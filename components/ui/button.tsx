@@ -11,7 +11,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "h-9 px-4 rounded-lg text-white bg-[linear-gradient(180deg,#654AF7_-41.25%,#412CB6_111.25%)] shadow-[0px_1px_0px_rgba(0,0,0,0.25)]",
+          "h-9 px-4 rounded-lg text-white bg-[linear-gradient(180deg,#654AF7_-41.25%,#412CB6_111.25%)] shadow-[0px_1px_0px_rgba(0,0,0,0.25),inset_0_0_0_1px_rgba(255,255,255,0.1),inset_0_1px_0_0_rgba(255,255,255,0.4)]",
         ghost: "h-9 px-4 rounded-lg text-white hover:opacity-70",
       },
     },
