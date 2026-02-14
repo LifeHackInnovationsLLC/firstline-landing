@@ -47,13 +47,32 @@
   --radius-4xl: calc(var(--radius) + 16px);
 
   /* custom vars */
-
+  --color-green: var(--green);
+  --color-gray: var(--gray);
   --navbar-height: var(--navbar-height);
   --navbar-height-mobile: var(--navbar-height-mobile);
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 :root {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -87,6 +106,8 @@
   --navbar-height: 5.25rem;
 	--navbar-height-mobile: 3.65rem;
   --radius: 0.625rem;
+  --green: oklch(0.8311 0.2162 150.56);
+  --gray: oklch(0.9222 0.0013 286.37);
 }
 
 html {
@@ -104,7 +125,6 @@ html {
 
 @utility container {
 	padding-inline: 20px;
-	padding-block: 24px;
 	margin-inline: auto;
 	max-width: 100%;
 
@@ -117,7 +137,6 @@ html {
 		max-width: calc(1240px + 100px * 2);
 	}
 }
-
 
 .scrollbar-thin {
 	scrollbar-width: thin;
