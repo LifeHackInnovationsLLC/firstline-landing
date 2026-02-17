@@ -8,7 +8,7 @@ export default function MarketingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-svh isolate flex grow flex-col relative bg-background text-foreground">
+    <div className="min-h-svh isolate flex grow flex-col relative bg-background text-foreground overflow-clip">
       <PatternBg />
       <Header />
       <main className="pt-(--navbar-height) relative max-w-screen overflow-x-clip">
