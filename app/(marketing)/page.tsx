@@ -3,7 +3,8 @@ import Benefits from "@/components/sections/Benefits";
 import Audiences from "@/components/sections/Audiences";
 import WhySwitch from "@/components/sections/WhySwitch";
 import Process from "@/components/sections/Process";
-
+import FAQ from "@/components/sections/FAQ";
+import CTA from "@/components/layout/cta";
 export default function Page() {
   return (
     <>
@@ -12,6 +13,8 @@ export default function Page() {
       <Audiences />
       <WhySwitch />
       <Process />
+      <FAQ />
+      <CTA />
     </>
   );
 }
