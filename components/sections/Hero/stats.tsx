@@ -18,13 +18,13 @@ function StatDivider() {
     >
       <path
         d="M0.584351 0L0.584354 79"
-        stroke="white"
+        stroke="black"
         strokeOpacity="0.06"
         strokeWidth="1.16873"
       />
       <path
         d="M0.584351 0L0.584352 37"
-        stroke="white"
+        stroke="black"
         strokeOpacity="0.5"
         strokeWidth="1.16873"
       />
@@ -42,10 +42,10 @@ export function Stats() {
         >
           <StatDivider />
           <div className="flex flex-col gap-1">
-            <span className="text-white text-3xl font-semibold">
+            <span className="text-black text-3xl font-semibold">
               {stat.value}
             </span>
-            <span className="text-white/50 text-xl font-bold">
+            <span className="text-black/50 text-xl font-semibold">
               {stat.label}
             </span>
           </div>

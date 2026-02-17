@@ -3,6 +3,7 @@ import bentoImage2 from "@/public/sections/benefits/bento-2.webp";
 import bentoImage3 from "@/public/sections/benefits/bento-3.webp";
 import bentoImage4 from "@/public/sections/benefits/bento-4.webp";
 import bentoImage5 from "@/public/sections/benefits/bento-5.webp";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const content = {
@@ -48,46 +49,109 @@ const content = {
 export function Bento() {
   const firstThreeItems = content.bento.slice(0, 3);
   const lastItems = content.bento.slice(3);
+
   return (
-    <div className="grid grid-cols-1 mt-15 gap-3 md:grid-cols-2 lg:grid-cols-6 [--bento-card-height:22.56rem]">
+    <BentoGrid>
       {firstThreeItems.map((item) => (
-        <div
-          key={item.text.highlightText}
-          className="col-span-1 p-6 md:col-span-2 w-full relative flex flex-col justify-end h-(--bento-card-height) bg-[#131418] overflow-hidden rounded-4xl"
-        >
-          <Image
+        <BentoCard key={item.text.highlightText} className="md:col-span-2">
+          <BentoImage
             src={item.image}
             alt={item.text.highlightText + " " + item.text.regularText}
-            fill
-            className="object-cover"
           />
-          <p className="relative z-10 text-lg leading-tight max-w-2xs">
-            <span className="font-semibold text-white">
-              {item.text.highlightText}
-            </span>{" "}
-            <span className="text-white/65">{item.text.regularText}</span>
-          </p>
-        </div>
+          <BentoContent className="max-w-2xs">
+            <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
+            <BentoText>{item.text.regularText}</BentoText>
+          </BentoContent>
+        </BentoCard>
       ))}
       {lastItems.map((item) => (
-        <div
+        <BentoCard
           key={item.text.highlightText}
-          className="col-span-1 p-6 md:col-span-2 lg:col-span-3 flex flex-col justify-end h-(--bento-card-height) w-full relative bg-[#131418] overflow-hidden rounded-4xl"
+          className="md:col-span-2 lg:col-span-3"
         >
-          <Image
+          <BentoImage
             src={item.image}
             alt={item.text.highlightText + " " + item.text.regularText}
-            fill
-            className="object-cover"
           />
-          <p className="relative z-10 text-lg ">
-            <span className="font-semibold text-white">
-              {item.text.highlightText}
-            </span>{" "}
-            <span className="text-white/65">{item.text.regularText}</span>
-          </p>
-        </div>
+          <BentoContent>
+            <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
+            <BentoText>{item.text.regularText}</BentoText>
+          </BentoContent>
+        </BentoCard>
       ))}
+    </BentoGrid>
+  );
+}
+
+interface BentoGridProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+function BentoGrid({ className, children, ...props }: BentoGridProps) {
+  return (
+    <div
+      className={cn(
+        "grid grid-cols-1 mt-15 gap-3 md:grid-cols-2 lg:grid-cols-6 [--bento-card-height:22.56rem]",
+        className
+      )}
+      {...props}
+    >
+      {children}
     </div>
+  );
+}
+
+interface BentoCardProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+function BentoCard({ className, children, ...props }: BentoCardProps) {
+  return (
+    <div
+      className={cn(
+        "col-span-1 p-6 w-full relative flex flex-col justify-end h-(--bento-card-height) bg-card-dark overflow-hidden rounded-4xl",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+}
+
+interface BentoImageProps extends React.ComponentProps<typeof Image> {}
+
+function BentoImage({ className, alt, ...props }: BentoImageProps) {
+  return (
+    <Image fill className={cn("object-cover", className)} alt={alt} {...props} />
+  );
+}
+
+interface BentoContentProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+
+function BentoContent({ className, children, ...props }: BentoContentProps) {
+  return (
+    <p
+      className={cn("relative z-10 text-lg leading-tight", className)}
+      {...props}
+    >
+      {children}
+    </p>
+  );
+}
+
+interface BentoHighlightProps extends React.HTMLAttributes<HTMLSpanElement> {}
+
+function BentoHighlight({ className, children, ...props }: BentoHighlightProps) {
+  return (
+    <span className={cn("font-semibold text-white", className)} {...props}>
+      {children}
+    </span>
+  );
+}
+
+interface BentoTextProps extends React.HTMLAttributes<HTMLSpanElement> {}
+
+function BentoText({ className, children, ...props }: BentoTextProps) {
+  return (
+    <span className={cn("text-white/65", className)} {...props}>
+      {children}
+    </span>
   );
 }

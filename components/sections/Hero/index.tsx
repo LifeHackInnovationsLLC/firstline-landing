@@ -10,7 +10,6 @@ import heroImage from "@/public/sections/hero/hero-image.webp";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Marquee } from "@/components/ui/marquee";
-import { Stats } from "./stats";
 import profilePhoto from "@/public/sections/hero/mock-profile-picture.png";
 
 const content = {
@@ -139,7 +138,7 @@ export default function Hero() {
           />
         </div>
 
-        <div className="flex w-full  items-center gap-4 -mt-24 border-t border-white/6 pt-4">
+        <div className="flex w-full  items-center gap-4 -mt-24 border-t border-white/6 pt-4 pb-16">
           <span className="text-white/72 text-lg whitespace-nowrap shrink-0">
             Trusted by <br /> 2,500+ users:
           </span>
@@ -162,7 +161,6 @@ export default function Hero() {
             </Marquee>
           </div>
         </div>
-        <Stats />
       </div>
     </section>
   );
