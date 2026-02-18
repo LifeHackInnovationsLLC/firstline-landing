@@ -9,7 +9,7 @@ import Image from "next/image";
 import heroImage from "@/public/sections/hero/hero-image.webp";
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Marquee } from "@/components/ui/marquee";
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import profilePhoto from "@/public/sections/hero/mock-profile-picture.png";
 
 const content = {
@@ -142,8 +142,8 @@ export default function Hero() {
           <span className="text-white/72 text-lg whitespace-nowrap shrink-0">
             Trusted by <br /> 2,500+ users:
           </span>
-          <div className="relative flex-1 min-w-0 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-            <Marquee className="[--duration:30s] [--gap:1.5rem]">
+          <div className="relative flex-1 min-w-0 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+            <InfiniteSlider gap={24} speed={50}>
               {content.socialProof.items.map((item) => (
                 <div
                   key={item.name}
@@ -158,7 +158,7 @@ export default function Hero() {
                   />
                 </div>
               ))}
-            </Marquee>
+            </InfiniteSlider>
           </div>
         </div>
       </div>

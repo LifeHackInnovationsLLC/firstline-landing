@@ -57,6 +57,11 @@
   --navbar-height-mobile: var(--navbar-height-mobile);
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+  /* Testimonial */
+  --color-testimonial-card-outer-bg: var(--testimonial-card-outer-bg);
+  --color-testimonial-card-border: var(--testimonial-card-border);
+  --shadow-testimonial-card: var(--testimonial-card-shadow);
   @keyframes marquee {
   from {
     transform: translateX(0);
@@ -116,6 +121,11 @@
   --card-dark: oklch(0.1373 0.0046 285.75);
   --text-primary: oklch(0.1059 0.0092 285.75);
   --text-tertiary: oklch(0.4878 0 0);
+
+  /* Testimonial */
+  --testimonial-card-outer-bg: #BEBEBE52;
+  --testimonial-card-border: #E8E8E8;
+  --testimonial-card-shadow: 0px 1px 2px rgba(46, 63, 95, 0.08), 0px 4px 6px rgba(46, 63, 95, 0.04), 0px 24px 40px -16px rgba(37, 60, 104, 0.08);
 }
 
 html {

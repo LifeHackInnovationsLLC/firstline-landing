@@ -5,6 +5,7 @@ import WhySwitch from "@/components/sections/WhySwitch";
 import Process from "@/components/sections/Process";
 import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/layout/cta";
+import Testimonials from "@/components/sections/Testimonials";
 export default function Page() {
   return (
     <>
@@ -13,6 +14,7 @@ export default function Page() {
       <Audiences />
       <WhySwitch />
       <Process />
+      <Testimonials />
       <FAQ />
       <CTA />
     </>
