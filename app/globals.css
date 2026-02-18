@@ -113,7 +113,7 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
   --navbar-height: 5.25rem;
-	--navbar-height-mobile: 3.65rem;
+	--navbar-height-mobile: 3.75rem;
   --radius: 0.625rem;
   --green: oklch(0.8311 0.2162 150.56);
   --gray: oklch(0.9222 0.0013 286.37);
@@ -142,7 +142,7 @@ html {
 }
 
 @utility container {
-	padding-inline: 20px;
+	padding-inline: 24px;
 	margin-inline: auto;
 	max-width: 100%;
 

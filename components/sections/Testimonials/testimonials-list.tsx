@@ -10,6 +10,8 @@ import {
   Testimonials,
   TestimonialsColumn,
   TestimonialsGrid,
+  TestimonialsMobileGrid,
+  TestimonialsRow,
 } from "@/components/ui/testimonial";
 import Image from "next/image";
 
@@ -100,71 +102,81 @@ const testimonials = {
   ],
 };
 
-export function TestimonialsList() {
+// Reusable testimonial card renderer
+function TestimonialItem({ item }: { item: typeof testimonials.column1[0] }) {
   return (
-    <Testimonials>
+    <TestimonialCard>
+      <TestimonialCardQuote>{item.testimonial}</TestimonialCardQuote>
+      <TestimonialCardAuthor>
+        <Image
+          src={item.authorImage}
+          alt={item.author}
+          width={40}
+          height={40}
+          className="rounded-full"
+        />
+        <TestimonialCardAuthorInfo>
+          <TestimonialCardAuthorName>{item.author}</TestimonialCardAuthorName>
+          <TestimonialCardAuthorRole>{item.authorPosition}</TestimonialCardAuthorRole>
+        </TestimonialCardAuthorInfo>
+      </TestimonialCardAuthor>
+    </TestimonialCard>
+  );
+}
+
+// Mobile: Two horizontal rows
+function TestimonialsListMobile() {
+  const row1 = [...testimonials.column1, ...testimonials.column2.slice(0, 2)];
+  const row2 = [...testimonials.column2.slice(2), ...testimonials.column3];
+
+  return (
+    <Testimonials className="lg:hidden">
+      <TestimonialsMobileGrid>
+        <TestimonialsRow speed={30}>
+          {row1.map((item) => (
+            <TestimonialItem key={item.author} item={item} />
+          ))}
+        </TestimonialsRow>
+        <TestimonialsRow speed={25} reverse>
+          {row2.map((item) => (
+            <TestimonialItem key={item.author} item={item} />
+          ))}
+        </TestimonialsRow>
+      </TestimonialsMobileGrid>
+    </Testimonials>
+  );
+}
+
+// Desktop: Three vertical columns
+function TestimonialsListDesktop() {
+  return (
+    <Testimonials className="hidden lg:block">
       <TestimonialsGrid height={500}>
         <TestimonialsColumn speed={30}>
           {testimonials.column1.map((item) => (
-            <TestimonialCard key={item.author}>
-              <TestimonialCardQuote>{item.testimonial}</TestimonialCardQuote>
-              <TestimonialCardAuthor>
-                <Image
-                  src={item.authorImage}
-                  alt={item.author}
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />
-                <TestimonialCardAuthorInfo>
-                  <TestimonialCardAuthorName>{item.author}</TestimonialCardAuthorName>
-                  <TestimonialCardAuthorRole>{item.authorPosition}</TestimonialCardAuthorRole>
-                </TestimonialCardAuthorInfo>
-              </TestimonialCardAuthor>
-            </TestimonialCard>
+            <TestimonialItem key={item.author} item={item} />
           ))}
         </TestimonialsColumn>
         <TestimonialsColumn speed={25} reverse>
           {testimonials.column2.map((item) => (
-            <TestimonialCard key={item.author}>
-              <TestimonialCardQuote>{item.testimonial}</TestimonialCardQuote>
-              <TestimonialCardAuthor>
-                <Image
-                  src={item.authorImage}
-                  alt={item.author}
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />
-                <TestimonialCardAuthorInfo>
-                  <TestimonialCardAuthorName>{item.author}</TestimonialCardAuthorName>
-                  <TestimonialCardAuthorRole>{item.authorPosition}</TestimonialCardAuthorRole>
-                </TestimonialCardAuthorInfo>
-              </TestimonialCardAuthor>
-            </TestimonialCard>
+            <TestimonialItem key={item.author} item={item} />
           ))}
         </TestimonialsColumn>
-        <TestimonialsColumn speed={35} className="hidden md:flex">
+        <TestimonialsColumn speed={35}>
           {testimonials.column3.map((item) => (
-            <TestimonialCard key={item.author}>
-              <TestimonialCardQuote>{item.testimonial}</TestimonialCardQuote>
-              <TestimonialCardAuthor>
-                <Image
-                  src={item.authorImage}
-                  alt={item.author}
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />
-                <TestimonialCardAuthorInfo>
-                  <TestimonialCardAuthorName>{item.author}</TestimonialCardAuthorName>
-                  <TestimonialCardAuthorRole>{item.authorPosition}</TestimonialCardAuthorRole>
-                </TestimonialCardAuthorInfo>
-              </TestimonialCardAuthor>
-            </TestimonialCard>
+            <TestimonialItem key={item.author} item={item} />
           ))}
         </TestimonialsColumn>
       </TestimonialsGrid>
     </Testimonials>
+  );
+}
+
+export function TestimonialsList() {
+  return (
+    <>
+      <TestimonialsListMobile />
+      <TestimonialsListDesktop />
+    </>
   );
 }

@@ -83,8 +83,10 @@ export function NavLinks({
     <ul
       ref={navRef}
       className={cn(
-        "flex items-center gap-8 py-2 px-6 rounded-full border border-white/[0.04] bg-white/[0.04]",
-        direction === "col" ? "flex-col items-start" : "flex-row",
+        "flex",
+        direction === "col"
+          ? "flex-col items-start"
+          : "flex-row items-center gap-8 py-2 px-6 rounded-full border border-white/[0.04] bg-white/[0.04]",
         className,
       )}
     >
@@ -187,42 +189,44 @@ export function NavLinks({
                   />
                 </button>
 
-                <ul
+                <div
                   className={cn(
-                    "flex flex-col gap-3 overflow-hidden transition-all duration-300",
-                    isOpen ? "mt-3 max-h-96 opacity-100" : "max-h-0 opacity-0",
+                    "grid transition-all duration-300",
+                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
                   )}
                 >
-                  {item.subItems?.map((sub) => (
-                    <li key={sub.label}>
-                      {isExternalLink(sub.href) ? (
-                        <a
-                          href={sub.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block pl-4 text-lg font-light text-muted-foreground transition-colors hover:text-white"
-                          onClick={() => {
-                            setOpenIndex(null);
-                            onLinkClick?.();
-                          }}
-                        >
-                          {sub.label}
-                        </a>
-                      ) : (
-                        <Link
-                          href={getHashAwareHref(sub.href, pathname, "/")}
-                          className="block pl-4 text-lg font-light text-muted-foreground transition-colors hover:text-white"
-                          onClick={() => {
-                            setOpenIndex(null);
-                            onLinkClick?.();
-                          }}
-                        >
-                          {sub.label}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="flex flex-col gap-3 overflow-hidden min-h-0 pt-3">
+                    {item.subItems?.map((sub) => (
+                      <li key={sub.label}>
+                        {isExternalLink(sub.href) ? (
+                          <a
+                            href={sub.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block pl-4 text-lg font-light text-muted-foreground transition-colors hover:text-white"
+                            onClick={() => {
+                              setOpenIndex(null);
+                              onLinkClick?.();
+                            }}
+                          >
+                            {sub.label}
+                          </a>
+                        ) : (
+                          <Link
+                            href={getHashAwareHref(sub.href, pathname, "/")}
+                            className="block pl-4 text-lg font-light text-muted-foreground transition-colors hover:text-white"
+                            onClick={() => {
+                              setOpenIndex(null);
+                              onLinkClick?.();
+                            }}
+                          >
+                            {sub.label}
+                          </Link>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ) : (
               <Link

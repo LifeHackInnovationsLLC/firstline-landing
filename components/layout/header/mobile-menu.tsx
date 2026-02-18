@@ -25,8 +25,12 @@ export function MobileMenu() {
     <>
       {/* Burger button */}
       <Button
-        variant="primary"
-        className="lg:hidden relative z-50"
+        className="lg:hidden relative z-50 text-white rounded-[4px]"
+        style={{
+          background: "linear-gradient(162.92deg, #1C1C1C 0%, #0D0D0D 100%)",
+          boxShadow:
+            "0px 11.6873px 23.2577px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255,255,255,0.15)",
+        }}
         aria-expanded={isOpen}
         aria-controls={menuId}
         aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -89,7 +93,7 @@ export function MobileMenu() {
         aria-modal="true"
         aria-label="Mobile navigation menu"
         className={cn(
-          "fixed inset-0 z-40 bg-black lg:hidden top-(--navbar-height) transition-opacity duration-300",
+          "absolute top-[var(--navbar-height)] left-0 w-full h-[calc(100dvh-var(--navbar-height))] bg-gradient-to-b from-background to-background/80 backdrop-blur-md z-40 lg:hidden transition-opacity duration-300",
           isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none",

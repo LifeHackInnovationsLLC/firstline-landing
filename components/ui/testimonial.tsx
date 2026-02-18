@@ -23,10 +23,56 @@ function TestimonialsGrid({
       style={{ height }}
       {...props}
     >
-      <div className="flex gap-4 h-full">{children}</div>
+      <div className="flex gap-4 h-full justify-center">{children}</div>
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray to-transparent pointer-events-none" />
       <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-gray to-transparent pointer-events-none" />
     </div>
+  );
+}
+
+function TestimonialsMobileGrid({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="testimonials-mobile-grid"
+      className={cn("relative overflow-hidden flex flex-col gap-4", className)}
+      {...props}
+    >
+      {children}
+      <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-gray to-transparent pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-gray to-transparent pointer-events-none" />
+    </div>
+  );
+}
+
+function TestimonialsRow({
+  className,
+  children,
+  speed = 30,
+  reverse = false,
+  repeat = 4,
+  ...props
+}: React.ComponentProps<"div"> & {
+  speed?: number;
+  reverse?: boolean;
+  repeat?: number;
+}) {
+  return (
+    <InfiniteSlider
+      data-slot="testimonials-row"
+      direction="horizontal"
+      gap={16}
+      speed={speed}
+      reverse={reverse}
+      repeat={repeat}
+      className={cn("", className)}
+      {...props}
+    >
+      {children}
+    </InfiniteSlider>
   );
 }
 
@@ -50,7 +96,7 @@ function TestimonialsColumn({
       speed={speed}
       reverse={reverse}
       repeat={repeat}
-      className={cn("flex-1", className)}
+      className={cn("", className)}
       {...props}
     >
       {children}
@@ -60,11 +106,11 @@ function TestimonialsColumn({
 
 function TestimonialCard({ className, ...props }: React.ComponentProps<"div">) {
   return (
-    <div className="bg-testimonial-card-outer-bg border border-black/5 rounded-2xl p-2.5 max-w-100">
+    <div className="bg-testimonial-card-outer-bg border border-black/5 rounded-2xl p-2.5 max-w-100 h-full">
       <div
         data-slot="testimonial-card"
         className={cn(
-          "flex flex-col bg-white/85 rounded-xl shadow-testimonial-card",
+          "flex flex-col h-full bg-white/85 rounded-xl shadow-testimonial-card",
           className,
         )}
         {...props}
@@ -82,7 +128,7 @@ function TestimonialCardQuote({
     <p
       data-slot="testimonial-card-quote"
       className={cn(
-        "text-text-secondary text-sm leading-relaxed px-4 pt-4 pb-4",
+        "text-text-secondary text-sm leading-relaxed px-4 pt-4 pb-4 flex-1",
         className,
       )}
       {...props}
@@ -100,7 +146,7 @@ function TestimonialCardAuthor({
     <div
       data-slot="testimonial-card-author"
       className={cn(
-        "flex items-center gap-3 px-4 py-4 border-t border-testimonial-card-border",
+        "flex items-center gap-3 px-4 py-4 border-t border-testimonial-card-border mt-auto",
         className,
       )}
       {...props}
@@ -163,7 +209,9 @@ function TestimonialCardAuthorRole({
 export {
   Testimonials,
   TestimonialsGrid,
+  TestimonialsMobileGrid,
   TestimonialsColumn,
+  TestimonialsRow,
   TestimonialCard,
   TestimonialCardQuote,
   TestimonialCardAuthor,

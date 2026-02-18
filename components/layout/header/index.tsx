@@ -6,7 +6,7 @@ import { MobileMenu } from "./mobile-menu";
 
 export function Header() {
   return (
-    <header className="fixed flex items-center inset-0 z-50 h-(--navbar-height) bg-transparent">
+    <header className="fixed flex items-center inset-0 z-50 h-(--navbar-height) bg-black/80 backdrop-blur-md border-b border-white/5">
       <nav className="container flex items-center">
         {/* Logo */}
         <div className="flex-1 flex items-center">

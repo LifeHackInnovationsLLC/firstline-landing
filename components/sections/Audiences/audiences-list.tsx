@@ -55,7 +55,7 @@ function AudiencesGrid({ className, children, ...props }: AudiencesGridProps) {
   return (
     <div
       className={cn(
-        "flex flex-row items-center overflow-x-auto gap-4 mt-15 [--audience-card-width:22rem] [--audience-card-height:24.4rem]",
+        "flex flex-col lg:flex-row items-center lg:overflow-x-auto gap-4 mt-8 lg:mt-15 [--audience-card-width:100%] lg:[--audience-card-width:22rem] [--audience-card-height:20rem] lg:[--audience-card-height:24.4rem]",
         className,
       )}
       {...props}

@@ -43,7 +43,7 @@ function WhySwitchGrid({ className, children, ...props }: WhySwitchGridProps) {
   return (
     <div
       className={cn(
-        "flex flex-row items-start justify-start gap-8 [--why-switch-icon-size:3rem] [--why-switch-title-max-width:16.25rem]",
+        "flex flex-col lg:flex-row items-start justify-start lg:gap-8 [--why-switch-icon-size:2.5rem] lg:[--why-switch-icon-size:3rem] [--why-switch-title-max-width:100%] lg:[--why-switch-title-max-width:16.25rem]",
         className,
       )}
       {...props}

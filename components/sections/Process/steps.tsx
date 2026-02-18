@@ -28,7 +28,7 @@ const content = [
 
 export function Steps() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col [--steps-content-width:28rem] lg:[--steps-content-width:100%] max-w-(--steps-content-width) mx-auto lg:mx-0">
       <Heading as="h2" className="text-center">
         Get started in 3 simple steps
       </Heading>
@@ -54,7 +54,7 @@ function StepsGrid({ className, children, ...props }: StepsGridProps) {
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-15 [--step-card-height:26.5rem]",
+        "grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mt-8 lg:mt-15 [--step-card-height:22rem] lg:[--step-card-height:26.5rem]",
         className,
       )}
       {...props}

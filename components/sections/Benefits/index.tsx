@@ -1,19 +1,22 @@
 import { Heading } from "@/components/ui/heading";
+import { Section } from "@/components/layout/section";
 import { Bento } from "./bento";
 import { Stats } from "../Hero/stats";
 export default function Benefits() {
   return (
-    <section id="benefits" className="py-25 pt-5 bg-gray">
+    <Section id="benefits" className="pt-5 bg-gray">
       <div className="container">
-        <Stats />
-        <Heading as="h2" className="text-left text-balance text-black">
-          The benefits <br /> that set us apart
-        </Heading>
-        <Bento />
-        <p className="text-center text-text-secondary w-full mt-8">
-          No contracts. No inventory. No upfront cost.
-        </p>
+        <div className="[--benefits-content-width:28rem] lg:[--benefits-content-width:100%] max-w-(--benefits-content-width) mx-auto lg:mx-0">
+          <Stats />
+          <Heading as="h2" className="text-left text-balance text-black">
+            The benefits <br className="hidden lg:block" /> that set us apart
+          </Heading>
+          <Bento />
+          <p className="text-center text-text-secondary w-full mt-8">
+            No contracts. No inventory. No upfront cost.
+          </p>
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }

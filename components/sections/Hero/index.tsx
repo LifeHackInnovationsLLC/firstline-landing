@@ -76,15 +76,15 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="pt-25">
+    <section id="hero" className="pt-12">
       <div className="container">
-        <div className="flex flex-col md:flex-row w-full">
-          <div className="flex-1">
+        <div className="flex flex-col lg:flex-row w-full [--hero-content-width:28rem] lg:[--hero-content-width:100%] max-w-(--hero-content-width) mx-auto lg:mx-0">
+          <div className="flex-1 flex flex-col items-center text-center lg:items-start lg:text-left">
             <HeroKicker>{content.kicker}</HeroKicker>
-            <Heading as="h1" className="mt-6">
+            <Heading as="h1" className="mt-6 text-center lg:text-left text-balance">
               {content.title}
             </Heading>
-            <div className="relative overflow-hidden bg-white/4 backdrop-blur-[16.95px] border mt-4 p-1 border-white/6 flex flex-row w-fit items-center gap-2 rounded-[36px]">
+            <div className="relative overflow-hidden bg-white/4 backdrop-blur-[16.95px] border mt-4 p-1 border-white/6 flex flex-row items-center gap-2 rounded-[36px]">
               {content.modes.map((mode) => {
                 const isActive = activeMode === mode.key;
 
@@ -107,10 +107,10 @@ export default function Hero() {
                     <button
                       type="button"
                       onClick={() => toggleMode(mode.key)}
-                      className="relative z-10 flex cursor-pointer flex-row items-center gap-2 px-4 py-2"
+                      className="relative z-10 flex cursor-pointer flex-row items-center gap-2 px-[6px] lg:px-4 py-2"
                     >
                       {mode.icon}
-                      <span className="text-white/72 text-base">
+                      <span className="text-white/72 text-sm lg:text-base">
                         {mode.label}
                       </span>
                     </button>
@@ -118,11 +118,11 @@ export default function Hero() {
                 );
               })}
             </div>
-            <p className="mt-6 text-white/72 text-base max-w-lg">
+            <p className="mt-4 lg:mt-6 text-white/72 text-sm lg:text-base max-w-lg mx-auto lg:mx-0">
               {content.description}
             </p>
             <Button
-              className="mt-12"
+              className="mt-8 lg:mt-12"
               nativeButton={false}
               render={<Link href={content.cta.to} />}
             >
@@ -134,16 +134,16 @@ export default function Hero() {
             alt="Hero Image"
             width={450}
             height={450}
-            className="object-cover self-start w-full h-full flex-1 -mt-32"
+            className="object-cover self-start w-full h-full flex-1 lg:-mt-32"
           />
         </div>
 
-        <div className="flex w-full  items-center gap-4 -mt-24 border-t border-white/6 pt-4 pb-16">
-          <span className="text-white/72 text-lg whitespace-nowrap shrink-0">
-            Trusted by <br /> 2,500+ users:
+        <div className="flex flex-col lg:flex-row w-full items-center gap-4 -mt-24 border-t border-white/6 pt-4 pb-16">
+          <span className="text-white/72 text-lg whitespace-nowrap shrink-0 text-center lg:text-left">
+            Trusted by 2,500+ users:
           </span>
           <div className="relative flex-1 min-w-0 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-            <InfiniteSlider gap={24} speed={50}>
+            <InfiniteSlider gap={24} speed={50} repeat={4}>
               {content.socialProof.items.map((item) => (
                 <div
                   key={item.name}

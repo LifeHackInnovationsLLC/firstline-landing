@@ -12,7 +12,7 @@ export const SellerIcon = ({ className, ...props }: SellerIconProps) => {
       viewBox="0 0 26 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("", className)}
+      className={cn("size-4 lg:size-[26px]", className)}
       {...props}
     >
       <title>Seller Icon</title>
@@ -116,7 +116,7 @@ export const AgentIcon = ({ className, ...props }: AgentIconProps) => {
       viewBox="0 0 26 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("", className)}
+      className={cn("size-4 lg:size-[26px]", className)}
       {...props}
     >
       <title>Agent Icon</title>
@@ -259,7 +259,7 @@ export const AgenciesIcon = ({ className, ...props }: AgenciesIconProps) => {
       viewBox="0 0 27 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("", className)}
+      className={cn("size-4 lg:size-[26px]", className)}
       {...props}
     >
       <title>Agencies Icon</title>
@@ -343,7 +343,7 @@ export const AffiliatesIcon = ({
       viewBox="0 0 26 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("", className)}
+      className={cn("size-4 lg:size-[26px]", className)}
       {...props}
     >
       <title>Affiliates Icon</title>
