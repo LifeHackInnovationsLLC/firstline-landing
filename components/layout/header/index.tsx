@@ -1,12 +1,31 @@
+"use client";
+
 import Link from "next/link";
 import { Logo } from "@/components/global/logo";
 import { Button } from "@/components/ui/button";
 import { NavLinks } from "./nav-links";
 import { MobileMenu } from "./mobile-menu";
+import { useScroll, useMotionValueEvent } from "motion/react";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const { scrollYProgress } = useScroll();
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    setScrolled(latest > 0.05);
+  });
+
   return (
-    <header className="fixed flex items-center inset-0 z-50 h-(--navbar-height) bg-black/80 backdrop-blur-md border-b border-white/5">
+    <header
+      className={cn(
+        "fixed flex items-center inset-0 z-50 h-(--navbar-height) transition-[background-color,backdrop-filter,border-color] duration-300",
+        scrolled
+          ? "bg-black/80 backdrop-blur-md border-b border-white/5"
+          : "bg-transparent border-b border-transparent"
+      )}
+    >
       <nav className="container flex items-center">
         {/* Logo */}
         <div className="flex-1 flex items-center">
@@ -24,14 +43,14 @@ export function Header() {
             <Button
               variant="ghost"
               nativeButton={false}
-              render={<Link href="/sign-in" />}
+              render={<Link href="/sign-in" prefetch={false} />}
             >
               Sign in
             </Button>
             <Button
               variant="primary"
               nativeButton={false}
-              render={<Link href="/get-started" />}
+              render={<Link href="/get-started" prefetch={false} />}
             >
               Get Started
             </Button>

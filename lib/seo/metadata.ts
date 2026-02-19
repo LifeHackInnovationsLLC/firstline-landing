@@ -36,17 +36,11 @@ export const baseMetadata: Metadata = {
 	generator: "Next.js",
 	applicationName: SEO_CONSTANTS.siteName,
 	referrer: "origin-when-cross-origin",
-	category: "finance",
+	category: "business",
 
-	// Icons
 	icons: {
 		icon: [
-			{ url: "/favicon.ico", sizes: "any" },
 			{ url: "/icon.svg", type: "image/svg+xml" },
-		],
-		shortcut: "/favicon.ico",
-		apple: [
-			{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
 		],
 	},
 
@@ -83,7 +77,7 @@ export const baseMetadata: Metadata = {
 				url: SEO_CONSTANTS.ogImage,
 				width: 1200,
 				height: 630,
-				alt: `${SEO_CONSTANTS.siteName} - Become a Funded Trader`,
+				alt: `${SEO_CONSTANTS.siteName} - The Commission Platform for Sellers, Agents & Affiliates`,
 				type: "image/png",
 			},
 		],

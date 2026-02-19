@@ -106,10 +106,10 @@ export function MobileMenu() {
             className="items-start gap-6"
           />
           <div className="flex flex-col gap-4">
-            <Button variant="ghost" nativeButton={false} render={<Link href="/sign-in" />}>
+            <Button variant="ghost" nativeButton={false} render={<Link href="/sign-in" prefetch={false} />}>
               Sign in
             </Button>
-            <Button variant="primary" nativeButton={false} render={<Link href="/get-started" />}>
+            <Button variant="primary" nativeButton={false} render={<Link href="/get-started" prefetch={false} />}>
               Get Started
             </Button>
           </div>

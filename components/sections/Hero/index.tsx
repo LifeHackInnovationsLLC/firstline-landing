@@ -11,6 +11,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import profilePhoto from "@/public/sections/hero/mock-profile-picture.png";
+import { Section } from "@/components/layout/section";
 
 const content = {
   kicker: "$12M+ paid out",
@@ -76,7 +77,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="pt-12">
+    <Section id="hero" className="pt-12 lg:pt-12 pb-0 lg:pb-0">
       <div className="container">
         <div className="flex flex-col lg:flex-row w-full [--hero-content-width:28rem] lg:[--hero-content-width:100%] max-w-(--hero-content-width) mx-auto lg:mx-0">
           <div className="flex-1 flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -131,9 +132,13 @@ export default function Hero() {
           </div>
           <Image
             src={activeModeImage ?? heroImage}
-            alt="Hero Image"
+            alt="Firstline commission platform dashboard preview"
             width={450}
             height={450}
+            priority
+            fetchPriority="high"
+            sizes="(max-width: 768px) 384px, (max-width: 1024px) 50vw, 450px"
+            quality={40}
             className="object-cover self-start w-full h-full flex-1 lg:-mt-32"
           />
         </div>
@@ -143,7 +148,7 @@ export default function Hero() {
             Trusted by 2,500+ users:
           </span>
           <div className="relative flex-1 min-w-0 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-            <InfiniteSlider gap={24} speed={50} repeat={4}>
+            <InfiniteSlider gap={24} speed={50} repeat={2}>
               {content.socialProof.items.map((item) => (
                 <div
                   key={item.name}
@@ -154,6 +159,7 @@ export default function Hero() {
                     alt={item.name}
                     width={55}
                     height={55}
+                    sizes="55px"
                     className="rounded-full"
                   />
                 </div>
@@ -162,6 +168,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

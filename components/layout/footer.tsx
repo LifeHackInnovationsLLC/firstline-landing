@@ -161,6 +161,8 @@ export function Footer() {
         alt=""
         className="absolute bottom-0 left-0 w-full object-cover pointer-events-none"
         aria-hidden="true"
+        sizes="100vw"
+        quality={50}
       />
       <GradientDivider />
       <div className="container relative z-10 flex-1">
@@ -232,6 +234,8 @@ export function Footer() {
           src={footerLogo}
           alt="Firstline"
           className="w-full object-contain"
+          sizes="100vw"
+          quality={65}
         />
       </div>
     </footer>

@@ -8,8 +8,11 @@ export default function Process() {
     <Section id="process" className="relative overflow-hidden isolate">
       <Image
         src={sectionPurpleGradient}
-        alt="Section Purple Gradient"
+        alt=""
+        aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        sizes="100vw"
+        quality={50}
       />
       <div className="container flex flex-col gap-20 lg:gap-40 relative z-10">
         <DashboardPreview />

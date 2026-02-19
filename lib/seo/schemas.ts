@@ -1,8 +1,5 @@
 import { SEO_CONSTANTS } from "./constants";
 
-/**
- * Organization schema for Elite Trader Funding
- */
 export const organizationSchema = {
 	"@context": "https://schema.org",
 	"@type": "Organization",
@@ -11,28 +8,33 @@ export const organizationSchema = {
 	url: SEO_CONSTANTS.siteUrl,
 	logo: {
 		"@type": "ImageObject",
-		url: `${SEO_CONSTANTS.siteUrl}/brand/etf-logo.png`,
+		url: `${SEO_CONSTANTS.siteUrl}/brand/logo.svg`,
 		width: 512,
 		height: 512,
 	},
 	image: `${SEO_CONSTANTS.siteUrl}${SEO_CONSTANTS.ogImage}`,
 	description: SEO_CONSTANTS.defaultDescription,
 	sameAs: [
-		"https://twitter.com/EliteTraderFund",
-		"https://www.youtube.com/@EliteTraderFunding",
-		"https://www.instagram.com/elitetraderfunding",
-		"https://discord.gg/elitetraderfunding",
+		"https://twitter.com/firstaborad",
 	],
 	contactPoint: {
 		"@type": "ContactPoint",
 		contactType: "customer service",
 		url: `${SEO_CONSTANTS.siteUrl}/contact`,
 	},
+	foundingDate: "2024",
+	numberOfEmployees: {
+		"@type": "QuantitativeValue",
+		minValue: 10,
+	},
+	aggregateRating: {
+		"@type": "AggregateRating",
+		ratingValue: "4.9",
+		ratingCount: "2500",
+		bestRating: "5",
+	},
 };
 
-/**
- * WebSite schema with search action
- */
 export const websiteSchema = {
 	"@context": "https://schema.org",
 	"@type": "WebSite",
@@ -46,119 +48,87 @@ export const websiteSchema = {
 	inLanguage: "en-US",
 };
 
-/**
- * Service schema for funded trading evaluations
- */
 export const serviceSchema = {
 	"@context": "https://schema.org",
-	"@type": "Service",
-	"@id": `${SEO_CONSTANTS.siteUrl}/#service`,
-	name: "Funded Trading Evaluations",
+	"@type": "SoftwareApplication",
+	"@id": `${SEO_CONSTANTS.siteUrl}/#application`,
+	name: "Firstline Commission Platform",
 	description:
-		"Trading evaluation programs that allow traders to prove their skills and receive funded trading accounts with real capital.",
+		"The commission platform for sellers, agents, agencies, and affiliates. Split payments instantly, pay commissions in real-time, and scale globally.",
+	applicationCategory: "BusinessApplication",
+	operatingSystem: "Web",
+	offers: {
+		"@type": "Offer",
+		price: "0",
+		priceCurrency: "USD",
+		description: "Free to get started. No credit card required.",
+	},
 	provider: {
 		"@id": `${SEO_CONSTANTS.siteUrl}/#organization`,
 	},
-	serviceType: "Financial Services",
-	areaServed: {
-		"@type": "Place",
-		name: "Worldwide",
-	},
-	hasOfferCatalog: {
-		"@type": "OfferCatalog",
-		name: "Trading Evaluations",
-		itemListElement: [
-			{
-				"@type": "Offer",
-				itemOffered: {
-					"@type": "Service",
-					name: "1-Step Evaluation",
-					description:
-						"Single-phase evaluation to prove your trading skills and get funded",
-				},
-			},
-			{
-				"@type": "Offer",
-				itemOffered: {
-					"@type": "Service",
-					name: "Fast Track Evaluation",
-					description: "Accelerated path to a funded trading account",
-				},
-			},
-			{
-				"@type": "Offer",
-				itemOffered: {
-					"@type": "Service",
-					name: "End of Day Evaluation",
-					description:
-						"Evaluation with end-of-day drawdown rules for swing traders",
-				},
-			},
-			{
-				"@type": "Offer",
-				itemOffered: {
-					"@type": "Service",
-					name: "Static Evaluation",
-					description: "Evaluation with static drawdown for consistent traders",
-				},
-			},
-		],
+	featureList: [
+		"Real-time commission tracking",
+		"Automated payment splitting",
+		"Lifetime commission duration",
+		"Multi-tier commission structures",
+		"Real-time dashboard and analytics",
+		"Global payout support",
+	],
+	aggregateRating: {
+		"@type": "AggregateRating",
+		ratingValue: "4.9",
+		ratingCount: "2500",
+		bestRating: "5",
 	},
 };
 
-/**
- * FAQ schema for common questions
- */
 export const faqSchema = {
 	"@context": "https://schema.org",
 	"@type": "FAQPage",
 	mainEntity: [
 		{
 			"@type": "Question",
-			name: "What is Elite Trader Funding?",
+			name: "How secure is my data with Firstline?",
 			acceptedAnswer: {
 				"@type": "Answer",
-				text: "Elite Trader Funding is a proprietary trading firm that provides traders with funded accounts after they pass an evaluation. We offer various evaluation types including 1-Step, Fast Track, End of Day, and Static evaluations to match different trading styles.",
+				text: "Your data is protected with enterprise-grade security. We use end-to-end encryption, secure cloud infrastructure, and follow industry best practices to ensure your sales network and commission data remain safe and private.",
 			},
 		},
 		{
 			"@type": "Question",
-			name: "How do I become a funded trader?",
+			name: "Can I access Firstline on both mobile and desktop?",
 			acceptedAnswer: {
 				"@type": "Answer",
-				text: "To become a funded trader with Elite Trader Funding, you need to purchase an evaluation account, meet the profit target while following the trading rules, and upon passing, you'll receive a funded account with real capital to trade.",
+				text: "Yes! Firstline is fully responsive and works seamlessly across all devices. Access your dashboard, track commissions, and manage your sales network from anywhere - whether you're on your phone, tablet, or desktop.",
 			},
 		},
 		{
 			"@type": "Question",
-			name: "What are the payout terms?",
+			name: "What happens after my free trial?",
 			acceptedAnswer: {
 				"@type": "Answer",
-				text: "Elite Trader Funding offers competitive payout splits. Funded traders can request payouts after meeting the minimum requirements, with fast processing times and multiple withdrawal options.",
+				text: "After your free trial ends, you can choose a plan that fits your needs. All your data and configurations will be preserved, so you can continue right where you left off with no interruption to your sales network.",
 			},
 		},
 		{
 			"@type": "Question",
-			name: "What trading platforms are supported?",
+			name: "How can I upgrade or downgrade my plan?",
 			acceptedAnswer: {
 				"@type": "Answer",
-				text: "Elite Trader Funding supports popular trading platforms including NinjaTrader, Tradovate, TradingView, and Rithmic-compatible platforms for futures trading.",
+				text: "You can change your plan at any time from your account settings. Upgrades take effect immediately, while downgrades will apply at the start of your next billing cycle. No long-term contracts required.",
 			},
 		},
 		{
 			"@type": "Question",
-			name: "Is there a time limit on evaluations?",
+			name: "What if I forget my password?",
 			acceptedAnswer: {
 				"@type": "Answer",
-				text: "Elite Trader Funding offers flexible evaluation periods. Check our evaluation options to find plans that match your trading pace and style.",
+				text: "Simply click the 'Forgot Password' link on the login page. We'll send you a secure reset link to your registered email address. You can also enable two-factor authentication for added security.",
 			},
 		},
 	],
 };
 
-/**
- * Breadcrumb schema generator
- */
 export function generateBreadcrumbSchema(
 	items: Array<{ name: string; url: string }>,
 ) {
@@ -174,9 +144,6 @@ export function generateBreadcrumbSchema(
 	};
 }
 
-/**
- * WebPage schema generator for individual pages
- */
 export function generateWebPageSchema(options: {
 	title: string;
 	description: string;

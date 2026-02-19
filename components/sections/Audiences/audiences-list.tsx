@@ -89,6 +89,8 @@ function AudienceImage({ className, alt, ...props }: AudienceImageProps) {
       fill
       className={cn("object-cover", className)}
       alt={alt}
+      sizes="(max-width: 1024px) 400px, 352px"
+      quality={55}
       {...props}
     />
   );

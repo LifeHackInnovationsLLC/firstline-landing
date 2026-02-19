@@ -21,7 +21,7 @@ export default function FAQ() {
               className="w-fit mt-5"
               variant="primary"
               nativeButton={false}
-              render={<Link href="/contact" />}
+              render={<Link href="/contact" prefetch={false} />}
             >
               Contact Us
             </Button>

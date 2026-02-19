@@ -113,6 +113,7 @@ function TestimonialItem({ item }: { item: typeof testimonials.column1[0] }) {
           alt={item.author}
           width={40}
           height={40}
+          sizes="40px"
           className="rounded-full"
         />
         <TestimonialCardAuthorInfo>
@@ -132,12 +133,12 @@ function TestimonialsListMobile() {
   return (
     <Testimonials className="lg:hidden">
       <TestimonialsMobileGrid>
-        <TestimonialsRow speed={30}>
+        <TestimonialsRow speed={30} repeat={2}>
           {row1.map((item) => (
             <TestimonialItem key={item.author} item={item} />
           ))}
         </TestimonialsRow>
-        <TestimonialsRow speed={25} reverse>
+        <TestimonialsRow speed={25} reverse repeat={2}>
           {row2.map((item) => (
             <TestimonialItem key={item.author} item={item} />
           ))}
@@ -152,17 +153,17 @@ function TestimonialsListDesktop() {
   return (
     <Testimonials className="hidden lg:block">
       <TestimonialsGrid height={500}>
-        <TestimonialsColumn speed={30}>
+        <TestimonialsColumn speed={30} repeat={2}>
           {testimonials.column1.map((item) => (
             <TestimonialItem key={item.author} item={item} />
           ))}
         </TestimonialsColumn>
-        <TestimonialsColumn speed={25} reverse>
+        <TestimonialsColumn speed={25} reverse repeat={2}>
           {testimonials.column2.map((item) => (
             <TestimonialItem key={item.author} item={item} />
           ))}
         </TestimonialsColumn>
-        <TestimonialsColumn speed={35}>
+        <TestimonialsColumn speed={35} repeat={2}>
           {testimonials.column3.map((item) => (
             <TestimonialItem key={item.author} item={item} />
           ))}

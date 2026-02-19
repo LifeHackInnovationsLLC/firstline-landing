@@ -10,8 +10,11 @@ export function DashboardPreview() {
       {/* Mask rendered first so it's naturally below in stacking order */}
       <Image
         src={dashboardPreviewMask}
-        alt="Dashboard Preview Mask"
+        alt=""
+        aria-hidden="true"
         className="max-w-sm absolute top-0 left-0 pointer-events-none"
+        sizes="24rem"
+        quality={50}
       />
 
       <div className="bg-black/90 h-full flex flex-col lg:flex-row rounded-[6px] relative">
@@ -38,8 +41,10 @@ export function DashboardPreview() {
         </div>
         <Image
           src={dashboardPreview}
-          alt="Dashboard Preview"
+          alt="Firstline dashboard showing sales, commissions, and payouts"
           className="object-cover w-full h-full max-h-[357px] mt-4 flex-1 pl-5 lg:pl-0"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          quality={65}
         />
       </div>
     </div>

@@ -1,10 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
-import type { WebSite, WithContext } from "schema-dts";
 
-import { SEO_CONSTANTS } from "@/lib/seo/constants";
 import { baseMetadata, defaultViewport } from "@/lib/seo/metadata";
+import { organizationSchema, websiteSchema, faqSchema, serviceSchema } from "@/lib/seo/schemas";
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
@@ -28,14 +27,7 @@ const brittiSans = localFont({
   display: "swap",
 });
 
-function getWebsiteJsonLd(): WithContext<WebSite> {
-  return {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: SEO_CONSTANTS.siteName,
-    url: SEO_CONSTANTS.siteUrl,
-  };
-}
+const jsonLdSchemas = [organizationSchema, websiteSchema, serviceSchema, faqSchema];
 
 export const metadata: Metadata = baseMetadata;
 
@@ -53,13 +45,15 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* Schema.org JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getWebsiteJsonLd()).replace(/</g, "\\u003c"),
-          }}
-        />
+        {jsonLdSchemas.map((schema, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+            }}
+          />
+        ))}
       </head>
 
       <body className="antialiased">{children}</body>

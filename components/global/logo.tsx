@@ -13,7 +13,7 @@ export function Logo({ className, ...props }: LogoProps) {
       className={cn("flex items-center gap-2", className)}
       {...props}
     >
-      <Image src={logo} alt="Firstline Logo" />
+      <Image src={logo} alt="Firstline" width={120} height={28} />
     </Link>
   );
 }

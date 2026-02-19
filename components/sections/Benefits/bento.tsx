@@ -14,6 +14,7 @@ const content = {
         regularText: "into a tracked incentivized salesperson",
       },
       image: bentoImage1,
+      alt: "",
     },
     {
       text: {
@@ -21,6 +22,7 @@ const content = {
         regularText: "",
       },
       image: bentoImage2,
+      alt: "Commission tracking dashboard",
     },
     {
       text: {
@@ -28,6 +30,7 @@ const content = {
         regularText: "in real time",
       },
       image: bentoImage3,
+      alt: "",
     },
     {
       text: {
@@ -35,6 +38,7 @@ const content = {
         regularText: "without building ops, finance, or tooling",
       },
       image: bentoImage4,
+      alt: "",
     },
     {
       text: {
@@ -42,9 +46,15 @@ const content = {
         regularText: "without disputes or delays",
       },
       image: bentoImage5,
+      alt: "",
     },
   ],
 };
+
+function getBentoAlt(item: (typeof content.bento)[number]) {
+  if (item.alt) return item.alt;
+  return `${item.text.highlightText} ${item.text.regularText}`.trim();
+}
 
 export function Bento() {
   const firstThreeItems = content.bento.slice(0, 3);
@@ -53,11 +63,8 @@ export function Bento() {
   return (
     <BentoGrid>
       {firstThreeItems.map((item) => (
-        <BentoCard key={item.text.highlightText} className="md:col-span-2">
-          <BentoImage
-            src={item.image}
-            alt={item.text.highlightText + " " + item.text.regularText}
-          />
+        <BentoCard key={getBentoAlt(item)} className="md:col-span-2">
+          <BentoImage src={item.image} alt={getBentoAlt(item)} />
           <BentoContent className="max-w-2xs">
             <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
             <BentoText>{item.text.regularText}</BentoText>
@@ -65,14 +72,8 @@ export function Bento() {
         </BentoCard>
       ))}
       {lastItems.map((item) => (
-        <BentoCard
-          key={item.text.highlightText}
-          className="md:col-span-2 lg:col-span-3"
-        >
-          <BentoImage
-            src={item.image}
-            alt={item.text.highlightText + " " + item.text.regularText}
-          />
+        <BentoCard key={getBentoAlt(item)} className="md:col-span-2 lg:col-span-3">
+          <BentoImage src={item.image} alt={getBentoAlt(item)} />
           <BentoContent>
             <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
             <BentoText>{item.text.regularText}</BentoText>
@@ -119,7 +120,14 @@ interface BentoImageProps extends React.ComponentProps<typeof Image> {}
 
 function BentoImage({ className, alt, ...props }: BentoImageProps) {
   return (
-    <Image fill className={cn("object-cover", className)} alt={alt} {...props} />
+    <Image
+      fill
+      className={cn("object-cover", className)}
+      alt={alt}
+      sizes="(max-width: 768px) 400px, (max-width: 1024px) 380px, 350px"
+      quality={55}
+      {...props}
+    />
   );
 }
 

@@ -4,43 +4,64 @@ import { SEO_CONSTANTS } from "@/lib/seo/constants";
 export default function robots(): MetadataRoute.Robots {
 	return {
 		rules: [
-			// Default rule for all bots
 			{
 				userAgent: "*",
 				allow: "/",
 				disallow: ["/api/", "/api/*", "/_next/", "/private/"],
 			},
-			// Google
+			// Traditional search engines
 			{
 				userAgent: "Googlebot",
 				allow: "/",
 				disallow: ["/api/"],
 			},
-			// Bing
 			{
 				userAgent: "Bingbot",
 				allow: "/",
 				disallow: ["/api/"],
 			},
-			// DuckDuckGo
 			{
 				userAgent: "DuckDuckBot",
 				allow: "/",
 				disallow: ["/api/"],
 			},
-			// Yahoo
 			{
 				userAgent: "Slurp",
 				allow: "/",
 				disallow: ["/api/"],
 			},
-			// Yandex
 			{
 				userAgent: "YandexBot",
 				allow: "/",
 				disallow: ["/api/"],
 			},
-			// Social media crawlers - allow full access to public pages
+			// AI search engine bots
+			{
+				userAgent: "GPTBot",
+				allow: "/",
+				disallow: ["/api/", "/private/"],
+			},
+			{
+				userAgent: "ChatGPT-User",
+				allow: "/",
+				disallow: ["/api/", "/private/"],
+			},
+			{
+				userAgent: "PerplexityBot",
+				allow: "/",
+				disallow: ["/api/", "/private/"],
+			},
+			{
+				userAgent: "ClaudeBot",
+				allow: "/",
+				disallow: ["/api/", "/private/"],
+			},
+			{
+				userAgent: "anthropic-ai",
+				allow: "/",
+				disallow: ["/api/", "/private/"],
+			},
+			// Social media crawlers
 			{
 				userAgent: "facebookexternalhit",
 				allow: "/",

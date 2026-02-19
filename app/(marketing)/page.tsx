@@ -6,6 +6,7 @@ import Process from "@/components/sections/Process";
 import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/layout/cta";
 import Testimonials from "@/components/sections/Testimonials";
+
 export default function Page() {
   return (
     <>
