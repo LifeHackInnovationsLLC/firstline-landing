@@ -1,8 +1,17 @@
+"use client";
+
+import { useState, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Logo } from "@/components/global/logo";
+import { cn } from "@/lib/utils";
 import footerGradient from "@/public/sections/footer/footer-gradient.png";
 import footerLogo from "@/public/sections/footer/firstline-footer.png";
+
+type FooterSection = {
+  title: string;
+  links: { label: string; href: string }[];
+};
 
 const content = {
   description:
@@ -45,6 +54,71 @@ const content = {
 };
 
 const currentYear = new Date().getFullYear();
+
+function ChevronIcon({ isOpen }: { isOpen: boolean }) {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      className={cn(
+        "transition-transform duration-300",
+        isOpen && "rotate-180"
+      )}
+    >
+      <path
+        d="M4 6L8 10L12 6"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function FooterAccordion({ section }: { section: FooterSection }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = useCallback(() => setIsOpen((prev) => !prev), []);
+
+  return (
+    <div className="flex flex-col border-b border-white/10 last:border-b-0">
+      <button
+        type="button"
+        onClick={toggle}
+        className="flex items-center justify-between w-full py-4 text-left"
+        aria-expanded={isOpen}
+      >
+        <span className="text-sm font-semibold text-foreground">
+          {section.title}
+        </span>
+        <ChevronIcon isOpen={isOpen} />
+      </button>
+      <div
+        className="grid transition-[grid-template-rows] duration-300 ease-out"
+        style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+      >
+        <div className="overflow-hidden">
+          <ul className="flex flex-col gap-2.5 pb-4">
+            {section.links.map((link) => (
+              <li key={link.label}>
+                <Link
+                  href={link.href}
+                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function GradientDivider() {
   return (
@@ -100,8 +174,15 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Link columns */}
-          <div className="flex flex-wrap gap-12 lg:gap-16">
+          {/* Link columns - Mobile accordion */}
+          <div className="flex flex-col w-full lg:hidden">
+            {content.sections.map((section) => (
+              <FooterAccordion key={section.title} section={section} />
+            ))}
+          </div>
+
+          {/* Link columns - Desktop */}
+          <div className="hidden lg:flex flex-wrap gap-12 lg:gap-16">
             {content.sections.map((section) => (
               <div
                 key={section.title}
@@ -129,7 +210,7 @@ export function Footer() {
 
         {/* Copyright bar */}
         <GradientDivider />
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 py-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 py-6">
           <span className="text-sm text-muted-foreground">
             &copy; {currentYear} Firstline Digital. All rights reserved.
           </span>

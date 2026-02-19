@@ -1,6 +1,5 @@
 import { Heading } from "@/components/ui/heading";
 import { Section } from "@/components/layout/section";
-import Image from "next/image";
 import { TestimonialsList } from "./testimonials-list";
 
 export default function Testimonials() {
@@ -10,14 +9,10 @@ export default function Testimonials() {
         <div className="container">
           <div className="[--testimonials-content-width:28rem] lg:[--testimonials-content-width:100%] max-w-(--testimonials-content-width) mx-auto lg:mx-0">
             <div className="relative flex flex-col gap-4 lg:gap-5 items-center">
-              <Image
-                src="/sections/testimonials/testimonial-heart.png"
-                alt=""
-                width={500}
-                height={400}
-                className="absolute -top-32 left-1/2 -translate-x-1/2 pointer-events-none hidden lg:block"
-              />
-              <Heading as="h2" className="text-center text-balance text-black relative z-10">
+              <Heading
+                as="h2"
+                className="text-center text-balance text-black relative z-10"
+              >
                 What Our Users Have to Say
               </Heading>
               <p className="text-center max-w-xl mx-auto text-text-secondary relative z-10 text-sm lg:text-base">
