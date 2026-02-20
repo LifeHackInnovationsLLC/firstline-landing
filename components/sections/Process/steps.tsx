@@ -88,7 +88,6 @@ function StepImage({ className, alt, ...props }: StepImageProps) {
       fill
       className={cn("object-cover", className)}
       alt={alt}
-      sizes="(max-width: 1024px) 100vw, 33vw"
       {...props}
     />
   );

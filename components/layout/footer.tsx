@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Logo } from "@/components/global/logo";
 import { cn } from "@/lib/utils";
-import footerGradient from "@/public/sections/footer/footer-gradient.png";
-import footerLogo from "@/public/sections/footer/firstline-footer.png";
+import footerGradient from "@/public/sections/footer/firstline-footer-gradient.webp";
+import footerLogo from "@/public/sections/footer/firstline-footer.webp";
 
 type FooterSection = {
   title: string;
