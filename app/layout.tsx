@@ -3,7 +3,12 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 
 import { baseMetadata, defaultViewport } from "@/lib/seo/metadata";
-import { organizationSchema, websiteSchema, faqSchema, serviceSchema } from "@/lib/seo/schemas";
+import {
+  organizationSchema,
+  websiteSchema,
+  faqSchema,
+  serviceSchema,
+} from "@/lib/seo/schemas";
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
@@ -27,7 +32,12 @@ const brittiSans = localFont({
   display: "swap",
 });
 
-const jsonLdSchemas = [organizationSchema, websiteSchema, serviceSchema, faqSchema];
+const jsonLdSchemas = [
+  organizationSchema,
+  websiteSchema,
+  serviceSchema,
+  faqSchema,
+];
 
 export const metadata: Metadata = baseMetadata;
 
@@ -47,7 +57,7 @@ export default function RootLayout({
       <head>
         {jsonLdSchemas.map((schema, i) => (
           <script
-            key={i}
+            key={`${schema["@type"]}-${i}`}
             type="application/ld+json"
             dangerouslySetInnerHTML={{
               __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
