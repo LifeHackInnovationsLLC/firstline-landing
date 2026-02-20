@@ -2,29 +2,35 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { Heading } from "../ui/heading";
 import ctaBackgroundMobile from "@/public/sections/cta/cta-bg-mobile.png";
+import ctaBackgroundDesktop from "@/public/sections/cta/cta-bg.webp";
 import Image from "next/image";
 import { Section } from "./section";
 
 export default function CTA() {
   return (
-    <Section id="cta" className="relative">
-      {/*<Image
-        src={ctaBackground}
-        alt="CTA Background"
-        fill
-        className="object-contain mt-32 hidden lg:block"
-      />*/}
+    <Section
+      id="cta"
+      className="relative lg:min-h-160 lg:flex lg:items-center lg:justify-center"
+    >
+      <div className="hidden lg:block absolute inset-x-0 top-20 bottom-0">
+        <Image
+          src={ctaBackgroundDesktop}
+          alt=""
+          aria-hidden="true"
+          fill
+          className="object-cover"
+        />
+      </div>
       <div className="container">
         <div className="flex flex-col gap-0 lg:gap-10 items-center justify-center w-full text-center max-w-md mx-auto lg:max-w-none">
           <Image
             src={ctaBackgroundMobile}
             alt=""
             aria-hidden="true"
-            className="lg:hidden w-full max-w-sm"
-            sizes="(max-width: 640px) 100vw, 24rem"
+            className="lg:hidden w-full max-w-sm top-10"
           />
           <div className="flex flex-col items-center justify-center text-center gap-4">
-            <Heading as="h2" className="text-center lg:text-left">
+            <Heading as="h2" className="text-center">
               Ready to start earning?
             </Heading>
             <p className="text-white/72 text-sm">

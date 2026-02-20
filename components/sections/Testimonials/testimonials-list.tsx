@@ -152,7 +152,7 @@ function TestimonialsListMobile() {
 function TestimonialsListDesktop() {
   return (
     <Testimonials className="hidden lg:block">
-      <TestimonialsGrid height={500}>
+      <TestimonialsGrid height={700}>
         <TestimonialsColumn speed={30} repeat={2}>
           {testimonials.column1.map((item) => (
             <TestimonialItem key={item.author} item={item} />
