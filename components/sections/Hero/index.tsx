@@ -6,11 +6,11 @@ import { AgentIcon, AgenciesIcon, SellerIcon, AffiliatesIcon } from "./svgs";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import heroImage from "@/public/sections/hero/hero-image.webp";
+import heroImage from "@/public/sections/hero/hero-image.avif";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
-import profilePhoto from "@/public/sections/hero/mock-profile-picture.png";
+import profilePhoto from "@/public/sections/hero/mock-profile-picture.webp";
 import { Section } from "@/components/layout/section";
 
 const content = {
@@ -136,8 +136,6 @@ export default function Hero() {
           <Image
             src={activeModeImage ?? heroImage}
             alt="Firstline commission platform dashboard preview"
-            width={450}
-            height={450}
             priority
             fetchPriority="high"
             sizes="(max-width: 768px) 384px, (max-width: 1024px) 50vw, 450px"

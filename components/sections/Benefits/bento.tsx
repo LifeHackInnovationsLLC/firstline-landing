@@ -127,7 +127,6 @@ function BentoImage({ className, alt, ...props }: BentoImageProps) {
       fill
       className={cn("object-cover", className)}
       alt={alt}
-      sizes="(max-width: 768px) 400px, (max-width: 1024px) 380px, 350px"
       {...props}
     />
   );
