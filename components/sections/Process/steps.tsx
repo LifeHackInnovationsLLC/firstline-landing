@@ -1,6 +1,6 @@
-import createAccountImage from "@/public/sections/process/step-1.png";
-import discoverPathImage from "@/public/sections/process/step-2.png";
-import earnCommissionsImage from "@/public/sections/process/step-3.png";
+import createAccountImage from "@/public/sections/process/step-1.webp";
+import discoverPathImage from "@/public/sections/process/step-2.webp";
+import earnCommissionsImage from "@/public/sections/process/step-3.webp";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Heading } from "@/components/ui/heading";

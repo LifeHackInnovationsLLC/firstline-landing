@@ -6,25 +6,25 @@ const audiences = [
     audienceName: "Sellers",
     audienceDescription:
       "Launch a commission-based sales network in days - not months",
-    audienceImage: "/sections/audiences/audiences-1.png",
+    audienceImage: "/sections/audiences/audiences-1.webp",
   },
   {
     audienceName: "Agents",
     audienceDescription:
       "Launch a commission-based sales network in days - not months",
-    audienceImage: "/sections/audiences/audiences-1.png",
+    audienceImage: "/sections/audiences/audiences-1.webp",
   },
   {
     audienceName: "Agencies",
     audienceDescription:
       "Launch a commission-based sales network in days - not months",
-    audienceImage: "/sections/audiences/audiences-1.png",
+    audienceImage: "/sections/audiences/audiences-1.webp",
   },
   {
     audienceName: "Affiliates",
     audienceDescription:
       "Launch a commission-based sales network in days - not months",
-    audienceImage: "/sections/audiences/audiences-1.png",
+    audienceImage: "/sections/audiences/audiences-1.webp",
   },
 ];
 
@@ -89,7 +89,6 @@ function AudienceImage({ className, alt, ...props }: AudienceImageProps) {
       fill
       className={cn("object-cover", className)}
       alt={alt}
-      sizes="(max-width: 1024px) 400px, 352px"
       {...props}
     />
   );
