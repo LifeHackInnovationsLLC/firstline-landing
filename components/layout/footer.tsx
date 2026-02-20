@@ -188,9 +188,9 @@ export function Footer() {
                 key={section.title}
                 className="flex flex-col gap-4 min-w-[130px]"
               >
-                <h5 className="text-sm font-semibold text-foreground">
+                <h3 className="text-sm font-semibold text-foreground">
                   {section.title}
-                </h5>
+                </h3>
                 <ul className="flex flex-col gap-2.5">
                   {section.links.map((link) => (
                     <li key={link.label}>
