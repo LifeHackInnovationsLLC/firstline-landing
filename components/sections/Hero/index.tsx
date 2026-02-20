@@ -82,7 +82,10 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row w-full [--hero-content-width:28rem] lg:[--hero-content-width:100%] max-w-(--hero-content-width) mx-auto lg:mx-0">
           <div className="flex-1 flex flex-col items-center text-center lg:items-start lg:text-left">
             <HeroKicker>{content.kicker}</HeroKicker>
-            <Heading as="h1" className="mt-6 text-center lg:text-left text-balance">
+            <Heading
+              as="h1"
+              className="mt-6 text-center lg:text-left text-balance"
+            >
               {content.title}
             </Heading>
             <div className="relative overflow-hidden bg-white/4 backdrop-blur-[16.95px] border mt-4 p-1 border-white/6 flex flex-row items-center gap-2 rounded-[36px]">
@@ -138,7 +141,6 @@ export default function Hero() {
             priority
             fetchPriority="high"
             sizes="(max-width: 768px) 384px, (max-width: 1024px) 50vw, 450px"
-            quality={40}
             className="object-cover self-start w-full h-full flex-1 lg:-mt-32"
           />
         </div>

@@ -22,7 +22,6 @@ export default function CTA() {
             aria-hidden="true"
             className="lg:hidden w-full max-w-sm"
             sizes="(max-width: 640px) 100vw, 24rem"
-            quality={65}
           />
           <div className="flex flex-col items-center justify-center text-center gap-4">
             <Heading as="h2" className="text-center lg:text-left">

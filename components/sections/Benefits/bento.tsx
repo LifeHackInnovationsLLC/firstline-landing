@@ -72,7 +72,10 @@ export function Bento() {
         </BentoCard>
       ))}
       {lastItems.map((item) => (
-        <BentoCard key={getBentoAlt(item)} className="md:col-span-2 lg:col-span-3">
+        <BentoCard
+          key={getBentoAlt(item)}
+          className="md:col-span-2 lg:col-span-3"
+        >
           <BentoImage src={item.image} alt={getBentoAlt(item)} />
           <BentoContent>
             <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
@@ -91,7 +94,7 @@ function BentoGrid({ className, children, ...props }: BentoGridProps) {
     <div
       className={cn(
         "grid grid-cols-1 mt-15 gap-3 md:grid-cols-2 lg:grid-cols-6 [--bento-card-height:22.56rem]",
-        className
+        className,
       )}
       {...props}
     >
@@ -107,7 +110,7 @@ function BentoCard({ className, children, ...props }: BentoCardProps) {
     <div
       className={cn(
         "col-span-1 p-6 w-full relative flex flex-col justify-end h-(--bento-card-height) bg-card-dark overflow-hidden rounded-4xl",
-        className
+        className,
       )}
       {...props}
     >
@@ -125,7 +128,6 @@ function BentoImage({ className, alt, ...props }: BentoImageProps) {
       className={cn("object-cover", className)}
       alt={alt}
       sizes="(max-width: 768px) 400px, (max-width: 1024px) 380px, 350px"
-      quality={55}
       {...props}
     />
   );
@@ -146,7 +148,11 @@ function BentoContent({ className, children, ...props }: BentoContentProps) {
 
 interface BentoHighlightProps extends React.HTMLAttributes<HTMLSpanElement> {}
 
-function BentoHighlight({ className, children, ...props }: BentoHighlightProps) {
+function BentoHighlight({
+  className,
+  children,
+  ...props
+}: BentoHighlightProps) {
   return (
     <span className={cn("font-semibold text-white", className)} {...props}>
       {children}

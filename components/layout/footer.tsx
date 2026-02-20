@@ -66,7 +66,7 @@ function ChevronIcon({ isOpen }: { isOpen: boolean }) {
       aria-hidden="true"
       className={cn(
         "transition-transform duration-300",
-        isOpen && "rotate-180"
+        isOpen && "rotate-180",
       )}
     >
       <path
@@ -162,7 +162,6 @@ export function Footer() {
         className="absolute bottom-0 left-0 w-full object-cover pointer-events-none"
         aria-hidden="true"
         sizes="100vw"
-        quality={50}
       />
       <GradientDivider />
       <div className="container relative z-10 flex-1">
@@ -235,7 +234,6 @@ export function Footer() {
           alt="Firstline"
           className="w-full object-contain"
           sizes="100vw"
-          quality={65}
         />
       </div>
     </footer>

@@ -22,7 +22,6 @@ export function PatternBg({ className, ...props }: PatternBgProps) {
         alt=""
         className="absolute top-0 left-0"
         sizes="100vw"
-        quality={40}
         priority
         draggable={false}
       />
