@@ -64,7 +64,7 @@ const testimonials = {
     {
       testimonial: LOREM_SHORT,
       author: "Rachel Adams",
-      authorImage: "/sections/hero/mock-profile-picture.png",
+      authorImage: "/sections/hero/mock-profile-picture.webp",
       authorPosition: "Partnership Manager at BrandCo",
     },
     {
@@ -103,7 +103,7 @@ const testimonials = {
 };
 
 // Reusable testimonial card renderer
-function TestimonialItem({ item }: { item: typeof testimonials.column1[0] }) {
+function TestimonialItem({ item }: { item: (typeof testimonials.column1)[0] }) {
   return (
     <TestimonialCard>
       <TestimonialCardQuote>{item.testimonial}</TestimonialCardQuote>
@@ -118,7 +118,9 @@ function TestimonialItem({ item }: { item: typeof testimonials.column1[0] }) {
         />
         <TestimonialCardAuthorInfo>
           <TestimonialCardAuthorName>{item.author}</TestimonialCardAuthorName>
-          <TestimonialCardAuthorRole>{item.authorPosition}</TestimonialCardAuthorRole>
+          <TestimonialCardAuthorRole>
+            {item.authorPosition}
+          </TestimonialCardAuthorRole>
         </TestimonialCardAuthorInfo>
       </TestimonialCardAuthor>
     </TestimonialCard>
