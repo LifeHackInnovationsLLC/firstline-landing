@@ -12,7 +12,7 @@ export default function CTA() {
       id="cta"
       className="relative lg:min-h-160 lg:flex lg:items-center lg:justify-center"
     >
-      <div className="hidden lg:block absolute inset-x-0 top-20 bottom-0">
+      <div className="hidden lg:block absolute inset-x-0 top-0 bottom-0">
         <Image
           src={ctaBackgroundDesktop}
           alt=""
