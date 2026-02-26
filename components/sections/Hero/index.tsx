@@ -6,7 +6,7 @@ import { AgentIcon, AgenciesIcon, SellerIcon, AffiliatesIcon } from "./svgs";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import heroImage from "@/public/sections/hero/hero-image.avif";
+import heroImage from "@/public/sections/hero/hero-image.webp";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
