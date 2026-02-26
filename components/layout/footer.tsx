@@ -29,10 +29,10 @@ const content = {
     {
       title: "Resources",
       links: [
-        { label: "For Sellers", href: "/for-sellers" },
-        { label: "For Agencies", href: "/for-agencies" },
-        { label: "For Affiliates", href: "/for-affiliates" },
-        { label: "For Creators", href: "/for-creators" },
+        { label: "For Sellers", href: "/sellers" },
+        { label: "For Agencies", href: "/agencies" },
+        { label: "For Affiliates", href: "/affiliates" },
+        { label: "For Agents", href: "/agents" },
         { label: "What is Payment Processing?", href: "/payment-processing" },
       ],
     },

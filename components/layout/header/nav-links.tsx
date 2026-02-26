@@ -30,9 +30,10 @@ const NAV_LINKS: NavItem[] = [
     label: "Who is it for",
     href: "#",
     subItems: [
-      { label: "Documentation", href: "/docs" },
-      { label: "Blog", href: "/blog" },
-      { label: "Changelog", href: "/changelog" },
+      { label: "For Sellers", href: "/sellers" },
+      { label: "For Agencies", href: "/agencies" },
+      { label: "For Affiliates", href: "/affiliates" },
+      { label: "For Agents", href: "/agents" },
     ],
   },
 ];
