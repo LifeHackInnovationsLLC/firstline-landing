@@ -22,9 +22,9 @@ const content = {
           <path
             d="M4.75 16.05H8.75M3.75 18.75H9.75C11.4069 18.75 12.75 17.5412 12.75 16.05V3.45C12.75 1.95883 11.4069 0.75 9.75 0.75H3.75C2.09315 0.75 0.75 1.95883 0.75 3.45V16.05C0.75 17.5412 2.09315 18.75 3.75 18.75Z"
             stroke="#9C8AFF"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -45,9 +45,9 @@ const content = {
           <path
             d="M4.75 16.05H8.75M3.75 18.75H9.75C11.4069 18.75 12.75 17.5412 12.75 16.05V3.45C12.75 1.95883 11.4069 0.75 9.75 0.75H3.75C2.09315 0.75 0.75 1.95883 0.75 3.45V16.05C0.75 17.5412 2.09315 18.75 3.75 18.75Z"
             stroke="#51C9C2"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -67,9 +67,9 @@ const content = {
           <path
             d="M4.75 16.05H8.75M3.75 18.75H9.75C11.4069 18.75 12.75 17.5412 12.75 16.05V3.45C12.75 1.95883 11.4069 0.75 9.75 0.75H3.75C2.09315 0.75 0.75 1.95883 0.75 3.45V16.05C0.75 17.5412 2.09315 18.75 3.75 18.75Z"
             stroke="#9C8AFF"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
