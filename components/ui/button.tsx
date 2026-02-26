@@ -13,6 +13,7 @@ const buttonVariants = cva(
         primary:
           "h-9 px-4 rounded-lg text-white bg-[linear-gradient(180deg,#654AF7_-41.25%,#412CB6_111.25%)] shadow-[0px_1px_0px_rgba(0,0,0,0.25),inset_0_0_0_1px_rgba(255,255,255,0.1),inset_0_1px_0_0_rgba(255,255,255,0.4)]",
         ghost: "h-9 px-4 rounded-lg text-white hover:opacity-70",
+        dark: "h-9 px-4 rounded-lg text-white bg-[linear-gradient(180deg,rgba(255,255,255,0.12)_-41.25%,rgba(255,255,255,0.04)_111.25%)] shadow-[0px_1px_0px_rgba(0,0,0,0.25),inset_0_0_0_1px_rgba(255,255,255,0.1),inset_0_1px_0_0_rgba(255,255,255,0.4)] backdrop-blur-sm",
         glass:
           "h-9 px-4 rounded-[14.0247px] text-white border-[1.17px] border-transparent [background:linear-gradient(162.92deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.04)_100%)_padding-box,linear-gradient(180deg,rgba(101,74,247,0)_0%,rgba(101,74,247,1)_100%)_border-box] shadow-[0px_11.6873px_23.2577px_rgba(0,0,0,0.25)] backdrop-blur-[80.1746px]",
       },
