@@ -4,6 +4,7 @@ import { Heading } from "@/components/ui/heading";
 import SplitPayments from "@/components/sections/SplitPayments";
 import EverythingToScale from "@/components/sections/EverythingToScale";
 import Link from "next/link";
+import GrowYourCommunity from "@/components/sections/GrowYourCommunity/index";
 
 const content = {
   title: "Your products, our mission",
@@ -29,6 +30,7 @@ export default function SellersPage() {
       <SellersPageHero />
       <SplitPayments />
       <EverythingToScale />
+      <GrowYourCommunity />
     </>
   );
 }

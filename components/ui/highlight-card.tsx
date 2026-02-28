@@ -1,4 +1,4 @@
-import * as React from "react";
+import type * as React from "react";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
@@ -33,6 +33,22 @@ function HighlightCard({
         className="pointer-events-none absolute top-0 right-0 select-none"
         aria-hidden
       />
+      {children}
+    </div>
+  );
+}
+
+function HighlightCardIcon({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="highlight-card-icon"
+      className={cn("shrink-0", className)}
+      {...props}
+    >
       {children}
     </div>
   );
@@ -73,4 +89,9 @@ function HighlightCardDescription({
   );
 }
 
-export { HighlightCard, HighlightCardTitle, HighlightCardDescription };
+export {
+  HighlightCard,
+  HighlightCardIcon,
+  HighlightCardTitle,
+  HighlightCardDescription,
+};

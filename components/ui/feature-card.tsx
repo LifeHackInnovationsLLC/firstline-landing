@@ -10,7 +10,10 @@ function FeatureCard({
   return (
     <div
       data-slot="feature-card"
-      className={cn("px-6 py-20 rounded-3xl bg-black", className)}
+      className={cn(
+        "px-6 py-20 rounded-3xl bg-black relative overflow-hidden",
+        className,
+      )}
       {...props}
     >
       {children}
