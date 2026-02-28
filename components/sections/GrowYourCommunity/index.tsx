@@ -13,12 +13,12 @@ export default function GrowYourCommunity() {
           <Image
             src={PurpleEllipseImage}
             alt="Grow your community"
-            className="absolute pointer-events-none -bottom-40 -right-40"
+            className="absolute pointer-events-none -bottom-40 -right-40 w-auto h-auto"
           />
           <Image
             src={GreenEllipseImage}
             alt="Grow your community"
-            className="absolute pointer-events-none -top-60 -left-60"
+            className="absolute pointer-events-none -top-60 -left-60 w-auto h-auto"
           />
           <div className="flex flex-col gap-10 max-w-4xl mx-auto ">
             <div className="flex flex-col gap-10">

@@ -5,6 +5,7 @@ import SplitPayments from "@/components/sections/SplitPayments";
 import EverythingToScale from "@/components/sections/EverythingToScale";
 import Link from "next/link";
 import GrowYourCommunity from "@/components/sections/GrowYourCommunity/index";
+import CommerceWithoutLimits from "@/components/sections/CommerceWithoutLimits";
 
 const content = {
   title: "Your products, our mission",
@@ -31,6 +32,7 @@ export default function SellersPage() {
       <SplitPayments />
       <EverythingToScale />
       <GrowYourCommunity />
+      <CommerceWithoutLimits />
     </>
   );
 }
