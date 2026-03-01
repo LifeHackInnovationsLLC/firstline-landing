@@ -6,6 +6,7 @@ import EverythingToScale from "@/components/sections/EverythingToScale";
 import Link from "next/link";
 import GrowYourCommunity from "@/components/sections/GrowYourCommunity/index";
 import CommerceWithoutLimits from "@/components/sections/CommerceWithoutLimits";
+import UploadYourCourses from "@/components/sections/UploadYourCourses";
 
 const content = {
   title: "Your products, our mission",
@@ -33,6 +34,7 @@ export default function SellersPage() {
       <EverythingToScale />
       <GrowYourCommunity />
       <CommerceWithoutLimits />
+      <UploadYourCourses />
     </>
   );
 }

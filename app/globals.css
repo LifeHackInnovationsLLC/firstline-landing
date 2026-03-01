@@ -53,6 +53,7 @@
   --color-card-dark: var(--card-dark);
   --color-text-primary: var(--text-primary);
   --color-text-tertiary: var(--text-tertiary);
+  --color-text-body: var(--text-body);
   --navbar-height: var(--navbar-height);
   --navbar-height-mobile: var(--navbar-height-mobile);
   --animate-marquee: marquee var(--duration) infinite linear;
@@ -121,6 +122,7 @@
   --card-dark: oklch(0.1373 0.0046 285.75);
   --text-primary: oklch(0.1059 0.0092 285.75);
   --text-tertiary: oklch(0.4878 0 0);
+  --text-body: oklch(0.4706 0 0);
 
   /* Testimonial */
   --testimonial-card-outer-bg: #BEBEBE52;

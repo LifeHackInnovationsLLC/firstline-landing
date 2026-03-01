@@ -52,7 +52,7 @@ export default function CommerceWithoutLimits() {
               <div key={item.title} className="flex flex-col gap-2">
                 <div className="flex flex-row items-center gap-2">
                   {item.icon}
-                  <span className="text-lg text-white font-medium">
+                  <span className="text-lg text-body font-medium">
                     {item.title}
                   </span>
                 </div>
