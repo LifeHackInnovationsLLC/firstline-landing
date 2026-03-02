@@ -1,4 +1,5 @@
 import { SEO_CONSTANTS } from "./constants";
+import { cdn, images } from "@/lib/cdn";
 
 export const organizationSchema = {
 	"@context": "https://schema.org",
@@ -8,7 +9,7 @@ export const organizationSchema = {
 	url: SEO_CONSTANTS.siteUrl,
 	logo: {
 		"@type": "ImageObject",
-		url: `${SEO_CONSTANTS.siteUrl}/brand/logo.svg`,
+		url: cdn(images.brand.logo),
 		width: 512,
 		height: 512,
 	},

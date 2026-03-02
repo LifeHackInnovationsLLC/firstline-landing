@@ -1,19 +1,17 @@
-import Image from "next/image";
+import { cdn, images } from "@/lib/cdn";
 import Link from "next/link";
-import dashboardPreview from "@/public/sections/process/dashboard-preview.png";
-import dashboardPreviewMask from "@/public/sections/process/process-dashboard-mask.png";
 import { Heading } from "@/components/ui/heading";
 import { Button } from "@/components/ui/button";
+
 export function DashboardPreview() {
   return (
     <div className="relative overflow-hidden p-[6px] bg-[linear-gradient(162.92deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.04)_100%)] backdrop-blur-[68.6px] rounded-[12px] w-full max-w-md mx-auto lg:max-w-none">
       {/* Mask rendered first so it's naturally below in stacking order */}
-      <Image
-        src={dashboardPreviewMask}
+      <img
+        src={cdn(images.process.dashboardMask)}
         alt=""
         aria-hidden="true"
         className="max-w-sm absolute top-0 left-0 pointer-events-none"
-        sizes="24rem"
       />
 
       <div className="bg-black/90 h-full flex flex-col lg:flex-row rounded-[6px] relative">
@@ -38,11 +36,10 @@ export function DashboardPreview() {
             Start Earning Today
           </Button>
         </div>
-        <Image
-          src={dashboardPreview}
+        <img
+          src={cdn(images.process.dashboardPreview)}
           alt="Firstline dashboard showing sales, commissions, and payouts"
           className="object-cover w-full h-full max-h-[357px] mt-4 flex-1 pl-5 lg:pl-0"
-          sizes="(max-width: 1024px) 100vw, 50vw"
         />
       </div>
     </div>

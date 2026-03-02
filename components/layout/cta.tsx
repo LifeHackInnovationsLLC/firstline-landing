@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Heading } from "../ui/heading";
-import ctaBackgroundMobile from "@/public/sections/cta/cta-bg-mobile.png";
-import ctaBackgroundDesktop from "@/public/sections/cta/cta-bg.webp";
-import Image from "next/image";
+import { cdn, images } from "@/lib/cdn";
 import { Section } from "./section";
 
 export default function CTA() {
@@ -13,18 +11,17 @@ export default function CTA() {
       className="relative lg:min-h-160 lg:flex lg:items-center lg:justify-center"
     >
       <div className="hidden lg:block absolute inset-x-0 top-0 bottom-0">
-        <Image
-          src={ctaBackgroundDesktop}
+        <img
+          src={cdn(images.cta.bgDesktop)}
           alt=""
           aria-hidden="true"
-          fill
-          className="object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         />
       </div>
       <div className="container">
         <div className="flex flex-col gap-0 lg:gap-10 items-center justify-center w-full text-center max-w-md mx-auto lg:max-w-none">
-          <Image
-            src={ctaBackgroundMobile}
+          <img
+            src={cdn(images.cta.bgMobile)}
             alt=""
             aria-hidden="true"
             className="lg:hidden w-full max-w-sm top-10"

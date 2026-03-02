@@ -1,8 +1,5 @@
 import { Section } from "@/components/layout/section";
-import Image from "next/image";
-import growYourCommunityImage from "@/public/sections/sellers/grow-your-community-socials-image.webp";
-import PurpleEllipseImage from "@/public/sections/sellers/grow-your-community-purple-decoration.webp";
-import GreenEllipseImage from "@/public/sections/sellers/grow-your-community-green-decoration.webp";
+import { cdn, images } from "@/lib/cdn";
 import { Heading } from "@/components/ui/heading";
 
 export default function GrowYourCommunity() {
@@ -10,21 +7,23 @@ export default function GrowYourCommunity() {
     <Section id="grow-your-community" className="bg-gray">
       <div className="container">
         <div className="px-6 pt-9 pb-15 rounded-3xl bg-black relative overflow-hidden">
-          <Image
-            src={PurpleEllipseImage}
-            alt="Grow your community"
+          <img
+            src={cdn(images.sellers.growYourCommunityPurple)}
+            alt=""
+            aria-hidden="true"
             className="absolute pointer-events-none -bottom-40 -right-40 w-auto h-auto"
           />
-          <Image
-            src={GreenEllipseImage}
-            alt="Grow your community"
+          <img
+            src={cdn(images.sellers.growYourCommunityGreen)}
+            alt=""
+            aria-hidden="true"
             className="absolute pointer-events-none -top-60 -left-60 w-auto h-auto"
           />
           <div className="flex flex-col gap-10 max-w-4xl mx-auto ">
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-7">
-                <Image
-                  src={growYourCommunityImage}
+                <img
+                  src={cdn(images.sellers.growYourCommunitySocials)}
                   alt="Grow your community"
                   className="max-w-md mx-auto"
                 />

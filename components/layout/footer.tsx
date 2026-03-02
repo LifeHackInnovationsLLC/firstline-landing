@@ -2,11 +2,9 @@
 
 import { useState, useCallback } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { cdn, images } from "@/lib/cdn";
 import { Logo } from "@/components/global/logo";
 import { cn } from "@/lib/utils";
-import footerGradient from "@/public/sections/footer/firstline-footer-gradient.webp";
-import footerLogo from "@/public/sections/footer/firstline-footer.webp";
 
 type FooterSection = {
   title: string;
@@ -156,8 +154,8 @@ function GradientDivider() {
 export function Footer() {
   return (
     <footer id="footer" className="relative flex flex-col">
-      <Image
-        src={footerGradient}
+      <img
+        src={cdn(images.footer.gradient)}
         alt=""
         className="absolute bottom-0 left-0 w-full object-cover pointer-events-none"
         aria-hidden="true"
@@ -228,8 +226,8 @@ export function Footer() {
         </div>
       </div>
       <div className="container relative z-10">
-        <Image
-          src={footerLogo}
+        <img
+          src={cdn(images.footer.logo)}
           alt="Firstline"
           className="w-full object-contain"
         />

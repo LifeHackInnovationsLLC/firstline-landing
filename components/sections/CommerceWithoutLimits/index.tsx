@@ -1,8 +1,5 @@
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
-import GreenDecorationImage from "@/public/sections/sellers/commerce-without-limits-decoration-green.webp";
-import PurpleDecorationImage from "@/public/sections/sellers/commerce-without-limits-decoration-purple.webp";
-import Image from "next/image";
 import {
   GlobalSalesIcon,
   MobileFirstIcon,

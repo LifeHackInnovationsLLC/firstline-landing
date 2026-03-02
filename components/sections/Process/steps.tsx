@@ -1,8 +1,5 @@
-import createAccountImage from "@/public/sections/process/step-1.webp";
-import discoverPathImage from "@/public/sections/process/step-2.webp";
-import earnCommissionsImage from "@/public/sections/process/step-3.webp";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { cdn, images } from "@/lib/cdn";
 import { Heading } from "@/components/ui/heading";
 
 const content = [
@@ -10,19 +7,19 @@ const content = [
     title: "Create your account",
     description:
       "Sign up in under 2 minutes. Complete free training to understand the product.",
-    image: createAccountImage,
+    image: images.process.step1,
   },
   {
     title: "Discover your path",
     description:
       "Selling payment processing, find affiliate marketing partners, or lead a team.",
-    image: discoverPathImage,
+    image: images.process.step2,
   },
   {
     title: "Earn commissions",
     description:
       "Every merchant signup earns you recurring commissions. Lifetime.",
-    image: earnCommissionsImage,
+    image: images.process.step3,
   },
 ];
 
@@ -36,7 +33,7 @@ export function Steps() {
       <StepsGrid>
         {content.map((step) => (
           <StepCard key={step.title}>
-            <StepImage src={step.image} alt={step.title} />
+            <StepImage src={cdn(step.image)} alt={step.title} />
             <StepContent>
               <StepTitle>{step.title}</StepTitle>
               <StepDescription>{step.description}</StepDescription>
@@ -80,13 +77,12 @@ function StepCard({ className, children, ...props }: StepCardProps) {
   );
 }
 
-interface StepImageProps extends React.ComponentProps<typeof Image> {}
+interface StepImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
 
 function StepImage({ className, alt, ...props }: StepImageProps) {
   return (
-    <Image
-      fill
-      className={cn("object-cover", className)}
+    <img
+      className={cn("absolute inset-0 w-full h-full object-cover", className)}
       alt={alt}
       {...props}
     />

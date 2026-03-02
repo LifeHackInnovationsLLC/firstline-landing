@@ -1,7 +1,6 @@
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
-import Image from "next/image";
-import teamsBg from "@/public/sections/affiliates/ready-to-scale.webp";
+import { cdn, images } from "@/lib/cdn";
 
 function FeatureIcon() {
   return (
@@ -56,7 +55,11 @@ export function AffiliatesTeams() {
     <Section id="affiliates-teams" className="py-20 bg-gray">
       <div className="container">
         <div className="relative overflow-hidden rounded-3xl py-20 px-6">
-          <Image fill src={teamsBg} alt="" className="object-cover" />
+          <img
+            src={cdn(images.affiliates.readyToScale)}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+          />
           <div className="relative z-10 flex flex-col max-w-xl">
             <div className="flex flex-col gap-6">
               <Heading as="h2" className="text-white text-left">

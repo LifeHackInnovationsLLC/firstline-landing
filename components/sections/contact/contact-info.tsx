@@ -1,8 +1,7 @@
 import { Heading } from "@/components/ui/heading";
-import Image from "next/image";
-import contactEmailImg from "@/public/sections/contact/contact-email.webp";
+import { cdn, images } from "@/lib/cdn";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
-import profilePhoto from "@/public/sections/hero/mock-profile-picture.webp";
+
 const content = {
   title: "Why list with Firstline?",
   descriptions: [
@@ -77,16 +76,16 @@ const content = {
   ],
   socialProof: {
     items: [
-      { image: profilePhoto, name: "John Doe" },
-      { image: profilePhoto, name: "Sarah Miller" },
-      { image: profilePhoto, name: "James Wilson" },
-      { image: profilePhoto, name: "Emily Chen" },
-      { image: profilePhoto, name: "Michael Brown" },
-      { image: profilePhoto, name: "Lisa Park" },
-      { image: profilePhoto, name: "David Kim" },
-      { image: profilePhoto, name: "Rachel Adams" },
-      { image: profilePhoto, name: "Tom Garcia" },
-      { image: profilePhoto, name: "Nina Patel" },
+      { image: images.hero.profilePhoto, name: "John Doe" },
+      { image: images.hero.profilePhoto, name: "Sarah Miller" },
+      { image: images.hero.profilePhoto, name: "James Wilson" },
+      { image: images.hero.profilePhoto, name: "Emily Chen" },
+      { image: images.hero.profilePhoto, name: "Michael Brown" },
+      { image: images.hero.profilePhoto, name: "Lisa Park" },
+      { image: images.hero.profilePhoto, name: "David Kim" },
+      { image: images.hero.profilePhoto, name: "Rachel Adams" },
+      { image: images.hero.profilePhoto, name: "Tom Garcia" },
+      { image: images.hero.profilePhoto, name: "Nina Patel" },
     ],
   },
 };
@@ -109,8 +108,8 @@ export function ContactInfo() {
         ))}
       </div>
       <hr className="border-white/16" />
-      <Image
-        src={contactEmailImg}
+      <img
+        src={cdn(images.contact.contactEmail)}
         alt="Contact Email"
         className="max-w-65 -ml-5"
       />
@@ -125,12 +124,11 @@ export function ContactInfo() {
                 key={item.name}
                 className="flex items-center gap-2.5 shrink-0 size-[63px] p-1 rounded-full bg-[linear-gradient(162.92deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.04)_100%)] shadow-[0px_11.69px_23.26px_rgba(0,0,0,0.25)] backdrop-blur-[80px]"
               >
-                <Image
-                  src={item.image}
+                <img
+                  src={cdn(item.image, { width: 110 })}
                   alt={item.name}
                   width={55}
                   height={55}
-                  sizes="55px"
                   className="rounded-full"
                 />
               </div>

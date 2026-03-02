@@ -1,12 +1,6 @@
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
-import Image from "next/image";
-import bentoImage1 from "@/public/sections/affiliates/affiliates-bento-1.webp";
-import bentoImage2 from "@/public/sections/affiliates/affiliates-bento-2.webp";
-import bentoImage3 from "@/public/sections/affiliates/affiliates-bento-3.webp";
-import bentoImage4 from "@/public/sections/affiliates/affiliates-bento-4.webp";
-import bentoImage5 from "@/public/sections/affiliates/affiliates-bento-5.webp";
-import bentoImage6 from "@/public/sections/affiliates/affiliates-bento-6.webp";
+import { cdn, images } from "@/lib/cdn";
 
 const content = {
   title: "What you get\nas a Firstline Seller?",
@@ -15,37 +9,37 @@ const content = {
       title: "Split at Acceptance",
       description:
         "Commission splits happen at the payment level - not after reconciliation, not after accounting, but instantly at sale.",
-      image: bentoImage1,
+      image: images.affiliates.bento1,
     },
     {
       title: "Full Visibility",
       description:
         "See every transaction, every commission, every split in real-time. No more wondering if you're getting what you're owed.",
-      image: bentoImage2,
+      image: images.affiliates.bento2,
     },
     {
       title: "Instant Settlement",
       description:
         "Your commission hits your Firstline balance immediately. No 30-day holds, no net-60 terms, no excuses.",
-      image: bentoImage3,
+      image: images.affiliates.bento3,
     },
     {
       title: "Trusted Provider",
       description:
         "Firstline Payments is a regulated payment service provider. Your earnings are protected, not promised.",
-      image: bentoImage4,
+      image: images.affiliates.bento4,
     },
     {
       title: "Build Your Downline",
       description:
         "Create multiple levels of commissions, share with colleagues, and track every referral in your network.",
-      image: bentoImage5,
+      image: images.affiliates.bento5,
     },
     {
       title: "Your Money, Your Way",
       description:
         "Hold balances, cash out via bank transfer, card, or hundreds of other methods. You control your earnings.",
-      image: bentoImage6,
+      image: images.affiliates.bento6,
     },
   ],
 };
@@ -63,11 +57,10 @@ export function AffiliatesBento() {
               key={item.title}
               className="relative flex flex-col justify-end h-[356px] p-5 bg-card-dark overflow-hidden rounded-4xl"
             >
-              <Image
-                fill
-                src={item.image}
+              <img
+                src={cdn(item.image)}
                 alt={item.title}
-                className="object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="relative z-10 flex flex-col gap-2">
                 <h3 className="text-white text-lg font-semibold">

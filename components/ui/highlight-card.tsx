@@ -1,15 +1,13 @@
 import type * as React from "react";
-import Image from "next/image";
+import { cdn, images } from "@/lib/cdn";
 
 import { cn } from "@/lib/utils";
-import purpleDecoration from "@/public/decorations/pattern-decoration-purple-card.webp";
-import greenDecoration from "@/public/decorations/pattern-decoration-green.webp";
 
 type HighlightColor = "purple" | "green";
 
-const decorationImages: Record<HighlightColor, typeof purpleDecoration> = {
-  purple: purpleDecoration,
-  green: greenDecoration,
+const decorationPaths: Record<HighlightColor, string> = {
+  purple: images.decorations.patternPurpleCard,
+  green: images.decorations.patternGreen,
 };
 
 function HighlightCard({
@@ -27,11 +25,11 @@ function HighlightCard({
       )}
       {...props}
     >
-      <Image
-        src={decorationImages[color]}
+      <img
+        src={cdn(decorationPaths[color])}
         alt=""
         className="pointer-events-none absolute top-0 right-0 select-none"
-        aria-hidden
+        aria-hidden="true"
       />
       {children}
     </div>

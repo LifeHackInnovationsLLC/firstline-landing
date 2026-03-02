@@ -7,10 +7,7 @@ import {
   FeatureCardList,
   FeatureCardListItem,
 } from "@/components/ui/feature-card";
-import Image from "next/image";
-import EllipseImage from "@/public/sections/sellers/elipse-split-payments.webp";
-import GraphicImage from "@/public/sections/sellers/graphic-split-payments.webp";
-import GreenEllipseImage from "@/public/sections/sellers/elipse-green-split-payments.webp";
+import { cdn, images } from "@/lib/cdn";
 import {
   InstantPayoutIcon,
   SplitPaymentIcon,
@@ -36,15 +33,15 @@ export default function SplitPayments() {
     <Section className="bg-gray">
       <div className="container">
         <FeatureCard className="flex flex-row justify-between">
-          <Image
-            src={EllipseImage}
+          <img
+            src={cdn(images.sellers.ellipseSplitPayments)}
             alt="Split payments"
             className="absolute pointer-events-none -top-40 -left-40"
             width={1000}
             height={1000}
           />
-          <Image
-            src={GreenEllipseImage}
+          <img
+            src={cdn(images.sellers.greenEllipseSplitPayments)}
             alt="Split payments"
             className="absolute pointer-events-none -bottom-20 -right-20"
             width={1000}
@@ -67,7 +64,7 @@ export default function SplitPayments() {
             </FeatureCardList>
           </FeatureCardContent>
           <div className="max-w-xl relative z-10">
-            <Image src={GraphicImage} alt="Split payments" />
+            <img src={cdn(images.sellers.graphicSplitPayments)} alt="Split payments" />
           </div>
         </FeatureCard>
       </div>

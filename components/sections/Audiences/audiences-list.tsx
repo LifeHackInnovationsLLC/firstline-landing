@@ -1,30 +1,30 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { cdn, images } from "@/lib/cdn";
 
 const audiences = [
   {
     audienceName: "Sellers",
     audienceDescription:
       "Launch a commission-based sales network in days - not months",
-    audienceImage: "/sections/audiences/audiences-1.webp",
+    audienceImage: images.audiences.audience1,
   },
   {
     audienceName: "Agents",
     audienceDescription:
       "Launch a commission-based sales network in days - not months",
-    audienceImage: "/sections/audiences/audiences-1.webp",
+    audienceImage: images.audiences.audience1,
   },
   {
     audienceName: "Agencies",
     audienceDescription:
       "Launch a commission-based sales network in days - not months",
-    audienceImage: "/sections/audiences/audiences-1.webp",
+    audienceImage: images.audiences.audience1,
   },
   {
     audienceName: "Affiliates",
     audienceDescription:
       "Launch a commission-based sales network in days - not months",
-    audienceImage: "/sections/audiences/audiences-1.webp",
+    audienceImage: images.audiences.audience1,
   },
 ];
 
@@ -34,7 +34,7 @@ export function AudiencesList() {
       {audiences.map((audience) => (
         <AudienceCard key={audience.audienceName}>
           <AudienceImage
-            src={audience.audienceImage}
+            src={cdn(audience.audienceImage)}
             alt={audience.audienceName}
           />
           <AudienceContent>
@@ -81,13 +81,12 @@ function AudienceCard({ className, children, ...props }: AudienceCardProps) {
   );
 }
 
-interface AudienceImageProps extends React.ComponentProps<typeof Image> {}
+interface AudienceImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
 
 function AudienceImage({ className, alt, ...props }: AudienceImageProps) {
   return (
-    <Image
-      fill
-      className={cn("object-cover", className)}
+    <img
+      className={cn("absolute inset-0 w-full h-full object-cover", className)}
       alt={alt}
       {...props}
     />

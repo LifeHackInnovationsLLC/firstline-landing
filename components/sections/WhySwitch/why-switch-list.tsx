@@ -1,26 +1,22 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import whySwitchIcon1 from "@/public/sections/why-switch/why-switch-icon-1.png";
-import whySwitchIcon2 from "@/public/sections/why-switch/why-switch-icon-2.png";
-import whySwitchIcon3 from "@/public/sections/why-switch/why-switch-icon-3.png";
-import whySwitchIcon4 from "@/public/sections/why-switch/why-switch-icon-4.png";
+import { cdn, images } from "@/lib/cdn";
 
 const content = [
   {
     title: `No "trust me, I'll pay you later"`,
-    icon: whySwitchIcon1,
+    icon: images.whySwitch.icon1,
   },
   {
     title: "No manual commission calculations",
-    icon: whySwitchIcon2,
+    icon: images.whySwitch.icon2,
   },
   {
     title: "No Spreadsheet Chaos",
-    icon: whySwitchIcon3,
+    icon: images.whySwitch.icon3,
   },
   {
     title: "No payout excuses",
-    icon: whySwitchIcon4,
+    icon: images.whySwitch.icon4,
   },
 ];
 
@@ -29,7 +25,7 @@ export function WhySwitchList() {
     <WhySwitchGrid>
       {content.map((item) => (
         <WhySwitchItem key={item.title} className="flex-1">
-          <WhySwitchIcon src={item.icon} alt={item.title} />
+          <WhySwitchIcon src={cdn(item.icon, { width: 96 })} alt={item.title} />
           <WhySwitchTitle>{item.title}</WhySwitchTitle>
         </WhySwitchItem>
       ))}
@@ -66,11 +62,11 @@ function WhySwitchItem({ className, children, ...props }: WhySwitchItemProps) {
   );
 }
 
-interface WhySwitchIconProps extends React.ComponentProps<typeof Image> {}
+interface WhySwitchIconProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
 
 function WhySwitchIcon({ className, alt, ...props }: WhySwitchIconProps) {
   return (
-    <Image
+    <img
       width={48}
       height={48}
       className={cn("size-(--why-switch-icon-size)", className)}

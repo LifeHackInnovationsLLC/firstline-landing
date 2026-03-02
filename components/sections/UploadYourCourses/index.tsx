@@ -1,8 +1,7 @@
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { cdn, images } from "@/lib/cdn";
 import Link from "next/link";
-import CourseImage from "@/public/sections/sellers/upload-your-courses.webp";
 import {
   UploadIcon,
   RewardsIcon,
@@ -61,8 +60,8 @@ export default function UploadYourCourses() {
             </div>
           </div>
           <div>
-            <Image
-              src={CourseImage}
+            <img
+              src={cdn(images.sellers.uploadYourCourses)}
               alt="Upload your courses"
               className="w-full h-auto rounded-3xl"
             />

@@ -1,10 +1,6 @@
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
-import Image from "next/image";
-import doorToDoorBg from "@/public/sections/affiliates/door-to-door-bg.webp";
-import doorToDoorIcon from "@/public/sections/affiliates/door-to-door-sales-icon.webp";
-import digitalAffiliatesBg from "@/public/sections/affiliates/digital-affiliates-bg.webp";
-import digitalAffiliatesIcon from "@/public/sections/affiliates/digital-affiliates-icon.webp";
+import { cdn, images } from "@/lib/cdn";
 
 function DoorToDoorBullet() {
   return (
@@ -210,8 +206,8 @@ const content = {
   title: "Built for how you work",
   cards: [
     {
-      icon: doorToDoorIcon,
-      bg: doorToDoorBg,
+      icon: images.affiliates.doorToDoorIcon,
+      bg: images.affiliates.doorToDoorBg,
       title: "Door-to-Door Sales",
       subtitle: "Solar, home services, and more",
       description:
@@ -225,8 +221,8 @@ const content = {
       bullet: <DoorToDoorBullet />,
     },
     {
-      icon: digitalAffiliatesIcon,
-      bg: digitalAffiliatesBg,
+      icon: images.affiliates.digitalAffiliatesIcon,
+      bg: images.affiliates.digitalAffiliatesBg,
       title: "Digital Affiliates",
       subtitle: "Content creators, influencers, marketers",
       description:
@@ -255,11 +251,15 @@ export function AffiliatesBuiltForYou() {
               key={card.title}
               className="relative overflow-hidden rounded-3xl p-7"
             >
-              <Image fill src={card.bg} alt="" className="object-cover" />
+              <img
+                src={cdn(card.bg)}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover"
+              />
               <div className="relative z-10 flex flex-col">
                 <div className="flex flex-col gap-2">
-                  <Image
-                    src={card.icon}
+                  <img
+                    src={cdn(card.icon, { width: 112 })}
                     alt={card.title}
                     width={56}
                     height={56}

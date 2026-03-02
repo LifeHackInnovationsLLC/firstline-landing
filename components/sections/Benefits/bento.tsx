@@ -1,10 +1,5 @@
-import bentoImage1 from "@/public/sections/benefits/bento-1.webp";
-import bentoImage2 from "@/public/sections/benefits/bento-2.webp";
-import bentoImage3 from "@/public/sections/benefits/bento-3.webp";
-import bentoImage4 from "@/public/sections/benefits/bento-4.webp";
-import bentoImage5 from "@/public/sections/benefits/bento-5.webp";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { cdn, images } from "@/lib/cdn";
 
 const content = {
   bento: [
@@ -13,7 +8,7 @@ const content = {
         highlightText: "Turn anyone",
         regularText: "into a tracked incentivized salesperson",
       },
-      image: bentoImage1,
+      image: images.benefits.bento1,
       alt: "",
     },
     {
@@ -21,7 +16,7 @@ const content = {
         highlightText: "",
         regularText: "",
       },
-      image: bentoImage2,
+      image: images.benefits.bento2,
       alt: "Commission tracking dashboard",
     },
     {
@@ -29,7 +24,7 @@ const content = {
         highlightText: "See every sale, split, and payout",
         regularText: "in real time",
       },
-      image: bentoImage3,
+      image: images.benefits.bento3,
       alt: "",
     },
     {
@@ -37,7 +32,7 @@ const content = {
         highlightText: "Scale globally",
         regularText: "without building ops, finance, or tooling",
       },
-      image: bentoImage4,
+      image: images.benefits.bento4,
       alt: "",
     },
     {
@@ -45,7 +40,7 @@ const content = {
         highlightText: "Pay teams, affiliates and partners",
         regularText: "without disputes or delays",
       },
-      image: bentoImage5,
+      image: images.benefits.bento5,
       alt: "",
     },
   ],
@@ -64,7 +59,7 @@ export function Bento() {
     <BentoGrid>
       {firstThreeItems.map((item) => (
         <BentoCard key={getBentoAlt(item)} className="md:col-span-2">
-          <BentoImage src={item.image} alt={getBentoAlt(item)} />
+          <BentoImage src={cdn(item.image)} alt={getBentoAlt(item)} />
           <BentoContent className="max-w-2xs">
             <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
             <BentoText>{item.text.regularText}</BentoText>
@@ -76,7 +71,7 @@ export function Bento() {
           key={getBentoAlt(item)}
           className="md:col-span-2 lg:col-span-3"
         >
-          <BentoImage src={item.image} alt={getBentoAlt(item)} />
+          <BentoImage src={cdn(item.image)} alt={getBentoAlt(item)} />
           <BentoContent>
             <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
             <BentoText>{item.text.regularText}</BentoText>
@@ -119,13 +114,12 @@ function BentoCard({ className, children, ...props }: BentoCardProps) {
   );
 }
 
-interface BentoImageProps extends React.ComponentProps<typeof Image> {}
+interface BentoImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
 
 function BentoImage({ className, alt, ...props }: BentoImageProps) {
   return (
-    <Image
-      fill
-      className={cn("object-cover", className)}
+    <img
+      className={cn("absolute inset-0 w-full h-full object-cover", className)}
       alt={alt}
       {...props}
     />

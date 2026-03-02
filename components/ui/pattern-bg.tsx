@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import purpleGradient from "@/public/decorations/purple-gradient-mask.webp";
+import { cdn, images } from "@/lib/cdn";
 
 interface PatternBgProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
@@ -17,12 +16,12 @@ export function PatternBg({ className, ...props }: PatternBgProps) {
       {...props}
     >
       <div className="absolute inset-0 bg-[radial-gradient(#11111B_1px,transparent_1px)] bg-size-[8px_8px] mask-[linear-gradient(to_bottom,#000_50%,transparent_100%)]" />
-      <Image
-        src={purpleGradient}
+      <img
+        src={cdn(images.decorations.purpleGradientMask)}
         alt=""
         className="absolute top-0 left-0"
-        sizes="100vw"
-        priority
+        loading="eager"
+        fetchPriority="high"
         draggable={false}
       />
     </div>

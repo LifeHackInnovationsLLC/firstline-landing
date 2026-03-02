@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import Image from "next/image";
-import logo from "@/public/brand/logo.svg";
+import { cdn, images } from "@/lib/cdn";
+
 interface LogoProps extends React.HTMLAttributes<HTMLAnchorElement> {
   className?: string;
 }
@@ -13,7 +13,7 @@ export function Logo({ className, ...props }: LogoProps) {
       className={cn("flex items-center gap-2", className)}
       {...props}
     >
-      <Image src={logo} alt="Firstline" width={120} height={28} />
+      <img src={cdn(images.brand.logo)} alt="Firstline" width={120} height={28} />
     </Link>
   );
 }
