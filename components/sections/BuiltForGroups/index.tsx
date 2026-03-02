@@ -2,16 +2,25 @@ import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
 import {
   HighlightCard,
+  HighlightCardIcon,
   HighlightCardTitle,
 } from "@/components/ui/highlight-card";
+import {
+  CourseCreatorsIcon,
+  OnlineEntrepreneursIcon,
+  CommunitiesIcon,
+  MarketingAgenciesIcon,
+  CallCentersIcon,
+  AffiliateNetworksIcon,
+} from "./icons";
 
 const items = [
-  { color: "purple" as const, title: "Course creators and educators" },
-  { color: "green" as const, title: "Online entrepreneurs and influencers" },
-  { color: "purple" as const, title: "Discord, Telegram, and private communities" },
-  { color: "purple" as const, title: "Marketing agencies and growth collectives" },
-  { color: "green" as const, title: "Call centers and outbound sales teams" },
-  { color: "purple" as const, title: "Affiliate networks and referral groups" },
+  { color: "purple" as const, title: "Course creators and educators", icon: <CourseCreatorsIcon /> },
+  { color: "green" as const, title: "Online entrepreneurs and influencers", icon: <OnlineEntrepreneursIcon /> },
+  { color: "purple" as const, title: "Discord, Telegram, and private communities", icon: <CommunitiesIcon /> },
+  { color: "purple" as const, title: "Marketing agencies and growth collectives", icon: <MarketingAgenciesIcon /> },
+  { color: "green" as const, title: "Call centers and outbound sales teams", icon: <CallCentersIcon /> },
+  { color: "purple" as const, title: "Affiliate networks and referral groups", icon: <AffiliateNetworksIcon /> },
 ];
 
 export default function BuiltForGroups() {
@@ -32,7 +41,8 @@ export default function BuiltForGroups() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
           {items.map((item) => (
             <HighlightCard key={item.title} color={item.color}>
-              <HighlightCardTitle className="mt-16 text-base">
+              <HighlightCardIcon>{item.icon}</HighlightCardIcon>
+              <HighlightCardTitle className="mt-4 text-base">
                 {item.title}
               </HighlightCardTitle>
             </HighlightCard>

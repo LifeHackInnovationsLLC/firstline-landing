@@ -4,6 +4,10 @@ import { Heading } from "@/components/ui/heading";
 import { HeroKicker } from "@/components/sections/Hero/hero-kicker";
 import ClientPayments from "@/components/sections/ClientPayments";
 import BuiltForGroups from "@/components/sections/BuiltForGroups";
+import AgenciesEarnings from "@/components/sections/AgenciesEarnings";
+import AgenciesSteps from "@/components/sections/AgenciesSteps";
+import WhyAgencies from "@/components/sections/WhyAgencies";
+import PotentialEarnings from "@/components/sections/PotentialEarnings";
 import Link from "next/link";
 
 const content = {
@@ -31,6 +35,10 @@ export default function AgenciesPage() {
       <AgenciesPageHero />
       <ClientPayments />
       <BuiltForGroups />
+      <AgenciesEarnings />
+      <AgenciesSteps />
+      <WhyAgencies />
+      <PotentialEarnings />
     </>
   );
 }
