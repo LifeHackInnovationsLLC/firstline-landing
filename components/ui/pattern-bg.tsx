@@ -17,7 +17,7 @@ export function PatternBg({ className, ...props }: PatternBgProps) {
     >
       <div className="absolute inset-0 bg-[radial-gradient(#11111B_1px,transparent_1px)] bg-size-[8px_8px] mask-[linear-gradient(to_bottom,#000_50%,transparent_100%)]" />
       <img
-        src={cdn(images.decorations.purpleGradientMask)}
+        src={cdn(images.decorations.purpleGradientMask, { width: 1400 })}
         alt=""
         className="absolute top-0 left-0"
         loading="eager"

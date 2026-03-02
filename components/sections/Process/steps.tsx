@@ -33,7 +33,7 @@ export function Steps() {
       <StepsGrid>
         {content.map((step) => (
           <StepCard key={step.title}>
-            <StepImage src={cdn(step.image)} alt={step.title} />
+            <StepImage src={cdn(step.image, { width: 800 })} alt={step.title} />
             <StepContent>
               <StepTitle>{step.title}</StepTitle>
               <StepDescription>{step.description}</StepDescription>

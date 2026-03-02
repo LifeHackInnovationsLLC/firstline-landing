@@ -8,7 +8,7 @@ export function DashboardPreview() {
     <div className="relative overflow-hidden p-[6px] bg-[linear-gradient(162.92deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.04)_100%)] backdrop-blur-[68.6px] rounded-[12px] w-full max-w-md mx-auto lg:max-w-none">
       {/* Mask rendered first so it's naturally below in stacking order */}
       <img
-        src={cdn(images.process.dashboardMask)}
+        src={cdn(images.process.dashboardMask, { width: 400 })}
         alt=""
         aria-hidden="true"
         className="max-w-sm absolute top-0 left-0 pointer-events-none"
@@ -37,7 +37,7 @@ export function DashboardPreview() {
           </Button>
         </div>
         <img
-          src={cdn(images.process.dashboardPreview)}
+          src={cdn(images.process.dashboardPreview, { width: 1440 })}
           alt="Firstline dashboard showing sales, commissions, and payouts"
           className="object-cover w-full h-full max-h-[357px] mt-4 flex-1 pl-5 lg:pl-0"
         />

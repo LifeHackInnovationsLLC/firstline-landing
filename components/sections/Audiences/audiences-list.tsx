@@ -34,7 +34,7 @@ export function AudiencesList() {
       {audiences.map((audience) => (
         <AudienceCard key={audience.audienceName}>
           <AudienceImage
-            src={cdn(audience.audienceImage)}
+            src={cdn(audience.audienceImage, { width: 800 })}
             alt={audience.audienceName}
           />
           <AudienceContent>

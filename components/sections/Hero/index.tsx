@@ -132,7 +132,7 @@ export default function Hero() {
             </Button>
           </div>
           <img
-            src={cdn(activeModeImage)}
+            src={cdn(activeModeImage, { width: 1200 })}
             alt="Firstline commission platform dashboard preview"
             loading="eager"
             fetchPriority="high"

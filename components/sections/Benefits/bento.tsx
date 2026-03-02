@@ -59,7 +59,7 @@ export function Bento() {
     <BentoGrid>
       {firstThreeItems.map((item) => (
         <BentoCard key={getBentoAlt(item)} className="md:col-span-2">
-          <BentoImage src={cdn(item.image)} alt={getBentoAlt(item)} />
+          <BentoImage src={cdn(item.image, { width: 800 })} alt={getBentoAlt(item)} />
           <BentoContent className="max-w-2xs">
             <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
             <BentoText>{item.text.regularText}</BentoText>
@@ -71,7 +71,7 @@ export function Bento() {
           key={getBentoAlt(item)}
           className="md:col-span-2 lg:col-span-3"
         >
-          <BentoImage src={cdn(item.image)} alt={getBentoAlt(item)} />
+          <BentoImage src={cdn(item.image, { width: 1200 })} alt={getBentoAlt(item)} />
           <BentoContent>
             <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
             <BentoText>{item.text.regularText}</BentoText>

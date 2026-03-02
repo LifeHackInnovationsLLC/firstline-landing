@@ -7,7 +7,7 @@ export default function Process() {
   return (
     <Section id="process" className="relative overflow-hidden isolate">
       <img
-        src={cdn(images.process.sectionBlur)}
+        src={cdn(images.process.sectionBlur, { width: 1400 })}
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
