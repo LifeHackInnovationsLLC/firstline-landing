@@ -1,6 +1,10 @@
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
+import AgentsStats from "@/components/sections/AgentsStats";
+import AgentsBento from "@/components/sections/AgentsBento";
+import AgentsSteps from "@/components/sections/AgentsSteps";
+import AgentsGlobal from "@/components/sections/AgentsGlobal";
 import Link from "next/link";
 
 const content = {
@@ -28,7 +32,13 @@ const content = {
 
 export default function AgentsPage() {
   return (
-    <AgentsPageHero />
+    <>
+      <AgentsPageHero />
+      <AgentsStats />
+      <AgentsBento />
+      <AgentsSteps />
+      <AgentsGlobal />
+    </>
   );
 }
 

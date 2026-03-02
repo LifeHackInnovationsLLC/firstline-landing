@@ -96,6 +96,10 @@ export const images = {
 		whyAgenciesGraphic: "firstline/why-agencies-graphic.webp",
 		potentialEarnings: "firstline/potential-earnings.webp",
 	},
+	agents: {
+		readyToGlobalGreenBlur: "firstline/ready-to-global-green-blur.webp",
+		readyToGlobalPurpleBlur: "firstline/ready-to-global-purple-blur.webp",
+	},
 	contact: {
 		contactEmail: "firstline/contact-email.webp",
 	},
