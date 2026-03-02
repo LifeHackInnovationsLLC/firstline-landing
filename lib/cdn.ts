@@ -84,6 +84,10 @@ export const images = {
     commerceWithoutLimitsGreen: "firstline/commerce-without-limits-decoration-green.webp",
     commerceWithoutLimitsPurple: "firstline/commerce-without-limits-decoration-purple.webp",
   },
+  agencies: {
+    paymentProcessingGreenBlur: "firstline/payment-processing-green-blur.webp",
+    paymentProcessingGlobe: "firstline/payment-processing-globe.webp",
+  },
   contact: {
     contactEmail: "firstline/contact-email.webp",
   },
