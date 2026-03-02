@@ -12,6 +12,8 @@ const buttonVariants = cva(
       variant: {
         primary:
           "h-9 px-4 rounded-lg text-white bg-[linear-gradient(180deg,#654AF7_-41.25%,#412CB6_111.25%)] shadow-[0px_1px_0px_rgba(0,0,0,0.25),inset_0_0_0_1px_rgba(255,255,255,0.1),inset_0_1px_0_0_rgba(255,255,255,0.4)]",
+        green:
+          "h-9 px-4 rounded-lg text-white bg-[linear-gradient(180deg,#368F8A_-41.25%,#0C6F6A_111.25%)] shadow-[0px_1px_0px_rgba(0,0,0,0.25),inset_0_0_0_1px_rgba(255,255,255,0.1),inset_0_1px_0_0_rgba(255,255,255,0.4)]",
         ghost: "h-9 px-4 rounded-lg text-white hover:opacity-70",
         dark: "h-9 px-4 rounded-lg text-white bg-[linear-gradient(180deg,rgba(255,255,255,0.12)_-41.25%,rgba(255,255,255,0.04)_111.25%)] shadow-[0px_1px_0px_rgba(0,0,0,0.25),inset_0_0_0_1px_rgba(255,255,255,0.1),inset_0_1px_0_0_rgba(255,255,255,0.4)] backdrop-blur-sm",
         glass:

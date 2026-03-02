@@ -5,6 +5,7 @@ import AgentsStats from "@/components/sections/AgentsStats";
 import AgentsBento from "@/components/sections/AgentsBento";
 import AgentsSteps from "@/components/sections/AgentsSteps";
 import AgentsGlobal from "@/components/sections/AgentsGlobal";
+import TheBottomLine from "@/components/sections/TheBottomLine";
 import Link from "next/link";
 
 const content = {
@@ -38,6 +39,7 @@ export default function AgentsPage() {
       <AgentsBento />
       <AgentsSteps />
       <AgentsGlobal />
+      <TheBottomLine />
     </>
   );
 }
