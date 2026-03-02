@@ -54,7 +54,7 @@ const content = {
 export function AffiliatesTeams() {
   return (
     <Section id="affiliates-teams" className="py-20 bg-gray">
-      <div className="container px-6">
+      <div className="container">
         <div className="relative overflow-hidden rounded-3xl py-20 px-6">
           <Image fill src={teamsBg} alt="" className="object-cover" />
           <div className="relative z-10 flex flex-col max-w-xl">
@@ -76,9 +76,7 @@ export function AffiliatesTeams() {
                     {feature.title}
                   </span>
                 </div>
-                <p className="text-white/60 text-sm">
-                  {feature.description}
-                </p>
+                <p className="text-white/60 text-sm">{feature.description}</p>
               </div>
             ))}
           </div>
