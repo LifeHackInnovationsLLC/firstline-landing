@@ -99,6 +99,8 @@ export const images = {
 	agents: {
 		readyToGlobalGreenBlur: "firstline/ready-to-global-green-blur.webp",
 		readyToGlobalPurpleBlur: "firstline/ready-to-global-purple-blur.webp",
+		bottomLineBlur: "firstline/the-bottom-line-green-blur.webp",
+		bottomLineImage: "firstline/the-bottom-line-image.webp",
 	},
 	contact: {
 		contactEmail: "firstline/contact-email.webp",
