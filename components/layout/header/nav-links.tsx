@@ -177,7 +177,7 @@ export function NavLinks({
               <div className="flex flex-col">
                 <button
                   type="button"
-                  className="flex items-center gap-2 text-2xl font-light text-muted-foreground transition-colors hover:text-white"
+                  className="flex items-center gap-2 text-2xl font-display font-medium text-white/80 transition-colors hover:text-white"
                   onClick={() => handleToggle(index)}
                   aria-expanded={isOpen}
                 >
@@ -204,7 +204,7 @@ export function NavLinks({
                             href={sub.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block pl-4 text-lg font-light text-muted-foreground transition-colors hover:text-white"
+                            className="block pl-4 text-base font-medium text-white/50 transition-colors hover:text-white"
                             onClick={() => {
                               setOpenIndex(null);
                               onLinkClick?.();
@@ -215,7 +215,7 @@ export function NavLinks({
                         ) : (
                           <Link
                             href={getHashAwareHref(sub.href, pathname, "/")}
-                            className="block pl-4 text-lg font-light text-muted-foreground transition-colors hover:text-white"
+                            className="block pl-4 text-base font-medium text-white/50 transition-colors hover:text-white"
                             onClick={() => {
                               setOpenIndex(null);
                               onLinkClick?.();
@@ -232,7 +232,7 @@ export function NavLinks({
             ) : (
               <Link
                 href={getHashAwareHref(item.href, pathname, "/")}
-                className="text-2xl font-light text-muted-foreground transition-colors hover:text-white"
+                className="text-2xl font-display font-medium text-white/80 transition-colors hover:text-white"
                 onClick={onLinkClick}
               >
                 {item.label}
