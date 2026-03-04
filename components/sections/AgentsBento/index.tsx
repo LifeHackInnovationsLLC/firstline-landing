@@ -46,16 +46,16 @@ const content = {
 
 export default function AgentsBento() {
   return (
-    <Section className="py-20 bg-gray">
+    <Section className="bg-gray">
       <div className="container">
-        <Heading as="h2" className="text-black text-center text-balance">
+        <Heading as="h2" align="center" className="text-black text-balance">
           {content.title}
         </Heading>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-15">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-8 lg:mt-15">
           {content.items.map((item) => (
             <div
               key={item.title}
-              className="relative flex flex-col justify-end h-[356px] p-5 bg-card-dark overflow-hidden rounded-4xl"
+              className="relative flex flex-col justify-end h-[280px] md:h-[356px] p-5 bg-card-dark overflow-hidden rounded-4xl"
             >
               <img
                 src={cdn(item.image)}

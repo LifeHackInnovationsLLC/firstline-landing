@@ -32,17 +32,19 @@ export default function SplitPayments() {
   return (
     <Section className="bg-gray">
       <div className="container">
-        <FeatureCard className="flex flex-row justify-between">
+        <FeatureCard className="flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-0">
           <img
             src={cdn(images.sellers.ellipseSplitPayments)}
-            alt="Split payments"
-            className="absolute pointer-events-none -top-40 -left-40"
+            alt=""
+            aria-hidden="true"
+            className="absolute pointer-events-none -top-40 -left-40 hidden lg:block"
             width={1000}
             height={1000}
           />
           <img
             src={cdn(images.sellers.greenEllipseSplitPayments)}
-            alt="Split payments"
+            alt=""
+            aria-hidden="true"
             className="absolute pointer-events-none -bottom-20 -right-20"
             width={1000}
             height={1000}
@@ -63,7 +65,7 @@ export default function SplitPayments() {
               ))}
             </FeatureCardList>
           </FeatureCardContent>
-          <div className="max-w-xl relative z-10">
+          <div className="max-w-sm lg:max-w-xl relative z-10 mx-auto lg:mx-0">
             <img src={cdn(images.sellers.graphicSplitPayments)} alt="Split payments" />
           </div>
         </FeatureCard>

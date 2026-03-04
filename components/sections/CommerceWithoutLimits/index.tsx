@@ -32,19 +32,19 @@ const items = [
 
 export default function CommerceWithoutLimits() {
   return (
-    <Section className="relative overflow-hidden py-25">
+    <Section className="relative overflow-hidden">
       <div className="container relative overflow-hidden">
-        <div className="flex flex-col items-center w-full gap-15 max-w-4xl mx-auto relative z-10">
-          <div className="flex flex-col gap-6 items-center">
+        <div className="flex flex-col items-center w-full gap-8 lg:gap-15 max-w-4xl mx-auto relative z-10">
+          <div className="flex flex-col gap-4 lg:gap-6 items-center">
             <Heading as="h2" className="text-center">
               Commerce without limits
             </Heading>
-            <p className="text-balance text-white/60 text-center">
+            <p className="text-balance text-white/60 text-center text-sm lg:text-base">
               Convert anyone with a phone into a dedicated salesperson with
               trackable conversions.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:gap-10">
             {items.map((item) => (
               <div key={item.title} className="flex flex-col gap-2">
                 <div className="flex flex-row items-center gap-2">
@@ -53,7 +53,7 @@ export default function CommerceWithoutLimits() {
                     {item.title}
                   </span>
                 </div>
-                <span className="text-white/60">{item.description}</span>
+                <span className="text-white/60 text-sm lg:text-base">{item.description}</span>
               </div>
             ))}
           </div>

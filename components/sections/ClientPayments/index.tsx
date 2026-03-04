@@ -117,14 +117,14 @@ export default function ClientPayments() {
           <img
             src={cdn(images.agencies.paymentProcessingGreenBlur)}
             alt="Payment processing green blur"
-            className="absolute pointer-events-none -bottom-20 -left-20"
+            className="absolute pointer-events-none -bottom-20 -left-20 hidden lg:block"
             width={1000}
             height={1000}
           />
           <img
             src={cdn(images.agencies.paymentProcessingGlobe)}
             alt=""
-            className="absolute pointer-events-none -bottom-10 -right-20"
+            className="absolute pointer-events-none -bottom-10 -right-20 hidden lg:block"
             width={1000}
             height={1000}
           />

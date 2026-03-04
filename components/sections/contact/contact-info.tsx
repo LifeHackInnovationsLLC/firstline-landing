@@ -92,8 +92,8 @@ const content = {
 
 export function ContactInfo() {
   return (
-    <div className="flex flex-col gap-10">
-      <Heading as="h2">{content.title}</Heading>
+    <div className="flex flex-col gap-8 lg:gap-10">
+      <Heading as="h2" align="center" className="lg:text-left">{content.title}</Heading>
       <div className="flex flex-col gap-6">
         {content.descriptions.map((description) => (
           <div key={description.title} className="flex flex-col gap-1">
@@ -111,7 +111,7 @@ export function ContactInfo() {
       <img
         src={cdn(images.contact.contactEmail)}
         alt="Contact Email"
-        className="max-w-65 -ml-5"
+        className="max-w-65 mx-auto lg:mx-0 lg:-ml-5"
       />
       <div className="flex flex-col lg:flex-row w-full items-center gap-4 border-t border-white/6">
         <span className="text-white/72 text-lg shrink-0 text-center lg:text-left">

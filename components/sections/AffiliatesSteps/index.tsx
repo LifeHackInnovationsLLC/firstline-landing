@@ -109,11 +109,11 @@ const content = {
 
 export function AffiliatesSteps() {
   return (
-    <Section id="affiliates-steps" className="py-20 bg-gray">
+    <Section id="affiliates-steps" className="bg-gray">
       <div className="container">
-        <div className="flex flex-col lg:flex-row gap-16">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
           <div className="lg:w-1/3 items-start">
-            <Heading as="h2" className="text-black text-left text-balance">
+            <Heading as="h2" align="center" className="text-black text-balance lg:text-left">
               {content.title}
             </Heading>
           </div>

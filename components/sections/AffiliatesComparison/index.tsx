@@ -45,19 +45,19 @@ const content = {
 
 export function AffiliatesComparison() {
   return (
-    <Section id="affiliates-comparison" className="py-20 bg-gray">
+    <Section id="affiliates-comparison" className="bg-gray">
       <div className="container">
-        <Heading as="h2" className="text-black text-center text-balance">
+        <Heading as="h2" align="center" className="text-black text-balance">
           {content.title}
         </Heading>
-        <div className="mt-15 rounded-3xl bg-card-dark p-10 overflow-x-auto">
+        <div className="mt-8 lg:mt-15 rounded-3xl bg-card-dark p-4 lg:p-10 overflow-x-auto">
           <table className="w-full">
             <thead>
               <tr className="border-b border-white/10">
                 {content.headers.map((header) => (
                   <th
                     key={header}
-                    className="text-left text-white/60 text-sm font-semibold pb-5 first:pl-0 px-4"
+                    className="text-left text-white/60 text-xs lg:text-sm font-semibold pb-3 lg:pb-5 first:pl-0 px-2 lg:px-4"
                   >
                     {header}
                   </th>
@@ -67,13 +67,13 @@ export function AffiliatesComparison() {
             <tbody>
               {content.rows.map((row) => (
                 <tr key={row.feature} className="border-b border-white/5 last:border-b-0">
-                  <td className="py-4 text-white text-sm font-semibold first:pl-0 px-4">
+                  <td className="py-3 lg:py-4 text-white text-xs lg:text-sm font-semibold first:pl-0 px-2 lg:px-4">
                     {row.feature}
                   </td>
-                  <td className="py-4 text-white/40 text-sm px-4">
+                  <td className="py-3 lg:py-4 text-white/40 text-xs lg:text-sm px-2 lg:px-4">
                     {row.traditional}
                   </td>
-                  <td className="py-4 text-white text-sm font-semibold px-4">
+                  <td className="py-3 lg:py-4 text-white text-xs lg:text-sm font-semibold px-2 lg:px-4">
                     {row.firstline}
                   </td>
                 </tr>

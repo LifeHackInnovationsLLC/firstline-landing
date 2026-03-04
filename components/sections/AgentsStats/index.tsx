@@ -38,18 +38,18 @@ export default function AgentsStats() {
   return (
     <Section className="pt-5 bg-gray">
       <div className="container">
-        <div className="w-full grid grid-cols-1 items-center lg:grid-cols-3 gap-6 lg:gap-0 py-16">
+        <div className="w-full grid grid-cols-3 items-center gap-0 py-8 lg:py-16">
           {content.stats.map((stat) => (
             <div
               key={stat.label}
-              className="flex flex-row justify-center items-center gap-4"
+              className="flex flex-row justify-center items-center gap-2 lg:gap-4"
             >
-              <StatDivider />
-              <div className="flex flex-col gap-1">
-                <span className="text-black text-2xl lg:text-3xl font-semibold">
+              <StatDivider className="hidden lg:block" />
+              <div className="flex flex-col gap-1 items-center lg:items-start">
+                <span className="text-black text-lg lg:text-3xl font-semibold">
                   {stat.value}
                 </span>
-                <span className="text-black/50 text-base lg:text-xl font-semibold">
+                <span className="text-black/50 text-xs lg:text-xl font-semibold">
                   {stat.label}
                 </span>
               </div>

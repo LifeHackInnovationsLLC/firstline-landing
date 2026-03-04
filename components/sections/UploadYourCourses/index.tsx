@@ -28,14 +28,14 @@ const items = [
 
 export default function UploadYourCourses() {
   return (
-    <Section className="bg-gray py-30 lg:py-30">
+    <Section className="bg-gray">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[90px] items-center">
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             <h2 className="font-display font-semibold tracking-tight text-4xl lg:text-[52px] lg:leading-[52px] text-text-primary">
               {content.title}
             </h2>
-            <p className="mt-6 text-base text-text-body">
+            <p className="mt-6 text-sm lg:text-base text-text-body">
               {content.description}
             </p>
             <ul className="mt-8 flex flex-col gap-3.5">

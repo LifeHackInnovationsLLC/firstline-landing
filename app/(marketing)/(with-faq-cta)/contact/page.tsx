@@ -6,7 +6,7 @@ export default function ContactPage() {
   return (
     <Section id="contact" className="pt-12 lg:pt-32 lg:pb-25">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-13">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-13">
           <ContactInfo />
           <ContactForm />
         </div>

@@ -52,25 +52,25 @@ const content = {
 
 export function AffiliatesTeams() {
   return (
-    <Section id="affiliates-teams" className="py-20 bg-gray">
+    <Section id="affiliates-teams" className="bg-gray">
       <div className="container">
-        <div className="relative overflow-hidden rounded-3xl py-20 px-6">
+        <div className="relative overflow-hidden rounded-3xl py-10 lg:py-20 px-4 lg:px-6">
           <img
             src={cdn(images.affiliates.readyToScale)}
             alt=""
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="relative z-10 flex flex-col max-w-xl">
-            <div className="flex flex-col gap-6">
-              <Heading as="h2" className="text-white text-left">
+            <div className="flex flex-col gap-4 lg:gap-6">
+              <Heading as="h2" className="text-white">
                 {content.title}
               </Heading>
-              <p className="text-white/60 text-base leading-relaxed">
+              <p className="text-white/60 text-sm lg:text-base leading-relaxed">
                 {content.description}
               </p>
             </div>
           </div>
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mt-20">
+          <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-20 mt-8 lg:mt-20">
             {content.features.map((feature) => (
               <div key={feature.title} className="flex flex-col gap-2">
                 <div className="flex flex-row items-center gap-2">

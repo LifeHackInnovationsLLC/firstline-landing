@@ -44,10 +44,10 @@ function SellersPageHero() {
     <Section id="sellers">
       <div className="container">
         <div className="flex flex-col">
-          <div className="flex flex-col gap-11 max-w-2xl mx-auto items-center text-center pt-40">
+          <div className="flex flex-col gap-8 lg:gap-11 max-w-2xl mx-auto items-center text-center pt-10 lg:pt-20">
             <div className="flex flex-col gap-4 items-center">
-              <Heading as="h1">{content.title}</Heading>
-              <p>{content.description}</p>
+              <Heading as="h1" align="center">{content.title}</Heading>
+              <p className="text-sm lg:text-base">{content.description}</p>
             </div>
             <div className="flex flex-row items-center gap-4">
               {content.ctas.map((cta) => (

@@ -120,15 +120,15 @@ export default function WhyAgencies() {
   return (
     <Section className="bg-gray">
       <div className="container">
-        <FeatureCard className="flex flex-col lg:flex-row justify-between">
+        <FeatureCard className="flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-0">
           <img
             src={cdn(images.agencies.whyAgenciesBlur)}
             alt=""
-            className="absolute pointer-events-none -top-40 -left-40"
+            className="absolute pointer-events-none -top-40 -left-40 hidden lg:block"
             width={1000}
             height={1000}
           />
-          <FeatureCardContent className="relative z-10 max-w-120">
+          <FeatureCardContent className="relative z-10 lg:max-w-120">
             <FeatureCardTitle>Why agencies love us</FeatureCardTitle>
             <FeatureCardDescription>
               We handle the hard part. You make the introduction, we do the
@@ -143,7 +143,7 @@ export default function WhyAgencies() {
               ))}
             </FeatureCardList>
           </FeatureCardContent>
-          <div className="max-w-100 relative z-10">
+          <div className="max-w-sm lg:max-w-100 relative z-10 mx-auto lg:mx-0">
             <img
               src={cdn(images.agencies.whyAgenciesGraphic)}
               alt="Why agencies love us"

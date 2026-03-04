@@ -240,16 +240,16 @@ const content = {
 
 export function AffiliatesBuiltForYou() {
   return (
-    <Section id="affiliates-built-for-you" className="py-20 bg-gray">
+    <Section id="affiliates-built-for-you" className="bg-gray">
       <div className="container">
-        <Heading as="h2" className="text-black text-center text-balance">
+        <Heading as="h2" align="center" className="text-black text-balance">
           {content.title}
         </Heading>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-15">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 lg:mt-15">
           {content.cards.map((card) => (
             <div
               key={card.title}
-              className="relative overflow-hidden rounded-3xl p-7"
+              className="relative overflow-hidden rounded-3xl p-5 lg:p-7"
             >
               <img
                 src={cdn(card.bg)}

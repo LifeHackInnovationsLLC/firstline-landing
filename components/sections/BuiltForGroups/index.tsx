@@ -31,14 +31,14 @@ export default function BuiltForGroups() {
           <Heading as="h2" align="center" className="text-black">
             Built for groups that already know how to scale
           </Heading>
-          <p className="text-text-secondary max-w-2xl">
+          <p className="text-text-secondary max-w-2xl text-sm lg:text-base">
             Firstline is designed for organizations with reach, trust, or
             distribution. If you already know how to build teams, manage people,
             or grow communities, this fits naturally into what you are already
             doing.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 lg:mt-10">
           {items.map((item) => (
             <HighlightCard key={item.title} color={item.color}>
               <HighlightCardIcon>{item.icon}</HighlightCardIcon>

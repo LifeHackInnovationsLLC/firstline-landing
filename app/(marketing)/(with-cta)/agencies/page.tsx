@@ -48,7 +48,7 @@ function AgenciesPageHero() {
     <Section id="agencies">
       <div className="container">
         <div className="flex flex-col">
-          <div className="flex flex-col gap-11 max-w-2xl mx-auto items-center text-center pt-40">
+          <div className="flex flex-col gap-8 lg:gap-11 max-w-2xl mx-auto items-center text-center pt-10 lg:pt-20">
             <div className="flex flex-col gap-4 items-center">
               <HeroKicker>{content.kicker}</HeroKicker>
               <Heading as="h1" align="center">{content.title}</Heading>

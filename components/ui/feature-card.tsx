@@ -11,7 +11,7 @@ function FeatureCard({
     <div
       data-slot="feature-card"
       className={cn(
-        "px-6 py-20 rounded-3xl bg-black relative overflow-hidden",
+        "px-6 py-10 lg:py-20 rounded-3xl bg-black relative overflow-hidden",
         className,
       )}
       {...props}

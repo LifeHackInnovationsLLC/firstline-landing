@@ -13,15 +13,15 @@ export default function TheBottomLine() {
   return (
     <Section className="bg-gray">
       <div className="container">
-        <FeatureCard className="flex flex-col lg:flex-row justify-between">
+        <FeatureCard className="flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-0">
           <img
             src={cdn(images.agents.bottomLineBlur)}
             alt=""
-            className="absolute pointer-events-none -top-40 -left-20"
+            className="absolute pointer-events-none -top-40 -left-20 hidden lg:block"
             width={1000}
             height={1000}
           />
-          <FeatureCardContent className="relative z-10 max-w-120">
+          <FeatureCardContent className="relative z-10 lg:max-w-120">
             <FeatureCardTitle>The bottom line</FeatureCardTitle>
             <FeatureCardDescription>
               You earn from every transaction through a Firstline terminal. This
@@ -38,7 +38,7 @@ export default function TheBottomLine() {
               </Button>
             </div>
           </FeatureCardContent>
-          <div className="max-w-100 relative z-10 lg:pr-[100px]">
+          <div className="max-w-sm lg:max-w-100 relative z-10 mx-auto lg:mx-0 lg:pr-[100px]">
             <img
               src={cdn(images.agents.bottomLineImage)}
               alt="The bottom line"
