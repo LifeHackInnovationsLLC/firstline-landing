@@ -24,8 +24,8 @@ const isExternalLink = (href: string) =>
 
 const NAV_LINKS: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Team", href: "#team" },
-  { label: "How it works", href: "#how-it-works" },
+  { label: "Why Firstline", href: "#why-switch" },
+  { label: "How it works", href: "#process" },
   {
     label: "Who is it for",
     href: "#",
