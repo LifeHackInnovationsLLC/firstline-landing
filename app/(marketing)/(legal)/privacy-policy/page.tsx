@@ -3,6 +3,15 @@ import type { ReactNode } from "react";
 import { Section } from "@/components/layout/section";
 import { HeroKicker } from "@/components/sections/Hero/hero-kicker";
 import { Heading } from "@/components/ui/heading";
+import { generatePageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = generatePageMetadata({
+  title: "Privacy Policy",
+  description:
+    "Learn how Firstline Digital LLC collects, uses, and protects your data. We never store banking information directly — all financial data is handled by third-party partners.",
+  path: "/privacy-policy",
+  noIndex: false,
+});
 
 interface PolicySection {
   title: string;

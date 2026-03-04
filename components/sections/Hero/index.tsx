@@ -10,6 +10,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { Section } from "@/components/layout/section";
+import Image from "next/image";
 
 const content = {
   kicker: "$12M+ paid out",
@@ -131,12 +132,14 @@ export default function Hero() {
               {content.cta.label}
             </Button>
           </div>
-          <img
+          <Image
             src={cdn(activeModeImage, { width: 1200 })}
             alt="Firstline commission platform dashboard preview"
-            loading="eager"
-            fetchPriority="high"
-            className="object-cover self-start w-full h-full flex-1 lg:-mt-32"
+            width={1200}
+            height={1367}
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover self-start w-full h-auto flex-1 lg:-mt-32"
           />
         </div>
 

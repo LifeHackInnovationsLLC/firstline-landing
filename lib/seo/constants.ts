@@ -6,7 +6,7 @@ export const SEO_CONSTANTS = {
 	defaultDescription:
 		"Split payments instantly, pay commissions in real-time, and scale globally. Firstline turns agents and affiliates into a dedicated sales team with automated payouts and real-time tracking.",
 	twitterHandle: "@firstaborad",
-	ogImage: "/brand/og-image.png",
+	ogImage: "/opengraph-image",
 } as const;
 
 export const SEO_KEYWORDS = {

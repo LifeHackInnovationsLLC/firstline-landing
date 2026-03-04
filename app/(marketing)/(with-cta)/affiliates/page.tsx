@@ -8,6 +8,20 @@ import { AffiliatesTeams } from "@/components/sections/AffiliatesTeams";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import Link from "next/link";
+import { generatePageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = generatePageMetadata({
+  title: "Affiliates — Earn Recurring Commissions",
+  description:
+    "Earn recurring monthly income as a Firstline affiliate. Promote payment processing solutions, track your commissions in real-time, and get paid automatically.",
+  path: "/affiliates",
+  keywords: [
+    "affiliate program",
+    "recurring affiliate commissions",
+    "affiliate payout platform",
+    "payment processing affiliate",
+  ],
+});
 
 const content = {
   title: "The ultimate side hustle",

@@ -12,19 +12,21 @@ export default function CTA() {
     >
       <div className="hidden lg:block absolute inset-x-0 top-0 bottom-0">
         <img
-          src={cdn(images.cta.bgDesktop)}
+          src={cdn(images.cta.bgDesktop, { width: 1440 })}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
       <div className="container">
         <div className="flex flex-col gap-0 lg:gap-10 items-center justify-center w-full text-center max-w-md mx-auto lg:max-w-none">
           <img
-            src={cdn(images.cta.bgMobile)}
+            src={cdn(images.cta.bgMobile, { width: 640 })}
             alt=""
             aria-hidden="true"
             className="lg:hidden w-full max-w-sm top-10"
+            loading="lazy"
           />
           <div className="flex flex-col items-center justify-center text-center gap-4">
             <Heading as="h2" className="text-center">

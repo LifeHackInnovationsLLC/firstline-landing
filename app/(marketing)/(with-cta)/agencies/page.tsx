@@ -9,6 +9,20 @@ import AgenciesSteps from "@/components/sections/AgenciesSteps";
 import WhyAgencies from "@/components/sections/WhyAgencies";
 import PotentialEarnings from "@/components/sections/PotentialEarnings";
 import Link from "next/link";
+import { generatePageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = generatePageMetadata({
+  title: "Agencies — Turn Your Community Into a Revenue Engine",
+  description:
+    "Launch your own payment sales team with Firstline. Agencies, creators, and organizations earn recurring monthly income on merchant volume and product sales.",
+  path: "/agencies",
+  keywords: [
+    "agency commission platform",
+    "community revenue",
+    "agency partner program",
+    "merchant volume commissions",
+  ],
+});
 
 const content = {
   kicker: "$12M+ paid out",

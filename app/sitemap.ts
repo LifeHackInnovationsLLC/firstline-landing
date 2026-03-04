@@ -13,9 +13,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 1.0,
 		},
 		{
-			url: `${siteUrl}/sign-up`,
+			url: `${siteUrl}/agents`,
 			lastModified: now,
-			changeFrequency: "monthly",
+			changeFrequency: "weekly",
+			priority: 0.9,
+		},
+		{
+			url: `${siteUrl}/affiliates`,
+			lastModified: now,
+			changeFrequency: "weekly",
+			priority: 0.9,
+		},
+		{
+			url: `${siteUrl}/agencies`,
+			lastModified: now,
+			changeFrequency: "weekly",
+			priority: 0.9,
+		},
+		{
+			url: `${siteUrl}/sellers`,
+			lastModified: now,
+			changeFrequency: "weekly",
 			priority: 0.9,
 		},
 		{
@@ -25,10 +43,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 0.6,
 		},
 		{
-			url: `${siteUrl}/sign-in`,
+			url: `${siteUrl}/privacy-policy`,
 			lastModified: now,
 			changeFrequency: "yearly",
-			priority: 0.4,
+			priority: 0.3,
+		},
+		{
+			url: `${siteUrl}/terms-of-service`,
+			lastModified: now,
+			changeFrequency: "yearly",
+			priority: 0.3,
 		},
 	];
 

@@ -7,6 +7,20 @@ import Link from "next/link";
 import GrowYourCommunity from "@/components/sections/GrowYourCommunity/index";
 import CommerceWithoutLimits from "@/components/sections/CommerceWithoutLimits";
 import UploadYourCourses from "@/components/sections/UploadYourCourses";
+import { generatePageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = generatePageMetadata({
+  title: "Sellers — Your Products, Our Sales Network",
+  description:
+    "Turn Firstline's network of agents and affiliates into your dedicated sales team. Split payments instantly, pay commissions in real-time, and scale globally.",
+  path: "/sellers",
+  keywords: [
+    "seller commission platform",
+    "split payments",
+    "sales team management",
+    "product sales commissions",
+  ],
+});
 
 const content = {
   title: "Your products, our mission",

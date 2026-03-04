@@ -7,6 +7,20 @@ import AgentsSteps from "@/components/sections/AgentsSteps";
 import AgentsGlobal from "@/components/sections/AgentsGlobal";
 import TheBottomLine from "@/components/sections/TheBottomLine";
 import Link from "next/link";
+import { generatePageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = generatePageMetadata({
+  title: "Agents — The Ultimate Side Hustle",
+  description:
+    "Turn payment processing volume into recurring monthly income with Firstline. Join as an agent, earn real-time commissions, and build a sustainable revenue stream.",
+  path: "/agents",
+  keywords: [
+    "sales agent commission",
+    "agent side hustle",
+    "recurring commission income",
+    "payment processing agent",
+  ],
+});
 
 const content = {
   title: "The ultimate side hustle",

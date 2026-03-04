@@ -155,10 +155,11 @@ export function Footer() {
   return (
     <footer id="footer" className="relative flex flex-col">
       <img
-        src={cdn(images.footer.gradient)}
+        src={cdn(images.footer.gradient, { width: 1440 })}
         alt=""
         className="absolute bottom-0 left-0 w-full object-cover pointer-events-none"
         aria-hidden="true"
+        loading="lazy"
       />
       <GradientDivider />
       <div className="container relative z-10 flex-1">
@@ -227,9 +228,10 @@ export function Footer() {
       </div>
       <div className="container relative z-10">
         <img
-          src={cdn(images.footer.logo)}
+          src={cdn(images.footer.logo, { width: 1440 })}
           alt="Firstline"
           className="w-full object-contain"
+          loading="lazy"
         />
       </div>
     </footer>

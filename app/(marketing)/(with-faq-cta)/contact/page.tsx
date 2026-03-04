@@ -1,6 +1,14 @@
 import { Section } from "@/components/layout/section";
 import { ContactForm } from "@/components/sections/contact/contact-form";
 import { ContactInfo } from "@/components/sections/contact/contact-info";
+import { generatePageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = generatePageMetadata({
+  title: "Contact Us",
+  description:
+    "Get in touch with the Firstline team. Have questions about commissions, partnerships, or our platform? We're here to help.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

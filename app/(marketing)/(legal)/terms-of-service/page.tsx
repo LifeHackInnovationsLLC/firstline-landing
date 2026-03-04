@@ -3,6 +3,15 @@ import type { ReactNode } from "react";
 import { Section } from "@/components/layout/section";
 import { HeroKicker } from "@/components/sections/Hero/hero-kicker";
 import { Heading } from "@/components/ui/heading";
+import { generatePageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = generatePageMetadata({
+  title: "Terms of Service",
+  description:
+    "Read the Firstline Digital LLC Terms of Service. Understand your rights, responsibilities, and our platform's legal framework for commission management.",
+  path: "/terms-of-service",
+  noIndex: false,
+});
 
 interface PolicySection {
   title: string;

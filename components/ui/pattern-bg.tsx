@@ -19,9 +19,7 @@ export function PatternBg({ className, ...props }: PatternBgProps) {
       <img
         src={cdn(images.decorations.purpleGradientMask, { width: 1400 })}
         alt=""
-        className="absolute top-0 left-0"
-        loading="eager"
-        fetchPriority="high"
+        className="absolute top-0 left-0 w-full"
         draggable={false}
       />
     </div>
