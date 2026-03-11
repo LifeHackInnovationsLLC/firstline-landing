@@ -8,7 +8,9 @@ import { AffiliatesTeams } from "@/components/sections/AffiliatesTeams";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import Link from "next/link";
+import Image from "next/image";
 import { generatePageMetadata } from "@/lib/seo/metadata";
+import { cdn, images } from "@/lib/cdn";
 
 export const metadata = generatePageMetadata({
   title: "Affiliates — Earn Recurring Commissions",
@@ -24,9 +26,9 @@ export const metadata = generatePageMetadata({
 });
 
 const content = {
-  title: "The ultimate side hustle",
+  title: "Finally, commissions you can trust",
   description:
-    "Turn payment processing volume into recurring monthly income. A revenue stream once limited to insiders, now open to you!",
+    "No more promo codes and promises. No more complex contracts hiding your true earnings. Firstline gives you real-time visibility and instant settlement of every commission you earn.",
   ctas: [
     {
       label: "Start Earning Today",
@@ -72,10 +74,19 @@ export default function AffiliatesPage() {
 
 function AffiliatesPageHero() {
   return (
-    <Section id="affiliates">
-      <div className="container">
+    <Section id="affiliates" className="relative overflow-hidden">
+      <Image
+        src={cdn(images.affiliates.hero, { width: 1920 })}
+        alt="Affiliates hero — earn recurring commissions with Firstline"
+        width={4320}
+        height={2109}
+        priority
+        sizes="100vw"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="container relative z-10">
         <div className="flex flex-col">
-          <div className="flex flex-col gap-8 lg:gap-11 max-w-2xl mx-auto items-center text-center pt-10 lg:pt-20">
+          <div className="flex flex-col gap-8 lg:gap-11 max-w-200 mx-auto items-center text-center pt-10 lg:pt-20">
             <div className="flex flex-col gap-4 items-center">
               <Heading as="h1" align="center">
                 {content.title}

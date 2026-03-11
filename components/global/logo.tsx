@@ -14,8 +14,7 @@ export function Logo({ className, ...props }: LogoProps) {
       {...props}
     >
       <img
-        src={cdn(images.brand.logo, { width: 240 })}
-        srcSet={`${cdn(images.brand.logo, { width: 120 })} 1x, ${cdn(images.brand.logo, { width: 240 })} 2x`}
+        src={`https://res.cloudinary.com/deoxevgc6/image/upload/${images.brand.logo}`}
         alt="Firstline"
         width={120}
         height={28}
