@@ -1,7 +1,7 @@
 import { Heading } from "@/components/ui/heading";
 import { Section } from "@/components/layout/section";
 import { Bento } from "./bento";
-import { Stats } from "../Hero/stats";
+import { Stats } from "@/components/sections/shared/Hero/stats";
 export default function Benefits() {
   return (
     <Section id="benefits" className="pt-5 bg-gray">

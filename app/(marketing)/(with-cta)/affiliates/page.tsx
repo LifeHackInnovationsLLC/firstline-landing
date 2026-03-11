@@ -1,10 +1,10 @@
 import { Section } from "@/components/layout/section";
-import { AffiliatesBento } from "@/components/sections/AffiliatesBento";
-import { AffiliatesBuiltForYou } from "@/components/sections/AffiliatesBuiltForYou";
-import { AffiliatesComparison } from "@/components/sections/AffiliatesComparison";
-import { AffiliatesStats } from "@/components/sections/AffiliatesStats";
-import { AffiliatesSteps } from "@/components/sections/AffiliatesSteps";
-import { AffiliatesTeams } from "@/components/sections/AffiliatesTeams";
+import { AffiliatesBento } from "@/components/sections/affiliates/AffiliatesBento";
+import { AffiliatesBuiltForYou } from "@/components/sections/affiliates/AffiliatesBuiltForYou";
+import { AffiliatesComparison } from "@/components/sections/affiliates/AffiliatesComparison";
+import { AffiliatesStats } from "@/components/sections/affiliates/AffiliatesStats";
+import { AffiliatesSteps } from "@/components/sections/affiliates/AffiliatesSteps";
+import { AffiliatesTeams } from "@/components/sections/affiliates/AffiliatesTeams";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import Link from "next/link";

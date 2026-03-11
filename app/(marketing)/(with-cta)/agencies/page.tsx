@@ -1,13 +1,13 @@
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
-import { HeroKicker } from "@/components/sections/Hero/hero-kicker";
-import ClientPayments from "@/components/sections/ClientPayments";
-import BuiltForGroups from "@/components/sections/BuiltForGroups";
-import AgenciesEarnings from "@/components/sections/AgenciesEarnings";
-import AgenciesSteps from "@/components/sections/AgenciesSteps";
-import WhyAgencies from "@/components/sections/WhyAgencies";
-import PotentialEarnings from "@/components/sections/PotentialEarnings";
+import { HeroKicker } from "@/components/sections/shared/Hero/hero-kicker";
+import ClientPayments from "@/components/sections/agencies/ClientPayments";
+import BuiltForGroups from "@/components/sections/agencies/BuiltForGroups";
+import AgenciesEarnings from "@/components/sections/agencies/AgenciesEarnings";
+import AgenciesSteps from "@/components/sections/agencies/AgenciesSteps";
+import WhyAgencies from "@/components/sections/agencies/WhyAgencies";
+import PotentialEarnings from "@/components/sections/agencies/PotentialEarnings";
 import Link from "next/link";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 

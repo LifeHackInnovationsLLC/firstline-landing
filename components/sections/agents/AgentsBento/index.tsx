@@ -9,37 +9,37 @@ const content = {
       title: "Recurring Monthly Commissions",
       description:
         "Every merchant you bring on generates ongoing monthly commissions based on their processing volume. These are not one-time payouts. Your income continues to grow as your merchants grow.",
-      image: images.affiliates.bento1,
+      image: images.agents.bento1,
     },
     {
       title: "Real Time Commission Tracking",
       description:
         "View your merchants, processing volume, and commissions in one place. See exactly what you are earning and where it is coming from at any time.",
-      image: images.affiliates.bento2,
+      image: images.agents.bento2,
     },
     {
       title: "Team and Override Management",
       description:
         "Join a team as an agent or build your own team. Agents earn competitive commissions while team leaders earn override commissions across their entire network.",
-      image: images.affiliates.bento3,
+      image: images.agents.bento3,
     },
     {
       title: "Merchant and Portfolio Management",
       description:
         "Manage your full book of business from a single dashboard. Track activity, performance, and growth without spreadsheets or manual processes.",
-      image: images.affiliates.bento4,
+      image: images.agents.bento4,
     },
     {
       title: "Affiliate and Referral Tools",
       description:
         "Monetize your network beyond direct sales. Share referral links, bring in merchants or agents, and earn rewards automatically.",
-      image: images.affiliates.bento5,
+      image: images.agents.bento5,
     },
     {
       title: "Mobile First Access",
       description:
         "Everything operates online. No office, no hardware inventory, and no gatekeepers. If you have a phone, you have a business.",
-      image: images.affiliates.bento6,
+      image: images.agents.bento6,
     },
   ],
 };

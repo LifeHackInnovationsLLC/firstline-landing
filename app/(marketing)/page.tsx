@@ -1,11 +1,11 @@
-import Hero from "@/components/sections/Hero";
-import Benefits from "@/components/sections/Benefits";
-import Audiences from "@/components/sections/Audiences";
-import WhySwitch from "@/components/sections/WhySwitch";
-import Process from "@/components/sections/Process";
-import FAQ from "@/components/sections/FAQ";
+import Hero from "@/components/sections/shared/Hero";
+import Benefits from "@/components/sections/home/Benefits";
+import Audiences from "@/components/sections/home/Audiences";
+import WhySwitch from "@/components/sections/home/WhySwitch";
+import Process from "@/components/sections/home/Process";
+import FAQ from "@/components/sections/shared/FAQ";
 import CTA from "@/components/layout/cta";
-import Testimonials from "@/components/sections/Testimonials";
+import Testimonials from "@/components/sections/home/Testimonials";
 
 export default function Page() {
   return (

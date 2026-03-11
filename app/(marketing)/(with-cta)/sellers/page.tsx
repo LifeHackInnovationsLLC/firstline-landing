@@ -1,12 +1,12 @@
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
-import SplitPayments from "@/components/sections/SplitPayments";
-import EverythingToScale from "@/components/sections/EverythingToScale";
+import SplitPayments from "@/components/sections/sellers/SplitPayments";
+import EverythingToScale from "@/components/sections/sellers/EverythingToScale";
 import Link from "next/link";
-import GrowYourCommunity from "@/components/sections/GrowYourCommunity/index";
-import CommerceWithoutLimits from "@/components/sections/CommerceWithoutLimits";
-import UploadYourCourses from "@/components/sections/UploadYourCourses";
+import GrowYourCommunity from "@/components/sections/sellers/GrowYourCommunity/index";
+import CommerceWithoutLimits from "@/components/sections/sellers/CommerceWithoutLimits";
+import UploadYourCourses from "@/components/sections/sellers/UploadYourCourses";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = generatePageMetadata({

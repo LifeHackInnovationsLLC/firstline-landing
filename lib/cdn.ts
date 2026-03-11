@@ -62,7 +62,7 @@ export const images = {
 		doorToDoorBg: "firstline/door-to-door-bg_s06ggt.webp",
 		digitalAffiliatesIcon: "firstline/digital-affiliates-icon_yjo4tb.webp",
 		digitalAffiliatesBg: "firstline/digital-affiliates-bg_sbmfye.webp",
-		readyToScale: "firstline/ready-to-scale_lojx8h.webp",
+		readyToScale: "firstline/for-teams-that-scale.webp",
 		hero: "firstline/jey9ilzrye7qlxz94wn0.png",
 	},
 	whySwitch: {
@@ -98,6 +98,12 @@ export const images = {
 		potentialEarnings: "firstline/potential-earnings.webp",
 	},
 	agents: {
+		bento1: "firstline/agents-bento-1.webp",
+		bento2: "firstline/agents-bento-2.webp",
+		bento3: "firstline/agents-bento-3.webp",
+		bento4: "firstline/agents-bento-4.webp",
+		bento5: "firstline/agents-bento-5.webp",
+		bento6: "firstline/agents-bento-6.webp",
 		readyToGlobalGreenBlur: "firstline/ready-to-global-green-blur.webp",
 		readyToGlobalPurpleBlur: "firstline/ready-to-global-purple-blur.webp",
 		bottomLineBlur: "firstline/the-bottom-line-green-blur.webp",

@@ -1,11 +1,11 @@
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
-import AgentsStats from "@/components/sections/AgentsStats";
-import AgentsBento from "@/components/sections/AgentsBento";
-import AgentsSteps from "@/components/sections/AgentsSteps";
-import AgentsGlobal from "@/components/sections/AgentsGlobal";
-import TheBottomLine from "@/components/sections/TheBottomLine";
+import AgentsStats from "@/components/sections/agents/AgentsStats";
+import AgentsBento from "@/components/sections/agents/AgentsBento";
+import AgentsSteps from "@/components/sections/agents/AgentsSteps";
+import AgentsGlobal from "@/components/sections/agents/AgentsGlobal";
+import TheBottomLine from "@/components/sections/agents/TheBottomLine";
 import Link from "next/link";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import { Section } from "@/components/layout/section";
-import { HeroKicker } from "@/components/sections/Hero/hero-kicker";
+import { HeroKicker } from "@/components/sections/shared/Hero/hero-kicker";
 import { Heading } from "@/components/ui/heading";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 
