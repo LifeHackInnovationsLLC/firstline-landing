@@ -97,6 +97,9 @@ export const images = {
 		whyAgenciesGraphic: "firstline/why-agencies-graphic.webp",
 		potentialEarnings: "firstline/potential-earnings.webp",
 	},
+	team: {
+		communityDownline: "firstline/community-downline.webp",
+	},
 	agents: {
 		bento1: "firstline/agents-bento-1.webp",
 		bento2: "firstline/agents-bento-2.webp",
