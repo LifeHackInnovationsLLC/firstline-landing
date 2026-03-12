@@ -1,5 +1,6 @@
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { cdn, images } from "@/lib/cdn";
+import { cn } from "@/lib/utils";
 
 const content = [
   {
@@ -33,7 +34,7 @@ export function WhySwitchList() {
   );
 }
 
-interface WhySwitchGridProps extends React.HTMLAttributes<HTMLDivElement> {}
+type WhySwitchGridProps = React.HTMLAttributes<HTMLDivElement>;
 
 function WhySwitchGrid({ className, children, ...props }: WhySwitchGridProps) {
   return (
@@ -49,7 +50,7 @@ function WhySwitchGrid({ className, children, ...props }: WhySwitchGridProps) {
   );
 }
 
-interface WhySwitchItemProps extends React.HTMLAttributes<HTMLDivElement> {}
+type WhySwitchItemProps = React.HTMLAttributes<HTMLDivElement>;
 
 function WhySwitchItem({ className, children, ...props }: WhySwitchItemProps) {
   return (
@@ -62,21 +63,26 @@ function WhySwitchItem({ className, children, ...props }: WhySwitchItemProps) {
   );
 }
 
-interface WhySwitchIconProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
+interface WhySwitchIconProps {
+  className?: string;
+  alt: string;
+  src: string;
+}
 
-function WhySwitchIcon({ className, alt, ...props }: WhySwitchIconProps) {
+function WhySwitchIcon({ className, alt, src }: WhySwitchIconProps) {
   return (
-    <img
+    <Image
       width={48}
       height={48}
       className={cn("size-(--why-switch-icon-size)", className)}
       alt={alt}
-      {...props}
+      src={src}
+      unoptimized
     />
   );
 }
 
-interface WhySwitchTitleProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+type WhySwitchTitleProps = React.HTMLAttributes<HTMLParagraphElement>;
 
 function WhySwitchTitle({
   className,

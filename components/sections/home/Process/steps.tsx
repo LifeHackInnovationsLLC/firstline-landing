@@ -1,6 +1,7 @@
-import { cn } from "@/lib/utils";
-import { cdn, images } from "@/lib/cdn";
+import Image from "next/image";
 import { Heading } from "@/components/ui/heading";
+import { cdn, images } from "@/lib/cdn";
+import { cn } from "@/lib/utils";
 
 const content = [
   {
@@ -45,7 +46,7 @@ export function Steps() {
   );
 }
 
-interface StepsGridProps extends React.HTMLAttributes<HTMLDivElement> {}
+type StepsGridProps = React.HTMLAttributes<HTMLDivElement>;
 
 function StepsGrid({ className, children, ...props }: StepsGridProps) {
   return (
@@ -61,7 +62,7 @@ function StepsGrid({ className, children, ...props }: StepsGridProps) {
   );
 }
 
-interface StepCardProps extends React.HTMLAttributes<HTMLDivElement> {}
+type StepCardProps = React.HTMLAttributes<HTMLDivElement>;
 
 function StepCard({ className, children, ...props }: StepCardProps) {
   return (
@@ -77,19 +78,25 @@ function StepCard({ className, children, ...props }: StepCardProps) {
   );
 }
 
-interface StepImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
+interface StepImageProps {
+  className?: string;
+  alt: string;
+  src: string;
+}
 
-function StepImage({ className, alt, ...props }: StepImageProps) {
+function StepImage({ className, alt, src }: StepImageProps) {
   return (
-    <img
+    <Image
       className={cn("absolute inset-0 w-full h-full object-cover", className)}
       alt={alt}
-      {...props}
+      src={src}
+      fill
+      unoptimized
     />
   );
 }
 
-interface StepContentProps extends React.HTMLAttributes<HTMLDivElement> {}
+type StepContentProps = React.HTMLAttributes<HTMLDivElement>;
 
 function StepContent({ className, children, ...props }: StepContentProps) {
   return (
@@ -105,7 +112,7 @@ function StepContent({ className, children, ...props }: StepContentProps) {
   );
 }
 
-interface StepTitleProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+type StepTitleProps = React.HTMLAttributes<HTMLParagraphElement>;
 
 function StepTitle({ className, children, ...props }: StepTitleProps) {
   return (
@@ -115,7 +122,7 @@ function StepTitle({ className, children, ...props }: StepTitleProps) {
   );
 }
 
-interface StepDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+type StepDescriptionProps = React.HTMLAttributes<HTMLParagraphElement>;
 
 function StepDescription({
   className,

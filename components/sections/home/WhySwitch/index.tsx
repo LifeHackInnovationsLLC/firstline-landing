@@ -1,5 +1,5 @@
-import { Heading } from "@/components/ui/heading";
 import { Section } from "@/components/layout/section";
+import { Heading } from "@/components/ui/heading";
 import { WhySwitchList } from "./why-switch-list";
 
 export default function WhySwitch() {

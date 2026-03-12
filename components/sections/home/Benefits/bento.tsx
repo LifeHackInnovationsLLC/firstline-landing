@@ -1,5 +1,6 @@
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { cdn, images } from "@/lib/cdn";
+import { cn } from "@/lib/utils";
 
 const content = {
   bento: [
@@ -59,7 +60,10 @@ export function Bento() {
     <BentoGrid>
       {firstThreeItems.map((item) => (
         <BentoCard key={getBentoAlt(item)} className="md:col-span-2">
-          <BentoImage src={cdn(item.image, { width: 800 })} alt={getBentoAlt(item)} />
+          <BentoImage
+            src={cdn(item.image, { width: 800 })}
+            alt={getBentoAlt(item)}
+          />
           <BentoContent className="max-w-2xs">
             <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
             <BentoText>{item.text.regularText}</BentoText>
@@ -71,7 +75,10 @@ export function Bento() {
           key={getBentoAlt(item)}
           className="md:col-span-2 lg:col-span-3"
         >
-          <BentoImage src={cdn(item.image, { width: 1200 })} alt={getBentoAlt(item)} />
+          <BentoImage
+            src={cdn(item.image, { width: 1200 })}
+            alt={getBentoAlt(item)}
+          />
           <BentoContent>
             <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
             <BentoText>{item.text.regularText}</BentoText>
@@ -82,7 +89,7 @@ export function Bento() {
   );
 }
 
-interface BentoGridProps extends React.HTMLAttributes<HTMLDivElement> {}
+type BentoGridProps = React.HTMLAttributes<HTMLDivElement>;
 
 function BentoGrid({ className, children, ...props }: BentoGridProps) {
   return (
@@ -98,7 +105,7 @@ function BentoGrid({ className, children, ...props }: BentoGridProps) {
   );
 }
 
-interface BentoCardProps extends React.HTMLAttributes<HTMLDivElement> {}
+type BentoCardProps = React.HTMLAttributes<HTMLDivElement>;
 
 function BentoCard({ className, children, ...props }: BentoCardProps) {
   return (
@@ -114,19 +121,25 @@ function BentoCard({ className, children, ...props }: BentoCardProps) {
   );
 }
 
-interface BentoImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
+interface BentoImageProps {
+  className?: string;
+  alt: string;
+  src: string;
+}
 
-function BentoImage({ className, alt, ...props }: BentoImageProps) {
+function BentoImage({ className, alt, src }: BentoImageProps) {
   return (
-    <img
+    <Image
       className={cn("absolute inset-0 w-full h-full object-cover", className)}
       alt={alt}
-      {...props}
+      src={src}
+      fill
+      unoptimized
     />
   );
 }
 
-interface BentoContentProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+type BentoContentProps = React.HTMLAttributes<HTMLParagraphElement>;
 
 function BentoContent({ className, children, ...props }: BentoContentProps) {
   return (
@@ -139,7 +152,7 @@ function BentoContent({ className, children, ...props }: BentoContentProps) {
   );
 }
 
-interface BentoHighlightProps extends React.HTMLAttributes<HTMLSpanElement> {}
+type BentoHighlightProps = React.HTMLAttributes<HTMLSpanElement>;
 
 function BentoHighlight({
   className,
@@ -153,7 +166,7 @@ function BentoHighlight({
   );
 }
 
-interface BentoTextProps extends React.HTMLAttributes<HTMLSpanElement> {}
+type BentoTextProps = React.HTMLAttributes<HTMLSpanElement>;
 
 function BentoText({ className, children, ...props }: BentoTextProps) {
   return (

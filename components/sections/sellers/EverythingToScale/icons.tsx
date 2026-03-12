@@ -24,14 +24,11 @@ export function FunnelBuilderIcon() {
             fill="#6363B1"
           />
         </g>
-        <g filter={`url(#${id}-filter1)`} style={{ mixBlendMode: "plus-lighter" }}>
-          <circle
-            cx="24"
-            cy="59"
-            r="18"
-            fill="white"
-            fillOpacity="0.24"
-          />
+        <g
+          filter={`url(#${id}-filter1)`}
+          style={{ mixBlendMode: "plus-lighter" }}
+        >
+          <circle cx="24" cy="59" r="18" fill="white" fillOpacity="0.24" />
         </g>
         <path
           d="M34 13H14V17.9412L21.5 25.3529V34L26.5 32.7647V25.3529L34 17.9412V13Z"
@@ -66,7 +63,10 @@ export function FunnelBuilderIcon() {
             in2="BackgroundImageFix"
             result="shape"
           />
-          <feGaussianBlur stdDeviation="67.15" result="effect1_foregroundBlur" />
+          <feGaussianBlur
+            stdDeviation="67.15"
+            result="effect1_foregroundBlur"
+          />
         </filter>
         <filter
           id={`${id}-filter1`}
@@ -129,7 +129,10 @@ export function AnalyticsDashboardIcon() {
             fill="#368F8A"
           />
         </g>
-        <g filter={`url(#${id}-filter1)`} style={{ mixBlendMode: "plus-lighter" }}>
+        <g
+          filter={`url(#${id}-filter1)`}
+          style={{ mixBlendMode: "plus-lighter" }}
+        >
           <circle cx="24" cy="59" r="18" fill="white" fillOpacity="0.24" />
         </g>
         <path
@@ -165,7 +168,10 @@ export function AnalyticsDashboardIcon() {
             in2="BackgroundImageFix"
             result="shape"
           />
-          <feGaussianBlur stdDeviation="67.15" result="effect1_foregroundBlur" />
+          <feGaussianBlur
+            stdDeviation="67.15"
+            result="effect1_foregroundBlur"
+          />
         </filter>
         <filter
           id={`${id}-filter1`}
@@ -228,7 +234,10 @@ export function AccessToLendingIcon() {
             fill="#6363B1"
           />
         </g>
-        <g filter={`url(#${id}-filter1)`} style={{ mixBlendMode: "plus-lighter" }}>
+        <g
+          filter={`url(#${id}-filter1)`}
+          style={{ mixBlendMode: "plus-lighter" }}
+        >
           <circle cx="24" cy="59" r="18" fill="white" fillOpacity="0.24" />
         </g>
         <path
@@ -264,7 +273,10 @@ export function AccessToLendingIcon() {
             in2="BackgroundImageFix"
             result="shape"
           />
-          <feGaussianBlur stdDeviation="67.15" result="effect1_foregroundBlur" />
+          <feGaussianBlur
+            stdDeviation="67.15"
+            result="effect1_foregroundBlur"
+          />
         </filter>
         <filter
           id={`${id}-filter1`}
@@ -327,7 +339,10 @@ export function PaymentProcessingIcon() {
             fill="#368F8A"
           />
         </g>
-        <g filter={`url(#${id}-filter1)`} style={{ mixBlendMode: "plus-lighter" }}>
+        <g
+          filter={`url(#${id}-filter1)`}
+          style={{ mixBlendMode: "plus-lighter" }}
+        >
           <circle cx="24" cy="59" r="18" fill="white" fillOpacity="0.24" />
         </g>
         <path
@@ -363,7 +378,10 @@ export function PaymentProcessingIcon() {
             in2="BackgroundImageFix"
             result="shape"
           />
-          <feGaussianBlur stdDeviation="67.15" result="effect1_foregroundBlur" />
+          <feGaussianBlur
+            stdDeviation="67.15"
+            result="effect1_foregroundBlur"
+          />
         </filter>
         <filter
           id={`${id}-filter1`}
@@ -426,7 +444,10 @@ export function NeoBankingIcon() {
             fill="#6363B1"
           />
         </g>
-        <g filter={`url(#${id}-filter1)`} style={{ mixBlendMode: "plus-lighter" }}>
+        <g
+          filter={`url(#${id}-filter1)`}
+          style={{ mixBlendMode: "plus-lighter" }}
+        >
           <circle cx="24" cy="59" r="18" fill="white" fillOpacity="0.24" />
         </g>
         <path
@@ -462,7 +483,10 @@ export function NeoBankingIcon() {
             in2="BackgroundImageFix"
             result="shape"
           />
-          <feGaussianBlur stdDeviation="67.15" result="effect1_foregroundBlur" />
+          <feGaussianBlur
+            stdDeviation="67.15"
+            result="effect1_foregroundBlur"
+          />
         </filter>
         <filter
           id={`${id}-filter1`}
@@ -525,7 +549,10 @@ export function CommissionTrackingIcon() {
             fill="#368F8A"
           />
         </g>
-        <g filter={`url(#${id}-filter1)`} style={{ mixBlendMode: "plus-lighter" }}>
+        <g
+          filter={`url(#${id}-filter1)`}
+          style={{ mixBlendMode: "plus-lighter" }}
+        >
           <circle cx="24" cy="59" r="18" fill="white" fillOpacity="0.24" />
         </g>
         <path
@@ -561,7 +588,10 @@ export function CommissionTrackingIcon() {
             in2="BackgroundImageFix"
             result="shape"
           />
-          <feGaussianBlur stdDeviation="67.15" result="effect1_foregroundBlur" />
+          <feGaussianBlur
+            stdDeviation="67.15"
+            result="effect1_foregroundBlur"
+          />
         </filter>
         <filter
           id={`${id}-filter1`}

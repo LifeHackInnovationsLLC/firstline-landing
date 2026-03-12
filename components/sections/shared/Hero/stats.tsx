@@ -37,10 +37,7 @@ export function Stats() {
   return (
     <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 py-16">
       {content.stats.map((stat) => (
-        <div
-          key={stat.label}
-          className="flex flex-row items-center gap-4"
-        >
+        <div key={stat.label} className="flex flex-row items-center gap-4">
           <StatDivider className="hidden lg:block" />
           <div className="flex flex-col gap-1">
             <span className="text-black text-2xl lg:text-3xl font-semibold">

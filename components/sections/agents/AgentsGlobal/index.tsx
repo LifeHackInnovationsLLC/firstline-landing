@@ -1,16 +1,23 @@
+import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
 import {
   HighlightCard,
+  HighlightCardDescription,
   HighlightCardIcon,
   HighlightCardTitle,
-  HighlightCardDescription,
 } from "@/components/ui/highlight-card";
 import { cdn, images } from "@/lib/cdn";
 
 function PurpleDot() {
   return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <circle cx="16" cy="16" r="12" fill="#6363B1" fillOpacity="0.4" />
       <circle cx="16" cy="16" r="8" fill="#6363B1" fillOpacity="0.6" />
     </svg>
@@ -19,7 +26,13 @@ function PurpleDot() {
 
 function GreenDot() {
   return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <circle cx="16" cy="16" r="12" fill="#368F8A" fillOpacity="0.4" />
       <circle cx="16" cy="16" r="8" fill="#368F8A" fillOpacity="0.6" />
     </svg>
@@ -73,19 +86,21 @@ export default function AgentsGlobal() {
           ))}
         </div>
         <div className="relative overflow-hidden rounded-3xl bg-black p-6 lg:p-10 mt-4 flex flex-col items-center justify-center text-center min-h-62.5">
-          <img
+          <Image
             src={cdn(images.agents.readyToGlobalGreenBlur)}
             alt=""
             className="absolute pointer-events-none top-0 right-0"
             width={700}
             height={400}
+            unoptimized
           />
-          <img
+          <Image
             src={cdn(images.agents.readyToGlobalPurpleBlur)}
             alt=""
             className="absolute pointer-events-none bottom-0 left-0"
             width={700}
             height={400}
+            unoptimized
           />
           <h3 className="relative z-10 font-display font-semibold tracking-tight text-white text-2xl lg:text-4xl">
             Payment processing is needed everywhere

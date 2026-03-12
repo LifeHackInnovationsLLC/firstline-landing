@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { cn, getHashAwareHref } from "@/lib/utils";
 
 // ─── Types & Data ───────────────────────────────────────────
@@ -25,6 +25,7 @@ const isExternalLink = (href: string) =>
 const NAV_LINKS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Team", href: "/team" },
+  { label: "Courses", href: "/courses" },
   { label: "How it works", href: "#process" },
   {
     label: "Who is it for",
@@ -70,11 +71,12 @@ export function NavLinks({
     };
   }, [openIndex]);
 
-  // Close submenu on route change
-  // biome-ignore lint/correctness/useExhaustiveDependencies: intentionally reset when pathname changes
-  useEffect(() => {
+  // Close submenu on route change (React recommended pattern for resetting state on prop change)
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setOpenIndex(null);
-  }, [pathname]);
+  }
 
   const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -193,7 +195,9 @@ export function NavLinks({
                 <div
                   className={cn(
                     "grid transition-all duration-300",
-                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
+                    isOpen
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0",
                   )}
                 >
                   <ul className="flex flex-col gap-3 overflow-hidden min-h-0 pt-3">

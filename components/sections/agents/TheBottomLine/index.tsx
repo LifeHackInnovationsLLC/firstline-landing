@@ -1,25 +1,27 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Section } from "@/components/layout/section";
+import { Button } from "@/components/ui/button";
 import {
   FeatureCard,
   FeatureCardContent,
-  FeatureCardTitle,
   FeatureCardDescription,
+  FeatureCardTitle,
 } from "@/components/ui/feature-card";
-import { Button } from "@/components/ui/button";
 import { cdn, images } from "@/lib/cdn";
-import Link from "next/link";
 
 export default function TheBottomLine() {
   return (
     <Section className="bg-gray">
       <div className="container">
         <FeatureCard className="flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-0">
-          <img
+          <Image
             src={cdn(images.agents.bottomLineBlur)}
             alt=""
             className="absolute pointer-events-none -top-40 -left-20 hidden lg:block"
             width={1000}
             height={1000}
+            unoptimized
           />
           <FeatureCardContent className="relative z-10 lg:max-w-120">
             <FeatureCardTitle>The bottom line</FeatureCardTitle>
@@ -39,9 +41,12 @@ export default function TheBottomLine() {
             </div>
           </FeatureCardContent>
           <div className="max-w-sm lg:max-w-100 relative z-10 mx-auto lg:mx-0 lg:pr-[100px]">
-            <img
+            <Image
               src={cdn(images.agents.bottomLineImage)}
               alt="The bottom line"
+              width={400}
+              height={300}
+              unoptimized
             />
           </div>
         </FeatureCard>

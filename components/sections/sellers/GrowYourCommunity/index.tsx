@@ -1,34 +1,46 @@
+import Image from "next/image";
 import { Section } from "@/components/layout/section";
-import { cdn, images } from "@/lib/cdn";
 import { Heading } from "@/components/ui/heading";
+import { cdn, images } from "@/lib/cdn";
 
 export default function GrowYourCommunity() {
   return (
     <Section id="grow-your-community" className="bg-gray">
       <div className="container">
         <div className="px-4 lg:px-6 pt-9 pb-10 lg:pb-15 rounded-3xl bg-black relative overflow-hidden">
-          <img
+          <Image
             src={cdn(images.sellers.growYourCommunityPurple)}
             alt=""
             aria-hidden="true"
+            width={800}
+            height={800}
             className="absolute pointer-events-none -bottom-40 -right-40 w-auto h-auto"
+            unoptimized
           />
-          <img
+          <Image
             src={cdn(images.sellers.growYourCommunityGreen)}
             alt=""
             aria-hidden="true"
+            width={800}
+            height={800}
             className="absolute pointer-events-none -top-60 -left-60 w-auto h-auto hidden lg:block"
+            unoptimized
           />
           <div className="flex flex-col gap-8 lg:gap-10 max-w-4xl mx-auto">
             <div className="flex flex-col gap-8 lg:gap-10">
               <div className="flex flex-col gap-7">
-                <img
+                <Image
                   src={cdn(images.sellers.growYourCommunitySocials)}
                   alt="Grow your community"
+                  width={400}
+                  height={300}
                   className="max-w-xs lg:max-w-md mx-auto"
+                  unoptimized
                 />
                 <div className="flex flex-col items-center gap-4 lg:gap-6">
-                  <Heading as="h2" align="center">Grow your community</Heading>
+                  <Heading as="h2" align="center">
+                    Grow your community
+                  </Heading>
                   <p className="text-balance text-white/60 text-center text-sm lg:text-base">
                     Build your community on Discord, Slack, or Telegram. Let
                     them chat on web. Let your followers or the followers of
@@ -40,7 +52,9 @@ export default function GrowYourCommunity() {
                 <p className="text-balance text-sm lg:text-base">
                   Multi-platform community management
                 </p>
-                <p className="text-balance text-sm lg:text-base">Unlimited sales network depth</p>
+                <p className="text-balance text-sm lg:text-base">
+                  Unlimited sales network depth
+                </p>
                 <p className="text-balance text-sm lg:text-base">
                   Web chat for seamless communication
                 </p>

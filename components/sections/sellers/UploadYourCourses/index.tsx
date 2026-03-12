@@ -1,13 +1,9 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { cdn, images } from "@/lib/cdn";
-import Link from "next/link";
-import {
-  UploadIcon,
-  RewardsIcon,
-  TrackIcon,
-  PayoutsIcon,
-} from "./icons";
+import { PayoutsIcon, RewardsIcon, TrackIcon, UploadIcon } from "./icons";
 
 const content = {
   title: "Upload your courses",
@@ -60,10 +56,13 @@ export default function UploadYourCourses() {
             </div>
           </div>
           <div>
-            <img
+            <Image
               src={cdn(images.sellers.uploadYourCourses)}
               alt="Upload your courses"
+              width={800}
+              height={600}
               className="w-full h-auto rounded-3xl"
+              unoptimized
             />
           </div>
         </div>

@@ -1,5 +1,6 @@
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { cdn, images } from "@/lib/cdn";
+import { cn } from "@/lib/utils";
 
 const audiences = [
   {
@@ -49,7 +50,7 @@ export function AudiencesList() {
   );
 }
 
-interface AudiencesGridProps extends React.HTMLAttributes<HTMLDivElement> {}
+type AudiencesGridProps = React.HTMLAttributes<HTMLDivElement>;
 
 function AudiencesGrid({ className, children, ...props }: AudiencesGridProps) {
   return (
@@ -65,7 +66,7 @@ function AudiencesGrid({ className, children, ...props }: AudiencesGridProps) {
   );
 }
 
-interface AudienceCardProps extends React.HTMLAttributes<HTMLDivElement> {}
+type AudienceCardProps = React.HTMLAttributes<HTMLDivElement>;
 
 function AudienceCard({ className, children, ...props }: AudienceCardProps) {
   return (
@@ -81,19 +82,25 @@ function AudienceCard({ className, children, ...props }: AudienceCardProps) {
   );
 }
 
-interface AudienceImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
+interface AudienceImageProps {
+  className?: string;
+  alt: string;
+  src: string;
+}
 
-function AudienceImage({ className, alt, ...props }: AudienceImageProps) {
+function AudienceImage({ className, alt, src }: AudienceImageProps) {
   return (
-    <img
+    <Image
       className={cn("absolute inset-0 w-full h-full object-cover", className)}
       alt={alt}
-      {...props}
+      src={src}
+      fill
+      unoptimized
     />
   );
 }
 
-interface AudienceContentProps extends React.HTMLAttributes<HTMLDivElement> {}
+type AudienceContentProps = React.HTMLAttributes<HTMLDivElement>;
 
 function AudienceContent({
   className,
@@ -113,7 +120,7 @@ function AudienceContent({
   );
 }
 
-interface AudienceTitleProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+type AudienceTitleProps = React.HTMLAttributes<HTMLParagraphElement>;
 
 function AudienceTitle({ className, children, ...props }: AudienceTitleProps) {
   return (
@@ -123,7 +130,7 @@ function AudienceTitle({ className, children, ...props }: AudienceTitleProps) {
   );
 }
 
-interface AudienceDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+type AudienceDescriptionProps = React.HTMLAttributes<HTMLParagraphElement>;
 
 function AudienceDescription({
   className,

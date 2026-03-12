@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
 import { cdn, images } from "@/lib/cdn";
@@ -55,10 +56,12 @@ export function AffiliatesTeams() {
     <Section id="affiliates-teams" className="bg-gray">
       <div className="container">
         <div className="relative overflow-hidden rounded-3xl py-10 lg:py-20 px-4 lg:px-6">
-          <img
+          <Image
             src={cdn(images.affiliates.readyToScale)}
             alt=""
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            className="object-cover"
+            unoptimized
           />
           <div className="relative z-10 flex flex-col max-w-xl">
             <div className="flex flex-col gap-4 lg:gap-6">

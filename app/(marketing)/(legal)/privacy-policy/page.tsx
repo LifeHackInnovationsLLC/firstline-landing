@@ -81,7 +81,9 @@ const sections: PolicySection[] = [
     title: "How We Use Information",
     content: (
       <div className="flex flex-col gap-3">
-        <p className="text-white/60 text-sm">We use collected information to:</p>
+        <p className="text-white/60 text-sm">
+          We use collected information to:
+        </p>
         <ul className="list-disc list-inside space-y-1 text-white/60 text-sm">
           <li>Operate and improve the platform</li>
           <li>Provide reporting and analytics</li>

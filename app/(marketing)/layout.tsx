@@ -1,5 +1,5 @@
-import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
 import { PatternBg } from "@/components/ui/pattern-bg";
 
 export default function MarketingLayout({

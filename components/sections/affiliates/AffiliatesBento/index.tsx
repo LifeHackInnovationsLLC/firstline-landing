@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
 import { cdn, images } from "@/lib/cdn";
@@ -57,10 +58,12 @@ export function AffiliatesBento() {
               key={item.title}
               className="relative flex flex-col justify-end h-[280px] md:h-[356px] p-5 bg-card-dark overflow-hidden rounded-4xl"
             >
-              <img
+              <Image
                 src={cdn(item.image)}
                 alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                className="object-cover"
+                unoptimized
               />
               <div className="relative z-10 flex flex-col gap-2">
                 <h3 className="text-white text-lg font-semibold">

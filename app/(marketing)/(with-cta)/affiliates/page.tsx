@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Section } from "@/components/layout/section";
 import { AffiliatesBento } from "@/components/sections/affiliates/AffiliatesBento";
 import { AffiliatesBuiltForYou } from "@/components/sections/affiliates/AffiliatesBuiltForYou";
@@ -7,10 +9,8 @@ import { AffiliatesSteps } from "@/components/sections/affiliates/AffiliatesStep
 import { AffiliatesTeams } from "@/components/sections/affiliates/AffiliatesTeams";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
-import Link from "next/link";
-import Image from "next/image";
-import { generatePageMetadata } from "@/lib/seo/metadata";
 import { cdn, images } from "@/lib/cdn";
+import { generatePageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = generatePageMetadata({
   title: "Affiliates — Earn Recurring Commissions",

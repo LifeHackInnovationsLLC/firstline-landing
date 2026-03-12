@@ -35,9 +35,9 @@ const faqs = [
 
 export function FAQList() {
   return (
-    <Accordion defaultValue={[0]}>
-      {faqs.map((faq, index) => (
-        <AccordionItem key={index} value={index}>
+    <Accordion defaultValue={[faqs[0].question]}>
+      {faqs.map((faq) => (
+        <AccordionItem key={faq.question} value={faq.question}>
           <AccordionTrigger>{faq.question}</AccordionTrigger>
           <AccordionContent>{faq.answer}</AccordionContent>
         </AccordionItem>

@@ -1,9 +1,9 @@
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
 import {
+  CrossSellIcon,
   GlobalSalesIcon,
   MobileFirstIcon,
-  CrossSellIcon,
   MultiLevelIcon,
 } from "./icons";
 
@@ -53,7 +53,9 @@ export default function CommerceWithoutLimits() {
                     {item.title}
                   </span>
                 </div>
-                <span className="text-white/60 text-sm lg:text-base">{item.description}</span>
+                <span className="text-white/60 text-sm lg:text-base">
+                  {item.description}
+                </span>
               </div>
             ))}
           </div>

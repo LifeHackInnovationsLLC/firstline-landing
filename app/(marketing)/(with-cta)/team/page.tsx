@@ -1,9 +1,9 @@
+import Link from "next/link";
 import { Section } from "@/components/layout/section";
-import { Button } from "@/components/ui/button";
-import { Heading } from "@/components/ui/heading";
 import CommunityDownline from "@/components/sections/team/CommunityDownline";
 import EverythingToSucceed from "@/components/sections/team/EverythingToSucceed";
-import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Heading } from "@/components/ui/heading";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = generatePageMetadata({
@@ -54,7 +54,9 @@ function TeamPageHero() {
         <div className="flex flex-col">
           <div className="flex flex-col gap-8 lg:gap-11 max-w-2xl mx-auto items-center text-center pt-10 lg:pt-20">
             <div className="flex flex-col gap-4 items-center">
-              <Heading as="h1" align="center">{content.title}</Heading>
+              <Heading as="h1" align="center">
+                {content.title}
+              </Heading>
               <p className="text-white/72 text-sm lg:text-base max-w-lg">
                 {content.description}
               </p>

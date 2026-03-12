@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
 import { cdn, images } from "@/lib/cdn";
@@ -11,10 +12,13 @@ export default function PotentialEarnings() {
             Potential earnings
           </Heading>
           <div className="mt-8 lg:mt-15">
-            <img
+            <Image
               src={cdn(images.agencies.potentialEarnings)}
               alt="Potential earnings"
+              width={800}
+              height={600}
               className="w-full h-auto"
+              unoptimized
             />
           </div>
           <p className="mt-4 lg:mt-5 text-text-secondary text-sm max-w-2xl">

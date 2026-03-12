@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type * as React from "react";
 import { cdn, images } from "@/lib/cdn";
 
@@ -25,11 +26,14 @@ function HighlightCard({
       )}
       {...props}
     >
-      <img
+      <Image
         src={cdn(decorationPaths[color])}
         alt=""
+        width={200}
+        height={200}
         className="pointer-events-none absolute top-0 right-0 select-none"
         aria-hidden="true"
+        unoptimized
       />
       {children}
     </div>

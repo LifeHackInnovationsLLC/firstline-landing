@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { cdn, images } from "@/lib/cdn";
+import { useCallback, useState } from "react";
 import { Logo } from "@/components/global/logo";
+import { cdn, images } from "@/lib/cdn";
 import { cn } from "@/lib/utils";
 
 type FooterSection = {
@@ -31,7 +32,6 @@ const content = {
         { label: "For Agencies", href: "/agencies" },
         { label: "For Affiliates", href: "/affiliates" },
         { label: "For Agents", href: "/agents" },
-        { label: "What is Payment Processing?", href: "/payment-processing" },
       ],
     },
     {
@@ -154,12 +154,15 @@ function GradientDivider() {
 export function Footer() {
   return (
     <footer id="footer" className="relative flex flex-col">
-      <img
+      <Image
         src={cdn(images.footer.gradient, { width: 1440 })}
         alt=""
+        width={1440}
+        height={600}
         className="absolute bottom-0 left-0 w-full object-cover pointer-events-none"
         aria-hidden="true"
         loading="lazy"
+        unoptimized
       />
       <GradientDivider />
       <div className="container relative z-10 flex-1">
@@ -227,11 +230,14 @@ export function Footer() {
         </div>
       </div>
       <div className="container relative z-10">
-        <img
+        <Image
           src={cdn(images.footer.logo, { width: 1440 })}
           alt="Firstline"
+          width={1440}
+          height={200}
           className="w-full object-contain"
           loading="lazy"
+          unoptimized
         />
       </div>
     </footer>

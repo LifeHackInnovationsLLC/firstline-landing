@@ -1,14 +1,14 @@
+import Link from "next/link";
 import { Section } from "@/components/layout/section";
-import { Button } from "@/components/ui/button";
-import { Heading } from "@/components/ui/heading";
-import { HeroKicker } from "@/components/sections/shared/Hero/hero-kicker";
-import ClientPayments from "@/components/sections/agencies/ClientPayments";
-import BuiltForGroups from "@/components/sections/agencies/BuiltForGroups";
 import AgenciesEarnings from "@/components/sections/agencies/AgenciesEarnings";
 import AgenciesSteps from "@/components/sections/agencies/AgenciesSteps";
-import WhyAgencies from "@/components/sections/agencies/WhyAgencies";
+import BuiltForGroups from "@/components/sections/agencies/BuiltForGroups";
+import ClientPayments from "@/components/sections/agencies/ClientPayments";
 import PotentialEarnings from "@/components/sections/agencies/PotentialEarnings";
-import Link from "next/link";
+import WhyAgencies from "@/components/sections/agencies/WhyAgencies";
+import { HeroKicker } from "@/components/sections/shared/Hero/hero-kicker";
+import { Button } from "@/components/ui/button";
+import { Heading } from "@/components/ui/heading";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = generatePageMetadata({
@@ -65,7 +65,9 @@ function AgenciesPageHero() {
           <div className="flex flex-col gap-8 lg:gap-11 max-w-2xl mx-auto items-center text-center pt-10 lg:pt-20">
             <div className="flex flex-col gap-4 items-center">
               <HeroKicker>{content.kicker}</HeroKicker>
-              <Heading as="h1" align="center">{content.title}</Heading>
+              <Heading as="h1" align="center">
+                {content.title}
+              </Heading>
               <p className="text-white/72 text-sm lg:text-base max-w-lg">
                 {content.description}
               </p>

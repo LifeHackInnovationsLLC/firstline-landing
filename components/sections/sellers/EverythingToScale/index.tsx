@@ -2,17 +2,17 @@ import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
 import {
   HighlightCard,
+  HighlightCardDescription,
   HighlightCardIcon,
   HighlightCardTitle,
-  HighlightCardDescription,
 } from "@/components/ui/highlight-card";
 import {
-  FunnelBuilderIcon,
-  AnalyticsDashboardIcon,
   AccessToLendingIcon,
-  PaymentProcessingIcon,
-  NeoBankingIcon,
+  AnalyticsDashboardIcon,
   CommissionTrackingIcon,
+  FunnelBuilderIcon,
+  NeoBankingIcon,
+  PaymentProcessingIcon,
 } from "./icons";
 
 const items = [

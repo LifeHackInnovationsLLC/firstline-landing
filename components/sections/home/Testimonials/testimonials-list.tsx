@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   TestimonialCard,
   TestimonialCardAuthor,
@@ -108,12 +109,13 @@ function TestimonialItem({ item }: { item: (typeof testimonials.column1)[0] }) {
     <TestimonialCard>
       <TestimonialCardQuote>{item.testimonial}</TestimonialCardQuote>
       <TestimonialCardAuthor>
-        <img
+        <Image
           src={cdn(item.authorImage, { width: 80 })}
           alt={item.author}
           width={40}
           height={40}
           className="rounded-full"
+          unoptimized
         />
         <TestimonialCardAuthorInfo>
           <TestimonialCardAuthorName>{item.author}</TestimonialCardAuthorName>

@@ -1,16 +1,16 @@
 "use client";
 
-import { Heading } from "@/components/ui/heading";
-import { HeroKicker } from "./hero-kicker";
-import { AgentIcon, AgenciesIcon, SellerIcon, AffiliatesIcon } from "./svgs";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { cdn, images } from "@/lib/cdn";
-import { useState } from "react";
 import { motion } from "motion/react";
-import { InfiniteSlider } from "@/components/ui/infinite-slider";
-import { Section } from "@/components/layout/section";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { Section } from "@/components/layout/section";
+import { Button } from "@/components/ui/button";
+import { Heading } from "@/components/ui/heading";
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { cdn, images } from "@/lib/cdn";
+import { HeroKicker } from "./hero-kicker";
+import { AffiliatesIcon, AgenciesIcon, AgentIcon, SellerIcon } from "./svgs";
 
 const content = {
   kicker: "$12M+ paid out",
@@ -154,12 +154,13 @@ export default function Hero() {
                   key={item.name}
                   className="flex items-center gap-2.5 shrink-0 size-[63px] p-1 rounded-full bg-[linear-gradient(162.92deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.04)_100%)] shadow-[0px_11.69px_23.26px_rgba(0,0,0,0.25)] backdrop-blur-[80px]"
                 >
-                  <img
+                  <Image
                     src={cdn(item.image, { width: 110 })}
                     alt={item.name}
                     width={55}
                     height={55}
                     className="rounded-full"
+                    unoptimized
                   />
                 </div>
               ))}

@@ -66,7 +66,10 @@ export function AffiliatesComparison() {
             </thead>
             <tbody>
               {content.rows.map((row) => (
-                <tr key={row.feature} className="border-b border-white/5 last:border-b-0">
+                <tr
+                  key={row.feature}
+                  className="border-b border-white/5 last:border-b-0"
+                >
                   <td className="py-3 lg:py-4 text-white text-xs lg:text-sm font-semibold first:pl-0 px-2 lg:px-4">
                     {row.feature}
                   </td>

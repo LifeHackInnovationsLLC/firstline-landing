@@ -2,15 +2,15 @@ import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
 import {
   HighlightCard,
+  HighlightCardDescription,
   HighlightCardIcon,
   HighlightCardTitle,
-  HighlightCardDescription,
 } from "@/components/ui/highlight-card";
 import {
-  CommissionSplittingIcon,
-  GlobalTeamsIcon,
-  FinanceToolsIcon,
   BonusAndRewardsIcon,
+  CommissionSplittingIcon,
+  FinanceToolsIcon,
+  GlobalTeamsIcon,
   TeamAnalyticsIcon,
   TeamMessagingIcon,
 } from "./icons";

@@ -1,11 +1,12 @@
+import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import {
   FeatureCard,
   FeatureCardContent,
-  FeatureCardTitle,
   FeatureCardDescription,
   FeatureCardList,
   FeatureCardListItem,
+  FeatureCardTitle,
 } from "@/components/ui/feature-card";
 import { cdn, images } from "@/lib/cdn";
 
@@ -121,12 +122,13 @@ export default function WhyAgencies() {
     <Section className="bg-gray">
       <div className="container">
         <FeatureCard className="flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-0">
-          <img
+          <Image
             src={cdn(images.agencies.whyAgenciesBlur)}
             alt=""
             className="absolute pointer-events-none -top-40 -left-40 hidden lg:block"
             width={1000}
             height={1000}
+            unoptimized
           />
           <FeatureCardContent className="relative z-10 lg:max-w-120">
             <FeatureCardTitle>Why agencies love us</FeatureCardTitle>
@@ -144,9 +146,12 @@ export default function WhyAgencies() {
             </FeatureCardList>
           </FeatureCardContent>
           <div className="max-w-sm lg:max-w-100 relative z-10 mx-auto lg:mx-0">
-            <img
+            <Image
               src={cdn(images.agencies.whyAgenciesGraphic)}
               alt="Why agencies love us"
+              width={400}
+              height={300}
+              unoptimized
             />
           </div>
         </FeatureCard>

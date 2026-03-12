@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback, useId } from "react";
 import Link from "next/link";
+import { useCallback, useEffect, useId, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { NavLinks } from "./nav-links";
@@ -106,10 +106,18 @@ export function MobileMenu() {
             className="items-start gap-6"
           />
           <div className="flex flex-col gap-4">
-            <Button variant="ghost" nativeButton={false} render={<Link href="/sign-in" prefetch={false} />}>
+            <Button
+              variant="ghost"
+              nativeButton={false}
+              render={<Link href="/sign-in" prefetch={false} />}
+            >
               Sign in
             </Button>
-            <Button variant="primary" nativeButton={false} render={<Link href="/get-started" prefetch={false} />}>
+            <Button
+              variant="primary"
+              nativeButton={false}
+              render={<Link href="/get-started" prefetch={false} />}
+            >
               Get Started
             </Button>
           </div>

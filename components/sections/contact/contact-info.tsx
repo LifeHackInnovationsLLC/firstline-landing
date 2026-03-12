@@ -1,6 +1,7 @@
+import Image from "next/image";
 import { Heading } from "@/components/ui/heading";
-import { cdn, images } from "@/lib/cdn";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { cdn, images } from "@/lib/cdn";
 
 const content = {
   title: "Why list with Firstline?",
@@ -93,7 +94,9 @@ const content = {
 export function ContactInfo() {
   return (
     <div className="flex flex-col gap-8 lg:gap-10">
-      <Heading as="h2" align="center" className="lg:text-left">{content.title}</Heading>
+      <Heading as="h2" align="center" className="lg:text-left">
+        {content.title}
+      </Heading>
       <div className="flex flex-col gap-6">
         {content.descriptions.map((description) => (
           <div key={description.title} className="flex flex-col gap-1">
@@ -108,10 +111,13 @@ export function ContactInfo() {
         ))}
       </div>
       <hr className="border-white/16" />
-      <img
+      <Image
         src={cdn(images.contact.contactEmail)}
         alt="Contact Email"
+        width={400}
+        height={300}
         className="max-w-65 mx-auto lg:mx-0 lg:-ml-5"
+        unoptimized
       />
       <div className="flex flex-col lg:flex-row w-full items-center gap-4 border-t border-white/6">
         <span className="text-white/72 text-lg shrink-0 text-center lg:text-left">
@@ -124,12 +130,13 @@ export function ContactInfo() {
                 key={item.name}
                 className="flex items-center gap-2.5 shrink-0 size-[63px] p-1 rounded-full bg-[linear-gradient(162.92deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.04)_100%)] shadow-[0px_11.69px_23.26px_rgba(0,0,0,0.25)] backdrop-blur-[80px]"
               >
-                <img
+                <Image
                   src={cdn(item.image, { width: 110 })}
                   alt={item.name}
                   width={55}
                   height={55}
                   className="rounded-full"
+                  unoptimized
                 />
               </div>
             ))}

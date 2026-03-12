@@ -4,10 +4,10 @@ import localFont from "next/font/local";
 
 import { baseMetadata, defaultViewport } from "@/lib/seo/metadata";
 import {
-  organizationSchema,
-  websiteSchema,
   faqSchema,
+  organizationSchema,
   serviceSchema,
+  websiteSchema,
 } from "@/lib/seo/schemas";
 import { cn } from "@/lib/utils";
 
@@ -55,10 +55,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {jsonLdSchemas.map((schema, i) => (
+        {jsonLdSchemas.map((schema) => (
           <script
-            key={`${schema["@type"]}-${i}`}
+            key={schema["@type"]}
             type="application/ld+json"
+            // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD structured data requires dangerouslySetInnerHTML for script injection
             dangerouslySetInnerHTML={{
               __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
             }}

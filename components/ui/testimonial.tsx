@@ -1,8 +1,9 @@
 "use client";
 
-import * as React from "react";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
+import type * as React from "react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { cn } from "@/lib/utils";
 
 function Testimonials({ className, ...props }: React.ComponentProps<"div">) {
   return (
@@ -133,7 +134,7 @@ function TestimonialCardQuote({
       )}
       {...props}
     >
-      "{children}"
+      &quot;{children}&quot;
     </p>
   );
 }
@@ -156,12 +157,21 @@ function TestimonialCardAuthor({
 
 function TestimonialCardAuthorImage({
   className,
+  src,
+  alt = "",
+  width = 40,
+  height = 40,
   ...props
-}: React.ComponentProps<"img">) {
+}: React.ComponentProps<typeof Image>) {
   return (
-    <img
+    <Image
       data-slot="testimonial-card-author-image"
       className={cn("size-10 rounded-full", className)}
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      unoptimized
       {...props}
     />
   );

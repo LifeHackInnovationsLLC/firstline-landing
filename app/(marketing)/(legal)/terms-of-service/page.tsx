@@ -23,9 +23,11 @@ const sections: PolicySection[] = [
     title: "Acceptance of Terms",
     content: (
       <p className="text-white/60 text-sm leading-relaxed">
-        By accessing or using the Firstline Digital LLC platform ("Firstline,"
-        "we," "us," or "our"), you agree to be bound by these Terms of Service
-        ("Terms"). If you do not agree, you may not access or use the platform.
+        By accessing or using the Firstline Digital LLC platform
+        (&quot;Firstline,&quot; &quot;we,&quot; &quot;us,&quot; or
+        &quot;our&quot;), you agree to be bound by these Terms of Service
+        (&quot;Terms&quot;). If you do not agree, you may not access or use the
+        platform.
       </p>
     ),
   },
@@ -67,7 +69,7 @@ const sections: PolicySection[] = [
         <li>
           Earnings, if any, depend entirely on individual effort, market
           conditions, third-party services, and other factors outside Firstline
-          Digital's control.
+          Digital&apos;s control.
         </li>
       </ul>
     ),
@@ -94,8 +96,8 @@ const sections: PolicySection[] = [
           pages, or third-party integrations.
         </li>
         <li>
-          Users acknowledge that all financial relationships are directly between
-          the user and the third-party provider.
+          Users acknowledge that all financial relationships are directly
+          between the user and the third-party provider.
         </li>
       </ul>
     ),
@@ -149,9 +151,10 @@ const sections: PolicySection[] = [
     title: "Disclaimer of Warranties",
     content: (
       <p className="text-white/60 text-sm leading-relaxed">
-        The platform is provided "AS IS" and "AS AVAILABLE", without warranties
-        of any kind, express or implied, including but not limited to fitness
-        for a particular purpose or uninterrupted availability.
+        The platform is provided &quot;AS IS&quot; and &quot;AS AVAILABLE&quot;,
+        without warranties of any kind, express or implied, including but not
+        limited to fitness for a particular purpose or uninterrupted
+        availability.
       </p>
     ),
   },
@@ -185,8 +188,8 @@ const sections: PolicySection[] = [
     title: "Modifications",
     content: (
       <p className="text-white/60 text-sm leading-relaxed">
-        We reserve the right to modify these Terms at any time. Continued use
-        of the platform constitutes acceptance of updated Terms.
+        We reserve the right to modify these Terms at any time. Continued use of
+        the platform constitutes acceptance of updated Terms.
       </p>
     ),
   },

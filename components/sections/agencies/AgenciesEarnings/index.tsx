@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
 import { cdn, images } from "@/lib/cdn";
@@ -257,18 +258,21 @@ export default function AgenciesEarnings() {
               key={card.title}
               className="relative overflow-hidden rounded-3xl p-5 lg:p-7"
             >
-              <img
+              <Image
                 src={cdn(card.bg)}
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                className="object-cover"
+                unoptimized
               />
               <div className="relative z-10 flex flex-col">
                 <div className="flex flex-col gap-2">
-                  <img
+                  <Image
                     src={cdn(card.icon, { width: 112 })}
                     alt={card.title}
                     width={56}
                     height={56}
+                    unoptimized
                   />
                   <div className="flex flex-col gap-2 mt-4">
                     <h3 className="text-white text-2xl font-semibold">

@@ -45,10 +45,7 @@ function Heading({
   ...props
 }: HeadingProps) {
   return (
-    <Tag
-      className={cn(headingVariants({ size, align, className }))}
-      {...props}
-    >
+    <Tag className={cn(headingVariants({ size, align, className }))} {...props}>
       {children}
     </Tag>
   );

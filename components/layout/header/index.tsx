@@ -1,13 +1,13 @@
 "use client";
 
+import { useMotionValueEvent, useScroll } from "motion/react";
 import Link from "next/link";
+import { useState } from "react";
 import { Logo } from "@/components/global/logo";
 import { Button } from "@/components/ui/button";
-import { NavLinks } from "./nav-links";
-import { MobileMenu } from "./mobile-menu";
-import { useScroll, useMotionValueEvent } from "motion/react";
-import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { MobileMenu } from "./mobile-menu";
+import { NavLinks } from "./nav-links";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +23,7 @@ export function Header() {
         "fixed flex items-center inset-0 z-50 h-(--navbar-height) transition-[background-color,backdrop-filter,border-color] duration-300",
         scrolled
           ? "bg-black/80 backdrop-blur-md border-b border-white/5"
-          : "bg-transparent border-b border-transparent"
+          : "bg-transparent border-b border-transparent",
       )}
     >
       <nav className="container flex items-center">

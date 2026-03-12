@@ -1,12 +1,12 @@
+import Link from "next/link";
 import { Section } from "@/components/layout/section";
+import CommerceWithoutLimits from "@/components/sections/sellers/CommerceWithoutLimits";
+import EverythingToScale from "@/components/sections/sellers/EverythingToScale";
+import GrowYourCommunity from "@/components/sections/sellers/GrowYourCommunity/index";
+import SplitPayments from "@/components/sections/sellers/SplitPayments";
+import UploadYourCourses from "@/components/sections/sellers/UploadYourCourses";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
-import SplitPayments from "@/components/sections/sellers/SplitPayments";
-import EverythingToScale from "@/components/sections/sellers/EverythingToScale";
-import Link from "next/link";
-import GrowYourCommunity from "@/components/sections/sellers/GrowYourCommunity/index";
-import CommerceWithoutLimits from "@/components/sections/sellers/CommerceWithoutLimits";
-import UploadYourCourses from "@/components/sections/sellers/UploadYourCourses";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = generatePageMetadata({
@@ -60,7 +60,9 @@ function SellersPageHero() {
         <div className="flex flex-col">
           <div className="flex flex-col gap-8 lg:gap-11 max-w-2xl mx-auto items-center text-center pt-10 lg:pt-20">
             <div className="flex flex-col gap-4 items-center">
-              <Heading as="h1" align="center">{content.title}</Heading>
+              <Heading as="h1" align="center">
+                {content.title}
+              </Heading>
               <p className="text-sm lg:text-base">{content.description}</p>
             </div>
             <div className="flex flex-row items-center gap-4">

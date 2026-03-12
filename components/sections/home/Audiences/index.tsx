@@ -1,5 +1,5 @@
-import { Heading } from "@/components/ui/heading";
 import { Section } from "@/components/layout/section";
+import { Heading } from "@/components/ui/heading";
 import { AudiencesList } from "./audiences-list";
 
 export default function Audiences() {

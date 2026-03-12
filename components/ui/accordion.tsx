@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion"
+import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 function Accordion({ className, ...props }: AccordionPrimitive.Root.Props) {
   return (
@@ -11,7 +11,7 @@ function Accordion({ className, ...props }: AccordionPrimitive.Root.Props) {
       className={cn("flex w-full flex-col gap-4", className)}
       {...props}
     />
-  )
+  );
 }
 
 function AccordionItem({ className, ...props }: AccordionPrimitive.Item.Props) {
@@ -20,11 +20,11 @@ function AccordionItem({ className, ...props }: AccordionPrimitive.Item.Props) {
       data-slot="accordion-item"
       className={cn(
         "rounded-2xl border border-black/15 bg-transparent p-1",
-        className
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
 function AccordionTrigger({
@@ -38,7 +38,7 @@ function AccordionTrigger({
         data-slot="accordion-trigger"
         className={cn(
           "group/accordion-trigger flex w-full cursor-pointer items-center justify-between rounded-xl bg-white border border-black/15 px-5 py-4 text-left font-semibold text-base text-black transition-all outline-none focus-visible:ring-2 focus-visible:ring-ring/50 aria-disabled:pointer-events-none aria-disabled:opacity-50",
-          className
+          className,
         )}
         {...props}
       >
@@ -62,7 +62,7 @@ function AccordionTrigger({
         </svg>
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
-  )
+  );
 }
 
 function AccordionContent({
@@ -79,13 +79,13 @@ function AccordionContent({
       <div
         className={cn(
           "px-5 py-4 text-text-tertiary h-(--accordion-panel-height) data-ending-style:h-0 data-starting-style:h-0 [&_a]:underline [&_a]:underline-offset-3 [&_p:not(:last-child)]:mb-4",
-          className
+          className,
         )}
       >
         {children}
       </div>
     </AccordionPrimitive.Panel>
-  )
+  );
 }
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };

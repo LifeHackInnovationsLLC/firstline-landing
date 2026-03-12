@@ -6,21 +6,45 @@ import {
   HighlightCardTitle,
 } from "@/components/ui/highlight-card";
 import {
-  CourseCreatorsIcon,
-  OnlineEntrepreneursIcon,
-  CommunitiesIcon,
-  MarketingAgenciesIcon,
-  CallCentersIcon,
   AffiliateNetworksIcon,
+  CallCentersIcon,
+  CommunitiesIcon,
+  CourseCreatorsIcon,
+  MarketingAgenciesIcon,
+  OnlineEntrepreneursIcon,
 } from "./icons";
 
 const items = [
-  { color: "purple" as const, title: "Course creators and educators", icon: <CourseCreatorsIcon /> },
-  { color: "green" as const, title: "Online entrepreneurs and influencers", icon: <OnlineEntrepreneursIcon /> },
-  { color: "purple" as const, title: "Discord, Telegram, and private communities", icon: <CommunitiesIcon /> },
-  { color: "purple" as const, title: "Marketing agencies and growth collectives", icon: <MarketingAgenciesIcon /> },
-  { color: "green" as const, title: "Call centers and outbound sales teams", icon: <CallCentersIcon /> },
-  { color: "purple" as const, title: "Affiliate networks and referral groups", icon: <AffiliateNetworksIcon /> },
+  {
+    color: "purple" as const,
+    title: "Course creators and educators",
+    icon: <CourseCreatorsIcon />,
+  },
+  {
+    color: "green" as const,
+    title: "Online entrepreneurs and influencers",
+    icon: <OnlineEntrepreneursIcon />,
+  },
+  {
+    color: "purple" as const,
+    title: "Discord, Telegram, and private communities",
+    icon: <CommunitiesIcon />,
+  },
+  {
+    color: "purple" as const,
+    title: "Marketing agencies and growth collectives",
+    icon: <MarketingAgenciesIcon />,
+  },
+  {
+    color: "green" as const,
+    title: "Call centers and outbound sales teams",
+    icon: <CallCentersIcon />,
+  },
+  {
+    color: "purple" as const,
+    title: "Affiliate networks and referral groups",
+    icon: <AffiliateNetworksIcon />,
+  },
 ];
 
 export default function BuiltForGroups() {

@@ -1,5 +1,5 @@
-import { Heading } from "@/components/ui/heading";
 import { Section } from "@/components/layout/section";
+import { Heading } from "@/components/ui/heading";
 import { TestimonialsList } from "./testimonials-list";
 
 export default function Testimonials() {
