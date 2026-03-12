@@ -131,6 +131,12 @@ export const images = {
   courses: {
     trainingCardBg: "firstline/training-card-bg.webp",
   },
+  season1: {
+    bento1: "firstline/season1-bento-1.webp",
+    bento2: "firstline/season1-bento-2.webp",
+    bento3: "firstline/season1-bento-3.webp",
+    bento4: "firstline/season1-bento-4.webp",
+  },
   brand: {
     logo: "firstline/logo.svg",
   },

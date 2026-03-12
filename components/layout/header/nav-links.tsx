@@ -26,6 +26,7 @@ const NAV_LINKS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Team", href: "/team" },
   { label: "Courses", href: "/courses" },
+  { label: "Season 1", href: "/season-1" },
   { label: "How it works", href: "#process" },
   {
     label: "Who is it for",

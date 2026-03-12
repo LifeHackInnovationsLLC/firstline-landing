@@ -1,0 +1,13 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: biome
+      glob: "*.{js,ts,jsx,tsx}"
+      run: pnpm biome check --staged {staged_files}
+
+    - name: eslint
+      glob: "*.{js,ts,jsx,tsx}"
+      run: pnpm lint {staged_files}
+
+    - name: typecheck
+      run: pnpm typecheck
