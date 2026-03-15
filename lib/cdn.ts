@@ -80,6 +80,7 @@ export const images = {
     greenEllipseSplitPayments: "firstline/elipse-green-split-payments.webp",
     growYourCommunitySocials:
       "firstline/grow-your-community-socials-image.webp",
+    growYourCommunityBg: "firstline/grow-your-community-bg.webp",
     growYourCommunityPurple:
       "firstline/grow-your-community-purple-decoration.webp",
     growYourCommunityGreen:
@@ -89,6 +90,7 @@ export const images = {
       "firstline/commerce-without-limits-decoration-green.webp",
     commerceWithoutLimitsPurple:
       "firstline/commerce-without-limits-decoration-purple.webp",
+    commerceWithoutLimitsBg: "firstline/commerce-without-limits-bg.webp",
   },
   agencies: {
     paymentProcessingGreenBlur: "firstline/payment-processing-green-blur.webp",

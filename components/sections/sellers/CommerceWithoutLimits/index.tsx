@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { cdn, images } from "@/lib/cdn";
 import {
   CrossSellIcon,
   GlobalSalesIcon,
@@ -33,6 +35,14 @@ const items = [
 export default function CommerceWithoutLimits() {
   return (
     <Section className="relative overflow-hidden">
+      <Image
+        src={cdn(images.sellers.commerceWithoutLimitsBg, { width: 1400 })}
+        alt=""
+        aria-hidden="true"
+        fill
+        className="absolute inset-0 object-cover pointer-events-none"
+        unoptimized
+      />
       <div className="container relative overflow-hidden">
         <div className="flex flex-col items-center w-full gap-8 lg:gap-15 max-w-4xl mx-auto relative z-10">
           <div className="flex flex-col gap-4 lg:gap-6 items-center">

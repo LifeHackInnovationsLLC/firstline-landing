@@ -72,7 +72,7 @@ export default function SplitPayments() {
             <Image
               src={cdn(images.sellers.graphicSplitPayments)}
               alt="Split payments"
-              width={400}
+              width={600}
               height={300}
               unoptimized
             />

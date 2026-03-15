@@ -9,24 +9,14 @@ export default function GrowYourCommunity() {
       <div className="container">
         <div className="px-4 lg:px-6 pt-9 pb-10 lg:pb-15 rounded-3xl bg-black relative overflow-hidden">
           <Image
-            src={cdn(images.sellers.growYourCommunityPurple)}
+            src={cdn(images.sellers.growYourCommunityBg, { width: 1400 })}
             alt=""
             aria-hidden="true"
-            width={800}
-            height={800}
-            className="absolute pointer-events-none -bottom-40 -right-40 w-auto h-auto"
+            fill
+            className="absolute inset-0 object-cover pointer-events-none"
             unoptimized
           />
-          <Image
-            src={cdn(images.sellers.growYourCommunityGreen)}
-            alt=""
-            aria-hidden="true"
-            width={800}
-            height={800}
-            className="absolute pointer-events-none -top-60 -left-60 w-auto h-auto hidden lg:block"
-            unoptimized
-          />
-          <div className="flex flex-col gap-8 lg:gap-10 max-w-4xl mx-auto">
+          <div className="relative z-10 flex flex-col gap-8 lg:gap-10 max-w-4xl mx-auto">
             <div className="flex flex-col gap-8 lg:gap-10">
               <div className="flex flex-col gap-7">
                 <Image
