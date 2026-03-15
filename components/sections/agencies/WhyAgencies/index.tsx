@@ -117,7 +117,7 @@ const items = [
   "No minimum referral requirements",
 ];
 
-export default function WhyAgencies() {
+export function WhyAgencies() {
   return (
     <Section className="bg-gray">
       <div className="container">

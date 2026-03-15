@@ -63,7 +63,7 @@ export const images = {
     digitalAffiliatesIcon: "firstline/digital-affiliates-icon_yjo4tb.webp",
     digitalAffiliatesBg: "firstline/digital-affiliates-bg_sbmfye.webp",
     readyToScale: "firstline/for-teams-that-scale.webp",
-    hero: "firstline/jey9ilzrye7qlxz94wn0.png",
+    hero: "firstline/affiliates-bg-hero.png",
   },
   whySwitch: {
     icon1: "firstline/why-switch-icon-1.png",
@@ -91,6 +91,9 @@ export const images = {
     commerceWithoutLimitsPurple:
       "firstline/commerce-without-limits-decoration-purple.webp",
     commerceWithoutLimitsBg: "firstline/commerce-without-limits-bg.webp",
+    hero: "firstline/sellers-bg-hero.png",
+  },
+  shared: {
     whatYourTeamGetsIcon: "firstline/what-your-team-gets-icon.png",
     whatYouGetAsTeamOwnerIcon: "firstline/what-you-get-as-a-team-owner.png",
     comparisonSectionBg: "firstline/comparison-section-bg.webp",
@@ -101,9 +104,11 @@ export const images = {
     whyAgenciesBlur: "firstline/why-agencies-blur.webp",
     whyAgenciesGraphic: "firstline/why-agencies-graphic.webp",
     potentialEarnings: "firstline/potential-earnings.webp",
+    hero: "firstline/agencies-bg-hero.png",
   },
   team: {
     communityDownline: "firstline/community-downline.webp",
+    hero: "firstline/team-bg-hero.png",
   },
   agents: {
     bento1: "firstline/agents-bento-1.webp",
@@ -120,6 +125,7 @@ export const images = {
     recruitClosers: "firstline/recruit-closers.png",
     leadGenerators: "firstline/lead-generators.png",
     customPayouts: "firstline/custom-payouts.png",
+    hero: "firstline/agents-bg-hero.png",
   },
   contact: {
     contactEmail: "firstline/contact-email.webp",
@@ -139,6 +145,7 @@ export const images = {
   },
   courses: {
     trainingCardBg: "firstline/training-card-bg.webp",
+    hero: "firstline/courses-bg-hero.png",
   },
   season1: {
     bento1: "firstline/season1-bento-1.webp",
@@ -162,6 +169,7 @@ export const images = {
     tier5: "firstline/tier-5.png",
     tier6: "firstline/tier-6.png",
     xpBg: "firstline/xp-bg.webp",
+    hero: "firstline/season-1-bg-hero.png",
   },
   brand: {
     logo: "firstline/logo.svg",

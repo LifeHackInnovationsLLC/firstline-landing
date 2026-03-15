@@ -4,7 +4,7 @@ import { cdn, images } from "@/lib/cdn";
 
 import { DashboardPreview } from "./dashboard-preview";
 import { Steps } from "./steps";
-export default function Process() {
+export function Process() {
   return (
     <Section id="process" className="relative overflow-hidden isolate">
       <Image

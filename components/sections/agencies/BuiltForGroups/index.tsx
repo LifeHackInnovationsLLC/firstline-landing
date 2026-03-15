@@ -47,7 +47,7 @@ const items = [
   },
 ];
 
-export default function BuiltForGroups() {
+export function BuiltForGroups() {
   return (
     <Section className="bg-gray">
       <div className="container">

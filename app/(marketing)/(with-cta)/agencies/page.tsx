@@ -1,14 +1,14 @@
-import Link from "next/link";
-import { Section } from "@/components/layout/section";
-import AgenciesEarnings from "@/components/sections/agencies/AgenciesEarnings";
-import AgenciesSteps from "@/components/sections/agencies/AgenciesSteps";
-import BuiltForGroups from "@/components/sections/agencies/BuiltForGroups";
-import ClientPayments from "@/components/sections/agencies/ClientPayments";
-import PotentialEarnings from "@/components/sections/agencies/PotentialEarnings";
-import WhyAgencies from "@/components/sections/agencies/WhyAgencies";
+import { GreenBullet } from "@/components/icons/green-bullet";
+import { PurpleBullet } from "@/components/icons/purple-bullet";
+import { AgenciesSteps } from "@/components/sections/agencies/AgenciesSteps";
+import { BuiltForGroups } from "@/components/sections/agencies/BuiltForGroups";
+import { ClientPayments } from "@/components/sections/agencies/ClientPayments";
+import { PotentialEarnings } from "@/components/sections/agencies/PotentialEarnings";
+import { WhyAgencies } from "@/components/sections/agencies/WhyAgencies";
 import { HeroKicker } from "@/components/sections/shared/Hero/hero-kicker";
-import { Button } from "@/components/ui/button";
-import { Heading } from "@/components/ui/heading";
+import { PageHero } from "@/components/sections/shared/PageHero";
+import { TwoCardFeature } from "@/components/sections/shared/TwoCardFeature";
+import { cdn, images } from "@/lib/cdn";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = generatePageMetadata({
@@ -24,8 +24,7 @@ export const metadata = generatePageMetadata({
   ],
 });
 
-const content = {
-  kicker: "$12M+ paid out",
+const heroContent = {
   title: "Turn your community into a revenue engine",
   description:
     "Firstline enables agencies, creators, and organizations to launch their own payment sales teams and earn recurring monthly income on merchant volume and product sales.",
@@ -43,50 +42,73 @@ const content = {
   ],
 };
 
+const earningsContent = {
+  title: "Your community earns. Your team earns. You earn alongside them.",
+  cards: [
+    {
+      icon: images.shared.whatYourTeamGetsIcon,
+      bg: images.affiliates.doorToDoorBg,
+      title: "What your team gets",
+      subtitle: "Agents on your team receive everything they need to succeed.",
+      items: [
+        "Access to sell payment processing",
+        "Full suite of sales tools and educational materials",
+        "Access to affiliate marketing tools and other product sale opportunities",
+        "Real time commission and volume tracking",
+        "Merchant and portfolio management tools",
+        "XP program with incentivizing rewards",
+        "Split payments for downline and upstream commissions",
+        "Mobile first access from anywhere",
+      ],
+      bullet: <GreenBullet />,
+      footerText:
+        "Agents focus on relationships and outreach.\nFirstline handles the rest.",
+      footerColor: "text-[#47D9D1]",
+    },
+    {
+      icon: images.shared.whatYouGetAsTeamOwnerIcon,
+      bg: images.affiliates.digitalAffiliatesBg,
+      title: "What you get as a team owner",
+      subtitle: "As a team owner, you earn on the success of your agents.",
+      items: [
+        "Override commissions on team volume",
+        "Full visibility into team performance",
+        "Scalable income without managing fulfillment",
+        "A monetization layer for your existing audience",
+        "Total control of how you run your community, from commission splits, to rewards",
+      ],
+      bullet: <PurpleBullet />,
+      footerText: "The power to make your team succeed is in your hands.",
+      footerColor: "text-[#8787EF]",
+    },
+  ],
+};
+
 export default function AgenciesPage() {
   return (
     <>
-      <AgenciesPageHero />
+      <PageHero
+        id="agencies"
+        {...heroContent}
+        kicker={<HeroKicker>$12M+ paid out</HeroKicker>}
+        align="bottom"
+        className="relative overflow-hidden min-h-175 -mt-(--navbar-height) pt-(--navbar-height)"
+        bgImage={{
+          src: cdn(images.agencies.hero, { width: 3840, quality: "100" }),
+          alt: "Agencies hero background",
+          width: 4320,
+          height: 2109,
+        }}
+      />
       <ClientPayments />
       <BuiltForGroups />
-      <AgenciesEarnings />
+      <TwoCardFeature
+        title={earningsContent.title}
+        cards={earningsContent.cards}
+      />
       <AgenciesSteps />
       <WhyAgencies />
       <PotentialEarnings />
     </>
-  );
-}
-
-function AgenciesPageHero() {
-  return (
-    <Section id="agencies">
-      <div className="container">
-        <div className="flex flex-col">
-          <div className="flex flex-col gap-8 lg:gap-11 max-w-2xl mx-auto items-center text-center pt-10 lg:pt-20">
-            <div className="flex flex-col gap-4 items-center">
-              <HeroKicker>{content.kicker}</HeroKicker>
-              <Heading as="h1" align="center">
-                {content.title}
-              </Heading>
-              <p className="text-white/72 text-sm lg:text-base max-w-lg">
-                {content.description}
-              </p>
-            </div>
-            <div className="flex flex-row items-center gap-4">
-              {content.ctas.map((cta) => (
-                <Button
-                  key={cta.label}
-                  nativeButton={false}
-                  variant={cta.variant}
-                  render={<Link href={cta.href} />}
-                >
-                  {cta.label}
-                </Button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </Section>
   );
 }

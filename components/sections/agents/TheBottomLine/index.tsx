@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/feature-card";
 import { cdn, images } from "@/lib/cdn";
 
-export default function TheBottomLine() {
+export function TheBottomLine() {
   return (
     <Section className="bg-gray">
       <div className="container">

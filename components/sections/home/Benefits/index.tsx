@@ -2,7 +2,7 @@ import { Section } from "@/components/layout/section";
 import { Stats } from "@/components/sections/shared/Hero/stats";
 import { Heading } from "@/components/ui/heading";
 import { Bento } from "./bento";
-export default function Benefits() {
+export function Benefits() {
   return (
     <Section id="benefits" className="pt-5 bg-gray">
       <div className="container">

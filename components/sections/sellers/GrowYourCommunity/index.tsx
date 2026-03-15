@@ -3,7 +3,7 @@ import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
 import { cdn, images } from "@/lib/cdn";
 
-export default function GrowYourCommunity() {
+export function GrowYourCommunity() {
   return (
     <Section id="grow-your-community" className="bg-gray">
       <div className="container">

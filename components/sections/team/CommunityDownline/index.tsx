@@ -109,7 +109,7 @@ const listItems = [
   },
 ];
 
-export default function CommunityDownline() {
+export function CommunityDownline() {
   return (
     <Section>
       <div className="container">

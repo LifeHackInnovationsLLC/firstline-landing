@@ -29,7 +29,7 @@ const items = [
   { icon: <HighValueIcon />, label: "High-value transaction support" },
 ];
 
-export default function SplitPayments() {
+export function SplitPayments() {
   return (
     <Section className="bg-gray">
       <div className="container">

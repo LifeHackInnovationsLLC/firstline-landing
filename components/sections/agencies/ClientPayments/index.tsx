@@ -110,7 +110,7 @@ const items = [
   },
 ];
 
-export default function ClientPayments() {
+export function ClientPayments() {
   return (
     <Section className="bg-gray">
       <div className="container">

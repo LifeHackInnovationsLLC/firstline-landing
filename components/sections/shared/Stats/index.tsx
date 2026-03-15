@@ -1,12 +1,15 @@
 import { Section } from "@/components/layout/section";
 
-const content = {
-  stats: [
-    { value: "$0", label: "Upfront Cost" },
-    { value: "80%+", label: "Commission Rate" },
-    { value: "5 Min", label: "To submit a lead" },
-  ],
-};
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface StatsProps {
+  id?: string;
+  stats: Stat[];
+  className?: string;
+}
 
 function StatDivider({ className }: { className?: string }) {
   return (
@@ -34,17 +37,17 @@ function StatDivider({ className }: { className?: string }) {
   );
 }
 
-export function AffiliatesStats() {
+export function Stats({ id, stats, className }: StatsProps) {
   return (
-    <Section id="affiliates-stats" className="pt-5 bg-gray">
+    <Section id={id} className={`pt-5 bg-gray ${className ?? ""}`}>
       <div className="container">
-        <div className="w-full grid grid-cols-3 items-center gap-0 py-8 lg:py-16">
-          {content.stats.map((stat) => (
+        <div className="w-full grid grid-cols-1 sm:grid-cols-3 items-center gap-0 py-8 lg:py-16">
+          {stats.map((stat) => (
             <div
               key={stat.label}
               className="flex flex-row justify-center items-center gap-2 lg:gap-4"
             >
-              <StatDivider className="hidden lg:block" />
+              <StatDivider className="hidden sm:block" />
               <div className="flex flex-col gap-1 items-center lg:items-start">
                 <span className="text-black text-lg lg:text-3xl font-semibold">
                   {stat.value}

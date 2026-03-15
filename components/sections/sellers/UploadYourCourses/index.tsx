@@ -22,7 +22,7 @@ const items = [
   { icon: <PayoutsIcon />, label: "Payouts tied to actual performance" },
 ];
 
-export default function UploadYourCourses() {
+export function UploadYourCourses() {
   return (
     <Section className="bg-gray">
       <div className="container">

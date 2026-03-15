@@ -33,7 +33,7 @@ const items = [
   },
 ];
 
-export default function AgentsGlobal() {
+export function AgentsGlobal() {
   return (
     <Section className="bg-gray">
       <div className="container">

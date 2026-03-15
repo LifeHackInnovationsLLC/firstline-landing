@@ -60,7 +60,7 @@ const items = [
   },
 ];
 
-export default function EverythingToScale() {
+export function EverythingToScale() {
   return (
     <Section className="bg-gray">
       <div className="container">

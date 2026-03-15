@@ -60,7 +60,7 @@ const items = [
   },
 ];
 
-export default function EverythingToSucceed() {
+export function EverythingToSucceed() {
   return (
     <Section className="bg-gray">
       <div className="container">

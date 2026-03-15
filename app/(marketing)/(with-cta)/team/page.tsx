@@ -1,9 +1,7 @@
-import Link from "next/link";
-import { Section } from "@/components/layout/section";
-import CommunityDownline from "@/components/sections/team/CommunityDownline";
-import EverythingToSucceed from "@/components/sections/team/EverythingToSucceed";
-import { Button } from "@/components/ui/button";
-import { Heading } from "@/components/ui/heading";
+import { PageHero } from "@/components/sections/shared/PageHero";
+import { CommunityDownline } from "@/components/sections/team/CommunityDownline";
+import { EverythingToSucceed } from "@/components/sections/team/EverythingToSucceed";
+import { cdn, images } from "@/lib/cdn";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = generatePageMetadata({
@@ -19,7 +17,7 @@ export const metadata = generatePageMetadata({
   ],
 });
 
-const content = {
+const heroContent = {
   title: "Build your empire, earn together",
   description:
     "Have a community on Discord, Telegram, or social media? Turn your influence into income. Grow & manage your team and collect commissions globally.",
@@ -40,42 +38,20 @@ const content = {
 export default function TeamPage() {
   return (
     <>
-      <TeamPageHero />
+      <PageHero
+        id="team"
+        {...heroContent}
+        align="bottom"
+        className="relative overflow-hidden min-h-175 -mt-(--navbar-height) pt-(--navbar-height)"
+        bgImage={{
+          src: cdn(images.team.hero, { width: 3840, quality: "100" }),
+          alt: "Team hero background",
+          width: 4320,
+          height: 2109,
+        }}
+      />
       <CommunityDownline />
       <EverythingToSucceed />
     </>
-  );
-}
-
-function TeamPageHero() {
-  return (
-    <Section id="team">
-      <div className="container">
-        <div className="flex flex-col">
-          <div className="flex flex-col gap-8 lg:gap-11 max-w-2xl mx-auto items-center text-center pt-10 lg:pt-20">
-            <div className="flex flex-col gap-4 items-center">
-              <Heading as="h1" align="center">
-                {content.title}
-              </Heading>
-              <p className="text-white/72 text-sm lg:text-base max-w-lg">
-                {content.description}
-              </p>
-            </div>
-            <div className="flex flex-row items-center gap-4">
-              {content.ctas.map((cta) => (
-                <Button
-                  key={cta.label}
-                  nativeButton={false}
-                  variant={cta.variant}
-                  render={<Link href={cta.href} />}
-                >
-                  {cta.label}
-                </Button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </Section>
   );
 }

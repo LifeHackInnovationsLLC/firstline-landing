@@ -3,7 +3,7 @@ import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
 import { cdn, images } from "@/lib/cdn";
 
-export default function PotentialEarnings() {
+export function PotentialEarnings() {
   return (
     <Section className="bg-gray">
       <div className="container">

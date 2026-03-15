@@ -54,7 +54,7 @@ export function AffiliatesComparison() {
         </Heading>
         <div className="relative mt-8 lg:mt-15 rounded-3xl border border-white/10 overflow-hidden">
           <Image
-            src={cdn(images.sellers.comparisonSectionBg, { width: 1400 })}
+            src={cdn(images.shared.comparisonSectionBg, { width: 1400 })}
             alt=""
             aria-hidden="true"
             fill

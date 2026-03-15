@@ -16,7 +16,7 @@ const content = {
   ],
 };
 
-export default function AgentsShareLeads() {
+export function AgentsShareLeads() {
   return (
     <Section>
       <div className="container">

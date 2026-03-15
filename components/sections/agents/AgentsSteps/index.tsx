@@ -297,7 +297,7 @@ const content = {
   ],
 };
 
-export default function AgentsSteps() {
+export function AgentsSteps() {
   return (
     <Section className="bg-gray">
       <div className="container">

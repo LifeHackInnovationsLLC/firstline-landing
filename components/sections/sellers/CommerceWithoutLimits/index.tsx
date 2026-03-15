@@ -32,7 +32,7 @@ const items = [
   },
 ];
 
-export default function CommerceWithoutLimits() {
+export function CommerceWithoutLimits() {
   return (
     <Section className="relative overflow-hidden">
       <Image

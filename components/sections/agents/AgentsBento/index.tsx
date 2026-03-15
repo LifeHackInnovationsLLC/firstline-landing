@@ -45,7 +45,7 @@ const content = {
   ],
 };
 
-export default function AgentsBento() {
+export function AgentsBento() {
   return (
     <Section className="bg-gray">
       <div className="container">
