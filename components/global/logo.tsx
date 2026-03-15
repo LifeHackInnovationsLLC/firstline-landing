@@ -17,8 +17,9 @@ export function Logo({ className, ...props }: LogoProps) {
       <Image
         src={`https://res.cloudinary.com/deoxevgc6/image/upload/${images.brand.logo}`}
         alt="Firstline"
-        width={120}
-        height={28}
+        width={360}
+        height={84}
+        className="h-7 w-auto"
         unoptimized
       />
     </Link>
