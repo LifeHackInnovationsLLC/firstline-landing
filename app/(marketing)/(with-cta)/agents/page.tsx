@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Section } from "@/components/layout/section";
 import AgentsBento from "@/components/sections/agents/AgentsBento";
 import AgentsGlobal from "@/components/sections/agents/AgentsGlobal";
+import AgentsShareLeads from "@/components/sections/agents/AgentsShareLeads";
 import AgentsStats from "@/components/sections/agents/AgentsStats";
 import AgentsSteps from "@/components/sections/agents/AgentsSteps";
 import TheBottomLine from "@/components/sections/agents/TheBottomLine";
@@ -62,6 +63,7 @@ export default function AgentsPage() {
       <AgentsStats />
       <AgentsBento />
       <AgentsSteps />
+      <AgentsShareLeads />
       <AgentsGlobal />
       <TheBottomLine />
     </>

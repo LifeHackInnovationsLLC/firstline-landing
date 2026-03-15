@@ -115,7 +115,11 @@ export const images = {
     readyToGlobalGreenBlur: "firstline/ready-to-global-green-blur.webp",
     readyToGlobalPurpleBlur: "firstline/ready-to-global-purple-blur.webp",
     bottomLineBlur: "firstline/the-bottom-line-green-blur.webp",
-    bottomLineImage: "firstline/the-bottom-line-image.webp",
+    bottomLineImage: "firstline/the-bottom-line-image.png",
+    globe: "firstline/globe.webp",
+    recruitClosers: "firstline/recruit-closers.png",
+    leadGenerators: "firstline/lead-generators.png",
+    customPayouts: "firstline/custom-payouts.png",
   },
   contact: {
     contactEmail: "firstline/contact-email.webp",

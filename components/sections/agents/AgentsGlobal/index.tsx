@@ -9,53 +9,23 @@ import {
 } from "@/components/ui/highlight-card";
 import { cdn, images } from "@/lib/cdn";
 
-function PurpleDot() {
-  return (
-    <svg
-      width="32"
-      height="32"
-      viewBox="0 0 32 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <circle cx="16" cy="16" r="12" fill="#6363B1" fillOpacity="0.4" />
-      <circle cx="16" cy="16" r="8" fill="#6363B1" fillOpacity="0.6" />
-    </svg>
-  );
-}
-
-function GreenDot() {
-  return (
-    <svg
-      width="32"
-      height="32"
-      viewBox="0 0 32 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <circle cx="16" cy="16" r="12" fill="#368F8A" fillOpacity="0.4" />
-      <circle cx="16" cy="16" r="8" fill="#368F8A" fillOpacity="0.6" />
-    </svg>
-  );
-}
-
 const items = [
   {
-    icon: <PurpleDot />,
+    image: images.agents.recruitClosers,
     color: "purple" as const,
     title: "Recruit Closers",
     description:
       "Bring on skilled closers from anywhere in the world to work your leads.",
   },
   {
-    icon: <GreenDot />,
+    image: images.agents.leadGenerators,
     color: "green" as const,
     title: "Lead Generators",
     description:
       "Build a team of finders who source opportunities while you strategize.",
   },
   {
-    icon: <PurpleDot />,
+    image: images.agents.customPayouts,
     color: "purple" as const,
     title: "Custom Payouts",
     description:
@@ -74,7 +44,15 @@ export default function AgentsGlobal() {
           {items.map((item) => (
             <HighlightCard key={item.title} color={item.color}>
               <div className="flex flex-col gap-5">
-                <HighlightCardIcon>{item.icon}</HighlightCardIcon>
+                <HighlightCardIcon>
+                  <Image
+                    src={cdn(item.image, { width: 96 })}
+                    alt={item.title}
+                    width={48}
+                    height={48}
+                    unoptimized
+                  />
+                </HighlightCardIcon>
                 <div className="flex flex-col gap-2">
                   <HighlightCardTitle>{item.title}</HighlightCardTitle>
                   <HighlightCardDescription className="mt-0">
