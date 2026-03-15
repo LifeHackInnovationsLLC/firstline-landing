@@ -1,6 +1,8 @@
 import Season1Bento from "@/components/sections/season-1/Season1Bento";
+import Season1DoubleXP from "@/components/sections/season-1/Season1DoubleXP";
 import Season1Hero from "@/components/sections/season-1/Season1Hero";
 import Season1Levels from "@/components/sections/season-1/Season1Levels";
+import Season1Rewards from "@/components/sections/season-1/Season1Rewards";
 import Season1Story from "@/components/sections/season-1/Season1Story";
 
 export default function Season1Page() {
@@ -10,6 +12,8 @@ export default function Season1Page() {
       <Season1Story />
       <Season1Bento />
       <Season1Levels />
+      <Season1Rewards />
+      <Season1DoubleXP />
     </>
   );
 }

@@ -146,6 +146,13 @@ export const images = {
     level8: "firstline/level-8.webp",
     climbPurpleElipse: "firstline/climb-purple-elipse.webp",
     climbGreenElipse: "firstline/climb-green-elipse.webp",
+    tier1: "firstline/tier-1.png",
+    tier2: "firstline/tier-2.png",
+    tier3: "firstline/tier-3.png",
+    tier4: "firstline/tier-4.png",
+    tier5: "firstline/tier-5.png",
+    tier6: "firstline/tier-6.png",
+    xpBg: "firstline/xp-bg.webp",
   },
   brand: {
     logo: "firstline/logo.svg",
