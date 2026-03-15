@@ -207,7 +207,7 @@ const content = {
   title: "Your community earns. Your team earns. You earn alongside them.",
   cards: [
     {
-      icon: images.affiliates.doorToDoorIcon,
+      icon: images.sellers.whatYourTeamGetsIcon,
       bg: images.affiliates.doorToDoorBg,
       title: "What your team gets",
       subtitle: "Agents on your team receive everything they need to succeed.",
@@ -227,7 +227,7 @@ const content = {
       footerColor: "text-[#47D9D1]",
     },
     {
-      icon: images.affiliates.digitalAffiliatesIcon,
+      icon: images.sellers.whatYouGetAsTeamOwnerIcon,
       bg: images.affiliates.digitalAffiliatesBg,
       title: "What you get as a team owner",
       subtitle: "As a team owner, you earn on the success of your agents.",

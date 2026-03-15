@@ -207,7 +207,7 @@ const content = {
   title: "Built for how you work",
   cards: [
     {
-      icon: images.affiliates.doorToDoorIcon,
+      icon: images.sellers.whatYourTeamGetsIcon,
       bg: images.affiliates.doorToDoorBg,
       title: "Door-to-Door Sales",
       subtitle: "Solar, home services, and more",
@@ -222,7 +222,7 @@ const content = {
       bullet: <DoorToDoorBullet />,
     },
     {
-      icon: images.affiliates.digitalAffiliatesIcon,
+      icon: images.sellers.whatYouGetAsTeamOwnerIcon,
       bg: images.affiliates.digitalAffiliatesBg,
       title: "Digital Affiliates",
       subtitle: "Content creators, influencers, marketers",

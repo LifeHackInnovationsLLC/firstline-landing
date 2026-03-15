@@ -91,6 +91,9 @@ export const images = {
     commerceWithoutLimitsPurple:
       "firstline/commerce-without-limits-decoration-purple.webp",
     commerceWithoutLimitsBg: "firstline/commerce-without-limits-bg.webp",
+    whatYourTeamGetsIcon: "firstline/what-your-team-gets-icon.png",
+    whatYouGetAsTeamOwnerIcon: "firstline/what-you-get-as-a-team-owner.png",
+    comparisonSectionBg: "firstline/comparison-section-bg.webp",
   },
   agencies: {
     paymentProcessingGreenBlur: "firstline/payment-processing-green-blur.webp",
