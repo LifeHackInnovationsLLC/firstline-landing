@@ -41,18 +41,18 @@ export function Stats({ id, stats, className }: StatsProps) {
   return (
     <Section id={id} className={`pt-5 bg-gray ${className ?? ""}`}>
       <div className="container">
-        <div className="w-full grid grid-cols-1 sm:grid-cols-3 items-center gap-0 py-8 lg:py-16 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          {stats.map((stat) => (
+        <div className="w-full grid grid-cols-3 items-center gap-3 py-8 sm:gap-0 lg:py-16 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
+          {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="flex flex-row justify-center items-center gap-2 lg:gap-4"
+              className={`flex min-w-0 flex-col items-center justify-center gap-1 px-2 text-center sm:flex-row sm:gap-2 lg:gap-4 ${index === 0 ? "" : "border-l border-black/6 sm:border-l-0"}`}
             >
               <StatDivider className="hidden sm:block" />
-              <div className="flex flex-col gap-1 items-center lg:items-start">
-                <span className="text-black text-lg lg:text-3xl font-semibold">
+              <div className="flex min-w-0 flex-col gap-1 items-center lg:items-start">
+                <span className="text-black text-base sm:text-lg lg:text-3xl font-semibold">
                   {stat.value}
                 </span>
-                <span className="text-black/50 text-xs lg:text-xl font-semibold">
+                <span className="text-black/50 text-[11px] leading-tight text-balance sm:text-xs lg:text-xl font-semibold">
                   {stat.label}
                 </span>
               </div>

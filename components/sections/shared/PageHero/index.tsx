@@ -87,10 +87,11 @@ export function PageHero({
             </Heading>
             <p className={descriptionClassName}>{description}</p>
           </div>
-          <div className="flex flex-row items-center gap-4">
+          <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-4">
             {ctas.map((cta) => (
               <Button
                 key={cta.label}
+                className="w-full justify-center sm:w-auto"
                 nativeButton={false}
                 variant={cta.variant}
                 render={<Link href={cta.href} />}
