@@ -12,7 +12,7 @@ const content = [
     icon: images.whySwitch.icon2,
   },
   {
-    title: "No Spreadsheet Chaos",
+    title: "No spreadsheet chaos",
     icon: images.whySwitch.icon3,
   },
   {

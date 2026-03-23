@@ -6,25 +6,25 @@ const audiences = [
   {
     audienceName: "Sellers",
     audienceDescription:
-      "Launch a commission-based sales network in days - not months",
+      "Launch your products and gain real-time insights by tapping into a network of motivated salespeople while only paying when a sale is made. No wasted spend. No guesswork.",
     audienceImage: images.audiences.audience1,
   },
   {
     audienceName: "Agents",
     audienceDescription:
-      "Launch a commission-based sales network in days - not months",
+      "Earn commissions by selling products, including exclusive offers available to freelance salespeople for the first time.",
     audienceImage: images.audiences.audience1,
   },
   {
     audienceName: "Agencies",
     audienceDescription:
-      "Launch a commission-based sales network in days - not months",
+      "Empower your team or community with seamless sales tools and instant payouts at checkout.",
     audienceImage: images.audiences.audience1,
   },
   {
     audienceName: "Affiliates",
     audienceDescription:
-      "Launch a commission-based sales network in days - not months",
+      "Turn your influence into income with a smarter, more effective approach to affiliate marketing.",
     audienceImage: images.audiences.audience1,
   },
 ];

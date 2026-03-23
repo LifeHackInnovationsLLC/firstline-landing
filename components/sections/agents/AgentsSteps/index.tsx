@@ -7,7 +7,7 @@ const content = {
     {
       title: "Create Your Account",
       description:
-        "Sign up in minutes. Choose to join an existing team or go solo-either way, you get full platform access and can start building your network immediately.",
+        "Sign up in minutes. Join an existing team or go solo - either way, you get full platform access and can start building your network immediately.",
       icon: (
         <svg
           width="48"
@@ -65,7 +65,7 @@ const content = {
     {
       title: "Complete the Training",
       description:
-        "Master our training modules to understand the product and spot opportunities. Once trained, every restaurant, store, and online business becomes a potential lead.",
+        "Work through our training modules to understand the products and spot opportunities. Once trained, every friend, coworker, follower, or business - local shops, online stores, or service providers - becomes a potential lead.",
       icon: (
         <svg
           width="48"
@@ -123,7 +123,7 @@ const content = {
     {
       title: "Establish Contact",
       description:
-        "Find a merchant and start the conversation. Whether it\u2019s a local coffee shop or an e-commerce store, introduce them to better payment processing.",
+        "Whether it's on foot, cold calls, online marketing funnels, social media, or merchant demos, introduce your network to products they can benefit from.",
       icon: (
         <svg
           width="48"
@@ -179,9 +179,9 @@ const content = {
       ),
     },
     {
-      title: "Submit the Application",
+      title: "Close the sale",
       description:
-        "Assist your merchant with the application. After approval, your work is done and monthly commissions start automatically.",
+        "Direct potential customers to product pages, or help your merchant leads signup with payment processing. Once closed, your work is done and commissions are paid automatically.",
       icon: (
         <svg
           width="48"
@@ -239,7 +239,7 @@ const content = {
     {
       title: "Get Paid Monthly",
       description:
-        "Once approved, enjoy automatic monthly commissions paid directly to you. No chasing payments, no invoicing\u2014it all happens automatically.",
+        "Enjoy automatic commissions based on the products you sell or the monthly volume your merchants produce. No chasing payments, no invoicing - it all happens seamlessly.",
       icon: (
         <svg
           width="48"

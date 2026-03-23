@@ -231,10 +231,10 @@ export function Footer() {
       </div>
       <div className="container relative z-10">
         <Image
-          src={cdn(images.footer.logo, { width: 1440 })}
+          src={cdn(images.footer.logo, { width: 2400 })}
           alt="Firstline"
-          width={1440}
-          height={200}
+          width={5009}
+          height={894}
           className="w-full object-contain"
           loading="lazy"
           unoptimized

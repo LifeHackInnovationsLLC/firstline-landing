@@ -25,7 +25,7 @@ export const metadata = generatePageMetadata({
 const heroContent = {
   title: "The ultimate side hustle",
   description:
-    "Turn payment processing volume into recurring monthly income. A revenue stream once limited to insiders, now open to you!",
+    "Start selling a full library of products today. From standard offerings to industry-insider opportunities like payment processing, you're not stuck in one lane. What used to be locked behind connections is now open, and every deal you close can turn into ongoing income.",
   ctas: [
     {
       label: "Start Earning Today",

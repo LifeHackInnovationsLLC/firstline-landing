@@ -141,7 +141,7 @@ export const images = {
   },
   footer: {
     gradient: "firstline/firstline-footer-gradient.webp",
-    logo: "firstline/firstline-footer.webp",
+    logo: "firstline/firstline-footer-text-lowercase.png",
   },
   decorations: {
     patternPurpleCard: "firstline/pattern-decoration-purple-card.webp",

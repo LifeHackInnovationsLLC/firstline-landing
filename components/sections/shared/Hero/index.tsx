@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -14,9 +14,7 @@ import { AffiliatesIcon, AgenciesIcon, AgentIcon, SellerIcon } from "./svgs";
 
 const content = {
   kicker: "$12M+ paid out",
-  title: "The commision platform for",
-  description:
-    "Turn our base of agents and affiliates into a dedicated sales team. Split payments instantly, pay commissions in real-time, and scale globally with Firstline.",
+  title: "The commission platform for",
   cta: {
     label: "Start Earning Today",
     to: "/",
@@ -27,24 +25,32 @@ const content = {
       label: "Sellers",
       icon: <SellerIcon />,
       image: images.hero.image,
+      description:
+        "Launch products faster, scale distribution effortlessly, and tap into a network of motivated salespeople ready to sell for you. Only pay when revenue is generated, with full visibility so every dollar spent, drives growth.",
     },
     {
       key: "agents",
       label: "Agents",
       icon: <AgentIcon />,
       image: images.hero.image,
+      description:
+        "Access high-quality products to sell, work on your own terms, and earn commissions without the usual friction. Every sale is tracked, every payout is automatic, and everything is built so you can focus on closing, not chasing.",
     },
     {
       key: "agencies",
       label: "Agencies",
       icon: <AgenciesIcon />,
       image: images.hero.image,
+      description:
+        "Equip your team or community with the tools they need to sell, track performance, and get paid in one seamless system. From onboarding to checkout, everything is streamlined so you can scale without operational overhead.",
     },
     {
       key: "affiliates",
       label: "Affiliates",
       icon: <AffiliatesIcon />,
       image: images.hero.image,
+      description:
+        "Turn your audience into a reliable revenue stream by promoting real products with built-in conversion and payout infrastructure. No complicated setups, no manual tracking, just a smarter way to grow consistent income from your influence.",
     },
   ],
   socialProof: {
@@ -70,6 +76,7 @@ export default function Hero() {
 
   const activeModeData = content.modes.find((mode) => mode.key === activeMode);
   const activeModeImage = activeModeData?.image ?? images.hero.image;
+  const activeModeDescription = activeModeData?.description ?? "";
 
   const toggleMode = (key: ModeKey) => {
     setActiveMode(key);
@@ -121,9 +128,20 @@ export default function Hero() {
                 );
               })}
             </div>
-            <p className="mt-4 lg:mt-6 text-white/72 text-sm lg:text-base max-w-lg mx-auto lg:mx-0">
-              {content.description}
-            </p>
+            <div className="mt-4 lg:mt-6 max-w-lg mx-auto lg:mx-0 min-h-[7rem] lg:min-h-[6rem]">
+              <AnimatePresence initial={false} mode="wait">
+                <motion.p
+                  key={activeMode}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  className="text-white/72 text-sm lg:text-base"
+                >
+                  {activeModeDescription}
+                </motion.p>
+              </AnimatePresence>
+            </div>
             <Button
               className="mt-8 lg:mt-12"
               nativeButton={false}

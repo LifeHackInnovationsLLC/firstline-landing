@@ -7,15 +7,15 @@ const content = {
   title: "What you get\nas a Firstline Seller?",
   items: [
     {
-      title: "Recurring Monthly Commissions",
+      title: "Transparent Commissions",
       description:
-        "Every merchant you bring on generates ongoing monthly commissions based on their processing volume. These are not one-time payouts. Your income continues to grow as your merchants grow.",
+        "Every product you sell earns you instant and transparent commission. With offerings like payment processing, you can earn ongoing commissions based on monthly volume. Not just a one-time payout, your income grows as the businesses you bring in keep growing.",
       image: images.agents.bento1,
     },
     {
       title: "Real Time Commission Tracking",
       description:
-        "View your merchants, processing volume, and commissions in one place. See exactly what you are earning and where it is coming from at any time.",
+        "Track everything in one place, from the individual products you've sold, to your merchant volume and commissions. See exactly what you're earning and where it's coming from at any time.",
       image: images.agents.bento2,
     },
     {

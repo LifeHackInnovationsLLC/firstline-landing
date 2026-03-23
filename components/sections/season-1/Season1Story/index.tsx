@@ -2,15 +2,14 @@ import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
 
 const paragraphs = [
-  "There are millions of people out there with real talent. People who can sell. People who can connect. People who can walk into a room and make things happen.",
-  "But nobody gave them a shot. No fancy degree. No corporate network. No six months of unpaid internships. Just raw ability — sitting there, going to waste behind a register, a delivery route, a desk they were never meant to sit at.",
-  'The system wasn\'t built for them. It was built for people who already had the connections, the capital, the head start. Everyone else? Told to wait their turn. Told to be grateful. Told that "this is just how it works."',
-  "We didn't accept that.",
-  "Firstline was built for the overlooked. The hustlers. The ones who've been selling since they were kids — whether it was candy at school, ideas at work, or themselves in every job interview that led nowhere. We built a platform where that energy finally has a place to go.",
-  "No inventory. No upfront costs. No gatekeepers. You learn the product, you talk to businesses, and you earn. Real commissions. Real residuals. A real business that belongs to you.",
-  "Season 1 is where it starts.",
-  "Every course you finish, every merchant you bring on, every person you invite into the network — it all counts. Your XP isn't just a number. It's proof that you showed up. That you bet on yourself when nobody else would.",
-  "This is for the people who were always one opportunity away from changing everything. This is that opportunity.",
+  "There are a lot of people out there who are just naturally good at selling. Not in a pushy way, just... they know how to talk to people. They know how to connect, how to read a room, how to make things happen.",
+  "And honestly, a lot of them are in the wrong place right now. Talent is being undervalued sitting behind a register, a delivery route, or a desk they were never meant to sit at.",
+  "Things are shifting. AI is taking over a lot of roles, companies are tightening margins, and it feels like the people in the middle are getting squeezed the most. The ones who can actually produce, sometimes end up stuck.",
+  "So that talent just sits there. Gets wasted in jobs that don't really make sense for them.",
+  "That's really why Firstline exists.",
+  "It's a platform built around selling. It connects people who are good at it with businesses that actually need it. Nothing complicated. You get access to products, you understand what you're making, and when you close something, you get paid...instantly.",
+  "No chasing someone down. No confusion around commissions. No weird setups or backdooring.",
+  "You don't need inventory, you don't need upfront money, and you don't need to know the \"right\" people. If you can sell, there's finally a place to just... do that.",
 ];
 
 export default function Season1Story() {

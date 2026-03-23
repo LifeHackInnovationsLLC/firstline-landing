@@ -8,8 +8,7 @@ import { cdn, images } from "@/lib/cdn";
 const content = {
   kicker: "Season 1: New Beginnings",
   title: "Earn rewards while you build",
-  description:
-    "Level up, unlock rewards, and track your progress with the Firstline XP system. The more you grow your business, the more you earn.",
+  description: "The more you grow your portfolio, the more you earn.",
   ctas: [
     {
       label: "Start Learning",

@@ -83,7 +83,7 @@ export default function Season1Rewards() {
             {rewards.map((reward) => (
               <div
                 key={reward.tier}
-                className="flex items-center justify-between bg-card-dark rounded-xl border border-white/10 px-5 py-5 lg:px-8 lg:py-6"
+                className="flex flex-col gap-4 bg-card-dark rounded-xl border border-white/10 px-5 py-5 lg:flex-row lg:items-center lg:justify-between lg:px-8 lg:py-6"
               >
                 <div className="flex items-center gap-4 lg:gap-5">
                   <div className="relative size-16 lg:size-20 shrink-0">
@@ -108,7 +108,7 @@ export default function Season1Rewards() {
                   </div>
                 </div>
 
-                <div className="flex flex-col items-end gap-0.5">
+                <div className="flex flex-col gap-0.5 pl-20 lg:pl-0 lg:items-end">
                   <span className="text-green font-semibold text-base lg:text-xl">
                     {reward.xp}
                   </span>
