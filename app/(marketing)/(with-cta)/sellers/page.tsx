@@ -48,9 +48,15 @@ export default function SellersPage() {
         className="relative overflow-hidden min-h-175 -mt-(--navbar-height) pt-(--navbar-height)"
         bgImage={{
           src: cdn(images.sellers.hero, { width: 3840, quality: "100" }),
+          mobileSrc: cdn(images.sellers.heroMobile, {
+            width: 1608,
+            quality: "100",
+          }),
           alt: "Sellers hero background",
           width: 4320,
           height: 2109,
+          mobileWidth: 1608,
+          mobileHeight: 2268,
         }}
       />
       <SplitPayments />

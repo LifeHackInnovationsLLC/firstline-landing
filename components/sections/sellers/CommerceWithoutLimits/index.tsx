@@ -44,7 +44,7 @@ export function CommerceWithoutLimits() {
         unoptimized
       />
       <div className="container relative overflow-hidden">
-        <div className="flex flex-col items-center w-full gap-8 lg:gap-15 max-w-4xl mx-auto relative z-10">
+        <div className="flex flex-col items-center w-full gap-8 lg:gap-15 [--sellers-section-content-width:31.25rem] max-w-(--sellers-section-content-width) mx-auto lg:max-w-4xl relative z-10">
           <div className="flex flex-col gap-4 lg:gap-6 items-center">
             <Heading as="h2" className="text-center">
               Commerce without limits

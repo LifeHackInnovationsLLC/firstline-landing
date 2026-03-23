@@ -26,7 +26,7 @@ export function UploadYourCourses() {
   return (
     <Section className="bg-gray">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[90px] items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[90px] items-center [--sellers-section-content-width:31.25rem] max-w-(--sellers-section-content-width) mx-auto lg:max-w-none">
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             <h2 className="font-display font-semibold tracking-tight text-4xl lg:text-[52px] lg:leading-[52px] text-text-primary">
               {content.title}

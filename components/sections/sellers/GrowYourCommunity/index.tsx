@@ -7,7 +7,7 @@ export function GrowYourCommunity() {
   return (
     <Section id="grow-your-community" className="bg-gray">
       <div className="container">
-        <div className="px-4 lg:px-6 pt-9 pb-10 lg:pb-15 rounded-3xl bg-black relative overflow-hidden">
+        <div className="px-4 lg:px-6 pt-9 pb-10 lg:pb-15 rounded-3xl bg-black relative overflow-hidden [--sellers-section-content-width:31.25rem] max-w-(--sellers-section-content-width) mx-auto lg:max-w-none">
           <Image
             src={cdn(images.sellers.growYourCommunityBg, { width: 1400 })}
             alt=""

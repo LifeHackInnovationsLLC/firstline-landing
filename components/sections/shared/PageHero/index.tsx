@@ -21,9 +21,12 @@ interface PageHeroProps {
   maxWidth?: string;
   bgImage?: {
     src: string;
+    mobileSrc?: string;
     alt: string;
     width: number;
     height: number;
+    mobileWidth?: number;
+    mobileHeight?: number;
   };
   align?: "center" | "bottom";
   className?: string;
@@ -48,15 +51,28 @@ export function PageHero({
       className={`${className ?? ""}${isBottom ? " flex flex-col" : ""}`}
     >
       {bgImage && (
-        <Image
-          src={bgImage.src}
-          alt={bgImage.alt}
-          width={bgImage.width}
-          height={bgImage.height}
-          priority
-          sizes="100vw"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        <>
+          {bgImage.mobileSrc && (
+            <Image
+              src={bgImage.mobileSrc}
+              alt={bgImage.alt}
+              width={bgImage.mobileWidth ?? bgImage.width}
+              height={bgImage.mobileHeight ?? bgImage.height}
+              priority
+              sizes="100vw"
+              className="absolute inset-0 w-full h-full object-cover lg:hidden"
+            />
+          )}
+          <Image
+            src={bgImage.src}
+            alt={bgImage.alt}
+            width={bgImage.width}
+            height={bgImage.height}
+            priority
+            sizes="100vw"
+            className={`absolute inset-0 w-full h-full object-cover${bgImage.mobileSrc ? " hidden lg:block" : ""}`}
+          />
+        </>
       )}
       <div
         className={`${bgImage ? "container relative z-10" : "container"}${isBottom ? " flex flex-col flex-1 justify-end" : ""}`}

@@ -92,6 +92,7 @@ export const images = {
       "firstline/commerce-without-limits-decoration-purple.webp",
     commerceWithoutLimitsBg: "firstline/commerce-without-limits-bg.webp",
     hero: "firstline/sellers-bg-hero.png",
+    heroMobile: "firstline/sellers-bg-hero-mobile.png",
   },
   shared: {
     whatYourTeamGetsIcon: "firstline/what-your-team-gets-icon.png",

@@ -33,7 +33,7 @@ export function SplitPayments() {
   return (
     <Section className="bg-gray">
       <div className="container">
-        <FeatureCard className="flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-0">
+        <FeatureCard className="flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-0 [--sellers-section-content-width:31.25rem] max-w-(--sellers-section-content-width) mx-auto lg:max-w-none">
           <Image
             src={cdn(images.sellers.ellipseSplitPayments)}
             alt=""
