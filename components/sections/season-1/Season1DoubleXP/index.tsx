@@ -14,7 +14,7 @@ export default function Season1DoubleXP() {
   return (
     <Section className="bg-gray">
       <div className="container">
-        <div className="relative overflow-hidden rounded-2xl bg-card-dark border border-white/10 py-20">
+        <div className="relative overflow-hidden rounded-2xl bg-card-dark border border-white/10 py-20 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
           <Image
             src={cdn(images.season1.xpBg, { width: 1400 })}
             alt=""

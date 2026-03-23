@@ -17,7 +17,7 @@ export default function Season1Story() {
   return (
     <Section className="bg-gray">
       <div className="container">
-        <div className="max-w-[53.25rem] mx-auto flex flex-col gap-15">
+        <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto flex flex-col gap-15 lg:max-w-[53.25rem]">
           <Heading as="h2" className="text-black">
             The Story
           </Heading>

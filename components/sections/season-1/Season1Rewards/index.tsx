@@ -69,63 +69,65 @@ export default function Season1Rewards() {
   return (
     <Section className="bg-gray">
       <div className="container">
-        <div className="flex flex-col items-center gap-4">
-          <Heading as="h2" align="center" className="text-black">
-            {content.title}
-          </Heading>
-          <p className="text-black/60 text-sm lg:text-base max-w-lg text-center">
-            {content.description}
-          </p>
-        </div>
+        <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
+          <div className="flex flex-col items-center gap-4">
+            <Heading as="h2" align="center" className="text-black">
+              {content.title}
+            </Heading>
+            <p className="text-black/60 text-sm lg:text-base max-w-lg text-center lg:max-w-none">
+              {content.description}
+            </p>
+          </div>
 
-        <div className="flex flex-col gap-3 mt-15">
-          {rewards.map((reward) => (
-            <div
-              key={reward.tier}
-              className="flex items-center justify-between bg-card-dark rounded-xl border border-white/10 px-5 py-5 lg:px-8 lg:py-6"
-            >
-              <div className="flex items-center gap-4 lg:gap-5">
-                <div className="relative size-16 lg:size-20 shrink-0">
-                  <Image
-                    src={cdn(reward.image, { width: 160 })}
-                    alt={reward.name}
-                    fill
-                    className="object-contain"
-                    unoptimized
-                  />
+          <div className="flex flex-col gap-3 mt-15">
+            {rewards.map((reward) => (
+              <div
+                key={reward.tier}
+                className="flex items-center justify-between bg-card-dark rounded-xl border border-white/10 px-5 py-5 lg:px-8 lg:py-6"
+              >
+                <div className="flex items-center gap-4 lg:gap-5">
+                  <div className="relative size-16 lg:size-20 shrink-0">
+                    <Image
+                      src={cdn(reward.image, { width: 160 })}
+                      alt={reward.name}
+                      fill
+                      className="object-contain"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-white/65 text-xs lg:text-sm">
+                      Tier {reward.tier}
+                    </span>
+                    <span className="text-white font-semibold text-base lg:text-xl">
+                      {reward.name}
+                    </span>
+                    <span className="text-white/65 text-xs lg:text-sm">
+                      {reward.description}
+                    </span>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-white/65 text-xs lg:text-sm">
-                    Tier {reward.tier}
-                  </span>
-                  <span className="text-white font-semibold text-base lg:text-xl">
-                    {reward.name}
+
+                <div className="flex flex-col items-end gap-0.5">
+                  <span className="text-green font-semibold text-base lg:text-xl">
+                    {reward.xp}
                   </span>
                   <span className="text-white/65 text-xs lg:text-sm">
-                    {reward.description}
+                    {reward.xpDescription}
                   </span>
                 </div>
               </div>
+            ))}
+          </div>
 
-              <div className="flex flex-col items-end gap-0.5">
-                <span className="text-green font-semibold text-base lg:text-xl">
-                  {reward.xp}
-                </span>
-                <span className="text-white/65 text-xs lg:text-sm">
-                  {reward.xpDescription}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-3 bg-card-dark rounded-xl border border-white/10 px-5 py-6 lg:px-8 lg:py-8 text-center">
-          <p className="text-white font-semibold text-sm lg:text-base">
-            {content.mystery.title}
-          </p>
-          <p className="text-white/65 text-xs lg:text-sm mt-1">
-            {content.mystery.description}
-          </p>
+          <div className="mt-3 bg-card-dark rounded-xl border border-white/10 px-5 py-6 lg:px-8 lg:py-8 text-center">
+            <p className="text-white font-semibold text-sm lg:text-base">
+              {content.mystery.title}
+            </p>
+            <p className="text-white/65 text-xs lg:text-sm mt-1">
+              {content.mystery.description}
+            </p>
+          </div>
         </div>
       </div>
     </Section>

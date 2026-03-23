@@ -49,32 +49,34 @@ export function AgentsBento() {
   return (
     <Section className="bg-gray">
       <div className="container">
-        <Heading as="h2" align="center" className="text-black text-balance">
-          {content.title}
-        </Heading>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-8 lg:mt-15">
-          {content.items.map((item) => (
-            <div
-              key={item.title}
-              className="relative flex flex-col justify-end h-[280px] md:h-[356px] p-5 bg-card-dark overflow-hidden rounded-4xl"
-            >
-              <Image
-                src={cdn(item.image)}
-                alt={item.title}
-                fill
-                className="object-cover"
-                unoptimized
-              />
-              <div className="relative z-10 flex flex-col gap-2">
-                <h3 className="text-white text-lg font-semibold">
-                  {item.title}
-                </h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  {item.description}
-                </p>
+        <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
+          <Heading as="h2" align="center" className="text-black text-balance">
+            {content.title}
+          </Heading>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-8 lg:mt-15">
+            {content.items.map((item) => (
+              <div
+                key={item.title}
+                className="relative flex flex-col justify-end h-[280px] md:h-[356px] p-5 bg-card-dark overflow-hidden rounded-4xl"
+              >
+                <Image
+                  src={cdn(item.image)}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
+                <div className="relative z-10 flex flex-col gap-2">
+                  <h3 className="text-white text-lg font-semibold">
+                    {item.title}
+                  </h3>
+                  <p className="text-white/60 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </Section>

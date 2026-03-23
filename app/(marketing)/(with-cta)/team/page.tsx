@@ -45,9 +45,15 @@ export default function TeamPage() {
         className="relative overflow-hidden min-h-175 -mt-(--navbar-height) pt-(--navbar-height)"
         bgImage={{
           src: cdn(images.team.hero, { width: 3840, quality: "100" }),
+          mobileSrc: cdn(images.team.heroMobile, {
+            width: 1608,
+            quality: "100",
+          }),
           alt: "Team hero background",
           width: 4320,
           height: 2109,
+          mobileWidth: 1608,
+          mobileHeight: 2572,
         }}
       />
       <CommunityDownline />

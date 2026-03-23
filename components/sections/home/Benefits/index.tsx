@@ -6,7 +6,7 @@ export function Benefits() {
   return (
     <Section id="benefits" className="pt-5 bg-gray">
       <div className="container">
-        <div className="[--benefits-content-width:28rem] lg:[--benefits-content-width:100%] max-w-(--benefits-content-width) mx-auto lg:mx-0">
+        <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
           <Stats />
           <Heading as="h2" className="text-left text-balance text-black">
             The benefits <br className="hidden lg:block" /> that set us apart

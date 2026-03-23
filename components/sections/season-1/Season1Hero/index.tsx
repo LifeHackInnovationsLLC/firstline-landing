@@ -57,17 +57,26 @@ export default function Season1Hero() {
       className="relative overflow-hidden min-h-175 -mt-(--navbar-height) pt-(--navbar-height) flex flex-col"
     >
       <Image
+        src={cdn(images.season1.heroMobile, { width: 1608, quality: "100" })}
+        alt="Season 1 hero background"
+        width={1608}
+        height={2776}
+        priority
+        sizes="100vw"
+        className="absolute inset-0 w-full h-full object-cover lg:hidden"
+      />
+      <Image
         src={cdn(images.season1.hero, { width: 3840, quality: "100" })}
         alt="Season 1 hero background"
         width={4320}
         height={2109}
         priority
         sizes="100vw"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 hidden lg:block w-full h-full object-cover"
       />
       <div className="container relative z-10 flex flex-col flex-1 justify-end">
         <div className="flex flex-col">
-          <div className="flex flex-col gap-8 lg:gap-11 max-w-2xl mx-auto items-center text-center pb-10 lg:pb-20">
+          <div className="flex flex-col gap-8 lg:gap-11 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto items-center text-center pb-10 lg:pb-20 lg:max-w-2xl">
             <div className="flex flex-col gap-6 items-center">
               <Season1Kicker />
               <Heading as="h1" align="center">

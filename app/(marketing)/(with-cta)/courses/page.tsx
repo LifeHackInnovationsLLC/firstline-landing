@@ -97,9 +97,15 @@ export default function CoursesPage() {
         className="relative overflow-hidden min-h-175 -mt-(--navbar-height) pt-(--navbar-height)"
         bgImage={{
           src: cdn(images.courses.hero, { width: 3840, quality: "100" }),
+          mobileSrc: cdn(images.courses.heroMobile, {
+            width: 1608,
+            quality: "100",
+          }),
           alt: "Courses hero background",
           width: 4320,
           height: 2109,
+          mobileWidth: 1608,
+          mobileHeight: 2572,
         }}
       />
       <AdvancedTraining />
@@ -111,12 +117,12 @@ function AdvancedTraining() {
   return (
     <Section id="advanced-training" className="bg-gray">
       <div className="container">
-        <div className="flex flex-col gap-8 lg:gap-15">
+        <div className="flex flex-col gap-8 lg:gap-15 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
           <div className="flex flex-col gap-4 items-center text-center">
             <Heading as="h2" align="center" className="text-black">
               Advanced Training
             </Heading>
-            <p className="text-black/60 text-sm lg:text-base max-w-lg">
+            <p className="text-black/60 text-sm lg:text-base max-w-lg lg:max-w-none">
               Start with the fundamentals and progress to advanced techniques
             </p>
           </div>

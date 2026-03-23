@@ -301,7 +301,7 @@ export function AgentsSteps() {
   return (
     <Section className="bg-gray">
       <div className="container">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
           <div className="lg:w-1/3 items-start">
             <Heading
               as="h2"

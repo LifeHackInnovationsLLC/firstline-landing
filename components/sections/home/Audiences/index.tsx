@@ -6,7 +6,7 @@ export default function Audiences() {
   return (
     <Section id="audiences" className="bg-gray">
       <div className="container">
-        <div className="[--audiences-content-width:28rem] lg:[--audiences-content-width:100%] max-w-(--audiences-content-width) mx-auto lg:mx-0">
+        <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
           <Heading as="h2" className="text-left text-balance text-black">
             Find your role, Start earning
           </Heading>

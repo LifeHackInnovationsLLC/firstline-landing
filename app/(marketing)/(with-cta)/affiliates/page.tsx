@@ -96,9 +96,15 @@ export default function AffiliatesPage() {
         className="relative overflow-hidden min-h-175 -mt-(--navbar-height) pt-(--navbar-height)"
         bgImage={{
           src: cdn(images.affiliates.hero, { width: 3840, quality: "100" }),
+          mobileSrc: cdn(images.affiliates.heroMobile, {
+            width: 1608,
+            quality: "100",
+          }),
           alt: "Affiliates hero — earn recurring commissions with Firstline",
           width: 4320,
           height: 2109,
+          mobileWidth: 1608,
+          mobileHeight: 2572,
         }}
       />
       <Stats id="affiliates-stats" stats={stats} />

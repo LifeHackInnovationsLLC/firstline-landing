@@ -41,7 +41,7 @@ export function Stats({ id, stats, className }: StatsProps) {
   return (
     <Section id={id} className={`pt-5 bg-gray ${className ?? ""}`}>
       <div className="container">
-        <div className="w-full grid grid-cols-1 sm:grid-cols-3 items-center gap-0 py-8 lg:py-16">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-3 items-center gap-0 py-8 lg:py-16 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
           {stats.map((stat) => (
             <div
               key={stat.label}

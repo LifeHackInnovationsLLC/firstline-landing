@@ -26,7 +26,7 @@ const content = [
 
 export function Steps() {
   return (
-    <div className="flex flex-col [--steps-content-width:28rem] lg:[--steps-content-width:100%] max-w-(--steps-content-width) mx-auto lg:mx-0">
+    <div className="flex flex-col [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
       <Heading as="h2" className="text-center">
         Get started in 3 simple steps
       </Heading>

@@ -23,7 +23,7 @@ export default function CTA() {
         />
       </div>
       <div className="container">
-        <div className="flex flex-col gap-0 lg:gap-10 items-center justify-center w-full text-center max-w-md mx-auto lg:max-w-none">
+        <div className="flex flex-col gap-0 lg:gap-10 items-center justify-center w-full text-center [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
           <Image
             src={cdn(images.cta.bgMobile, { width: 640 })}
             alt=""

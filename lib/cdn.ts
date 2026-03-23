@@ -64,6 +64,7 @@ export const images = {
     digitalAffiliatesBg: "firstline/digital-affiliates-bg_sbmfye.webp",
     readyToScale: "firstline/for-teams-that-scale.webp",
     hero: "firstline/affiliates-bg-hero.png",
+    heroMobile: "firstline/affiliates-bg-hero-mobile.png",
   },
   whySwitch: {
     icon1: "firstline/why-switch-icon-1.png",
@@ -106,10 +107,12 @@ export const images = {
     whyAgenciesGraphic: "firstline/why-agencies-graphic.webp",
     potentialEarnings: "firstline/potential-earnings.webp",
     hero: "firstline/agencies-bg-hero.png",
+    heroMobile: "firstline/agencies-bg-hero-mobile.png",
   },
   team: {
     communityDownline: "firstline/community-downline.webp",
     hero: "firstline/team-bg-hero.png",
+    heroMobile: "firstline/team-bg-hero-mobile.png",
   },
   agents: {
     bento1: "firstline/agents-bento-1.webp",
@@ -127,6 +130,7 @@ export const images = {
     leadGenerators: "firstline/lead-generators.png",
     customPayouts: "firstline/custom-payouts.png",
     hero: "firstline/agents-bg-hero.png",
+    heroMobile: "firstline/agents-bg-hero-mobile.png",
   },
   contact: {
     contactEmail: "firstline/contact-email.webp",
@@ -147,6 +151,7 @@ export const images = {
   courses: {
     trainingCardBg: "firstline/training-card-bg.webp",
     hero: "firstline/courses-bg-hero.png",
+    heroMobile: "firstline/courses-bg-hero-mobile.png",
   },
   season1: {
     bento1: "firstline/season1-bento-1.webp",
@@ -171,6 +176,7 @@ export const images = {
     tier6: "firstline/tier-6.png",
     xpBg: "firstline/xp-bg.webp",
     hero: "firstline/season-1-bg-hero.png",
+    heroMobile: "firstline/season-1-bg-hero-mobile.png",
   },
   brand: {
     logo: "firstline/logo.svg",

@@ -7,7 +7,7 @@ export default function Testimonials() {
     <Section id="testimonials" className="bg-gray">
       <div className="flex flex-col gap-8 lg:gap-10">
         <div className="container">
-          <div className="[--testimonials-content-width:28rem] lg:[--testimonials-content-width:100%] max-w-(--testimonials-content-width) mx-auto lg:mx-0">
+          <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
             <div className="relative flex flex-col gap-4 lg:gap-5 items-center">
               <Heading
                 as="h2"

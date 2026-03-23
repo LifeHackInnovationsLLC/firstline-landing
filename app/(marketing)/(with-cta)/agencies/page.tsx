@@ -95,9 +95,15 @@ export default function AgenciesPage() {
         className="relative overflow-hidden min-h-175 -mt-(--navbar-height) pt-(--navbar-height)"
         bgImage={{
           src: cdn(images.agencies.hero, { width: 3840, quality: "100" }),
+          mobileSrc: cdn(images.agencies.heroMobile, {
+            width: 1608,
+            quality: "100",
+          }),
           alt: "Agencies hero background",
           width: 4320,
           height: 2109,
+          mobileWidth: 1608,
+          mobileHeight: 2572,
         }}
       />
       <ClientPayments />

@@ -39,34 +39,36 @@ export default function Season1Bento() {
   return (
     <Section className="bg-gray">
       <div className="container">
-        <Heading as="h2" align="center" className="text-black text-balance">
-          {content.title}
-        </Heading>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-15">
-          {content.items.map((item) => (
-            <div
-              key={item.title}
-              className="relative flex flex-col justify-end h-[22.25rem] bg-card-dark overflow-hidden rounded-4xl p-6"
-            >
-              <Image
-                className="absolute inset-0 w-full h-full object-cover"
-                src={cdn(item.image, { width: 800 })}
-                alt={item.title}
-                fill
-                unoptimized
-              />
-              <div className="relative z-10 flex flex-col gap-1">
-                <h3 className="text-white font-semibold text-lg">
-                  {item.title}
-                </h3>
-                <p className="text-white/65 text-sm">{item.description}</p>
+        <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
+          <Heading as="h2" align="center" className="text-black text-balance">
+            {content.title}
+          </Heading>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-15">
+            {content.items.map((item) => (
+              <div
+                key={item.title}
+                className="relative flex flex-col justify-end h-[22.25rem] bg-card-dark overflow-hidden rounded-4xl p-6"
+              >
+                <Image
+                  className="absolute inset-0 w-full h-full object-cover"
+                  src={cdn(item.image, { width: 800 })}
+                  alt={item.title}
+                  fill
+                  unoptimized
+                />
+                <div className="relative z-10 flex flex-col gap-1">
+                  <h3 className="text-white font-semibold text-lg">
+                    {item.title}
+                  </h3>
+                  <p className="text-white/65 text-sm">{item.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <p className="text-center text-text-secondary w-full mt-8">
+            {content.bottomText}
+          </p>
         </div>
-        <p className="text-center text-text-secondary w-full mt-8">
-          {content.bottomText}
-        </p>
       </div>
     </Section>
   );

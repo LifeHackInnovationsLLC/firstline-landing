@@ -193,25 +193,27 @@ export default function PrivacyPolicyPage() {
   return (
     <Section>
       <div className="container">
-        <div className="flex flex-col">
-          <HeroKicker>Legal</HeroKicker>
-          <Heading as="h1" className="mt-6">
-            Privacy Policy
-          </Heading>
-          <p className="mt-4 text-white/50 text-sm">
-            Last updated: January 2026
-          </p>
-        </div>
+        <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-2xl">
+          <div className="flex flex-col">
+            <HeroKicker>Legal</HeroKicker>
+            <Heading as="h1" className="mt-6">
+              Privacy Policy
+            </Heading>
+            <p className="mt-4 text-white/50 text-sm">
+              Last updated: January 2026
+            </p>
+          </div>
 
-        <div className="flex flex-col gap-10 mt-10 max-w-2xl">
-          {sections.map((section) => (
-            <div key={section.title} className="flex flex-col gap-3">
-              <Heading as="h2" size="md">
-                {section.title}
-              </Heading>
-              {section.content}
-            </div>
-          ))}
+          <div className="flex flex-col gap-10 mt-10">
+            {sections.map((section) => (
+              <div key={section.title} className="flex flex-col gap-3">
+                <Heading as="h2" size="md">
+                  {section.title}
+                </Heading>
+                {section.content}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </Section>

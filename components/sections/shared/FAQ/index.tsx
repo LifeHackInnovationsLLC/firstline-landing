@@ -8,7 +8,7 @@ export default function FAQ() {
   return (
     <Section id="faq" className="bg-gray">
       <div className="container">
-        <div className="flex flex-col lg:flex-row w-full gap-12 lg:gap-20 max-w-md mx-auto lg:max-w-none">
+        <div className="flex flex-col lg:flex-row w-full gap-12 lg:gap-20 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
           <div className="flex-1 flex flex-col items-center lg:items-start gap-5 lg:self-start">
             <Heading
               as="h2"

@@ -7,7 +7,7 @@ export function PotentialEarnings() {
   return (
     <Section className="bg-gray">
       <div className="container">
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
           <Heading as="h2" align="center" className="text-black">
             Potential earnings
           </Heading>

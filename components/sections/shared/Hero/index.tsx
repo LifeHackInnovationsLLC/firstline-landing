@@ -78,7 +78,7 @@ export default function Hero() {
   return (
     <Section id="hero" className="pt-12 lg:pt-12 pb-0 lg:pb-0">
       <div className="container">
-        <div className="flex flex-col lg:flex-row w-full [--hero-content-width:28rem] lg:[--hero-content-width:100%] max-w-(--hero-content-width) mx-auto lg:mx-0">
+        <div className="flex flex-col lg:flex-row w-full [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
           <div className="flex-1 flex flex-col items-center text-center lg:items-start lg:text-left">
             <HeroKicker>{content.kicker}</HeroKicker>
             <Heading
