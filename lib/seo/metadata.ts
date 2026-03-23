@@ -38,10 +38,6 @@ export const baseMetadata: Metadata = {
   referrer: "origin-when-cross-origin",
   category: "business",
 
-  icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-  },
-
   // Robots
   robots: {
     index: true,
