@@ -129,7 +129,7 @@ export default function Hero() {
                 );
               })}
             </div>
-            <div className="mt-4 lg:mt-6 max-w-lg mx-auto lg:mx-0 min-h-[7rem] lg:min-h-[6rem]">
+            <div className="mt-4 lg:mt-6 max-w-lg mx-auto lg:mx-0 min-h-28 lg:min-h-24">
               <AnimatePresence initial={false} mode="wait">
                 <motion.p
                   key={activeMode}
@@ -166,7 +166,7 @@ export default function Hero() {
           <span className="text-white/72 text-lg whitespace-nowrap shrink-0 text-center lg:text-left">
             Trusted by 2,500+ users:
           </span>
-          <div className="relative flex-1 min-w-0 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+          <div className="relative flex-1 min-w-0 mask-[linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]`">
             <InfiniteSlider gap={24} speed={50} repeat={2}>
               {content.socialProof.items.map((item) => (
                 <div
