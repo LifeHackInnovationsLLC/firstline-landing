@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { AutoAvatar } from "@/components/ui/auto-avatar";
 import {
   TestimonialCard,
   TestimonialCardAuthor,
@@ -14,7 +14,6 @@ import {
   TestimonialsMobileGrid,
   TestimonialsRow,
 } from "@/components/ui/testimonial";
-import { cdn, images } from "@/lib/cdn";
 
 const LOREM_LONG =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit";
@@ -27,25 +26,21 @@ const testimonials = {
     {
       testimonial: LOREM_LONG,
       author: "Sarah Chen",
-      authorImage: images.testimonials.profilePhoto,
       authorPosition: "VP Sales at TechCorp",
     },
     {
       testimonial: LOREM_SHORT,
       author: "Michael Torres",
-      authorImage: images.testimonials.profilePhoto,
       authorPosition: "Sales Director at Growth Inc",
     },
     {
       testimonial: LOREM_LONG,
       author: "Emily Watson",
-      authorImage: images.testimonials.profilePhoto,
       authorPosition: "CEO at Digital Agency",
     },
     {
       testimonial: LOREM_SHORT,
       author: "David Kim",
-      authorImage: images.testimonials.profilePhoto,
       authorPosition: "Founder at StartupX",
     },
   ],
@@ -53,25 +48,21 @@ const testimonials = {
     {
       testimonial: LOREM_SHORT,
       author: "Jessica Martinez",
-      authorImage: images.testimonials.profilePhoto,
       authorPosition: "Operations Lead at ScaleUp",
     },
     {
       testimonial: LOREM_LONG,
       author: "Alex Johnson",
-      authorImage: images.testimonials.profilePhoto,
       authorPosition: "Finance Manager at RetailPro",
     },
     {
       testimonial: LOREM_SHORT,
       author: "Rachel Adams",
-      authorImage: images.testimonials.profilePhoto,
       authorPosition: "Partnership Manager at BrandCo",
     },
     {
       testimonial: LOREM_LONG,
       author: "James Wilson",
-      authorImage: images.testimonials.profilePhoto,
       authorPosition: "Head of Sales at Enterprise Ltd",
     },
   ],
@@ -79,25 +70,21 @@ const testimonials = {
     {
       testimonial: LOREM_LONG,
       author: "Nina Patel",
-      authorImage: images.testimonials.profilePhoto,
       authorPosition: "International Director at GlobalSales",
     },
     {
       testimonial: LOREM_SHORT,
       author: "Tom Garcia",
-      authorImage: images.testimonials.profilePhoto,
       authorPosition: "CTO at AgencyHub",
     },
     {
       testimonial: LOREM_LONG,
       author: "Lisa Park",
-      authorImage: images.testimonials.profilePhoto,
       authorPosition: "COO at SalesForce Pro",
     },
     {
       testimonial: LOREM_SHORT,
       author: "Chris Brown",
-      authorImage: images.testimonials.profilePhoto,
       authorPosition: "Director at MediaGroup",
     },
   ],
@@ -109,14 +96,7 @@ function TestimonialItem({ item }: { item: (typeof testimonials.column1)[0] }) {
     <TestimonialCard>
       <TestimonialCardQuote>{item.testimonial}</TestimonialCardQuote>
       <TestimonialCardAuthor>
-        <Image
-          src={cdn(item.authorImage, { width: 80 })}
-          alt={item.author}
-          width={40}
-          height={40}
-          className="rounded-full"
-          unoptimized
-        />
+        <AutoAvatar name={item.author} width={40} height={40} />
         <TestimonialCardAuthorInfo>
           <TestimonialCardAuthorName>{item.author}</TestimonialCardAuthorName>
           <TestimonialCardAuthorRole>
