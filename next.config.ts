@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         hostname: "res.cloudinary.com",
         pathname: "/deoxevgc6/**",
       },
+      {
+        protocol: "https",
+        hostname: "randomuser.me",
+        pathname: "/api/portraits/**",
+      },
     ],
   },
 };

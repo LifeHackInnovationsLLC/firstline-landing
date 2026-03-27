@@ -31,7 +31,6 @@ export function cdn(
 export const images = {
   hero: {
     image: "firstline/hero-image.webp",
-    profilePhoto: "firstline/mock-profile-picture.webp",
   },
   benefits: {
     bento1: "firstline/bento-1.webp",
@@ -71,9 +70,6 @@ export const images = {
     icon2: "firstline/why-switch-icon-2.png",
     icon3: "firstline/why-switch-icon-3.png",
     icon4: "firstline/why-switch-icon-4.png",
-  },
-  testimonials: {
-    profilePhoto: "firstline/mock-profile-picture.webp",
   },
   sellers: {
     ellipseSplitPayments: "firstline/elipse-split-payments.webp",
