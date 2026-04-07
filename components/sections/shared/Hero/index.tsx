@@ -102,7 +102,7 @@ export default function Hero() {
                 return (
                   <div
                     key={mode.key}
-                    className="relative rounded-[36px_4px_4px_36px] last:rounded-[4px_36px_36px_4px]"
+                    className="relative rounded-[4px] first:rounded-[36px_4px_4px_36px] last:rounded-[4px_36px_36px_4px]"
                   >
                     {isActive && (
                       <motion.div
