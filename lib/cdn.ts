@@ -101,7 +101,6 @@ export const images = {
     paymentProcessingGlobe: "firstline/payment-processing-globe.webp",
     whyAgenciesBlur: "firstline/why-agencies-blur.webp",
     whyAgenciesGraphic: "firstline/why-agencies-graphic.webp",
-    potentialEarnings: "firstline/potential-earnings.webp",
     hero: "firstline/agencies-bg-hero.png",
     heroMobile: "firstline/agencies-bg-hero-mobile.png",
   },

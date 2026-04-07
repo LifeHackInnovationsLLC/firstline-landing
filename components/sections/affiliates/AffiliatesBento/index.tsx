@@ -27,7 +27,7 @@ const content = {
     {
       title: "Trusted Provider",
       description:
-        "Firstline Payments is a regulated payment service provider. Your earnings are protected, not promised.",
+        "Firstline Payments is a regulated payment service provider. Your earnings aren't just promised, they're protected.",
       image: images.affiliates.bento4,
     },
     {

@@ -62,8 +62,8 @@ const content = {
       ),
     },
     {
-      title: "Introduce",
-      description: "Connect us with your clients who accept cards",
+      title: "Connect",
+      description: "Introduce products and services to customers or merchants",
       icon: (
         <svg
           width="48"
@@ -119,8 +119,9 @@ const content = {
       ),
     },
     {
-      title: "We Close",
-      description: "Our team handles the sales and onboarding",
+      title: "Close",
+      description:
+        "Direct the customer to a checkout page, or board a new merchant for payment processing services",
       icon: (
         <svg
           width="48"
@@ -177,7 +178,8 @@ const content = {
     },
     {
       title: "You Earn",
-      description: "Get paid monthly for as long as they process",
+      description:
+        "Get paid instant commissions for sales and monthly residuals on merchant processing deals",
       icon: (
         <svg
           width="48"

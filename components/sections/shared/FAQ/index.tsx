@@ -2,9 +2,9 @@ import Link from "next/link";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
-import { FAQList } from "./faq-list";
+import { type FAQItem, FAQList } from "./faq-list";
 
-export default function FAQ() {
+export default function FAQ({ faqs }: { faqs?: FAQItem[] }) {
   return (
     <Section id="faq" className="bg-gray">
       <div className="container">
@@ -30,7 +30,7 @@ export default function FAQ() {
             </Button>
           </div>
           <div className="flex-1">
-            <FAQList />
+            <FAQList faqs={faqs} />
           </div>
         </div>
       </div>
