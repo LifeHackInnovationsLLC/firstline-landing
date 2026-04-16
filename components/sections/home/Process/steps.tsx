@@ -1,26 +1,42 @@
-import Image from "next/image";
+import {
+  AnimatedMedia,
+  type AnimatedMediaProps,
+} from "@/components/ui/animated-media";
 import { Heading } from "@/components/ui/heading";
-import { cdn, images } from "@/lib/cdn";
 import { cn } from "@/lib/utils";
 
-const content = [
+type StepItem = {
+  title: string;
+  description: string;
+  media: AnimatedMediaProps;
+};
+
+const content: StepItem[] = [
   {
     title: "Create your account",
     description:
       "Sign up in under 2 minutes. Complete free training to understand the product.",
-    image: images.process.step1,
+    media: {
+      kind: "video",
+      webm: "/animations/steps/create-account.webm",
+      mp4: "/animations/steps/create-account.mp4",
+    },
   },
   {
     title: "Discover your path",
     description:
       "Selling payment processing, find affiliate marketing partners, or lead a team.",
-    image: images.process.step2,
+    media: {
+      kind: "video",
+      webm: "/animations/steps/discover-path.webm",
+      mp4: "/animations/steps/discover-path.mp4",
+    },
   },
   {
     title: "Earn commissions",
     description:
       "Every merchant signup earns you recurring commissions. Lifetime.",
-    image: images.process.step3,
+    media: { kind: "lottie", src: "/animations/steps/earn-commissions.json" },
   },
 ];
 
@@ -34,7 +50,7 @@ export function Steps() {
       <StepsGrid>
         {content.map((step) => (
           <StepCard key={step.title}>
-            <StepImage src={cdn(step.image, { width: 800 })} alt={step.title} />
+            <AnimatedMedia {...step.media} />
             <StepContent>
               <StepTitle>{step.title}</StepTitle>
               <StepDescription>{step.description}</StepDescription>
@@ -75,24 +91,6 @@ function StepCard({ className, children, ...props }: StepCardProps) {
     >
       {children}
     </div>
-  );
-}
-
-interface StepImageProps {
-  className?: string;
-  alt: string;
-  src: string;
-}
-
-function StepImage({ className, alt, src }: StepImageProps) {
-  return (
-    <Image
-      className={cn("absolute inset-0 w-full h-full object-cover", className)}
-      alt={alt}
-      src={src}
-      fill
-      unoptimized
-    />
   );
 }
 
