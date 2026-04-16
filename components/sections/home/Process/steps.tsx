@@ -3,6 +3,7 @@ import {
   type AnimatedMediaProps,
 } from "@/components/ui/animated-media";
 import { Heading } from "@/components/ui/heading";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 
 type StepItem = {
@@ -35,37 +36,25 @@ const content: StepItem[] = [
 export function Steps() {
   return (
     <div className="flex flex-col [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-      <Heading as="h2" className="text-center">
-        Get started in 3 simple steps
-      </Heading>
+      <Reveal>
+        <Heading as="h2" className="text-center">
+          Get started in 3 simple steps
+        </Heading>
+      </Reveal>
 
-      <StepsGrid>
+      <StaggerGroup className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mt-8 lg:mt-15 [--step-card-height:22rem] lg:[--step-card-height:26.5rem]">
         {content.map((step) => (
-          <StepCard key={step.title}>
-            <AnimatedMedia {...step.media} />
-            <StepContent>
-              <StepTitle>{step.title}</StepTitle>
-              <StepDescription>{step.description}</StepDescription>
-            </StepContent>
-          </StepCard>
+          <StaggerItem key={step.title}>
+            <StepCard>
+              <AnimatedMedia {...step.media} />
+              <StepContent>
+                <StepTitle>{step.title}</StepTitle>
+                <StepDescription>{step.description}</StepDescription>
+              </StepContent>
+            </StepCard>
+          </StaggerItem>
         ))}
-      </StepsGrid>
-    </div>
-  );
-}
-
-type StepsGridProps = React.HTMLAttributes<HTMLDivElement>;
-
-function StepsGrid({ className, children, ...props }: StepsGridProps) {
-  return (
-    <div
-      className={cn(
-        "grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mt-8 lg:mt-15 [--step-card-height:22rem] lg:[--step-card-height:26.5rem]",
-        className,
-      )}
-      {...props}
-    >
-      {children}
+      </StaggerGroup>
     </div>
   );
 }

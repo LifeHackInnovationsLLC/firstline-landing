@@ -5,6 +5,7 @@ import {
   type AnimatedMediaProps,
 } from "@/components/ui/animated-media";
 import { Globe } from "@/components/ui/globe";
+import { StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 
 type BentoMedia = AnimatedMediaProps | { kind: "globe" };
@@ -127,45 +128,33 @@ export function Bento() {
   const lastItems = content.bento.slice(3);
 
   return (
-    <BentoGrid>
+    <StaggerGroup className="grid grid-cols-1 mt-15 gap-3 md:grid-cols-2 lg:grid-cols-6 [--bento-card-height:22.56rem]">
       {firstThreeItems.map((item) => (
-        <BentoCard key={getBentoKey(item)} className="md:col-span-2">
-          <BentoMediaRenderer media={item.media} />
-          <BentoContent className="max-w-2xs">
-            <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
-            <BentoText>{item.text.regularText}</BentoText>
-          </BentoContent>
-        </BentoCard>
+        <StaggerItem key={getBentoKey(item)} className="md:col-span-2">
+          <BentoCard>
+            <BentoMediaRenderer media={item.media} />
+            <BentoContent className="max-w-2xs">
+              <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
+              <BentoText>{item.text.regularText}</BentoText>
+            </BentoContent>
+          </BentoCard>
+        </StaggerItem>
       ))}
       {lastItems.map((item) => (
-        <BentoCard
+        <StaggerItem
           key={getBentoKey(item)}
           className="md:col-span-2 lg:col-span-3"
         >
-          <BentoMediaRenderer media={item.media} />
-          <BentoContent>
-            <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
-            <BentoText>{item.text.regularText}</BentoText>
-          </BentoContent>
-        </BentoCard>
+          <BentoCard>
+            <BentoMediaRenderer media={item.media} />
+            <BentoContent>
+              <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
+              <BentoText>{item.text.regularText}</BentoText>
+            </BentoContent>
+          </BentoCard>
+        </StaggerItem>
       ))}
-    </BentoGrid>
-  );
-}
-
-type BentoGridProps = React.HTMLAttributes<HTMLDivElement>;
-
-function BentoGrid({ className, children, ...props }: BentoGridProps) {
-  return (
-    <div
-      className={cn(
-        "grid grid-cols-1 mt-15 gap-3 md:grid-cols-2 lg:grid-cols-6 [--bento-card-height:22.56rem]",
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </div>
+    </StaggerGroup>
   );
 }
 
@@ -175,7 +164,7 @@ function BentoCard({ className, children, ...props }: BentoCardProps) {
   return (
     <div
       className={cn(
-        "col-span-1 p-6 w-full relative flex flex-col justify-end h-(--bento-card-height) bg-card-dark overflow-hidden rounded-4xl",
+        "p-6 w-full relative flex flex-col justify-end h-(--bento-card-height) bg-card-dark overflow-hidden rounded-4xl",
         className,
       )}
       {...props}
