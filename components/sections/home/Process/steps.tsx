@@ -26,11 +26,7 @@ const content: StepItem[] = [
     title: "Discover your path",
     description:
       "Selling payment processing, find affiliate marketing partners, or lead a team.",
-    media: {
-      kind: "video",
-      webm: "/animations/steps/discover-path.webm",
-      mp4: "/animations/steps/discover-path.mp4",
-    },
+    media: { kind: "lottie", src: "/animations/steps/discover-path.json" },
   },
   {
     title: "Earn commissions",
