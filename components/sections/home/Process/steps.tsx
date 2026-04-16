@@ -16,11 +16,7 @@ const content: StepItem[] = [
     title: "Create your account",
     description:
       "Sign up in under 2 minutes. Complete free training to understand the product.",
-    media: {
-      kind: "video",
-      webm: "/animations/steps/create-account.webm",
-      mp4: "/animations/steps/create-account.mp4",
-    },
+    media: { kind: "video", src: "/animations/steps/create-account.mp4" },
   },
   {
     title: "Discover your path",

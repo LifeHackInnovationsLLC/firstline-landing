@@ -24,8 +24,7 @@ const content: { bento: BentoItem[] } = {
       },
       media: {
         kind: "video",
-        webm: "/animations/bento/turn-anyone.webm",
-        mp4: "/animations/bento/turn-anyone.mp4",
+        src: "/animations/bento/turn-anyone.mp4",
         loop: false,
       },
     },
@@ -45,8 +44,7 @@ const content: { bento: BentoItem[] } = {
       },
       media: {
         kind: "video",
-        webm: "/animations/bento/real-time-tracking.webm",
-        mp4: "/animations/bento/real-time-tracking.mp4",
+        src: "/animations/bento/real-time-tracking.mp4",
         loop: false,
       },
     },

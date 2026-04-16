@@ -36,8 +36,7 @@ type CommonProps = {
 
 type VideoProps = CommonProps & {
   kind: "video";
-  webm: string;
-  mp4: string;
+  src: string;
   poster?: string;
 };
 
@@ -132,8 +131,7 @@ function usePrefersReducedMotion() {
 }
 
 function LazyVideo({
-  webm,
-  mp4,
+  src,
   poster,
   className,
   objectPosition,
@@ -177,8 +175,7 @@ function LazyVideo({
       tabIndex={-1}
       aria-hidden="true"
     >
-      <source src={webm} type="video/webm" />
-      <source src={mp4} type="video/mp4" />
+      <source src={src} type="video/mp4" />
     </video>
   );
 }
