@@ -4,10 +4,14 @@ import {
   FeatureCard,
   FeatureCardContent,
   FeatureCardDescription,
-  FeatureCardList,
-  FeatureCardListItem,
   FeatureCardTitle,
 } from "@/components/ui/feature-card";
+import {
+  Reveal,
+  RevealScale,
+  StaggerGroup,
+  StaggerItem,
+} from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 import {
   HighValueIcon,
@@ -53,22 +57,34 @@ export function SplitPayments() {
             unoptimized
           />
           <FeatureCardContent className="relative z-10">
-            <FeatureCardTitle>Split payments at sale</FeatureCardTitle>
-            <FeatureCardDescription>
-              Pay commissions to 1 or 5 people instantly when you collect. Based
-              on your risk tolerance, get your money in your account
-              immediately, even for high-value transactions.
-            </FeatureCardDescription>
-            <FeatureCardList>
+            <Reveal>
+              <FeatureCardTitle>Split payments at sale</FeatureCardTitle>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <FeatureCardDescription>
+                Pay commissions to 1 or 5 people instantly when you collect.
+                Based on your risk tolerance, get your money in your account
+                immediately, even for high-value transactions.
+              </FeatureCardDescription>
+            </Reveal>
+            <StaggerGroup as="ul" className="mt-10 flex flex-col gap-[14px]">
               {items.map((item) => (
-                <FeatureCardListItem key={item.label}>
+                <StaggerItem
+                  as="li"
+                  key={item.label}
+                  from="left"
+                  className="flex flex-row items-center gap-[14px] text-sm text-white"
+                >
                   {item.icon}
                   {item.label}
-                </FeatureCardListItem>
+                </StaggerItem>
               ))}
-            </FeatureCardList>
+            </StaggerGroup>
           </FeatureCardContent>
-          <div className="max-w-sm lg:max-w-xl relative z-10 mx-auto lg:mx-0">
+          <RevealScale
+            delay={0.1}
+            className="max-w-sm lg:max-w-xl relative z-10 mx-auto lg:mx-0"
+          >
             <Image
               src={cdn(images.sellers.graphicSplitPayments)}
               alt="Split payments"
@@ -76,7 +92,7 @@ export function SplitPayments() {
               height={300}
               unoptimized
             />
-          </div>
+          </RevealScale>
         </FeatureCard>
       </div>
     </Section>

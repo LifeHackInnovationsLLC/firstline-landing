@@ -7,6 +7,12 @@ import {
   HighlightCardIcon,
   HighlightCardTitle,
 } from "@/components/ui/highlight-card";
+import {
+  Reveal,
+  RevealScale,
+  StaggerGroup,
+  StaggerItem,
+} from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 const items = [
@@ -38,33 +44,37 @@ export function AgentsGlobal() {
     <Section className="bg-gray">
       <div className="container">
         <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <Heading as="h2" align="center" className="text-black">
-            Ready to go global?
-          </Heading>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 lg:mt-10">
+          <Reveal>
+            <Heading as="h2" align="center" className="text-black">
+              Ready to go global?
+            </Heading>
+          </Reveal>
+          <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 lg:mt-10">
             {items.map((item) => (
-              <HighlightCard key={item.title} color={item.color}>
-                <div className="flex flex-col gap-5">
-                  <HighlightCardIcon>
-                    <Image
-                      src={cdn(item.image, { width: 96 })}
-                      alt={item.title}
-                      width={48}
-                      height={48}
-                      unoptimized
-                    />
-                  </HighlightCardIcon>
-                  <div className="flex flex-col gap-2">
-                    <HighlightCardTitle>{item.title}</HighlightCardTitle>
-                    <HighlightCardDescription className="mt-0">
-                      {item.description}
-                    </HighlightCardDescription>
+              <StaggerItem key={item.title}>
+                <HighlightCard color={item.color}>
+                  <div className="flex flex-col gap-5">
+                    <HighlightCardIcon>
+                      <Image
+                        src={cdn(item.image, { width: 96 })}
+                        alt={item.title}
+                        width={48}
+                        height={48}
+                        unoptimized
+                      />
+                    </HighlightCardIcon>
+                    <div className="flex flex-col gap-2">
+                      <HighlightCardTitle>{item.title}</HighlightCardTitle>
+                      <HighlightCardDescription className="mt-0">
+                        {item.description}
+                      </HighlightCardDescription>
+                    </div>
                   </div>
-                </div>
-              </HighlightCard>
+                </HighlightCard>
+              </StaggerItem>
             ))}
-          </div>
-          <div className="relative overflow-hidden rounded-3xl bg-black p-6 lg:p-10 mt-4 flex flex-col items-center justify-center text-center min-h-62.5">
+          </StaggerGroup>
+          <RevealScale className="relative overflow-hidden rounded-3xl bg-black p-6 lg:p-10 mt-4 flex flex-col items-center justify-center text-center min-h-62.5">
             <Image
               src={cdn(images.agents.readyToGlobalGreenBlur)}
               alt=""
@@ -87,7 +97,7 @@ export function AgentsGlobal() {
             <p className="relative z-10 mt-3 text-white/60 text-sm lg:text-base">
               With Firstline, you can sell from anywhere to anywhere.
             </p>
-          </div>
+          </RevealScale>
         </div>
       </div>
     </Section>

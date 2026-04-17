@@ -2,6 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
+import {
+  Reveal,
+  RevealScale,
+  StaggerGroup,
+  StaggerItem,
+} from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 import { PayoutsIcon, RewardsIcon, TrackIcon, UploadIcon } from "./icons";
 
@@ -28,24 +34,30 @@ export function UploadYourCourses() {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[90px] items-center [--sellers-section-content-width:31.25rem] max-w-(--sellers-section-content-width) mx-auto lg:max-w-none">
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-            <h2 className="font-display font-semibold tracking-tight text-4xl lg:text-[52px] lg:leading-[52px] text-text-primary">
-              {content.title}
-            </h2>
-            <p className="mt-6 text-sm lg:text-base text-text-body">
-              {content.description}
-            </p>
-            <ul className="mt-8 flex flex-col gap-3.5">
+            <Reveal>
+              <h2 className="font-display font-semibold tracking-tight text-4xl lg:text-[52px] lg:leading-[52px] text-text-primary">
+                {content.title}
+              </h2>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <p className="mt-6 text-sm lg:text-base text-text-body">
+                {content.description}
+              </p>
+            </Reveal>
+            <StaggerGroup as="ul" className="mt-8 flex flex-col gap-3.5">
               {items.map((item) => (
-                <li
+                <StaggerItem
+                  as="li"
                   key={item.label}
+                  from="left"
                   className="flex flex-row items-center gap-3.5 text-sm text-text-body"
                 >
                   {item.icon}
                   {item.label}
-                </li>
+                </StaggerItem>
               ))}
-            </ul>
-            <div className="mt-10">
+            </StaggerGroup>
+            <Reveal delay={0.1} className="mt-10">
               <Button
                 nativeButton={false}
                 variant="primary"
@@ -53,9 +65,9 @@ export function UploadYourCourses() {
               >
                 {content.cta.label}
               </Button>
-            </div>
+            </Reveal>
           </div>
-          <div>
+          <RevealScale delay={0.1}>
             <Image
               src={cdn(images.sellers.uploadYourCourses)}
               alt="Upload your courses"
@@ -64,7 +76,7 @@ export function UploadYourCourses() {
               className="w-full h-auto rounded-3xl"
               unoptimized
             />
-          </div>
+          </RevealScale>
         </div>
       </div>
     </Section>

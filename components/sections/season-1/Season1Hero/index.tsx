@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
+import { FadeIn } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 const content = {
@@ -77,15 +78,23 @@ export default function Season1Hero() {
         <div className="flex flex-col">
           <div className="flex flex-col gap-8 lg:gap-11 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto items-center text-center pb-10 lg:pb-20 lg:max-w-2xl">
             <div className="flex flex-col gap-6 items-center">
-              <Season1Kicker />
-              <Heading as="h1" align="center">
-                {content.title}
-              </Heading>
-              <p className="text-white/72 text-sm lg:text-base max-w-lg">
+              <FadeIn>
+                <Season1Kicker />
+              </FadeIn>
+              <FadeIn delay={0.05}>
+                <Heading as="h1" align="center">
+                  {content.title}
+                </Heading>
+              </FadeIn>
+              <FadeIn
+                as="p"
+                delay={0.1}
+                className="text-white/72 text-sm lg:text-base max-w-lg"
+              >
                 {content.description}
-              </p>
+              </FadeIn>
             </div>
-            <div className="flex flex-row items-center gap-4">
+            <FadeIn delay={0.15} className="flex flex-row items-center gap-4">
               {content.ctas.map((cta) => (
                 <Button
                   key={cta.label}
@@ -97,7 +106,7 @@ export default function Season1Hero() {
                   {"icon" in cta && cta.icon}
                 </Button>
               ))}
-            </div>
+            </FadeIn>
           </div>
         </div>
       </div>

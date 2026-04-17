@@ -1,4 +1,5 @@
 import { Section } from "@/components/layout/section";
+import { StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 
 interface Stat {
   value: string;
@@ -41,9 +42,9 @@ export function Stats({ id, stats, className }: StatsProps) {
   return (
     <Section id={id} className={`pt-5 bg-gray ${className ?? ""}`}>
       <div className="container">
-        <div className="w-full grid grid-cols-3 items-center gap-3 py-8 sm:gap-0 lg:py-16 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
+        <StaggerGroup className="w-full grid grid-cols-3 items-center gap-3 py-8 sm:gap-0 lg:py-16 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
           {stats.map((stat, index) => (
-            <div
+            <StaggerItem
               key={stat.label}
               className={`flex min-w-0 flex-col items-center justify-center gap-1 px-2 text-center sm:flex-row sm:gap-2 lg:gap-4 ${index === 0 ? "" : "border-l border-black/6 sm:border-l-0"}`}
             >
@@ -56,9 +57,9 @@ export function Stats({ id, stats, className }: StatsProps) {
                   {stat.label}
                 </span>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGroup>
       </div>
     </Section>
   );

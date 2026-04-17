@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 const content = {
@@ -50,12 +51,14 @@ export function AffiliatesBento() {
     <Section id="affiliates-bento" className="bg-gray">
       <div className="container">
         <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <Heading as="h2" align="center" className="text-black text-balance">
-            {content.title}
-          </Heading>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-8 lg:mt-15">
+          <Reveal>
+            <Heading as="h2" align="center" className="text-black text-balance">
+              {content.title}
+            </Heading>
+          </Reveal>
+          <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-8 lg:mt-15">
             {content.items.map((item) => (
-              <div
+              <StaggerItem
                 key={item.title}
                 className="relative flex flex-col justify-end h-[280px] md:h-[356px] p-5 bg-card-dark overflow-hidden rounded-4xl"
               >
@@ -74,9 +77,9 @@ export function AffiliatesBento() {
                     {item.description}
                   </p>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </div>
     </Section>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 function FeatureIcon() {
@@ -63,7 +64,7 @@ export function AffiliatesTeams() {
             className="object-cover"
             unoptimized
           />
-          <div className="relative z-10 flex flex-col max-w-xl">
+          <Reveal className="relative z-10 flex flex-col max-w-xl">
             <div className="flex flex-col gap-4 lg:gap-6">
               <Heading as="h2" className="text-white">
                 {content.title}
@@ -72,10 +73,10 @@ export function AffiliatesTeams() {
                 {content.description}
               </p>
             </div>
-          </div>
-          <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-20 mt-8 lg:mt-20">
+          </Reveal>
+          <StaggerGroup className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-20 mt-8 lg:mt-20">
             {content.features.map((feature) => (
-              <div key={feature.title} className="flex flex-col gap-2">
+              <StaggerItem key={feature.title} className="flex flex-col gap-2">
                 <div className="flex flex-row items-center gap-2">
                   <FeatureIcon />
                   <span className="text-sm text-white font-semibold">
@@ -83,9 +84,9 @@ export function AffiliatesTeams() {
                   </span>
                 </div>
                 <p className="text-white/60 text-sm">{feature.description}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </div>
     </Section>

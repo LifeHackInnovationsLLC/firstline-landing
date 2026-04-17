@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 const content = {
@@ -40,12 +41,14 @@ export default function Season1Bento() {
     <Section className="bg-gray">
       <div className="container">
         <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <Heading as="h2" align="center" className="text-black text-balance">
-            {content.title}
-          </Heading>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-15">
+          <Reveal>
+            <Heading as="h2" align="center" className="text-black text-balance">
+              {content.title}
+            </Heading>
+          </Reveal>
+          <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-15">
             {content.items.map((item) => (
-              <div
+              <StaggerItem
                 key={item.title}
                 className="relative flex flex-col justify-end h-[22.25rem] bg-card-dark overflow-hidden rounded-4xl p-6"
               >
@@ -62,12 +65,16 @@ export default function Season1Bento() {
                   </h3>
                   <p className="text-white/65 text-sm">{item.description}</p>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
-          <p className="text-center text-text-secondary w-full mt-8">
+          </StaggerGroup>
+          <Reveal
+            as="p"
+            delay={0.1}
+            className="text-center text-text-secondary w-full mt-8"
+          >
             {content.bottomText}
-          </p>
+          </Reveal>
         </div>
       </div>
     </Section>

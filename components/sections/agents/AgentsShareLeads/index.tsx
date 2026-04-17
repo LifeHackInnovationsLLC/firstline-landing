@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { RevealScale, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 const content = {
@@ -21,7 +22,7 @@ export function AgentsShareLeads() {
     <Section>
       <div className="container">
         <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <div className="relative overflow-hidden p-[6px] bg-[linear-gradient(162.92deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.04)_100%)] backdrop-blur-[68.6px] rounded-[12px]">
+          <RevealScale className="relative overflow-hidden p-[6px] bg-[linear-gradient(162.92deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.04)_100%)] backdrop-blur-[68.6px] rounded-[12px]">
             <div className="bg-black/90 rounded-[6px] relative overflow-hidden flex flex-col lg:flex-row">
               <Image
                 src={cdn(images.season1.climbPurpleElipse)}
@@ -63,18 +64,19 @@ export function AgentsShareLeads() {
                 />
               </div>
             </div>
-          </div>
+          </RevealScale>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 mt-8 lg:mt-10">
+          <StaggerGroup className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 mt-8 lg:mt-10">
             {content.features.map((feature) => (
-              <p
+              <StaggerItem
+                as="p"
                 key={feature}
                 className="text-white text-sm lg:text-base font-medium"
               >
                 {feature}
-              </p>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </div>
     </Section>

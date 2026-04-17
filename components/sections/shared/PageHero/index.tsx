@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
+import { FadeIn } from "@/components/ui/reveal";
 
 interface PageHeroCta {
   label: string;
@@ -81,13 +82,20 @@ export function PageHero({
           className={`flex flex-col gap-8 lg:gap-11 ${maxWidth} mx-auto items-center text-center ${isBottom ? "pb-10 lg:pb-20" : "pt-10 lg:pt-20"}`}
         >
           <div className="flex flex-col gap-4 items-center">
-            {kicker}
-            <Heading as="h1" align="center">
-              {title}
-            </Heading>
-            <p className={descriptionClassName}>{description}</p>
+            {kicker && <FadeIn>{kicker}</FadeIn>}
+            <FadeIn delay={0.05}>
+              <Heading as="h1" align="center">
+                {title}
+              </Heading>
+            </FadeIn>
+            <FadeIn delay={0.1} as="p" className={descriptionClassName}>
+              {description}
+            </FadeIn>
           </div>
-          <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-4">
+          <FadeIn
+            delay={0.15}
+            className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-4"
+          >
             {ctas.map((cta) => (
               <Button
                 key={cta.label}
@@ -100,7 +108,7 @@ export function PageHero({
                 {cta.icon}
               </Button>
             ))}
-          </div>
+          </FadeIn>
         </div>
       </div>
     </Section>

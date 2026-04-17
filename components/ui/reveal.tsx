@@ -13,6 +13,8 @@ const DURATION = 0.5;
 const VIEWPORT = { once: true, margin: "0px 0px -10% 0px" } as const;
 
 type MotionTag = "div" | "section" | "p" | "span" | "li" | "ul";
+type StaggerDirection = "bottom" | "left" | "right";
+const STAGGER_DISTANCE = 16;
 
 interface RevealProps {
   as?: MotionTag;
@@ -51,6 +53,78 @@ export function Reveal({
   );
 }
 
+interface FadeInProps {
+  as?: MotionTag;
+  delay?: number;
+  className?: string;
+  children?: ReactNode;
+}
+
+export function FadeIn({
+  as = "div",
+  delay = 0,
+  className,
+  children,
+}: FadeInProps) {
+  const shouldReduce = useReducedMotion();
+
+  if (shouldReduce) {
+    const Tag = as as ElementType;
+    return <Tag className={className}>{children}</Tag>;
+  }
+
+  const MotionTagComponent = motion[as];
+
+  return (
+    <MotionTagComponent
+      className={className}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={VIEWPORT}
+      transition={{ duration: DURATION, ease: EASE, delay }}
+    >
+      {children}
+    </MotionTagComponent>
+  );
+}
+
+interface RevealScaleProps {
+  as?: MotionTag;
+  delay?: number;
+  from?: number;
+  className?: string;
+  children?: ReactNode;
+}
+
+export function RevealScale({
+  as = "div",
+  delay = 0,
+  from = 0.96,
+  className,
+  children,
+}: RevealScaleProps) {
+  const shouldReduce = useReducedMotion();
+
+  if (shouldReduce) {
+    const Tag = as as ElementType;
+    return <Tag className={className}>{children}</Tag>;
+  }
+
+  const MotionTagComponent = motion[as];
+
+  return (
+    <MotionTagComponent
+      className={className}
+      initial={{ opacity: 0, scale: from }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={VIEWPORT}
+      transition={{ duration: DURATION, ease: EASE, delay }}
+    >
+      {children}
+    </MotionTagComponent>
+  );
+}
+
 const groupVariants = (stagger: number, delayChildren: number): Variants => ({
   hidden: {},
   show: {
@@ -61,12 +135,30 @@ const groupVariants = (stagger: number, delayChildren: number): Variants => ({
   },
 });
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: DURATION, ease: EASE },
+const itemVariantsByDirection: Record<StaggerDirection, Variants> = {
+  bottom: {
+    hidden: { opacity: 0, y: STAGGER_DISTANCE },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: DURATION, ease: EASE },
+    },
+  },
+  left: {
+    hidden: { opacity: 0, x: -STAGGER_DISTANCE },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: DURATION, ease: EASE },
+    },
+  },
+  right: {
+    hidden: { opacity: 0, x: STAGGER_DISTANCE },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: DURATION, ease: EASE },
+    },
   },
 };
 
@@ -109,12 +201,14 @@ export function StaggerGroup({
 
 interface StaggerItemProps {
   as?: MotionTag;
+  from?: StaggerDirection;
   className?: string;
   children?: ReactNode;
 }
 
 export function StaggerItem({
   as = "div",
+  from = "bottom",
   className,
   children,
 }: StaggerItemProps) {
@@ -128,7 +222,10 @@ export function StaggerItem({
   const MotionTagComponent = motion[as];
 
   return (
-    <MotionTagComponent className={className} variants={itemVariants}>
+    <MotionTagComponent
+      className={className}
+      variants={itemVariantsByDirection[from]}
+    >
       {children}
     </MotionTagComponent>
   );

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cdn } from "@/lib/cdn";
 
 interface TwoCardFeatureCard {
@@ -32,13 +33,16 @@ export function TwoCardFeature({
     <Section id={id} className={`bg-gray ${className ?? ""}`}>
       <div className="container">
         <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <Heading as="h2" align="center" className="text-black text-balance">
-            {title}
-          </Heading>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 lg:mt-15">
-            {cards.map((card) => (
-              <div
+          <Reveal>
+            <Heading as="h2" align="center" className="text-black text-balance">
+              {title}
+            </Heading>
+          </Reveal>
+          <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 lg:mt-15">
+            {cards.map((card, index) => (
+              <StaggerItem
                 key={card.title}
+                from={index === 0 ? "left" : "right"}
                 className="relative overflow-hidden rounded-3xl p-5 lg:p-7"
               >
                 <Image
@@ -96,9 +100,9 @@ export function TwoCardFeature({
                     )}
                   </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </div>
     </Section>

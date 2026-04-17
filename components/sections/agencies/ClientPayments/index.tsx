@@ -4,10 +4,9 @@ import {
   FeatureCard,
   FeatureCardContent,
   FeatureCardDescription,
-  FeatureCardList,
-  FeatureCardListItem,
   FeatureCardTitle,
 } from "@/components/ui/feature-card";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 function NoExtraWorkIcon() {
@@ -132,22 +131,30 @@ export function ClientPayments() {
             unoptimized
           />
           <FeatureCardContent className="relative z-10">
-            <FeatureCardTitle>
-              Your clients need payment processing
-            </FeatureCardTitle>
-            <FeatureCardDescription>
-              Every business you work with accepts card payments. They&apos;re
-              already paying someone for processing — why not earn from that
-              relationship while providing better service?
-            </FeatureCardDescription>
-            <FeatureCardList>
+            <Reveal>
+              <FeatureCardTitle>
+                Your clients need payment processing
+              </FeatureCardTitle>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <FeatureCardDescription>
+                Every business you work with accepts card payments. They&apos;re
+                already paying someone for processing — why not earn from that
+                relationship while providing better service?
+              </FeatureCardDescription>
+            </Reveal>
+            <StaggerGroup as="ul" className="mt-10 flex flex-col gap-[14px]">
               {items.map((item) => (
-                <FeatureCardListItem key={item.label}>
+                <StaggerItem
+                  as="li"
+                  key={item.label}
+                  className="flex flex-row items-center gap-[14px] text-sm text-white"
+                >
                   {item.icon}
                   {item.label}
-                </FeatureCardListItem>
+                </StaggerItem>
               ))}
-            </FeatureCardList>
+            </StaggerGroup>
           </FeatureCardContent>
         </FeatureCard>
       </div>

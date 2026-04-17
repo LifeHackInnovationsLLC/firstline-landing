@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 import {
   CrossSellIcon,
@@ -45,7 +46,7 @@ export function CommerceWithoutLimits() {
       />
       <div className="container relative overflow-hidden">
         <div className="flex flex-col items-center w-full gap-8 lg:gap-15 [--sellers-section-content-width:31.25rem] max-w-(--sellers-section-content-width) mx-auto lg:max-w-4xl relative z-10">
-          <div className="flex flex-col gap-4 lg:gap-6 items-center">
+          <Reveal className="flex flex-col gap-4 lg:gap-6 items-center">
             <Heading as="h2" className="text-center">
               Commerce without limits
             </Heading>
@@ -53,10 +54,10 @@ export function CommerceWithoutLimits() {
               Convert anyone with a phone into a dedicated salesperson with
               trackable conversions.
             </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:gap-10">
+          </Reveal>
+          <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:gap-10">
             {items.map((item) => (
-              <div key={item.title} className="flex flex-col gap-2">
+              <StaggerItem key={item.title} className="flex flex-col gap-2">
                 <div className="flex flex-row items-center gap-2">
                   {item.icon}
                   <span className="text-lg text-body font-medium">
@@ -66,9 +67,9 @@ export function CommerceWithoutLimits() {
                 <span className="text-white/60 text-sm lg:text-base">
                   {item.description}
                 </span>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </div>
     </Section>

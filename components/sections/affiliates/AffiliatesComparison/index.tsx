@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { Reveal, RevealScale } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 const content = {
@@ -50,10 +51,12 @@ export function AffiliatesComparison() {
     <Section id="affiliates-comparison" className="bg-gray">
       <div className="container">
         <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <Heading as="h2" align="center" className="text-black text-balance">
-            {content.title}
-          </Heading>
-          <div className="relative mt-8 lg:mt-15 rounded-3xl border border-white/10 overflow-hidden">
+          <Reveal>
+            <Heading as="h2" align="center" className="text-black text-balance">
+              {content.title}
+            </Heading>
+          </Reveal>
+          <RevealScale className="relative mt-8 lg:mt-15 rounded-3xl border border-white/10 overflow-hidden">
             <Image
               src={cdn(images.shared.comparisonSectionBg, { width: 1400 })}
               alt=""
@@ -94,7 +97,7 @@ export function AffiliatesComparison() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </RevealScale>
         </div>
       </div>
     </Section>
