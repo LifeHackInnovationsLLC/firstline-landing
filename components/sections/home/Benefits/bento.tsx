@@ -24,8 +24,8 @@ const content: { bento: BentoItem[] } = {
         regularText: "into a tracked incentivized salesperson",
       },
       media: {
-        kind: "video",
-        src: "/animations/bento/turn-anyone.mp4",
+        kind: "lottie",
+        src: "/animations/bento/turn-anyone.json",
         loop: false,
       },
     },
@@ -44,8 +44,8 @@ const content: { bento: BentoItem[] } = {
         regularText: "in real time",
       },
       media: {
-        kind: "video",
-        src: "/animations/bento/real-time-tracking.mp4",
+        kind: "lottie",
+        src: "/animations/bento/real-time-tracking.json",
         loop: false,
       },
     },
