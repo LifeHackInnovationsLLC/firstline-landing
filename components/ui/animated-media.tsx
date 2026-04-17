@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import {
   type ComponentType,
-  type CSSProperties,
   useCallback,
   useEffect,
   useRef,
@@ -13,19 +12,19 @@ import {
 } from "react";
 import { cn } from "@/lib/utils";
 
-const Lottie = dynamic(() => import("lottie-react"), {
-  ssr: false,
-}) as unknown as ComponentType<{
-  animationData: unknown;
+type DotLottieProps = {
+  src: string;
   loop?: boolean;
   autoplay?: boolean;
   className?: string;
-  style?: CSSProperties;
-  rendererSettings?: {
-    preserveAspectRatio?: string;
-    progressiveLoad?: boolean;
-  };
-}>;
+  layout?: { fit: "cover" | "contain"; align: [number, number] };
+};
+
+const DotLottieReact = dynamic(
+  () =>
+    import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
+  { ssr: false },
+) as unknown as ComponentType<DotLottieProps>;
 
 type CommonProps = {
   className?: string;
@@ -190,23 +189,6 @@ function LazyLottie({
 }: LottieProps) {
   const { setNode, isInView } = useInViewport<HTMLDivElement>(rootMargin);
   const reducedMotion = usePrefersReducedMotion();
-  const [animationData, setAnimationData] = useState<unknown>(null);
-
-  useEffect(() => {
-    if (!isInView || animationData) return;
-    let cancelled = false;
-    fetch(src)
-      .then((res) => res.json())
-      .then((data) => {
-        if (!cancelled) setAnimationData(data);
-      })
-      .catch(() => {
-        /* swallow — card will stay blank if the JSON fails to load */
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [isInView, src, animationData]);
 
   return (
     <div
@@ -215,16 +197,13 @@ function LazyLottie({
       style={objectPosition ? { objectPosition } : undefined}
       aria-hidden="true"
     >
-      {animationData ? (
-        <Lottie
-          animationData={animationData}
+      {isInView ? (
+        <DotLottieReact
+          src={src}
           loop={loop && !reducedMotion}
           autoplay={!reducedMotion}
-          className="h-full w-full [&_svg]:!h-full [&_svg]:!w-full"
-          rendererSettings={{
-            preserveAspectRatio:
-              fit === "cover" ? "xMidYMid slice" : "xMidYMid meet",
-          }}
+          className="h-full w-full"
+          layout={{ fit, align: [0.5, 0.5] }}
         />
       ) : null}
     </div>

@@ -23,13 +23,13 @@ const content: StepItem[] = [
     title: "Discover your path",
     description:
       "Selling payment processing, find affiliate marketing partners, or lead a team.",
-    media: { kind: "lottie", src: "/animations/steps/discover-path.json" },
+    media: { kind: "lottie", src: "/animations/steps/discover-path.lottie" },
   },
   {
     title: "Earn commissions",
     description:
       "Every merchant signup earns you recurring commissions. Lifetime.",
-    media: { kind: "lottie", src: "/animations/steps/earn-commissions.json" },
+    media: { kind: "lottie", src: "/animations/steps/earn-commissions.lottie" },
   },
 ];
 

@@ -25,7 +25,7 @@ const content: { bento: BentoItem[] } = {
       },
       media: {
         kind: "lottie",
-        src: "/animations/bento/turn-anyone.json",
+        src: "/animations/bento/turn-anyone.lottie",
         loop: false,
       },
     },
@@ -34,7 +34,7 @@ const content: { bento: BentoItem[] } = {
       alt: "Commission tracking dashboard",
       media: {
         kind: "lottie",
-        src: "/animations/bento/split-commissions.json",
+        src: "/animations/bento/split-commissions.lottie",
         loop: false,
       },
     },
@@ -45,7 +45,7 @@ const content: { bento: BentoItem[] } = {
       },
       media: {
         kind: "lottie",
-        src: "/animations/bento/real-time-tracking.json",
+        src: "/animations/bento/real-time-tracking.lottie",
         loop: false,
       },
     },
@@ -64,7 +64,7 @@ const content: { bento: BentoItem[] } = {
       },
       media: {
         kind: "lottie",
-        src: "/animations/bento/pay-teams.json",
+        src: "/animations/bento/pay-teams.lottie",
         loop: false,
       },
     },

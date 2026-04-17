@@ -148,7 +148,7 @@ export default function Hero() {
           <div className="relative flex-1 self-start w-full aspect-706/556">
             <AnimatedMedia
               kind="lottie"
-              src="/animations/hero.json"
+              src="/animations/hero.lottie"
               fit="contain"
             />
           </div>
