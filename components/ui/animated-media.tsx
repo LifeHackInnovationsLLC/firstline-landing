@@ -18,11 +18,14 @@ type DotLottieProps = {
   autoplay?: boolean;
   className?: string;
   layout?: { fit: "cover" | "contain"; align: [number, number] };
+  renderConfig?: { devicePixelRatio?: number; freezeOnOffscreen?: boolean };
 };
 
 const DotLottieReact = dynamic(
   () =>
-    import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
+    import("@lottiefiles/dotlottie-react/webgl").then(
+      (mod) => mod.DotLottieReact,
+    ),
   { ssr: false },
 ) as unknown as ComponentType<DotLottieProps>;
 
@@ -204,6 +207,13 @@ function LazyLottie({
           autoplay={!reducedMotion}
           className="h-full w-full"
           layout={{ fit, align: [0.5, 0.5] }}
+          renderConfig={{
+            devicePixelRatio: Math.min(
+              typeof window !== "undefined" ? window.devicePixelRatio : 1,
+              1.5,
+            ),
+            freezeOnOffscreen: true,
+          }}
         />
       ) : null}
     </div>
