@@ -1,11 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import {
   AnimatedMedia,
   type AnimatedMediaProps,
 } from "@/components/ui/animated-media";
 import { Globe } from "@/components/ui/globe";
 import { StaggerGroup, StaggerItem } from "@/components/ui/reveal";
+import { cdn, images } from "@/lib/cdn";
 import { cn } from "@/lib/utils";
 
 type BentoMedia = AnimatedMediaProps | { kind: "globe" };
@@ -86,6 +88,24 @@ function BentoMediaRenderer({ media }: { media: BentoMedia }) {
 function BrandGlobe() {
   return (
     <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+      <Image
+        src={cdn(images.sellers.ellipseSplitPayments)}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-32 -left-32"
+        width={600}
+        height={600}
+        unoptimized
+      />
+      <Image
+        src={cdn(images.sellers.greenEllipseSplitPayments)}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-32 -right-32"
+        width={600}
+        height={600}
+        unoptimized
+      />
       <div className="pointer-events-none aspect-square w-[110%] translate-y-[18%] sm:w-[90%] lg:w-[80%]">
         <Globe
           className="!relative !inset-auto !max-w-none"
