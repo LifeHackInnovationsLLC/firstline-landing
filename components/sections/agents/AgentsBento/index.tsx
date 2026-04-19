@@ -1,47 +1,79 @@
-import Image from "next/image";
 import { Section } from "@/components/layout/section";
+import {
+  AnimatedMedia,
+  type AnimatedMediaProps,
+} from "@/components/ui/animated-media";
 import { Heading } from "@/components/ui/heading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
-import { cdn, images } from "@/lib/cdn";
 
-const content = {
+type BentoItem = {
+  title: string;
+  description: string;
+  media: AnimatedMediaProps;
+};
+
+const content: { title: string; items: BentoItem[] } = {
   title: "What you get\nas a Firstline Seller?",
   items: [
     {
       title: "Transparent Commissions",
       description:
         "Every product you sell earns you instant and transparent commission. With offerings like payment processing, you can earn ongoing commissions based on monthly volume. Not just a one-time payout, your income grows as the businesses you bring in keep growing.",
-      image: images.agents.bento1,
+      media: {
+        kind: "lottie",
+        src: "/animations/agents/bento-1.lottie",
+        loop: false,
+      },
     },
     {
       title: "Real Time Commission Tracking",
       description:
         "Track everything in one place, from the individual products you've sold, to your merchant volume and commissions. See exactly what you're earning and where it's coming from at any time.",
-      image: images.agents.bento2,
+      media: {
+        kind: "lottie",
+        src: "/animations/agents/bento-2.lottie",
+        loop: false,
+      },
     },
     {
       title: "Team and Override Management",
       description:
         "Join a team as an agent or build your own team. Agents earn competitive commissions while team leaders earn override commissions across their entire network.",
-      image: images.agents.bento3,
+      media: {
+        kind: "lottie",
+        src: "/animations/agents/bento-3.lottie",
+        loop: false,
+      },
     },
     {
       title: "Merchant and Portfolio Management",
       description:
         "Manage your full book of business from a single dashboard. Track activity, performance, and growth without spreadsheets or manual processes.",
-      image: images.agents.bento4,
+      media: {
+        kind: "lottie",
+        src: "/animations/agents/bento-4.lottie",
+        loop: false,
+      },
     },
     {
       title: "Affiliate and Referral Tools",
       description:
         "Monetize your network beyond direct sales. Share referral links, bring in merchants or agents, and earn rewards automatically.",
-      image: images.agents.bento5,
+      media: {
+        kind: "lottie",
+        src: "/animations/agents/bento-5.lottie",
+        loop: false,
+      },
     },
     {
       title: "Mobile First Access",
       description:
         "Everything operates online. No office, no hardware inventory, and no gatekeepers. If you have a phone, you have a business.",
-      image: images.agents.bento6,
+      media: {
+        kind: "lottie",
+        src: "/animations/agents/bento-6.lottie",
+        loop: false,
+      },
     },
   ],
 };
@@ -62,13 +94,7 @@ export function AgentsBento() {
                 key={item.title}
                 className="relative flex flex-col justify-end h-[280px] md:h-[356px] p-5 bg-card-dark overflow-hidden rounded-4xl"
               >
-                <Image
-                  src={cdn(item.image)}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                  unoptimized
-                />
+                <AnimatedMedia {...item.media} />
                 <div className="relative z-10 flex flex-col gap-2">
                   <h3 className="text-white text-lg font-semibold">
                     {item.title}
