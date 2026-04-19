@@ -4,9 +4,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import {
   type ComponentType,
-  useCallback,
   useEffect,
-  useRef,
   useState,
   useSyncExternalStore,
 } from "react";
@@ -23,9 +21,7 @@ type DotLottieProps = {
 
 const DotLottieReact = dynamic(
   () =>
-    import("@lottiefiles/dotlottie-react/webgl").then(
-      (mod) => mod.DotLottieReact,
-    ),
+    import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
   { ssr: false },
 ) as unknown as ComponentType<DotLottieProps>;
 
@@ -86,36 +82,31 @@ export function AnimatedMedia(props: AnimatedMediaProps) {
 
 function useInViewport<T extends Element>(rootMargin = "200px") {
   const [node, setNode] = useState<T | null>(null);
-  const inViewRef = useRef(false);
+  const [isInView, setIsInView] = useState(false);
 
-  const subscribe = useCallback(
-    (notify: () => void) => {
-      if (!node) return () => {};
-      if (typeof IntersectionObserver === "undefined") {
-        inViewRef.current = true;
-        notify();
-        return () => {};
-      }
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry?.isIntersecting && !inViewRef.current) {
-            inViewRef.current = true;
-            notify();
+  useEffect(() => {
+    if (!node) return;
+    let unmountTimer: ReturnType<typeof setTimeout> | null = null;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          if (unmountTimer) {
+            clearTimeout(unmountTimer);
+            unmountTimer = null;
           }
-        },
-        { rootMargin },
-      );
-      observer.observe(node);
-      return () => observer.disconnect();
-    },
-    [node, rootMargin],
-  );
-
-  const isInView = useSyncExternalStore(
-    subscribe,
-    () => inViewRef.current,
-    () => false,
-  );
+          setIsInView(true);
+        } else {
+          unmountTimer = setTimeout(() => setIsInView(false), 800);
+        }
+      },
+      { rootMargin },
+    );
+    observer.observe(node);
+    return () => {
+      if (unmountTimer) clearTimeout(unmountTimer);
+      observer.disconnect();
+    };
+  }, [node, rootMargin]);
 
   return { setNode, node, isInView };
 }
@@ -210,7 +201,7 @@ function LazyLottie({
           renderConfig={{
             devicePixelRatio: Math.min(
               typeof window !== "undefined" ? window.devicePixelRatio : 1,
-              1.5,
+              1.25,
             ),
             freezeOnOffscreen: true,
           }}
