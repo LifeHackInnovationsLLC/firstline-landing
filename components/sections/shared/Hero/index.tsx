@@ -4,13 +4,13 @@ import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { useState } from "react";
 import { Section } from "@/components/layout/section";
-import { AnimatedMedia } from "@/components/ui/animated-media";
 import { AutoAvatar } from "@/components/ui/auto-avatar";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { HeroKicker } from "./hero-kicker";
 import { AffiliatesIcon, AgenciesIcon, AgentIcon, SellerIcon } from "./svgs";
+import { AnimatedMedia } from "@/components/ui/animated-media";
 
 const content = {
   kicker: "$12M+ paid out",
@@ -146,20 +146,22 @@ export default function Hero() {
             </Button>
           </div>
           <div className="relative flex-1 self-start w-full aspect-706/556">
-            <AnimatedMedia
+            {/* <AnimatedMedia
               kind="lottie"
               src="/animations/hero.lottie"
               fit="contain"
-            />
+            /> */}
           </div>
         </div>
 
         <div className="flex flex-col lg:flex-row w-full items-center gap-4 mt-8 border-t border-white/6 pt-4 pb-16">
-          <span className="text-white/72 text-lg whitespace-nowrap shrink-0 text-center lg:text-left">
-            Trusted by 2,500+ users:
-          </span>
-          <div className="relative flex-1 min-w-0 mask-[linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]`">
-            <InfiniteSlider gap={24} speed={50} repeat={2}>
+          <div className="inline lg:max-w-44 lg:border-r lg:border-white/10 lg:pr-6 shrink-0">
+            <p className="text-white/72 text-sm text-center lg:text-end">
+              Trusted by 2,500+ users
+            </p>
+          </div>
+          <div className="relative flex-1 min-w-0 py-3">
+            <InfiniteSlider speedOnHover={20} speed={40} gap={24} repeat={2}>
               {content.socialProof.items.map((item) => (
                 <div
                   key={item.name}
@@ -169,6 +171,14 @@ export default function Hero() {
                 </div>
               ))}
             </InfiniteSlider>
+            <div
+              aria-hidden
+              className="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-background to-transparent pointer-events-none z-10"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-y-0 right-0 w-20 bg-linear-to-l from-background to-transparent pointer-events-none z-10"
+            />
           </div>
         </div>
       </div>
