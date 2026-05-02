@@ -129,8 +129,8 @@ function AdvancedTraining() {
           </Reveal>
           <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {courses.map((course) => (
-              <StaggerItem key={course.title}>
-                <TrainingCard>
+              <StaggerItem key={course.title} className="h-full">
+                <TrainingCard className="h-full">
                   <TrainingCardImage>
                     <TrainingCardBadge>{course.badge}</TrainingCardBadge>
                   </TrainingCardImage>

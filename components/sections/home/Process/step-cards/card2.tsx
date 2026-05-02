@@ -1,7 +1,6 @@
 "use client";
 import { useRef } from "react";
 import gsap from "gsap";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { useGSAP } from "@gsap/react";
 
 export function Card2Media() {
@@ -12,44 +11,52 @@ export function Card2Media() {
       if (!svgRef.current) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-      gsap.registerPlugin(MotionPathPlugin);
-
       const svg = svgRef.current;
-      const path1 = svg.querySelector<SVGPathElement>(".path1");
-      const path2 = svg.querySelector<SVGPathElement>(".path2");
       const card1El = svg.querySelector<SVGGElement>(".card1");
       const card2El = svg.querySelector<SVGGElement>(".card2");
 
-      if (!path1 || !path2 || !card1El || !card2El) return;
+      if (!card1El || !card2El) return;
 
-      gsap.to(card2El, {
-        duration: 8,
-        repeat: -1,
-        ease: "none",
-        motionPath: {
-          path: path1,
-          align: path1,
-          alignOrigin: [0.5, 0.5],
-          autoRotate: false,
-          start: -0.2,
-          end: 1.2,
-        },
-      });
+      const FADE_IN = 0.6;
+      const FADE_OUT = 2.5;
 
-      gsap.to(card1El, {
-        duration: 8,
-        repeat: -1,
-        ease: "none",
-        delay: 2,
-        motionPath: {
-          path: path2,
-          align: path2,
-          alignOrigin: [0.5, 0.5],
-          autoRotate: false,
-          start: -0.2,
-          end: 1.2,
-        },
-      });
+      gsap.set([card1El, card2El], { opacity: 0 });
+
+      // card2 = Seller. SVG center ≈ (81, 183.5).
+      // path1: M20.5 0 V146.9 L155.2 224.6 V424.3
+      // keyframe x/y = path_waypoint − card_center
+      {
+        const TOTAL = 12;
+        const tl = gsap.timeline({ repeat: -1 });
+        tl.to(card2El, {
+          keyframes: [
+            { x: -61, y: -264, duration: 0 },               // above SVG
+            { x: -61, y: -37, ease: "none", duration: 4 },  // down left rail to bend
+            { x: 74, y: 41, ease: "none", duration: 3 },    // diagonal to centre
+            { x: 74, y: 320, ease: "none", duration: 5 },   // off-screen below
+          ],
+        });
+        tl.to(card2El, { opacity: 1, duration: FADE_IN, ease: "power2.out" }, 0);
+        tl.to(card2El, { opacity: 0, duration: FADE_OUT, ease: "power2.in" }, TOTAL - FADE_OUT);
+      }
+
+      // card1 = Affiliates. SVG center ≈ (245, 89.5).
+      // path2: M298 0 V76 L155.5 158.3 V424.3
+      // keyframe x/y = path_waypoint − card_center
+      {
+        const TOTAL = 12;
+        const tl = gsap.timeline({ repeat: -1, delay: 4 });
+        tl.to(card1El, {
+          keyframes: [
+            { x: 53, y: -170, duration: 0 },                // above SVG
+            { x: 53, y: -14, ease: "none", duration: 2 },   // down right rail to bend
+            { x: -89, y: 69, ease: "none", duration: 3 },   // diagonal to centre
+            { x: -89, y: 400, ease: "none", duration: 7 },  // off-screen below
+          ],
+        });
+        tl.to(card1El, { opacity: 1, duration: FADE_IN, ease: "power2.out" }, 0);
+        tl.to(card1El, { opacity: 0, duration: FADE_OUT, ease: "power2.in" }, TOTAL - FADE_OUT);
+      }
     },
     { scope: svgRef },
   );

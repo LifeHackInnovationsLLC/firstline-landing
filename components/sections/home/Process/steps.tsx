@@ -46,7 +46,7 @@ export function Steps() {
           <StaggerItem key={step.title}>
             <StepCard className="relative">
               <step.Media />
-              <StepContent className=" absolute z-50">
+              <StepContent className="absolute inset-0 z-50">
                 <StepTitle>{step.title}</StepTitle>
                 <StepDescription>{step.description}</StepDescription>
               </StepContent>

@@ -1,36 +1,81 @@
 "use client";
 
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { useId } from "react";
+import { motion } from "motion/react";
+
+const BEAM_DURATION = 5;
+const BEAM_REPEAT_DELAY = 1;
+
+function BeamGradient({
+  id,
+  delay = 0,
+  color = "#7DD3FC",
+}: {
+  id: string;
+  delay?: number;
+  color?: string;
+}) {
+  return (
+    <motion.linearGradient
+      id={id}
+      gradientUnits="userSpaceOnUse"
+      y1="0%"
+      y2="0%"
+      initial={{ x1: "0%", x2: "0%" }}
+      animate={{
+        x1: ["10%", "110%"],
+        x2: ["0%", "100%"],
+      }}
+      transition={{
+        delay,
+        duration: BEAM_DURATION,
+        ease: [0.16, 1, 0.3, 1],
+        repeat: Infinity,
+        repeatDelay: BEAM_REPEAT_DELAY,
+      }}
+    >
+      <stop stopColor="white" stopOpacity="0" />
+      <stop stopColor="white" />
+      <stop offset="32.5%" stopColor={color} />
+      <stop offset="100%" stopColor={color} stopOpacity="0" />
+    </motion.linearGradient>
+  );
+}
+
+function BeamPath({
+  d,
+  gradientId,
+  delay = 0,
+}: {
+  d: string;
+  gradientId: string;
+  delay?: number;
+}) {
+  return (
+    <motion.path
+      d={d}
+      stroke={`url(#${gradientId})`}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: [0, 1, 1, 0] }}
+      transition={{
+        delay,
+        duration: BEAM_DURATION,
+        times: [0, 0.08, 0.88, 1],
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatDelay: BEAM_REPEAT_DELAY,
+      }}
+    />
+  );
+}
 
 export function Card1Media() {
-  const svgRef = useRef<SVGSVGElement>(null);
-
-  useGSAP(
-    () => {
-      if (!svgRef.current) return;
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-      const beams = svgRef.current.querySelectorAll<SVGPathElement>(".c1-beam");
-
-      gsap.set(beams, { opacity: 0, strokeDashoffset: 1 });
-
-      const tl = gsap.timeline({ repeat: -1 });
-
-      beams.forEach((beam) => {
-        tl.to(beam, { opacity: 0.55, duration: 0.25, ease: "none" })
-          .to(
-            beam,
-            { strokeDashoffset: -0.15, duration: 4, ease: "power2.inOut" },
-            "<",
-          )
-          .to(beam, { opacity: 0, duration: 0.4, ease: "none" }, ">-0.5")
-          .set(beam, { strokeDashoffset: 1, opacity: 0 });
-      });
-    },
-    { scope: svgRef },
-  );
+  const id1 = useId();
+  const id2 = useId();
+  const id3 = useId();
+  const id4 = useId();
 
   return (
     <div
@@ -47,8 +92,7 @@ export function Card1Media() {
         alt=""
       />{" "}
       <svg
-        ref={svgRef}
-        className="w-full h-full"
+        className="w-full h-full mb-20"
         viewBox="0 0 397 195"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -115,42 +159,18 @@ export function Card1Media() {
           stroke="#FF0000"
           strokeOpacity="0.02"
         />
-        {/* beam animations — controlled entirely by GSAP */}
-        <path
-          className="c1-beam"
-          d="M-2.63062 104.346H392.559"
-          pathLength="1"
-          strokeDasharray="0.18 0.82"
-          stroke="white"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path
-          className="c1-beam"
-          d="M-2.0498 89.8804H393.14"
-          pathLength="1"
-          strokeDasharray="0.18 0.82"
-          stroke="white"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path
-          className="c1-beam"
+        {/* beam animations — motion.linearGradient sweep with opacity fade */}
+        <BeamPath d="M-2.63062 104.346H392.559" gradientId={id1} delay={0} />
+        <BeamPath d="M-2.0498 89.8804H393.14" gradientId={id2} delay={1.5} />
+        <BeamPath
           d="M-2.41968 34.8228H86.21L114.119 76.2911H282.913L309.216 35.8079H392.927"
-          pathLength="1"
-          strokeDasharray="0.18 0.82"
-          stroke="white"
-          strokeWidth="1.5"
-          strokeLinecap="round"
+          gradientId={id3}
+          delay={3}
         />
-        <path
-          className="c1-beam"
+        <BeamPath
           d="M-2.49023 159.849H86.7403L114.119 118.252H282.913L309.817 159.345H393.345"
-          pathLength="1"
-          strokeDasharray="0.18 0.82"
-          stroke="white"
-          strokeWidth="1.5"
-          strokeLinecap="round"
+          gradientId={id4}
+          delay={4.5}
         />
         <foreignObject x="-50.6" y="-170.6" width="493.2" height="536.2">
           <div
@@ -232,6 +252,11 @@ export function Card1Media() {
           />
         </g>
         <defs>
+          <BeamGradient id={id1} delay={0} color="#F9A8D4" />
+          <BeamGradient id={id2} delay={1.5} color="#F9A8D4" />
+          <BeamGradient id={id3} delay={3} />
+          <BeamGradient id={id4} delay={4.5} />
+          {/* delays match BeamPath so gradient position stays in sync with visibility */}
           <clipPath
             id="bgblur_0_34_77_clip_path"
             transform="translate(50.6 170.6)"
