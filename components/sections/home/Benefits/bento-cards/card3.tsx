@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Transition } from "framer-motion";
 import { DollarSign } from "lucide-react";
+import type { Transition } from "motion/react";
+import { motion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 
 const CARDS = [
   { label: "New Payment", date: "13th Feb 2025", amount: "$2,000" },

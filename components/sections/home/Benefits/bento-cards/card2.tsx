@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export function Card2Media() {
   return (
@@ -47,7 +47,7 @@ export function Card2Media() {
         <g className="Frame 2147225313">
           {[0, 0.6, 1.2, 1.8].map((delay, i) => (
             <motion.g
-              key={i}
+              key={delay}
               initial={{ opacity: 0.12 }}
               animate={{ opacity: [0.12, 1, 1, 0.12, 0.12] }}
               transition={{
