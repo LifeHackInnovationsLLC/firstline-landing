@@ -188,7 +188,7 @@ export function Footer() {
             {content.sections.map((section) => (
               <div
                 key={section.title}
-                className="flex flex-col gap-4 min-w-[130px]"
+                className="flex flex-col gap-4 min-w-32.5"
               >
                 <h3 className="text-sm font-semibold text-foreground">
                   {section.title}
