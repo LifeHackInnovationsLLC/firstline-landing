@@ -32,7 +32,7 @@ const audiences = [
 
 export function AudiencesList() {
   return (
-    <StaggerGroup className="flex flex-col lg:flex-row items-center lg:overflow-x-auto gap-4 mt-8 lg:mt-15 [--audience-card-width:100%] lg:[--audience-card-width:22rem] [--audience-card-height:20rem] lg:[--audience-card-height:24.4rem]">
+    <StaggerGroup className="flex flex-row gap-4 mt-8 lg:mt-15 [--audience-card-width:80vw] lg:[--audience-card-width:22rem] [--audience-card-height:20rem] lg:[--audience-card-height:24.4rem]">
       {audiences.map((audience) => (
         <StaggerItem
           key={audience.audienceName}

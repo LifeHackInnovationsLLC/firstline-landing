@@ -83,6 +83,15 @@ export function NavLinks({
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const isActive = (href: string) => {
+    if (!href || href.startsWith("#")) return false;
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(href + "/");
+  };
+
+  const isParentActive = (item: NavItem) =>
+    item.subItems?.some((sub) => isActive(sub.href)) ?? false;
+
   return (
     <ul
       ref={navRef}
@@ -90,7 +99,7 @@ export function NavLinks({
         "flex",
         direction === "col"
           ? "flex-col items-start"
-          : "flex-row items-center gap-8 py-2 px-6 rounded-full border border-white/[0.04] bg-white/[0.04]",
+          : "flex-row items-center gap-8 py-2 px-6 rounded-full border border-white/4 bg-white/4",
         className,
       )}
     >
@@ -105,7 +114,12 @@ export function NavLinks({
               {hasSubItems ? (
                 <button
                   type="button"
-                  className="flex items-center gap-1.5 text-sm font-light text-white transition-colors hover:text-white/80"
+                  className={cn(
+                    "flex items-center gap-1.5 text-sm font-light transition-colors",
+                    isParentActive(item)
+                      ? "text-white"
+                      : "text-white/60 hover:text-white/80",
+                  )}
                   onClick={() => handleToggle(index)}
                 >
                   <span>{item.label}</span>
@@ -119,7 +133,12 @@ export function NavLinks({
               ) : (
                 <Link
                   href={getHashAwareHref(item.href, pathname, "/")}
-                  className="text-sm font-light text-white transition-colors hover:text-white/80"
+                  className={cn(
+                    "text-sm font-light transition-colors",
+                    isActive(item.href)
+                      ? "text-white"
+                      : "text-white/60 hover:text-white/80",
+                  )}
                   onClick={onLinkClick}
                 >
                   {item.label}
@@ -130,7 +149,7 @@ export function NavLinks({
               {hasSubItems && (
                 <div
                   className={cn(
-                    "absolute left-1/2 top-full z-10 mt-4 -translate-x-1/2 min-w-[160px] rounded-xl border border-border bg-card px-2 py-3 shadow-lg transition-all duration-200",
+                    "absolute left-1/2 top-full z-10 mt-4 -translate-x-1/2 min-w-40 rounded-xl border border-border bg-card px-2 py-3 shadow-lg transition-all duration-200",
                     isOpen
                       ? "pointer-events-auto translate-y-0 opacity-100"
                       : "pointer-events-none -translate-y-2 opacity-0",
@@ -155,7 +174,12 @@ export function NavLinks({
                         ) : (
                           <Link
                             href={getHashAwareHref(sub.href, pathname, "/")}
-                            className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-white"
+                            className={cn(
+                              "block rounded-lg px-3 py-2 text-sm transition-colors",
+                              isActive(sub.href)
+                                ? "bg-accent text-white"
+                                : "text-muted-foreground hover:bg-accent hover:text-white",
+                            )}
                             onClick={() => {
                               setOpenIndex(null);
                               onLinkClick?.();
@@ -180,7 +204,12 @@ export function NavLinks({
               <div className="flex flex-col">
                 <button
                   type="button"
-                  className="flex items-center gap-2 text-2xl font-display font-medium text-white/80 transition-colors hover:text-white"
+                  className={cn(
+                    "flex items-center gap-2 text-2xl font-display font-medium transition-colors",
+                    isParentActive(item)
+                      ? "text-white"
+                      : "text-white/50 hover:text-white",
+                  )}
                   onClick={() => handleToggle(index)}
                   aria-expanded={isOpen}
                 >
@@ -220,7 +249,12 @@ export function NavLinks({
                         ) : (
                           <Link
                             href={getHashAwareHref(sub.href, pathname, "/")}
-                            className="block pl-4 text-base font-medium text-white/50 transition-colors hover:text-white"
+                            className={cn(
+                              "block pl-4 text-base font-medium transition-colors",
+                              isActive(sub.href)
+                                ? "text-white"
+                                : "text-white/50 hover:text-white",
+                            )}
                             onClick={() => {
                               setOpenIndex(null);
                               onLinkClick?.();
@@ -237,7 +271,12 @@ export function NavLinks({
             ) : (
               <Link
                 href={getHashAwareHref(item.href, pathname, "/")}
-                className="text-2xl font-display font-medium text-white/80 transition-colors hover:text-white"
+                className={cn(
+                  "text-2xl font-display font-medium transition-colors",
+                  isActive(item.href)
+                    ? "text-white"
+                    : "text-white/50 hover:text-white",
+                )}
                 onClick={onLinkClick}
               >
                 {item.label}

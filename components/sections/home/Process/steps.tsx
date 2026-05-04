@@ -1,15 +1,14 @@
-import {
-  AnimatedMedia,
-  type AnimatedMediaProps,
-} from "@/components/ui/animated-media";
 import { Heading } from "@/components/ui/heading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
+import { Card1Media } from "./step-cards/card1";
+import { Card2Media } from "./step-cards/card2";
+import { Card3Media } from "./step-cards/card3";
 
 type StepItem = {
   title: string;
   description: string;
-  media: AnimatedMediaProps;
+  Media: React.ComponentType;
 };
 
 const content: StepItem[] = [
@@ -17,22 +16,19 @@ const content: StepItem[] = [
     title: "Create your account",
     description:
       "Sign up in under 2 minutes. Complete free training to understand the product.",
-    media: {
-      kind: "lottie",
-      src: "/animations/steps/create-an-account.lottie",
-    },
+    Media: Card1Media,
   },
   {
     title: "Discover your path",
     description:
       "Selling payment processing, find affiliate marketing partners, or lead a team.",
-    media: { kind: "lottie", src: "/animations/steps/discover-path.lottie" },
+    Media: Card2Media,
   },
   {
     title: "Earn commissions",
     description:
       "Every merchant signup earns you recurring commissions. Lifetime.",
-    media: { kind: "lottie", src: "/animations/steps/earn-commissions.lottie" },
+    Media: Card3Media,
   },
 ];
 
@@ -48,9 +44,9 @@ export function Steps() {
       <StaggerGroup className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mt-8 lg:mt-15 [--step-card-height:22rem] lg:[--step-card-height:26.5rem]">
         {content.map((step) => (
           <StaggerItem key={step.title}>
-            <StepCard>
-              <AnimatedMedia {...step.media} />
-              <StepContent>
+            <StepCard className="relative">
+              <step.Media />
+              <StepContent className="absolute inset-0 z-50">
                 <StepTitle>{step.title}</StepTitle>
                 <StepDescription>{step.description}</StepDescription>
               </StepContent>

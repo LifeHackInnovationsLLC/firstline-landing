@@ -1,21 +1,16 @@
 "use client";
 
-import Image from "next/image";
-import {
-  AnimatedMedia,
-  type AnimatedMediaProps,
-} from "@/components/ui/animated-media";
-import { Globe } from "@/components/ui/globe";
 import { StaggerGroup, StaggerItem } from "@/components/ui/reveal";
-import { cdn, images } from "@/lib/cdn";
 import { cn } from "@/lib/utils";
-
-type BentoMedia = AnimatedMediaProps | { kind: "globe" };
+import { Card1Media } from "./bento-cards/card1";
+import { Card2Media } from "./bento-cards/card2";
+import { Card3Media } from "./bento-cards/card3";
+import { Card4Media } from "./bento-cards/card4";
+import { Card5Media } from "./bento-cards/card5";
 
 type BentoItem = {
   text: { highlightText: string; regularText: string };
-  alt?: string;
-  media: BentoMedia;
+  Media: React.ComponentType;
 };
 
 const content: { bento: BentoItem[] } = {
@@ -25,123 +20,35 @@ const content: { bento: BentoItem[] } = {
         highlightText: "Turn anyone",
         regularText: "into a tracked incentivized salesperson",
       },
-      media: {
-        kind: "lottie",
-        src: "/animations/bento/turn-anyone.lottie",
-        loop: false,
-      },
+      Media: Card1Media,
     },
     {
       text: { highlightText: "", regularText: "" },
-      alt: "Commission tracking dashboard",
-      media: {
-        kind: "lottie",
-        src: "/animations/bento/split-commissions.lottie",
-        loop: false,
-      },
+      Media: Card2Media,
     },
     {
       text: {
         highlightText: "See every sale, split, and payout",
         regularText: "in real time",
       },
-      media: {
-        kind: "lottie",
-        src: "/animations/bento/real-time-tracking.lottie",
-        loop: false,
-      },
+      Media: Card3Media,
     },
     {
       text: {
         highlightText: "Scale globally",
         regularText: "without building ops, finance, or tooling",
       },
-      alt: "Scale globally without building ops, finance, or tooling",
-      media: { kind: "globe" },
+      Media: Card4Media,
     },
     {
       text: {
         highlightText: "Pay teams, affiliates and partners",
         regularText: "without disputes or delays",
       },
-      media: {
-        kind: "lottie",
-        src: "/animations/bento/pay-teams.lottie",
-        loop: false,
-      },
+      Media: Card5Media,
     },
   ],
 };
-
-function getBentoKey(item: BentoItem) {
-  if (item.alt) return item.alt;
-  return `${item.text.highlightText} ${item.text.regularText}`.trim();
-}
-
-function BentoMediaRenderer({ media }: { media: BentoMedia }) {
-  if (media.kind === "globe") {
-    return <BrandGlobe />;
-  }
-  return <AnimatedMedia {...media} />;
-}
-
-function BrandGlobe() {
-  return (
-    <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-      <Image
-        src={cdn(images.sellers.ellipseSplitPayments)}
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-32 -left-32"
-        width={600}
-        height={600}
-        unoptimized
-      />
-      <Image
-        src={cdn(images.sellers.greenEllipseSplitPayments)}
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 -right-32"
-        width={600}
-        height={600}
-        unoptimized
-      />
-      <div className="pointer-events-none aspect-square w-[110%] translate-y-[18%] sm:w-[90%] lg:w-[80%]">
-        <Globe
-          className="!relative !inset-auto !max-w-none"
-          config={{
-            width: 800,
-            height: 800,
-            devicePixelRatio: 2,
-            phi: 0,
-            theta: 0.3,
-            dark: 1,
-            diffuse: 1.2,
-            mapSamples: 16000,
-            mapBrightness: 4,
-            baseColor: [0.2, 0.22, 0.24],
-            markerColor: [0.38, 0.88, 0.41],
-            glowColor: [0.2, 0.45, 0.25],
-            markers: [
-              { location: [40.7128, -74.006], size: 0.08 },
-              { location: [51.5074, -0.1278], size: 0.08 },
-              { location: [48.8566, 2.3522], size: 0.06 },
-              { location: [35.6762, 139.6503], size: 0.08 },
-              { location: [1.3521, 103.8198], size: 0.06 },
-              { location: [-33.8688, 151.2093], size: 0.06 },
-              { location: [-23.5505, -46.6333], size: 0.08 },
-              { location: [19.4326, -99.1332], size: 0.07 },
-              { location: [25.2048, 55.2708], size: 0.05 },
-              { location: [19.076, 72.8777], size: 0.07 },
-              { location: [39.9042, 116.4074], size: 0.07 },
-              { location: [-26.2041, 28.0473], size: 0.05 },
-            ],
-          }}
-        />
-      </div>
-    </div>
-  );
-}
 
 export function Bento() {
   const firstThreeItems = content.bento.slice(0, 3);
@@ -149,10 +56,12 @@ export function Bento() {
 
   return (
     <StaggerGroup className="grid grid-cols-1 mt-15 gap-3 md:grid-cols-2 lg:grid-cols-6 [--bento-card-height:22.56rem]">
-      {firstThreeItems.map((item) => (
-        <StaggerItem key={getBentoKey(item)} className="md:col-span-2">
+      {firstThreeItems.map((item, i) => (
+        <StaggerItem key={i} className="md:col-span-2 h-full">
           <BentoCard>
-            <BentoMediaRenderer media={item.media} />
+            <div className="flex-1 flex items-center justify-center">
+              <item.Media />
+            </div>
             <BentoContent className="max-w-2xs">
               <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
               <BentoText>{item.text.regularText}</BentoText>
@@ -160,13 +69,12 @@ export function Bento() {
           </BentoCard>
         </StaggerItem>
       ))}
-      {lastItems.map((item) => (
-        <StaggerItem
-          key={getBentoKey(item)}
-          className="md:col-span-2 lg:col-span-3"
-        >
+      {lastItems.map((item, i) => (
+        <StaggerItem key={i + 3} className="md:col-span-2 lg:col-span-3 h-full">
           <BentoCard>
-            <BentoMediaRenderer media={item.media} />
+            <div className="flex-1 flex items-center justify-center">
+              <item.Media />
+            </div>
             <BentoContent>
               <BentoHighlight>{item.text.highlightText}</BentoHighlight>{" "}
               <BentoText>{item.text.regularText}</BentoText>
@@ -184,7 +92,7 @@ function BentoCard({ className, children, ...props }: BentoCardProps) {
   return (
     <div
       className={cn(
-        "p-6 w-full relative flex flex-col justify-end h-(--bento-card-height) bg-card-dark overflow-hidden rounded-4xl",
+        "p-6 w-full relative flex flex-col h-(--bento-card-height) bg-card-dark overflow-hidden rounded-4xl",
         className,
       )}
       {...props}

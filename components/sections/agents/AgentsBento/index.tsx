@@ -1,15 +1,18 @@
 import { Section } from "@/components/layout/section";
-import {
-  AnimatedMedia,
-  type AnimatedMediaProps,
-} from "@/components/ui/animated-media";
 import { Heading } from "@/components/ui/heading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
+import { Card1Media } from "./agents-bento-cards/card1";
+import { Card2Media } from "./agents-bento-cards/card2";
+import { Card3Media } from "./agents-bento-cards/card3";
+import { Card4Media } from "./agents-bento-cards/card4";
+import { Card5Media } from "./agents-bento-cards/card5";
+import { Card6Media } from "./agents-bento-cards/card6";
 
 type BentoItem = {
   title: string;
   description: string;
-  media: AnimatedMediaProps;
+  Media: React.ComponentType;
+  background: string;
 };
 
 const content: { title: string; items: BentoItem[] } = {
@@ -19,61 +22,43 @@ const content: { title: string; items: BentoItem[] } = {
       title: "Transparent Commissions",
       description:
         "Every product you sell earns you instant and transparent commission. With offerings like payment processing, you can earn ongoing commissions based on monthly volume. Not just a one-time payout, your income grows as the businesses you bring in keep growing.",
-      media: {
-        kind: "lottie",
-        src: "/animations/agents/bento-1.lottie",
-        loop: false,
-      },
+      Media: Card1Media,
+      background: "/textures/agent-bento/card1/background.png",
     },
     {
       title: "Real Time Commission Tracking",
       description:
         "Track everything in one place, from the individual products you've sold, to your merchant volume and commissions. See exactly what you're earning and where it's coming from at any time.",
-      media: {
-        kind: "lottie",
-        src: "/animations/agents/bento-2.lottie",
-        loop: false,
-      },
+      Media: Card2Media,
+      background: "/textures/agent-bento/card2/background.png",
     },
     {
       title: "Team and Override Management",
       description:
         "Join a team as an agent or build your own team. Agents earn competitive commissions while team leaders earn override commissions across their entire network.",
-      media: {
-        kind: "lottie",
-        src: "/animations/agents/bento-3.lottie",
-        loop: false,
-      },
+      Media: Card3Media,
+      background: "/textures/agent-bento/card3/background.png",
     },
     {
       title: "Merchant and Portfolio Management",
       description:
         "Manage your full book of business from a single dashboard. Track activity, performance, and growth without spreadsheets or manual processes.",
-      media: {
-        kind: "lottie",
-        src: "/animations/agents/bento-4.lottie",
-        loop: false,
-      },
+      Media: Card4Media,
+      background: "/textures/agent-bento/card4/background.png",
     },
     {
       title: "Affiliate and Referral Tools",
       description:
         "Monetize your network beyond direct sales. Share referral links, bring in merchants or agents, and earn rewards automatically.",
-      media: {
-        kind: "lottie",
-        src: "/animations/agents/bento-5.lottie",
-        loop: false,
-      },
+      Media: Card5Media,
+      background: "/textures/agent-bento/card5/background.png",
     },
     {
       title: "Mobile First Access",
       description:
         "Everything operates online. No office, no hardware inventory, and no gatekeepers. If you have a phone, you have a business.",
-      media: {
-        kind: "lottie",
-        src: "/animations/agents/bento-6.lottie",
-        loop: false,
-      },
+      Media: Card6Media,
+      background: "/textures/agent-bento/card6/background.png",
     },
   ],
 };
@@ -94,7 +79,15 @@ export function AgentsBento() {
                 key={item.title}
                 className="relative flex flex-col justify-end h-[280px] md:h-[356px] p-5 bg-card-dark overflow-hidden rounded-4xl"
               >
-                <AnimatedMedia {...item.media} />
+                <img
+                  src={item.background}
+                  alt=""
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+                />
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                  <item.Media />
+                </div>
                 <div className="relative z-10 flex flex-col gap-2">
                   <h3 className="text-white text-lg font-semibold">
                     {item.title}

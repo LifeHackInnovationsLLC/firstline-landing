@@ -5,7 +5,7 @@ import { AudiencesList } from "./audiences-list";
 
 export default function Audiences() {
   return (
-    <Section id="audiences" className="bg-gray">
+    <Section id="audiences" className="bg-gray overflow-hidden">
       <div className="container">
         <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
           <Reveal>

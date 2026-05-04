@@ -59,6 +59,7 @@ export default function RootLayout({
           <script
             key={schema["@type"]}
             type="application/ld+json"
+            suppressHydrationWarning
             // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD structured data requires dangerouslySetInnerHTML for script injection
             dangerouslySetInnerHTML={{
               __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
