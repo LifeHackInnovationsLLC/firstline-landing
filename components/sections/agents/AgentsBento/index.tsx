@@ -1,6 +1,7 @@
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
+import { cdn, images } from "@/lib/cdn";
 import { Card1Media } from "./agents-bento-cards/card1";
 import { Card2Media } from "./agents-bento-cards/card2";
 import { Card3Media } from "./agents-bento-cards/card3";
@@ -23,42 +24,42 @@ const content: { title: string; items: BentoItem[] } = {
       description:
         "Every product you sell earns you instant and transparent commission. With offerings like payment processing, you can earn ongoing commissions based on monthly volume. Not just a one-time payout, your income grows as the businesses you bring in keep growing.",
       Media: Card1Media,
-      background: "/textures/agent-bento/card1/background.png",
+      background: cdn(images.agentBento.card1Bg),
     },
     {
       title: "Real Time Commission Tracking",
       description:
         "Track everything in one place, from the individual products you've sold, to your merchant volume and commissions. See exactly what you're earning and where it's coming from at any time.",
       Media: Card2Media,
-      background: "/textures/agent-bento/card2/background.png",
+      background: cdn(images.agentBento.card2Bg),
     },
     {
       title: "Team and Override Management",
       description:
         "Join a team as an agent or build your own team. Agents earn competitive commissions while team leaders earn override commissions across their entire network.",
       Media: Card3Media,
-      background: "/textures/agent-bento/card3/background.png",
+      background: cdn(images.agentBento.card3Bg),
     },
     {
       title: "Merchant and Portfolio Management",
       description:
         "Manage your full book of business from a single dashboard. Track activity, performance, and growth without spreadsheets or manual processes.",
       Media: Card4Media,
-      background: "/textures/agent-bento/card4/background.png",
+      background: cdn(images.agentBento.card4Bg),
     },
     {
       title: "Affiliate and Referral Tools",
       description:
         "Monetize your network beyond direct sales. Share referral links, bring in merchants or agents, and earn rewards automatically.",
       Media: Card5Media,
-      background: "/textures/agent-bento/card5/background.png",
+      background: cdn(images.agentBento.card5Bg),
     },
     {
       title: "Mobile First Access",
       description:
         "Everything operates online. No office, no hardware inventory, and no gatekeepers. If you have a phone, you have a business.",
       Media: Card6Media,
-      background: "/textures/agent-bento/card6/background.png",
+      background: cdn(images.agentBento.card6Bg),
     },
   ],
 };

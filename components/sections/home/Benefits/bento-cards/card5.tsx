@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { cdn, images } from "@/lib/cdn";
 
 const BORDER_GRADIENT =
   "linear-gradient(134.72deg, #4A4A80 0.28%, rgba(99, 99, 177, 0) 128.61%), linear-gradient(162.92deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%)";
@@ -9,14 +10,72 @@ const PLACEHOLDER_SRC =
   "https://i.pinimg.com/1200x/e8/09/8a/e8098a3d487b4fd7b8d591d7d9db32bb.jpg";
 
 const AVATARS = [
-  { size: 78, src: PLACEHOLDER_SRC, pos: { top: "10%",    left: "18%"  }, fx: "60px",  fy: "45px",  delay: "0.05s" },
-  { size: 66, src: PLACEHOLDER_SRC, pos: { top: "8%",     right: "14%" }, fx: "-60px", fy: "45px",  delay: "0.1s"  },
-  { size: 78, src: PLACEHOLDER_SRC, pos: { top: "42%",    left: "2%"   }, fx: "80px",  fy: "0px",   delay: "0.15s", hideOnSm: true },
-  { size: 80, src: PLACEHOLDER_SRC, pos: { top: "57%",    left: "20%"  }, fx: "55px",  fy: "-45px", delay: "0.2s"  },
-  { size: 78, src: PLACEHOLDER_SRC, pos: { top: "55%",    right: "15%" }, fx: "-55px", fy: "-45px", delay: "0.25s" },
-  { size: 68, src: PLACEHOLDER_SRC, pos: { top: "37%",    right: "2%"  }, fx: "-80px", fy: "0px",   delay: "0.3s",  hideOnSm: true },
-  { size: 66, src: PLACEHOLDER_SRC, pos: { bottom: "-12%",left: "4%"   }, fx: "40px",  fy: "-60px", delay: "0.35s" },
-  { size: 66, src: PLACEHOLDER_SRC, pos: { bottom: "-12%",right: "4%"  }, fx: "-40px", fy: "-60px", delay: "0.4s"  },
+  {
+    size: 78,
+    src: PLACEHOLDER_SRC,
+    pos: { top: "10%", left: "18%" },
+    fx: "60px",
+    fy: "45px",
+    delay: "0.05s",
+  },
+  {
+    size: 66,
+    src: PLACEHOLDER_SRC,
+    pos: { top: "8%", right: "14%" },
+    fx: "-60px",
+    fy: "45px",
+    delay: "0.1s",
+  },
+  {
+    size: 78,
+    src: PLACEHOLDER_SRC,
+    pos: { top: "42%", left: "2%" },
+    fx: "80px",
+    fy: "0px",
+    delay: "0.15s",
+    hideOnSm: true,
+  },
+  {
+    size: 80,
+    src: PLACEHOLDER_SRC,
+    pos: { top: "57%", left: "20%" },
+    fx: "55px",
+    fy: "-45px",
+    delay: "0.2s",
+  },
+  {
+    size: 78,
+    src: PLACEHOLDER_SRC,
+    pos: { top: "55%", right: "15%" },
+    fx: "-55px",
+    fy: "-45px",
+    delay: "0.25s",
+  },
+  {
+    size: 68,
+    src: PLACEHOLDER_SRC,
+    pos: { top: "37%", right: "2%" },
+    fx: "-80px",
+    fy: "0px",
+    delay: "0.3s",
+    hideOnSm: true,
+  },
+  {
+    size: 66,
+    src: PLACEHOLDER_SRC,
+    pos: { bottom: "-12%", left: "4%" },
+    fx: "40px",
+    fy: "-60px",
+    delay: "0.35s",
+  },
+  {
+    size: 66,
+    src: PLACEHOLDER_SRC,
+    pos: { bottom: "-12%", right: "4%" },
+    fx: "-40px",
+    fy: "-60px",
+    delay: "0.4s",
+  },
 ];
 
 export function Card5Media() {
@@ -68,12 +127,12 @@ export function Card5Media() {
         }
       `}</style>
 
-      {AVATARS.map(({ size, src, pos, fx, fy, delay, hideOnSm }, i) => (
+      {AVATARS.map(({ size, src, pos, fx, fy, delay, hideOnSm }) => (
         <div
-          key={i}
+          key={delay}
           className={`avatar absolute rounded-full${hideOnSm ? " hide-sm" : ""}`}
           style={{
-            ...pos as React.CSSProperties,
+            ...(pos as React.CSSProperties),
             width: size,
             height: size,
             padding: 3,
@@ -95,7 +154,7 @@ export function Card5Media() {
       {/* Background texture overlay — above avatars */}
       <img
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-        src="/textures/benefit-bento/card5/background.png"
+        src={cdn(images.benefitBento.card5Bg)}
         alt=""
       />
 

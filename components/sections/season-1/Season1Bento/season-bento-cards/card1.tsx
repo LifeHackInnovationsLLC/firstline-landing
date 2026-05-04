@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "motion/react";
 import type { Transition } from "motion/react";
+import { motion } from "motion/react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { cdn, images } from "@/lib/cdn";
 
 const COURSES = [
   { title: "Product Fundamentals", percent: 100 },
@@ -73,7 +74,9 @@ export function Card1Media() {
     displayProgressRef.current = displayProgress;
   }, [displayProgress]);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: reset progress whenever the stack order changes
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional reset on order change
     setDisplayProgress(0);
   }, [order]);
 
@@ -132,7 +135,7 @@ export function Card1Media() {
   return (
     <div ref={containerRef} className="absolute inset-0 overflow-hidden">
       <img
-        src="/textures/season-bento/card1/background.png"
+        src={cdn(images.seasonBento.card1Bg)}
         alt=""
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"

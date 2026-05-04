@@ -4,6 +4,7 @@ import { DollarSign } from "lucide-react";
 import type { Transition } from "motion/react";
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { cdn, images } from "@/lib/cdn";
 
 const CARDS = [
   { label: "New Payment", date: "13th Feb 2025", amount: "$2,000" },
@@ -83,7 +84,7 @@ export function Card3Media() {
   return (
     <div ref={containerRef} className="flex items-center justify-center w-full">
       <img
-        src="/textures/benefit-bento/card3/background.png"
+        src={cdn(images.benefitBento.card3Bg)}
         className="absolute inset-0 w-full h-full object-cover"
         alt=""
       />

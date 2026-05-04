@@ -1,7 +1,8 @@
 "use client";
 
-import { useId } from "react";
 import { motion } from "motion/react";
+import { useId } from "react";
+import { cdn, images } from "@/lib/cdn";
 
 const BEAM_DURATION = 5;
 const BEAM_REPEAT_DELAY = 1;
@@ -88,7 +89,7 @@ export function Card1Media() {
     >
       <img
         className="absolute inset-0 w-full h-full object-cover"
-        src="/textures/step-cards/card1/background.png"
+        src={cdn(images.stepCards.card1Bg)}
         alt=""
       />{" "}
       <svg

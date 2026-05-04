@@ -1,11 +1,12 @@
 import { motion } from "motion/react";
+import { cdn, images } from "@/lib/cdn";
 
 export function Card2Media() {
   return (
     <div className="flex flex-col gap-6 justify-center items-center">
       <motion.img
         className="absolute inset-0 w-full h-full object-cover"
-        src="/textures/benefit-bento/card2/background.png"
+        src={cdn(images.benefitBento.card2Bg)}
         alt=""
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

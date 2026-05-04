@@ -1,9 +1,9 @@
 ﻿"use client";
 
-import { useId, useRef } from "react";
-import { motion } from "motion/react";
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { motion } from "motion/react";
+import { useId, useRef } from "react";
 
 const AVATAR_URL =
   "https://i.pinimg.com/control1/1200x/09/e4/0a/09e40a3f556058ae2f57ba22bce36f12.jpg";
@@ -11,9 +11,22 @@ const AVATAR_URL =
 const BEAM_DURATION = 5;
 const BEAM_COLOR = "#A78BFA";
 
-function BeamGradient({ id, color = BEAM_COLOR }: { id: string; color?: string }) {
+function BeamGradient({
+  id,
+  color = BEAM_COLOR,
+}: {
+  id: string;
+  color?: string;
+}) {
   return (
-    <linearGradient id={id} gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient
+      id={id}
+      gradientUnits="objectBoundingBox"
+      x1="0"
+      y1="0"
+      x2="1"
+      y2="0"
+    >
       <stop offset="0%" stopColor={color} stopOpacity="0" />
       <stop offset="55%" stopColor={color} stopOpacity="0.45" />
       <stop offset="92%" stopColor={color} stopOpacity="1" />
@@ -149,89 +162,87 @@ export function Card5Media() {
   const beamInnerId = useId();
 
   return (
-    <>
-      <svg
-        width="234"
-        height="234"
-        viewBox="0 0 234 234"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        overflow="visible"
-      >
-        <circle
-          cx="117"
-          cy="117"
-          r="116.5"
-          stroke="white"
-          strokeOpacity="0.03"
+    <svg
+      width="234"
+      height="234"
+      viewBox="0 0 234 234"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      overflow="visible"
+    >
+      <circle cx="117" cy="117" r="116.5" stroke="white" strokeOpacity="0.03" />
+      <circle cx="117" cy="117" r="91.5" stroke="white" strokeOpacity="0.03" />
+      <circle cx="117" cy="117" r="64.5" stroke="white" strokeOpacity="0.03" />
+      <BeamCircle
+        cx={117}
+        cy={117}
+        r={116.5}
+        gradientId={beamOuterId}
+        delay={0}
+      />
+      <BeamCircle
+        cx={117}
+        cy={117}
+        r={91.5}
+        gradientId={beamMiddleId}
+        delay={0.6}
+      />
+      <BeamCircle
+        cx={117}
+        cy={117}
+        r={64.5}
+        gradientId={beamInnerId}
+        delay={1.2}
+      />
+      {ORBITS.map((orbit) => (
+        <OrbitingAvatar
+          key={orbit.radius}
+          radius={orbit.radius}
+          duration={orbit.duration}
+          startAngle={orbit.startAngle}
+          reverse={orbit.reverse}
         />
-        <circle
-          cx="117"
-          cy="117"
-          r="91.5"
-          stroke="white"
-          strokeOpacity="0.03"
-        />
-        <circle
-          cx="117"
-          cy="117"
-          r="64.5"
-          stroke="white"
-          strokeOpacity="0.03"
-        />
-        <BeamCircle cx={117} cy={117} r={116.5} gradientId={beamOuterId} delay={0} />
-        <BeamCircle cx={117} cy={117} r={91.5} gradientId={beamMiddleId} delay={0.6} />
-        <BeamCircle cx={117} cy={117} r={64.5} gradientId={beamInnerId} delay={1.2} />
-        {ORBITS.map((orbit) => (
-          <OrbitingAvatar
-            key={orbit.radius}
-            radius={orbit.radius}
-            duration={orbit.duration}
-            startAngle={orbit.startAngle}
-            reverse={orbit.reverse}
-          />
-        ))}
-        <rect
-          x="83"
-          y="83"
-          width="69"
-          height="69"
-          rx="34.5"
-          fill="url(#paint0_linear_79_123)"
-        />
-        <rect
-          x="83.5"
-          y="83.5"
-          width="68"
-          height="68"
-          rx="34"
-          stroke="#14B6FF"
-          strokeOpacity="0.09"
-        />
-        <path
-          d="M115.333 109.333L116.335 108.344C119.461 105.218 124.53 105.219 127.656 108.344C130.781 111.47 130.781 116.539 127.656 119.665L126.667 120.667M109.333 115.333L108.344 116.335C105.218 119.461 105.219 124.53 108.345 127.656C111.47 130.781 116.539 130.781 119.665 127.656L120.667 126.667M115.333 120.667L120.667 115.333"
-          stroke="white"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <defs>
-          <BeamGradient id={beamOuterId} />
-          <BeamGradient id={beamMiddleId} />
-          <BeamGradient id={beamInnerId} />
-          <linearGradient
-            id="paint0_linear_79_123"
-            x1="87.2119"
-            y1="83"
-            x2="147.788"
-            y2="152"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#C4BAFF" />
-            <stop offset="1" stopColor="#654AF7" />
-          </linearGradient>
-        </defs>
-      </svg>
-    </>
+      ))}
+      <rect
+        x="83"
+        y="83"
+        width="69"
+        height="69"
+        rx="34.5"
+        fill="url(#paint0_linear_79_123)"
+      />
+      <rect
+        x="83.5"
+        y="83.5"
+        width="68"
+        height="68"
+        rx="34"
+        stroke="#14B6FF"
+        strokeOpacity="0.09"
+      />
+      <path
+        d="M115.333 109.333L116.335 108.344C119.461 105.218 124.53 105.219 127.656 108.344C130.781 111.47 130.781 116.539 127.656 119.665L126.667 120.667M109.333 115.333L108.344 116.335C105.218 119.461 105.219 124.53 108.345 127.656C111.47 130.781 116.539 130.781 119.665 127.656L120.667 126.667M115.333 120.667L120.667 115.333"
+        stroke="white"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <defs>
+        <BeamGradient id={beamOuterId} />
+        <BeamGradient id={beamMiddleId} />
+        <BeamGradient id={beamInnerId} />
+        <linearGradient
+          id="paint0_linear_79_123"
+          x1="87.2119"
+          y1="83"
+          x2="147.788"
+          y2="152"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#C4BAFF" />
+          <stop offset="1" stopColor="#654AF7" />
+        </linearGradient>
+      </defs>
+    </svg>
   );
 }

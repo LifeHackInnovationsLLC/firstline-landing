@@ -1,8 +1,9 @@
 "use client";
 
-import { useRef } from "react";
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
+import { cdn, images } from "@/lib/cdn";
 
 export function Card2Media() {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -91,7 +92,7 @@ export function Card2Media() {
   return (
     <>
       <img
-        src="/textures/season-bento/card2/background.png"
+        src={cdn(images.seasonBento.card2Bg)}
         alt=""
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"

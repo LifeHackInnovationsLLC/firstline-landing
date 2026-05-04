@@ -5,7 +5,7 @@ import {
 } from "@/components/ui/animated-media";
 import { Heading } from "@/components/ui/heading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
-import { cdn, images } from "@/lib/cdn";
+import { animations, cdn, cdnRaw, images } from "@/lib/cdn";
 
 type BentoItem = {
   title: string;
@@ -22,7 +22,7 @@ const content: { title: string; items: BentoItem[] } = {
         "Commission splits happen at the payment level - not after reconciliation, not after accounting, but instantly at sale.",
       media: {
         kind: "lottie",
-        src: "/animations/affiliates/bento-1.lottie",
+        src: cdnRaw(animations.affiliatesBento.bento1),
         loop: false,
       },
     },
@@ -42,7 +42,7 @@ const content: { title: string; items: BentoItem[] } = {
         "Your commission hits your Firstline balance immediately. No 30-day holds, no net-60 terms, no excuses.",
       media: {
         kind: "lottie",
-        src: "/animations/affiliates/bento-3.lottie",
+        src: cdnRaw(animations.affiliatesBento.bento3),
         loop: false,
       },
     },
@@ -52,7 +52,7 @@ const content: { title: string; items: BentoItem[] } = {
         "Firstline Payments is a regulated payment service provider. Your earnings aren't just promised, they're protected.",
       media: {
         kind: "lottie",
-        src: "/animations/affiliates/bento-4.lottie",
+        src: cdnRaw(animations.affiliatesBento.bento4),
         loop: false,
       },
     },
@@ -62,7 +62,7 @@ const content: { title: string; items: BentoItem[] } = {
         "Create multiple levels of commissions, share with colleagues, and track every referral in your network.",
       media: {
         kind: "lottie",
-        src: "/animations/affiliates/bento-5.lottie",
+        src: cdnRaw(animations.affiliatesBento.bento5),
         loop: false,
       },
     },
@@ -72,7 +72,7 @@ const content: { title: string; items: BentoItem[] } = {
         "Hold balances, cash out via bank transfer, card, or hundreds of other methods. You control your earnings.",
       media: {
         kind: "lottie",
-        src: "/animations/affiliates/bento-6.lottie",
+        src: cdnRaw(animations.affiliatesBento.bento6),
         loop: false,
       },
     },

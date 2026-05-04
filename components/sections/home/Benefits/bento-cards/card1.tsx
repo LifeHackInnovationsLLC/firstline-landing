@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { cdn, images } from "@/lib/cdn";
 
 export function Card1Media() {
   return (
@@ -103,7 +104,7 @@ export function Card1Media() {
         </defs>
       </motion.svg>
       <img
-        src="/textures/benefit-bento/card1/box.png"
+        src={cdn(images.benefitBento.card1Box)}
         className="absolute inset-0 w-full h-full object-cover"
         alt=""
       />

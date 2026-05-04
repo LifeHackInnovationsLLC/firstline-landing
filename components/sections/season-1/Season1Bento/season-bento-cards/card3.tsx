@@ -1,3 +1,5 @@
+import { cdn, images } from "@/lib/cdn";
+
 type Tile = { avatar: string; active?: boolean };
 
 const TILES: Tile[] = [
@@ -70,7 +72,7 @@ export function Card3Media() {
         }
       `}</style>
       <img
-        src="/textures/season-bento/card3/background.png"
+        src={cdn(images.seasonBento.card3Bg)}
         alt=""
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
@@ -85,9 +87,9 @@ export function Card3Media() {
         }}
       >
         <div className="grid grid-cols-3 gap-3">
-          {TILES.map((tile, i) => (
+          {TILES.map((tile) => (
             <div
-              key={i}
+              key={tile.avatar}
               className={
                 "card3-tile group relative size-24 overflow-hidden rounded-2xl bg-[#2B2C30] " +
                 (tile.active

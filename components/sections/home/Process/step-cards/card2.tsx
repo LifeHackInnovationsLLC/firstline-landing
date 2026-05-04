@@ -1,7 +1,8 @@
 "use client";
-import { useRef } from "react";
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
+import { cdn, images } from "@/lib/cdn";
 
 export function Card2Media() {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -30,14 +31,22 @@ export function Card2Media() {
         const tl = gsap.timeline({ repeat: -1 });
         tl.to(card2El, {
           keyframes: [
-            { x: -61, y: -264, duration: 0 },               // above SVG
-            { x: -61, y: -37, ease: "none", duration: 4 },  // down left rail to bend
-            { x: 74, y: 41, ease: "none", duration: 3 },    // diagonal to centre
-            { x: 74, y: 320, ease: "none", duration: 5 },   // off-screen below
+            { x: -61, y: -264, duration: 0 }, // above SVG
+            { x: -61, y: -37, ease: "none", duration: 4 }, // down left rail to bend
+            { x: 74, y: 41, ease: "none", duration: 3 }, // diagonal to centre
+            { x: 74, y: 320, ease: "none", duration: 5 }, // off-screen below
           ],
         });
-        tl.to(card2El, { opacity: 1, duration: FADE_IN, ease: "power2.out" }, 0);
-        tl.to(card2El, { opacity: 0, duration: FADE_OUT, ease: "power2.in" }, TOTAL - FADE_OUT);
+        tl.to(
+          card2El,
+          { opacity: 1, duration: FADE_IN, ease: "power2.out" },
+          0,
+        );
+        tl.to(
+          card2El,
+          { opacity: 0, duration: FADE_OUT, ease: "power2.in" },
+          TOTAL - FADE_OUT,
+        );
       }
 
       // card1 = Affiliates. SVG center ≈ (245, 89.5).
@@ -48,14 +57,22 @@ export function Card2Media() {
         const tl = gsap.timeline({ repeat: -1, delay: 4 });
         tl.to(card1El, {
           keyframes: [
-            { x: 53, y: -170, duration: 0 },                // above SVG
-            { x: 53, y: -14, ease: "none", duration: 2 },   // down right rail to bend
-            { x: -89, y: 69, ease: "none", duration: 3 },   // diagonal to centre
-            { x: -89, y: 400, ease: "none", duration: 7 },  // off-screen below
+            { x: 53, y: -170, duration: 0 }, // above SVG
+            { x: 53, y: -14, ease: "none", duration: 2 }, // down right rail to bend
+            { x: -89, y: 69, ease: "none", duration: 3 }, // diagonal to centre
+            { x: -89, y: 400, ease: "none", duration: 7 }, // off-screen below
           ],
         });
-        tl.to(card1El, { opacity: 1, duration: FADE_IN, ease: "power2.out" }, 0);
-        tl.to(card1El, { opacity: 0, duration: FADE_OUT, ease: "power2.in" }, TOTAL - FADE_OUT);
+        tl.to(
+          card1El,
+          { opacity: 1, duration: FADE_IN, ease: "power2.out" },
+          0,
+        );
+        tl.to(
+          card1El,
+          { opacity: 0, duration: FADE_OUT, ease: "power2.in" },
+          TOTAL - FADE_OUT,
+        );
       }
     },
     { scope: svgRef },
@@ -72,7 +89,7 @@ export function Card2Media() {
     >
       <img
         className="absolute inset-0 w-full h-full object-cover"
-        src="/textures/step-cards/card2/background.png"
+        src={cdn(images.stepCards.card2Bg)}
         alt=""
       />{" "}
       <svg

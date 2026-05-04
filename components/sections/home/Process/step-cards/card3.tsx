@@ -1,7 +1,7 @@
 "use client";
 
-import { AnimatedMedia } from "@/components/ui/animated-media";
 import { Ripple } from "@/components/ui/ripple";
+import { cdn, images } from "@/lib/cdn";
 
 export function Card3Media() {
   return (
@@ -15,7 +15,7 @@ export function Card3Media() {
     >
       <img
         className="absolute inset-0 w-full h-full object-cover"
-        src="/textures/step-cards/card3/background.png"
+        src={cdn(images.stepCards.card3Bg)}
         alt=""
       />{" "}
       <div>
