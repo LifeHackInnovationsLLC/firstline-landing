@@ -86,7 +86,7 @@ export function NavLinks({
   const isActive = (href: string) => {
     if (!href || href.startsWith("#")) return false;
     if (href === "/") return pathname === "/";
-    return pathname === href || pathname.startsWith(href + "/");
+    return pathname === href || pathname.startsWith(`${href}/`);
   };
 
   const isParentActive = (item: NavItem) =>

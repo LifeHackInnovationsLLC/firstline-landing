@@ -9,6 +9,7 @@ import { Card4Media } from "./bento-cards/card4";
 import { Card5Media } from "./bento-cards/card5";
 
 type BentoItem = {
+  id: string;
   text: { highlightText: string; regularText: string };
   Media: React.ComponentType;
 };
@@ -16,6 +17,7 @@ type BentoItem = {
 const content: { bento: BentoItem[] } = {
   bento: [
     {
+      id: "turn-anyone",
       text: {
         highlightText: "Turn anyone",
         regularText: "into a tracked incentivized salesperson",
@@ -23,10 +25,12 @@ const content: { bento: BentoItem[] } = {
       Media: Card1Media,
     },
     {
+      id: "card-2",
       text: { highlightText: "", regularText: "" },
       Media: Card2Media,
     },
     {
+      id: "see-every-sale",
       text: {
         highlightText: "See every sale, split, and payout",
         regularText: "in real time",
@@ -34,6 +38,7 @@ const content: { bento: BentoItem[] } = {
       Media: Card3Media,
     },
     {
+      id: "scale-globally",
       text: {
         highlightText: "Scale globally",
         regularText: "without building ops, finance, or tooling",
@@ -41,6 +46,7 @@ const content: { bento: BentoItem[] } = {
       Media: Card4Media,
     },
     {
+      id: "pay-teams",
       text: {
         highlightText: "Pay teams, affiliates and partners",
         regularText: "without disputes or delays",
@@ -56,8 +62,8 @@ export function Bento() {
 
   return (
     <StaggerGroup className="grid grid-cols-1 mt-15 gap-3 md:grid-cols-2 lg:grid-cols-6 [--bento-card-height:22.56rem]">
-      {firstThreeItems.map((item, i) => (
-        <StaggerItem key={i} className="md:col-span-2 h-full">
+      {firstThreeItems.map((item) => (
+        <StaggerItem key={item.id} className="md:col-span-2 h-full">
           <BentoCard>
             <div className="flex-1 flex items-center justify-center">
               <item.Media />
@@ -69,8 +75,11 @@ export function Bento() {
           </BentoCard>
         </StaggerItem>
       ))}
-      {lastItems.map((item, i) => (
-        <StaggerItem key={i + 3} className="md:col-span-2 lg:col-span-3 h-full">
+      {lastItems.map((item) => (
+        <StaggerItem
+          key={item.id}
+          className="md:col-span-2 lg:col-span-3 h-full"
+        >
           <BentoCard>
             <div className="flex-1 flex items-center justify-center">
               <item.Media />

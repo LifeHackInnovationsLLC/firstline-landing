@@ -104,6 +104,7 @@ function TestimonialsColumn({
       >
         {Array.from({ length: repeat }).map((_, i) => (
           <div
+            // biome-ignore lint/suspicious/noArrayIndexKey: repeated clones for marquee, fixed length and order
             key={i}
             className="flex flex-col"
             style={{ gap: "16px", paddingBottom: "16px" }}

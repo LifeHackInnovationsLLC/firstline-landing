@@ -34,6 +34,7 @@ export const Ripple = React.memo(function Ripple({
 
         return (
           <div
+            // biome-ignore lint/suspicious/noArrayIndexKey: ripple count is fixed and rings never reorder
             key={i}
             className={`animate-ripple bg-muted-foreground/30 absolute rounded-full border shadow-xl`}
             style={

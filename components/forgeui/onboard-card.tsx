@@ -1,9 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { Check, Loader, Pointer } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface OnboardCardProps {
   duration?: number;
@@ -21,6 +21,7 @@ const OnboardCard = ({
   const [progress, setProgress] = useState(0);
   const [animateKey, setAnimateKey] = useState(0);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: animateKey re-triggers the effect to loop the animation
   useEffect(() => {
     const forward = setTimeout(() => setProgress(100), 100);
     const reset = setTimeout(() => {
