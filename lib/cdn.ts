@@ -1,6 +1,5 @@
 const CLOUD_NAME = "deoxevgc6";
 const BASE_URL = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload`;
-const RAW_BASE_URL = `https://res.cloudinary.com/${CLOUD_NAME}/raw/upload`;
 
 export function cdn(
   path: string,
@@ -27,10 +26,6 @@ export function cdn(
   }
 
   return `${BASE_URL}/${transforms.join(",")}/${path}`;
-}
-
-export function cdnRaw(path: string): string {
-  return `${RAW_BASE_URL}/${path}`;
 }
 
 export const images = {
@@ -205,15 +200,5 @@ export const images = {
     card1Bg: "firstline-landing/textures/step-cards/card1/background.png",
     card2Bg: "firstline-landing/textures/step-cards/card2/background.png",
     card3Bg: "firstline-landing/textures/step-cards/card3/background.png",
-  },
-} as const;
-
-export const animations = {
-  affiliatesBento: {
-    bento1: "firstline-landing/animations/affiliates/bento-1.lottie",
-    bento3: "firstline-landing/animations/affiliates/bento-3.lottie",
-    bento4: "firstline-landing/animations/affiliates/bento-4.lottie",
-    bento5: "firstline-landing/animations/affiliates/bento-5.lottie",
-    bento6: "firstline-landing/animations/affiliates/bento-6.lottie",
   },
 } as const;
