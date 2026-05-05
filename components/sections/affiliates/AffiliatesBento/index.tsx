@@ -1,16 +1,18 @@
 import { Section } from "@/components/layout/section";
-import {
-  AnimatedMedia,
-  type AnimatedMediaProps,
-} from "@/components/ui/animated-media";
 import { Heading } from "@/components/ui/heading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
-import { animations, cdn, cdnRaw, images } from "@/lib/cdn";
+import { Card1Media } from "./affiliates-bento-cards/card1";
+import { Card2Media } from "./affiliates-bento-cards/card2";
+import { Card3Media } from "./affiliates-bento-cards/card3";
+import { Card4Media } from "./affiliates-bento-cards/card4";
+import { Card5Media } from "./affiliates-bento-cards/card5";
+import { Card6Media } from "./affiliates-bento-cards/card6";
 
 type BentoItem = {
   title: string;
   description: string;
-  media: AnimatedMediaProps;
+  image: string;
+  Media: React.ComponentType;
 };
 
 const content: { title: string; items: BentoItem[] } = {
@@ -20,61 +22,43 @@ const content: { title: string; items: BentoItem[] } = {
       title: "Split at Acceptance",
       description:
         "Commission splits happen at the payment level - not after reconciliation, not after accounting, but instantly at sale.",
-      media: {
-        kind: "lottie",
-        src: cdnRaw(animations.affiliatesBento.bento1),
-        loop: false,
-      },
+      image: "/textures/card1.png",
+      Media: Card1Media,
     },
     {
       title: "Full Visibility",
       description:
         "See every transaction, every commission, every split in real-time. No more wondering if you're getting what you're owed.",
-      media: {
-        kind: "image",
-        src: cdn(images.affiliates.bento2),
-        alt: "Full Visibility",
-      },
+      image: "/textures/card2.png",
+      Media: Card2Media,
     },
     {
       title: "Instant Settlement",
       description:
         "Your commission hits your Firstline balance immediately. No 30-day holds, no net-60 terms, no excuses.",
-      media: {
-        kind: "lottie",
-        src: cdnRaw(animations.affiliatesBento.bento3),
-        loop: false,
-      },
+      image: "/textures/card3.png",
+      Media: Card3Media,
     },
     {
       title: "Trusted Provider",
       description:
         "Firstline Payments is a regulated payment service provider. Your earnings aren't just promised, they're protected.",
-      media: {
-        kind: "lottie",
-        src: cdnRaw(animations.affiliatesBento.bento4),
-        loop: false,
-      },
+      image: "/textures/card4.png",
+      Media: Card4Media,
     },
     {
       title: "Build Your Downline",
       description:
         "Create multiple levels of commissions, share with colleagues, and track every referral in your network.",
-      media: {
-        kind: "lottie",
-        src: cdnRaw(animations.affiliatesBento.bento5),
-        loop: false,
-      },
+      image: "/textures/card5.png",
+      Media: Card5Media,
     },
     {
       title: "Your Money, Your Way",
       description:
         "Hold balances, cash out via bank transfer, card, or hundreds of other methods. You control your earnings.",
-      media: {
-        kind: "lottie",
-        src: cdnRaw(animations.affiliatesBento.bento6),
-        loop: false,
-      },
+      image: "/textures/card6.png",
+      Media: Card6Media,
     },
   ],
 };
@@ -95,7 +79,15 @@ export function AffiliatesBento() {
                 key={item.title}
                 className="relative flex flex-col justify-end h-[280px] md:h-[356px] p-5 bg-card-dark overflow-hidden rounded-4xl"
               >
-                <AnimatedMedia {...item.media} />
+                <img
+                  src={item.image}
+                  alt=""
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+                />
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                  <item.Media />
+                </div>
                 <div className="relative z-10 flex flex-col gap-2">
                   <h3 className="text-white text-lg font-semibold">
                     {item.title}
