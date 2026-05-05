@@ -11,7 +11,10 @@ export function TrainingCardDescription({
   ...props
 }: TrainingCardDescriptionProps) {
   return (
-    <p className={cn("text-base text-white/60", className)} {...props}>
+    <p
+      className={cn("text-sm md:text-base text-white/60", className)}
+      {...props}
+    >
       {children}
     </p>
   );

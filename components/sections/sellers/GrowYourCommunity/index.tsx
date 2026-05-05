@@ -45,31 +45,35 @@ export function GrowYourCommunity() {
                   </p>
                 </Reveal>
               </div>
-              <StaggerGroup className="grid grid-cols-2 lg:flex lg:flex-row lg:items-center lg:justify-center gap-4 lg:gap-10 text-center">
-                <StaggerItem
-                  as="p"
-                  className="text-balance text-sm lg:text-base"
-                >
-                  Multi-platform community management
-                </StaggerItem>
-                <StaggerItem
-                  as="p"
-                  className="text-balance text-sm lg:text-base"
-                >
-                  Unlimited sales network depth
-                </StaggerItem>
-                <StaggerItem
-                  as="p"
-                  className="text-balance text-sm lg:text-base"
-                >
-                  Web chat for seamless communication
-                </StaggerItem>
-                <StaggerItem
-                  as="p"
-                  className="text-balance text-sm lg:text-base"
-                >
-                  Sell your product to your community
-                </StaggerItem>
+              <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-row lg:items-center lg:justify-center gap-4 lg:gap-10 text-left lg:text-center">
+                {[
+                  "Multi-platform community management",
+                  "Unlimited sales network depth",
+                  "Web chat for seamless communication",
+                  "Sell your product to your community",
+                ].map((label) => (
+                  <StaggerItem
+                    key={label}
+                    as="p"
+                    className="text-balance text-sm lg:text-base flex flex-row items-start lg:items-center lg:justify-center gap-2"
+                  >
+                    <svg
+                      aria-hidden
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      className="shrink-0 size-4 mt-0.5 sm:hidden text-[#51C9C2]"
+                    >
+                      <path
+                        d="M3.5 8.5l3 3 6-6"
+                        stroke="currentColor"
+                        strokeWidth="1.75"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span>{label}</span>
+                  </StaggerItem>
+                ))}
               </StaggerGroup>
             </div>
           </div>

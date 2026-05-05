@@ -97,15 +97,16 @@ export function Card2Media() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-x-0 top-0 flex items-center justify-center">
         <svg
           ref={svgRef}
+          className=" h-full max-sm:w-full"
           xmlns="http://www.w3.org/2000/svg"
           width="414"
           height="356"
           fill="none"
           viewBox="0 0 414 356"
-          style={{ overflow: "hidden" }}
+          style={{ overflow: "visible" }}
         >
           <g>
             <g>

@@ -67,16 +67,18 @@ export function SplitPayments() {
                 immediately, even for high-value transactions.
               </FeatureCardDescription>
             </Reveal>
-            <StaggerGroup as="ul" className="mt-10 flex flex-col gap-[14px]">
+            <StaggerGroup as="ul" className="mt-10 flex flex-col gap-3.5">
               {items.map((item) => (
                 <StaggerItem
                   as="li"
                   key={item.label}
                   from="left"
-                  className="flex flex-row items-center gap-[14px] text-sm text-white"
+                  className="flex flex-row items-start gap-3.5 text-sm text-white leading-snug"
                 >
-                  {item.icon}
-                  {item.label}
+                  <span className="shrink-0 w-6 h-6 flex items-center justify-center mt-0.5">
+                    {item.icon}
+                  </span>
+                  <span className="flex-1">{item.label}</span>
                 </StaggerItem>
               ))}
             </StaggerGroup>

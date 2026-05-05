@@ -55,11 +55,13 @@ export function CommerceWithoutLimits() {
               trackable conversions.
             </p>
           </Reveal>
-          <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:gap-10">
+          <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 lg:w-full mx-auto">
             {items.map((item) => (
               <StaggerItem key={item.title} className="flex flex-col gap-2">
                 <div className="flex flex-row items-center gap-2">
-                  {item.icon}
+                  <span className="shrink-0 w-5 h-5 flex items-center justify-center">
+                    {item.icon}
+                  </span>
                   <span className="text-lg text-body font-medium">
                     {item.title}
                   </span>
