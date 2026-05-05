@@ -1,6 +1,7 @@
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
+import { cdn, images } from "@/lib/cdn";
 import { Card1Media } from "./affiliates-bento-cards/card1";
 import { Card2Media } from "./affiliates-bento-cards/card2";
 import { Card3Media } from "./affiliates-bento-cards/card3";
@@ -22,42 +23,42 @@ const content: { title: string; items: BentoItem[] } = {
       title: "Split at Acceptance",
       description:
         "Commission splits happen at the payment level - not after reconciliation, not after accounting, but instantly at sale.",
-      image: "/textures/card1.png",
+      image: cdn(images.affiliatesBento.card1Bg),
       Media: Card1Media,
     },
     {
       title: "Full Visibility",
       description:
         "See every transaction, every commission, every split in real-time. No more wondering if you're getting what you're owed.",
-      image: "/textures/card2.png",
+      image: cdn(images.affiliatesBento.card2Bg),
       Media: Card2Media,
     },
     {
       title: "Instant Settlement",
       description:
         "Your commission hits your Firstline balance immediately. No 30-day holds, no net-60 terms, no excuses.",
-      image: "/textures/card3.png",
+      image: cdn(images.affiliatesBento.card3Bg),
       Media: Card3Media,
     },
     {
       title: "Trusted Provider",
       description:
         "Firstline Payments is a regulated payment service provider. Your earnings aren't just promised, they're protected.",
-      image: "/textures/card4.png",
+      image: cdn(images.affiliatesBento.card4Bg),
       Media: Card4Media,
     },
     {
       title: "Build Your Downline",
       description:
         "Create multiple levels of commissions, share with colleagues, and track every referral in your network.",
-      image: "/textures/card5.png",
+      image: cdn(images.affiliatesBento.card5Bg),
       Media: Card5Media,
     },
     {
       title: "Your Money, Your Way",
       description:
         "Hold balances, cash out via bank transfer, card, or hundreds of other methods. You control your earnings.",
-      image: "/textures/card6.png",
+      image: cdn(images.affiliatesBento.card6Bg),
       Media: Card6Media,
     },
   ],

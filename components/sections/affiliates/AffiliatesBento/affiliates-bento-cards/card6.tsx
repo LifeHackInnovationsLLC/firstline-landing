@@ -1,12 +1,17 @@
 "use client";
 
+import { cdn, images } from "@/lib/cdn";
+
+const COIN1_SRC = cdn(images.affiliatesBento.coin1);
+const COIN2_SRC = cdn(images.affiliatesBento.coin2);
+
 const COINS = [
-  { src: "/textures/coin1.png", begin: "0s" },
-  { src: "/textures/coin2.png", begin: "-5s" },
-  { src: "/textures/coin1.png", begin: "-10s" },
-  { src: "/textures/coin2.png", begin: "-15s" },
-  { src: "/textures/coin1.png", begin: "-20s" },
-  { src: "/textures/coin2.png", begin: "-25s" },
+  { src: COIN1_SRC, begin: "0s" },
+  { src: COIN2_SRC, begin: "-5s" },
+  { src: COIN1_SRC, begin: "-10s" },
+  { src: COIN2_SRC, begin: "-15s" },
+  { src: COIN1_SRC, begin: "-20s" },
+  { src: COIN2_SRC, begin: "-25s" },
 ];
 
 export function Card6Media() {
