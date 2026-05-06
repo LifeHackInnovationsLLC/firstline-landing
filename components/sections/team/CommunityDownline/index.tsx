@@ -138,7 +138,7 @@ export function CommunityDownline() {
                 <StaggerItem
                   as="li"
                   key={item.label}
-                  className="flex flex-row items-center gap-[14px] text-sm text-white"
+                  className="flex flex-row items-start gap-3.5 text-sm text-white [&>svg]:mt-0.5 [&>svg]:shrink-0"
                 >
                   {item.icon}
                   {item.label}

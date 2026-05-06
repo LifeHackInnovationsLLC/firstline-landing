@@ -22,42 +22,42 @@ const content: { title: string; items: BentoItem[] } = {
     {
       title: "Transparent Commissions",
       description:
-        "Every product you sell earns you instant and transparent commission. With offerings like payment processing, you can earn ongoing commissions based on monthly volume. Not just a one-time payout, your income grows as the businesses you bring in keep growing.",
+        "Instant, transparent commissions on every sale, growing with your merchants.",
       Media: Card1Media,
       background: cdn(images.agentBento.card1Bg),
     },
     {
       title: "Real Time Commission Tracking",
       description:
-        "Track everything in one place, from the individual products you've sold, to your merchant volume and commissions. See exactly what you're earning and where it's coming from at any time.",
+        "Track every sale, merchant, and commission in one place, anytime.",
       Media: Card2Media,
       background: cdn(images.agentBento.card2Bg),
     },
     {
       title: "Team and Override Management",
       description:
-        "Join a team as an agent or build your own team. Agents earn competitive commissions while team leaders earn override commissions across their entire network.",
+        "Join a team or build your own, earning commissions and overrides across your network.",
       Media: Card3Media,
       background: cdn(images.agentBento.card3Bg),
     },
     {
       title: "Merchant and Portfolio Management",
       description:
-        "Manage your full book of business from a single dashboard. Track activity, performance, and growth without spreadsheets or manual processes.",
+        "Manage your full book of business from one dashboard, no spreadsheets needed.",
       Media: Card4Media,
       background: cdn(images.agentBento.card4Bg),
     },
     {
       title: "Affiliate and Referral Tools",
       description:
-        "Monetize your network beyond direct sales. Share referral links, bring in merchants or agents, and earn rewards automatically.",
+        "Share links, bring in merchants or agents, and earn rewards automatically.",
       Media: Card5Media,
       background: cdn(images.agentBento.card5Bg),
     },
     {
       title: "Mobile First Access",
       description:
-        "Everything operates online. No office, no hardware inventory, and no gatekeepers. If you have a phone, you have a business.",
+        "No office, no hardware, no gatekeepers, just your phone and a business.",
       Media: Card6Media,
       background: cdn(images.agentBento.card6Bg),
     },

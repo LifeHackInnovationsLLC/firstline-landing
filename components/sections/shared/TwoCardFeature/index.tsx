@@ -84,10 +84,12 @@ export function TwoCardFeature({
                       {card.items.map((item) => (
                         <li
                           key={item}
-                          className="flex flex-row items-center gap-3 text-white/80 text-sm"
+                          className="flex flex-row items-start gap-3 text-white/80 text-sm leading-snug"
                         >
-                          {card.bullet}
-                          {item}
+                          <span className="shrink-0 mt-0.75 [&>svg]:block">
+                            {card.bullet}
+                          </span>
+                          <span className="flex-1">{item}</span>
                         </li>
                       ))}
                     </ul>

@@ -11,7 +11,10 @@ export function TrainingCardContent({
   ...props
 }: TrainingCardContentProps) {
   return (
-    <div className={cn("flex flex-col flex-1 px-6 py-4", className)} {...props}>
+    <div
+      className={cn("flex flex-col flex-1 px-5 py-4 md:px-6", className)}
+      {...props}
+    >
       {children}
     </div>
   );

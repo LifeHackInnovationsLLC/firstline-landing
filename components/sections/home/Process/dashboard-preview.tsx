@@ -20,7 +20,7 @@ export function DashboardPreview() {
       />
 
       <div className="bg-black/90 h-full flex flex-col lg:flex-row rounded-[6px] relative">
-        <div className="max-w-2xl flex-1 px-5 flex flex-col gap-5 pt-16 pb-8">
+        <div className="max-w-2xl flex-1 px-5 flex flex-col gap-5 pt-8 lg:pt-16 pb-8">
           <Heading
             as="h3"
             size="md"

@@ -5,8 +5,11 @@ import gsap from "gsap";
 import { motion } from "motion/react";
 import { useId, useRef } from "react";
 
-const AVATAR_URL =
-  "https://i.pinimg.com/control1/1200x/09/e4/0a/09e40a3f556058ae2f57ba22bce36f12.jpg";
+const AVATAR_URLS = [
+  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=160&h=160&q=80",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&h=160&q=80",
+  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&h=160&q=80",
+];
 
 const BEAM_DURATION = 5;
 const BEAM_COLOR = "#A78BFA";
@@ -75,9 +78,27 @@ function BeamCircle({
 }
 
 const ORBITS = [
-  { radius: 116.5, duration: 22, startAngle: -90, reverse: false },
-  { radius: 91.5, duration: 16, startAngle: 40, reverse: false },
-  { radius: 64.5, duration: 12, startAngle: 160, reverse: false },
+  {
+    radius: 116.5,
+    duration: 22,
+    startAngle: -90,
+    reverse: false,
+    avatar: AVATAR_URLS[0],
+  },
+  {
+    radius: 91.5,
+    duration: 16,
+    startAngle: 40,
+    reverse: false,
+    avatar: AVATAR_URLS[1],
+  },
+  {
+    radius: 64.5,
+    duration: 12,
+    startAngle: 160,
+    reverse: false,
+    avatar: AVATAR_URLS[2],
+  },
 ];
 
 const CENTER = 117;
@@ -88,11 +109,13 @@ function OrbitingAvatar({
   duration,
   startAngle,
   reverse,
+  avatar,
 }: {
   radius: number;
   duration: number;
   startAngle: number;
   reverse: boolean;
+  avatar: string;
 }) {
   const orbitRef = useRef<SVGGElement | null>(null);
   const counterRef = useRef<SVGGElement | null>(null);
@@ -142,7 +165,7 @@ function OrbitingAvatar({
             <circle r={AVATAR_SIZE / 2} />
           </clipPath>
           <image
-            href={AVATAR_URL}
+            href={avatar}
             x={-AVATAR_SIZE / 2}
             y={-AVATAR_SIZE / 2}
             width={AVATAR_SIZE}
@@ -201,6 +224,7 @@ export function Card5Media() {
           duration={orbit.duration}
           startAngle={orbit.startAngle}
           reverse={orbit.reverse}
+          avatar={orbit.avatar}
         />
       ))}
       <rect

@@ -44,16 +44,21 @@ export function UploadYourCourses() {
                 {content.description}
               </p>
             </Reveal>
-            <StaggerGroup as="ul" className="mt-8 flex flex-col gap-3.5">
+            <StaggerGroup
+              as="ul"
+              className="mt-8 flex flex-col gap-3.5 mx-auto lg:mx-0"
+            >
               {items.map((item) => (
                 <StaggerItem
                   as="li"
                   key={item.label}
                   from="left"
-                  className="flex flex-row items-center gap-3.5 text-sm text-text-body"
+                  className="flex flex-row items-start gap-3.5 text-sm text-text-body leading-snug"
                 >
-                  {item.icon}
-                  {item.label}
+                  <span className="shrink-0 size-5 flex items-center justify-center mt-0.5">
+                    {item.icon}
+                  </span>
+                  <span className="flex-1 text-left">{item.label}</span>
                 </StaggerItem>
               ))}
             </StaggerGroup>

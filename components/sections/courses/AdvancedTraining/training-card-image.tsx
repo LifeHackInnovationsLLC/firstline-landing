@@ -10,7 +10,7 @@ export function TrainingCardImage({
   ...props
 }: TrainingCardImageProps) {
   return (
-    <div className={cn("relative h-[250px]", className)} {...props}>
+    <div className={cn("relative h-35 md:h-62.5", className)} {...props}>
       {children}
     </div>
   );

@@ -74,40 +74,41 @@ export default function Season1Hero() {
         sizes="100vw"
         className="absolute inset-0 hidden lg:block w-full h-full object-cover"
       />
-      <div className="container relative z-10 flex flex-col flex-1 justify-end">
-        <div className="flex flex-col">
-          <div className="flex flex-col gap-8 lg:gap-11 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto items-center text-center pb-10 lg:pb-20 lg:max-w-2xl">
-            <div className="flex flex-col gap-6 items-center">
-              <FadeIn>
-                <Season1Kicker />
-              </FadeIn>
-              <FadeIn delay={0.05}>
-                <Heading as="h1" align="center">
-                  {content.title}
-                </Heading>
-              </FadeIn>
-              <FadeIn
-                as="p"
-                delay={0.1}
-                className="text-white/72 text-sm lg:text-base max-w-lg"
-              >
-                {content.description}
-              </FadeIn>
-            </div>
-            <FadeIn delay={0.15} className="flex flex-row items-center gap-4">
-              {content.ctas.map((cta) => (
-                <Button
-                  key={cta.label}
-                  nativeButton={false}
-                  variant={cta.variant}
-                  render={<Link href={cta.href} />}
-                >
-                  {cta.label}
-                  {"icon" in cta && cta.icon}
-                </Button>
-              ))}
+      <div className="container relative z-10 flex flex-col flex-1 justify-center lg:justify-end">
+        <div className="w-full flex flex-col items-center text-center gap-8 lg:gap-11 max-w-2xl mx-auto py-10 lg:pt-0 lg:pb-20">
+          <div className="flex flex-col gap-6 items-center w-full">
+            <FadeIn>
+              <Season1Kicker />
+            </FadeIn>
+            <FadeIn delay={0.05}>
+              <Heading as="h1" align="center">
+                {content.title}
+              </Heading>
+            </FadeIn>
+            <FadeIn
+              as="p"
+              delay={0.1}
+              className="text-white/72 text-sm lg:text-base max-w-lg mx-auto"
+            >
+              {content.description}
             </FadeIn>
           </div>
+          <FadeIn
+            delay={0.15}
+            className="flex flex-row items-center justify-center gap-4"
+          >
+            {content.ctas.map((cta) => (
+              <Button
+                key={cta.label}
+                nativeButton={false}
+                variant={cta.variant}
+                render={<Link href={cta.href} />}
+              >
+                {cta.label}
+                {"icon" in cta && cta.icon}
+              </Button>
+            ))}
+          </FadeIn>
         </div>
       </div>
     </Section>

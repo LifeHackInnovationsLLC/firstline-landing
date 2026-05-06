@@ -10,7 +10,7 @@ export function TrainingCardBody({
   ...props
 }: TrainingCardBodyProps) {
   return (
-    <div className={cn("mt-6", className)} {...props}>
+    <div className={cn("mt-4 md:mt-6", className)} {...props}>
       {children}
     </div>
   );

@@ -78,7 +78,7 @@ export function Card3Media() {
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
       />
       <div
-        className="absolute inset-0 flex items-start justify-center p-8"
+        className="absolute inset-0 flex items-start justify-center p-5 md:p-8"
         style={{
           maskImage:
             "radial-gradient(ellipse 110% 95% at 50% 0%, #000 65%, transparent 100%)",
@@ -86,12 +86,12 @@ export function Card3Media() {
             "radial-gradient(ellipse 110% 95% at 50% 0%, #000 65%, transparent 100%)",
         }}
       >
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-2 md:gap-3">
           {TILES.map((tile) => (
             <div
               key={tile.avatar}
               className={
-                "card3-tile group relative size-24 overflow-hidden rounded-2xl bg-[#2B2C30] " +
+                "card3-tile group relative aspect-square w-full max-w-24 overflow-hidden rounded-xl md:rounded-2xl bg-[#2B2C30] " +
                 (tile.active
                   ? "ring-1 ring-white/25 shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.45)]"
                   : "ring-1 ring-white/6 hover:ring-white/25 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.45)]")
