@@ -29,6 +29,7 @@ interface PageHeroProps {
     mobileWidth?: number;
     mobileHeight?: number;
   };
+  decorations?: React.ReactNode;
   align?: "center" | "bottom";
   className?: string;
 }
@@ -42,6 +43,7 @@ export function PageHero({
   ctas,
   maxWidth = "max-w-2xl",
   bgImage,
+  decorations,
   align = "center",
   className,
 }: PageHeroProps) {
@@ -75,6 +77,7 @@ export function PageHero({
           />
         </>
       )}
+      {decorations}
       <div
         className={`${bgImage ? "container relative z-10" : "container"}${isBottom ? " flex flex-col flex-1 justify-end" : ""}`}
       >
