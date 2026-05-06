@@ -1,11 +1,15 @@
 ﻿"use client";
 
 import { motion } from "motion/react";
+import { cdn, images } from "@/lib/cdn";
 
 const COIN_TRANSITION = {
   duration: 1.1,
   ease: [0.16, 1, 0.3, 1] as const,
 };
+
+const COIN1_SRC = cdn(images.affiliatesBento.coin1);
+const COIN2_SRC = cdn(images.affiliatesBento.coin2);
 
 export function Card1Media() {
   return (
@@ -42,7 +46,7 @@ export function Card1Media() {
         }}
       />
       <motion.image
-        href="/textures/coin1.png"
+        href={COIN1_SRC}
         x="13.357"
         y="14.194"
         width="71.575"
@@ -52,7 +56,7 @@ export function Card1Media() {
         transition={{ ...COIN_TRANSITION, delay: 0.2 }}
       />
       <motion.image
-        href="/textures/coin2.png"
+        href={COIN2_SRC}
         x="167.635"
         y="68.971"
         width="131.019"

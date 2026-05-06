@@ -201,4 +201,14 @@ export const images = {
     card2Bg: "firstline-landing/textures/step-cards/card2/background.png",
     card3Bg: "firstline-landing/textures/step-cards/card3/background.png",
   },
+  affiliatesBento: {
+    card1Bg: "firstline-landing/textures/affiliates-bento/card1/background.png",
+    card2Bg: "firstline-landing/textures/affiliates-bento/card2/background.png",
+    card3Bg: "firstline-landing/textures/affiliates-bento/card3/background.png",
+    card4Bg: "firstline-landing/textures/affiliates-bento/card4/background.png",
+    card5Bg: "firstline-landing/textures/affiliates-bento/card5/background.png",
+    card6Bg: "firstline-landing/textures/affiliates-bento/card6/background.png",
+    coin1: "firstline-landing/textures/affiliates-bento/coin1.png",
+    coin2: "firstline-landing/textures/affiliates-bento/coin2.png",
+  },
 } as const;
