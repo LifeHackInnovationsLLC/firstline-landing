@@ -30,7 +30,7 @@ interface PageHeroProps {
     mobileHeight?: number;
   };
   decorations?: React.ReactNode;
-  align?: "center" | "bottom";
+  align?: "center" | "bottom" | "responsive-bottom";
   className?: string;
 }
 
@@ -47,7 +47,8 @@ export function PageHero({
   align = "center",
   className,
 }: PageHeroProps) {
-  const isBottom = align === "bottom";
+  const isBottom = align === "bottom" || align === "responsive-bottom";
+  const isResponsiveBottom = align === "responsive-bottom";
   return (
     <Section
       id={id}
@@ -79,10 +80,22 @@ export function PageHero({
       )}
       {decorations}
       <div
-        className={`${bgImage ? "container relative z-10" : "container"}${isBottom ? " flex flex-col flex-1 justify-end" : ""}`}
+        className={`${bgImage || decorations ? "container relative z-10" : "container"}${
+          isBottom
+            ? isResponsiveBottom
+              ? " flex flex-col flex-1 justify-start lg:justify-end"
+              : " flex flex-col flex-1 justify-end"
+            : ""
+        }`}
       >
         <div
-          className={`flex flex-col gap-8 lg:gap-11 ${maxWidth} mx-auto items-center text-center ${isBottom ? "pb-10 lg:pb-20" : "pt-10 lg:pt-20"}`}
+          className={`flex flex-col gap-8 lg:gap-11 ${maxWidth} mx-auto items-center text-center ${
+            isBottom
+              ? isResponsiveBottom
+                ? "pt-10 pb-10 lg:pt-0 lg:pb-20"
+                : "pb-10 lg:pb-20"
+              : "pt-10 lg:pt-20"
+          }`}
         >
           <div className="flex flex-col gap-4 items-center">
             {kicker && <FadeIn>{kicker}</FadeIn>}

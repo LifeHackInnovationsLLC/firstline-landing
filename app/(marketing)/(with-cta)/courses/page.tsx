@@ -15,11 +15,11 @@ import {
   TrainingCardTitle,
   TrainingCardXp,
 } from "@/components/sections/courses/AdvancedTraining";
+import { CoursesHeroBackdrop } from "@/components/sections/courses/CoursesHeroBackdrop";
 import { HeroKicker } from "@/components/sections/shared/Hero/hero-kicker";
 import { PageHero } from "@/components/sections/shared/PageHero";
 import { Heading } from "@/components/ui/heading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
-import { cdn, images } from "@/lib/cdn";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = generatePageMetadata({
@@ -96,18 +96,7 @@ export default function CoursesPage() {
         kicker={<HeroKicker>Build your network</HeroKicker>}
         align="bottom"
         className="relative overflow-hidden min-h-175 -mt-(--navbar-height) pt-(--navbar-height)"
-        bgImage={{
-          src: cdn(images.courses.hero, { width: 3840, quality: "100" }),
-          mobileSrc: cdn(images.courses.heroMobile, {
-            width: 1608,
-            quality: "100",
-          }),
-          alt: "Courses hero background",
-          width: 4320,
-          height: 2109,
-          mobileWidth: 1608,
-          mobileHeight: 2572,
-        }}
+        decorations={<CoursesHeroBackdrop />}
       />
       <AdvancedTraining />
     </>

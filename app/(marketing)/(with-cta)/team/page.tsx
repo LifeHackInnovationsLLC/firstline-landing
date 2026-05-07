@@ -1,7 +1,7 @@
 import { PageHero } from "@/components/sections/shared/PageHero";
 import { CommunityDownline } from "@/components/sections/team/CommunityDownline";
 import { EverythingToSucceed } from "@/components/sections/team/EverythingToSucceed";
-import { cdn, images } from "@/lib/cdn";
+import { TeamHeroGlobe } from "@/components/sections/team/TeamHeroGlobe";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = generatePageMetadata({
@@ -41,20 +41,9 @@ export default function TeamPage() {
       <PageHero
         id="team"
         {...heroContent}
-        align="bottom"
+        align="responsive-bottom"
         className="relative overflow-hidden min-h-175 -mt-(--navbar-height) pt-(--navbar-height)"
-        bgImage={{
-          src: cdn(images.team.hero, { width: 3840, quality: "100" }),
-          mobileSrc: cdn(images.team.heroMobile, {
-            width: 1608,
-            quality: "100",
-          }),
-          alt: "Team hero background",
-          width: 4320,
-          height: 2109,
-          mobileWidth: 1608,
-          mobileHeight: 2572,
-        }}
+        decorations={<TeamHeroGlobe />}
       />
       <CommunityDownline />
       <EverythingToSucceed />

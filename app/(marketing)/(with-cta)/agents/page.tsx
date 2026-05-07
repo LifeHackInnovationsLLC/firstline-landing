@@ -1,12 +1,12 @@
 import { PlayArrow } from "@/components/icons/play-arrow";
 import { AgentsBento } from "@/components/sections/agents/AgentsBento";
 import { AgentsGlobal } from "@/components/sections/agents/AgentsGlobal";
+import { AgentsHeroBackdrop } from "@/components/sections/agents/AgentsHeroBackdrop";
 import { AgentsShareLeads } from "@/components/sections/agents/AgentsShareLeads";
 import { AgentsSteps } from "@/components/sections/agents/AgentsSteps";
 import { TheBottomLine } from "@/components/sections/agents/TheBottomLine";
 import { PageHero } from "@/components/sections/shared/PageHero";
 import { Stats } from "@/components/sections/shared/Stats";
-import { cdn, images } from "@/lib/cdn";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = generatePageMetadata({
@@ -55,18 +55,7 @@ export default function AgentsPage() {
         {...heroContent}
         align="bottom"
         className="relative overflow-hidden min-h-175 -mt-(--navbar-height) pt-(--navbar-height)"
-        bgImage={{
-          src: cdn(images.agents.hero, { width: 3840, quality: "100" }),
-          mobileSrc: cdn(images.agents.heroMobile, {
-            width: 1608,
-            quality: "100",
-          }),
-          alt: "Agents hero background",
-          width: 4320,
-          height: 2109,
-          mobileWidth: 1608,
-          mobileHeight: 2572,
-        }}
+        decorations={<AgentsHeroBackdrop />}
       />
       <Stats stats={stats} />
       <AgentsBento />
