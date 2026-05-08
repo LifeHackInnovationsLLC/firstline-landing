@@ -2,14 +2,15 @@ import Link from "next/link";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
-import { FAQList } from "./faq-list";
+import { Reveal } from "@/components/ui/reveal";
+import { type FAQItem, FAQList } from "./faq-list";
 
-export default function FAQ() {
+export default function FAQ({ faqs }: { faqs?: FAQItem[] }) {
   return (
     <Section id="faq" className="bg-gray">
       <div className="container">
         <div className="flex flex-col lg:flex-row w-full gap-12 lg:gap-20 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <div className="flex-1 flex flex-col items-center lg:items-start gap-5 lg:self-start">
+          <Reveal className="flex-1 flex flex-col items-center lg:items-start gap-5 lg:self-start">
             <Heading
               as="h2"
               className="text-center lg:text-left text-balance text-black"
@@ -28,10 +29,10 @@ export default function FAQ() {
             >
               Contact Us
             </Button>
-          </div>
-          <div className="flex-1">
-            <FAQList />
-          </div>
+          </Reveal>
+          <Reveal className="flex-1" delay={0.1}>
+            <FAQList faqs={faqs} />
+          </Reveal>
         </div>
       </div>
     </Section>

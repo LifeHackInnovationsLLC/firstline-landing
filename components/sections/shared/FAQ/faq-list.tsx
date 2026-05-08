@@ -5,7 +5,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqs = [
+export type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+const defaultFaqs: FAQItem[] = [
   {
     question: "How secure is my data with Firstline?",
     answer:
@@ -33,7 +38,7 @@ const faqs = [
   },
 ];
 
-export function FAQList() {
+export function FAQList({ faqs = defaultFaqs }: { faqs?: FAQItem[] }) {
   return (
     <Accordion defaultValue={[faqs[0].question]}>
       {faqs.map((faq) => (

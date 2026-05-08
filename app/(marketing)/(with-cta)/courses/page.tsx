@@ -15,10 +15,11 @@ import {
   TrainingCardTitle,
   TrainingCardXp,
 } from "@/components/sections/courses/AdvancedTraining";
+import { CoursesHeroBackdrop } from "@/components/sections/courses/CoursesHeroBackdrop";
 import { HeroKicker } from "@/components/sections/shared/Hero/hero-kicker";
 import { PageHero } from "@/components/sections/shared/PageHero";
 import { Heading } from "@/components/ui/heading";
-import { cdn, images } from "@/lib/cdn";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = generatePageMetadata({
@@ -95,18 +96,7 @@ export default function CoursesPage() {
         kicker={<HeroKicker>Build your network</HeroKicker>}
         align="bottom"
         className="relative overflow-hidden min-h-175 -mt-(--navbar-height) pt-(--navbar-height)"
-        bgImage={{
-          src: cdn(images.courses.hero, { width: 3840, quality: "100" }),
-          mobileSrc: cdn(images.courses.heroMobile, {
-            width: 1608,
-            quality: "100",
-          }),
-          alt: "Courses hero background",
-          width: 4320,
-          height: 2109,
-          mobileWidth: 1608,
-          mobileHeight: 2572,
-        }}
+        decorations={<CoursesHeroBackdrop />}
       />
       <AdvancedTraining />
     </>
@@ -118,47 +108,49 @@ function AdvancedTraining() {
     <Section id="advanced-training" className="bg-gray">
       <div className="container">
         <div className="flex flex-col gap-8 lg:gap-15 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <div className="flex flex-col gap-4 items-center text-center">
+          <Reveal className="flex flex-col gap-4 items-center text-center">
             <Heading as="h2" align="center" className="text-black">
               Advanced Training
             </Heading>
             <p className="text-black/60 text-sm lg:text-base max-w-lg lg:max-w-none">
               Start with the fundamentals and progress to advanced techniques
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          </Reveal>
+          <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {courses.map((course) => (
-              <TrainingCard key={course.title}>
-                <TrainingCardImage>
-                  <TrainingCardBadge>{course.badge}</TrainingCardBadge>
-                </TrainingCardImage>
-                <TrainingCardContent>
-                  <TrainingCardHeader>
-                    <div className="flex items-baseline gap-2">
-                      <TrainingCardTitle>{course.title}</TrainingCardTitle>
-                      <TrainingCardXp>{course.xp}</TrainingCardXp>
-                    </div>
-                    <TrainingCardSubtitle>
-                      {course.subtitle}
-                    </TrainingCardSubtitle>
-                  </TrainingCardHeader>
-                  <TrainingCardBody>
-                    <TrainingCardDescription>
-                      {course.description}
-                    </TrainingCardDescription>
-                  </TrainingCardBody>
-                  <TrainingCardFooter>
-                    <TrainingCardAction href={course.href}>
-                      Watch Training
-                    </TrainingCardAction>
-                    <TrainingCardDuration>
-                      {course.duration}
-                    </TrainingCardDuration>
-                  </TrainingCardFooter>
-                </TrainingCardContent>
-              </TrainingCard>
+              <StaggerItem key={course.title} className="h-full">
+                <TrainingCard className="h-full">
+                  <TrainingCardImage>
+                    <TrainingCardBadge>{course.badge}</TrainingCardBadge>
+                  </TrainingCardImage>
+                  <TrainingCardContent>
+                    <TrainingCardHeader>
+                      <div className="flex items-baseline gap-2">
+                        <TrainingCardTitle>{course.title}</TrainingCardTitle>
+                        <TrainingCardXp>{course.xp}</TrainingCardXp>
+                      </div>
+                      <TrainingCardSubtitle>
+                        {course.subtitle}
+                      </TrainingCardSubtitle>
+                    </TrainingCardHeader>
+                    <TrainingCardBody>
+                      <TrainingCardDescription>
+                        {course.description}
+                      </TrainingCardDescription>
+                    </TrainingCardBody>
+                    <TrainingCardFooter>
+                      <TrainingCardAction href={course.href}>
+                        Watch Training
+                      </TrainingCardAction>
+                      <TrainingCardDuration>
+                        {course.duration}
+                      </TrainingCardDuration>
+                    </TrainingCardFooter>
+                  </TrainingCardContent>
+                </TrainingCard>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </div>
     </Section>

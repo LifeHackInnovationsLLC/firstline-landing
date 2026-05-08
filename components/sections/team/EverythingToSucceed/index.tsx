@@ -6,6 +6,7 @@ import {
   HighlightCardIcon,
   HighlightCardTitle,
 } from "@/components/ui/highlight-card";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import {
   BonusAndRewardsIcon,
   CommissionSplittingIcon,
@@ -65,29 +66,31 @@ export function EverythingToSucceed() {
     <Section className="bg-gray">
       <div className="container">
         <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <div className="flex flex-col items-center text-center gap-4">
+          <Reveal className="flex flex-col items-center text-center gap-4">
             <Heading as="h2" align="center" className="text-black">
               Everything you need to succeed
             </Heading>
             <p className="text-text-secondary">
               From funnels to financing, we&apos;ve got you covered.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+          </Reveal>
+          <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
             {items.map((item) => (
-              <HighlightCard key={item.title} color={item.color}>
-                <div className="flex flex-col gap-5">
-                  <HighlightCardIcon>{item.icon}</HighlightCardIcon>
-                  <div className="flex flex-col gap-2">
-                    <HighlightCardTitle>{item.title}</HighlightCardTitle>
-                    <HighlightCardDescription className="mt-0">
-                      {item.description}
-                    </HighlightCardDescription>
+              <StaggerItem key={item.title}>
+                <HighlightCard color={item.color}>
+                  <div className="flex flex-col gap-5">
+                    <HighlightCardIcon>{item.icon}</HighlightCardIcon>
+                    <div className="flex flex-col gap-2">
+                      <HighlightCardTitle>{item.title}</HighlightCardTitle>
+                      <HighlightCardDescription className="mt-0">
+                        {item.description}
+                      </HighlightCardDescription>
+                    </div>
                   </div>
-                </div>
-              </HighlightCard>
+                </HighlightCard>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </div>
     </Section>

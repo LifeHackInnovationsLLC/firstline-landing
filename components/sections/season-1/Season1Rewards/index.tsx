@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 const rewards = [
@@ -70,18 +71,18 @@ export default function Season1Rewards() {
     <Section className="bg-gray">
       <div className="container">
         <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <div className="flex flex-col items-center gap-4">
+          <Reveal className="flex flex-col items-center gap-4">
             <Heading as="h2" align="center" className="text-black">
               {content.title}
             </Heading>
             <p className="text-black/60 text-sm lg:text-base max-w-lg text-center lg:max-w-none">
               {content.description}
             </p>
-          </div>
+          </Reveal>
 
-          <div className="flex flex-col gap-3 mt-15">
+          <StaggerGroup className="flex flex-col gap-3 mt-15">
             {rewards.map((reward) => (
-              <div
+              <StaggerItem
                 key={reward.tier}
                 className="flex flex-col gap-4 bg-card-dark rounded-xl border border-white/10 px-5 py-5 lg:flex-row lg:items-center lg:justify-between lg:px-8 lg:py-6"
               >
@@ -116,18 +117,21 @@ export default function Season1Rewards() {
                     {reward.xpDescription}
                   </span>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
 
-          <div className="mt-3 bg-card-dark rounded-xl border border-white/10 px-5 py-6 lg:px-8 lg:py-8 text-center">
+          <Reveal
+            delay={0.1}
+            className="mt-3 bg-card-dark rounded-xl border border-white/10 px-5 py-6 lg:px-8 lg:py-8 text-center"
+          >
             <p className="text-white font-semibold text-sm lg:text-base">
               {content.mystery.title}
             </p>
             <p className="text-white/65 text-xs lg:text-sm mt-1">
               {content.mystery.description}
             </p>
-          </div>
+          </Reveal>
         </div>
       </div>
     </Section>

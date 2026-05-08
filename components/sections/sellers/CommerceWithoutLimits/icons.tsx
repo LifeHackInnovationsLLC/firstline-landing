@@ -1,8 +1,7 @@
 export function GlobalSalesIcon() {
   return (
     <svg
-      width="18"
-      height="18"
+      className="shrink-0 size-5"
       viewBox="0 0 18 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -22,8 +21,7 @@ export function GlobalSalesIcon() {
 export function MobileFirstIcon() {
   return (
     <svg
-      width="14"
-      height="20"
+      className="shrink-0 h-5 w-3.5"
       viewBox="0 0 14 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -43,8 +41,7 @@ export function MobileFirstIcon() {
 export function CrossSellIcon() {
   return (
     <svg
-      width="16"
-      height="18"
+      className="shrink-0 h-5 w-4.5"
       viewBox="0 0 16 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -64,8 +61,7 @@ export function CrossSellIcon() {
 export function MultiLevelIcon() {
   return (
     <svg
-      width="20"
-      height="18"
+      className="shrink-0 h-5 w-5.5"
       viewBox="0 0 20 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

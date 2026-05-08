@@ -1,63 +1,59 @@
-import Image from "next/image";
 import { Heading } from "@/components/ui/heading";
-import { cdn, images } from "@/lib/cdn";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
+import { Card1Media } from "./step-cards/card1";
+import { Card2Media } from "./step-cards/card2";
+import { Card3Media } from "./step-cards/card3";
 
-const content = [
+type StepItem = {
+  title: string;
+  description: string;
+  Media: React.ComponentType;
+};
+
+const content: StepItem[] = [
   {
     title: "Create your account",
     description:
       "Sign up in under 2 minutes. Complete free training to understand the product.",
-    image: images.process.step1,
+    Media: Card1Media,
   },
   {
     title: "Discover your path",
     description:
       "Selling payment processing, find affiliate marketing partners, or lead a team.",
-    image: images.process.step2,
+    Media: Card2Media,
   },
   {
     title: "Earn commissions",
     description:
       "Every merchant signup earns you recurring commissions. Lifetime.",
-    image: images.process.step3,
+    Media: Card3Media,
   },
 ];
 
 export function Steps() {
   return (
     <div className="flex flex-col [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-      <Heading as="h2" className="text-center">
-        Get started in 3 simple steps
-      </Heading>
+      <Reveal>
+        <Heading as="h2" className="text-center">
+          Get started in 3 simple steps
+        </Heading>
+      </Reveal>
 
-      <StepsGrid>
+      <StaggerGroup className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mt-8 lg:mt-15 [--step-card-height:22rem] lg:[--step-card-height:26.5rem]">
         {content.map((step) => (
-          <StepCard key={step.title}>
-            <StepImage src={cdn(step.image, { width: 800 })} alt={step.title} />
-            <StepContent>
-              <StepTitle>{step.title}</StepTitle>
-              <StepDescription>{step.description}</StepDescription>
-            </StepContent>
-          </StepCard>
+          <StaggerItem key={step.title}>
+            <StepCard className="relative">
+              <step.Media />
+              <StepContent className="absolute inset-0 z-50">
+                <StepTitle>{step.title}</StepTitle>
+                <StepDescription>{step.description}</StepDescription>
+              </StepContent>
+            </StepCard>
+          </StaggerItem>
         ))}
-      </StepsGrid>
-    </div>
-  );
-}
-
-type StepsGridProps = React.HTMLAttributes<HTMLDivElement>;
-
-function StepsGrid({ className, children, ...props }: StepsGridProps) {
-  return (
-    <div
-      className={cn(
-        "grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mt-8 lg:mt-15 [--step-card-height:22rem] lg:[--step-card-height:26.5rem]",
-        className,
-      )}
-      {...props}
-    >
-      {children}
+      </StaggerGroup>
     </div>
   );
 }
@@ -75,24 +71,6 @@ function StepCard({ className, children, ...props }: StepCardProps) {
     >
       {children}
     </div>
-  );
-}
-
-interface StepImageProps {
-  className?: string;
-  alt: string;
-  src: string;
-}
-
-function StepImage({ className, alt, src }: StepImageProps) {
-  return (
-    <Image
-      className={cn("absolute inset-0 w-full h-full object-cover", className)}
-      alt={alt}
-      src={src}
-      fill
-      unoptimized
-    />
   );
 }
 

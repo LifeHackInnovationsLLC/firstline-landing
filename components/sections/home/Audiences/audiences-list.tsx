@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 import { cn } from "@/lib/utils";
 
@@ -31,38 +32,27 @@ const audiences = [
 
 export function AudiencesList() {
   return (
-    <AudiencesGrid>
+    <StaggerGroup className="flex flex-row gap-4 mt-8 lg:mt-15 [--audience-card-width:80vw] lg:[--audience-card-width:22rem] [--audience-card-height:20rem] lg:[--audience-card-height:24.4rem]">
       {audiences.map((audience) => (
-        <AudienceCard key={audience.audienceName}>
-          <AudienceImage
-            src={cdn(audience.audienceImage, { width: 800 })}
-            alt={audience.audienceName}
-          />
-          <AudienceContent>
-            <AudienceTitle>For {audience.audienceName}</AudienceTitle>
-            <AudienceDescription>
-              {audience.audienceDescription}
-            </AudienceDescription>
-          </AudienceContent>
-        </AudienceCard>
+        <StaggerItem
+          key={audience.audienceName}
+          className="w-(--audience-card-width) shrink-0"
+        >
+          <AudienceCard>
+            <AudienceImage
+              src={cdn(audience.audienceImage, { width: 800 })}
+              alt={audience.audienceName}
+            />
+            <AudienceContent>
+              <AudienceTitle>For {audience.audienceName}</AudienceTitle>
+              <AudienceDescription>
+                {audience.audienceDescription}
+              </AudienceDescription>
+            </AudienceContent>
+          </AudienceCard>
+        </StaggerItem>
       ))}
-    </AudiencesGrid>
-  );
-}
-
-type AudiencesGridProps = React.HTMLAttributes<HTMLDivElement>;
-
-function AudiencesGrid({ className, children, ...props }: AudiencesGridProps) {
-  return (
-    <div
-      className={cn(
-        "flex flex-col lg:flex-row items-center lg:overflow-x-auto gap-4 mt-8 lg:mt-15 [--audience-card-width:100%] lg:[--audience-card-width:22rem] [--audience-card-height:20rem] lg:[--audience-card-height:24.4rem]",
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </div>
+    </StaggerGroup>
   );
 }
 

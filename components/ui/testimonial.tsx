@@ -80,28 +80,41 @@ function TestimonialsRow({
 function TestimonialsColumn({
   className,
   children,
-  speed = 30,
+  duration = 25,
   reverse = false,
-  repeat = 4,
+  repeat = 2,
   ...props
 }: React.ComponentProps<"div"> & {
-  speed?: number;
+  duration?: number;
   reverse?: boolean;
   repeat?: number;
 }) {
   return (
-    <InfiniteSlider
+    <div
       data-slot="testimonials-column"
-      direction="vertical"
-      gap={16}
-      speed={speed}
-      reverse={reverse}
-      repeat={repeat}
-      className={cn("", className)}
+      className={cn("overflow-hidden", className)}
       {...props}
     >
-      {children}
-    </InfiniteSlider>
+      <div
+        className={reverse ? "animate-scroll-down" : "animate-scroll-up"}
+        style={{
+          ["--duration" as string]: `${duration}s`,
+          willChange: "transform",
+        }}
+      >
+        {Array.from({ length: repeat }).map((_, i) => (
+          <div
+            // biome-ignore lint/suspicious/noArrayIndexKey: repeated clones for marquee, fixed length and order
+            key={i}
+            className="flex flex-col"
+            style={{ gap: "16px", paddingBottom: "16px" }}
+            aria-hidden={i > 0 ? true : undefined}
+          >
+            {children}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 

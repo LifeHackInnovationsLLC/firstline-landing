@@ -5,6 +5,7 @@ import {
   HighlightCardIcon,
   HighlightCardTitle,
 } from "@/components/ui/highlight-card";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import {
   AffiliateNetworksIcon,
   CallCentersIcon,
@@ -52,7 +53,7 @@ export function BuiltForGroups() {
     <Section className="bg-gray">
       <div className="container">
         <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <div className="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto lg:max-w-none">
+          <Reveal className="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto lg:max-w-none">
             <Heading as="h2" align="center" className="text-black">
               Built for groups that already know how to scale
             </Heading>
@@ -62,17 +63,19 @@ export function BuiltForGroups() {
               people, or grow communities, this fits naturally into what you are
               already doing.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 lg:mt-10">
+          </Reveal>
+          <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 lg:mt-10">
             {items.map((item) => (
-              <HighlightCard key={item.title} color={item.color}>
-                <HighlightCardIcon>{item.icon}</HighlightCardIcon>
-                <HighlightCardTitle className="mt-4 text-base">
-                  {item.title}
-                </HighlightCardTitle>
-              </HighlightCard>
+              <StaggerItem key={item.title}>
+                <HighlightCard color={item.color}>
+                  <HighlightCardIcon>{item.icon}</HighlightCardIcon>
+                  <HighlightCardTitle className="mt-4 text-base">
+                    {item.title}
+                  </HighlightCardTitle>
+                </HighlightCard>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </div>
     </Section>

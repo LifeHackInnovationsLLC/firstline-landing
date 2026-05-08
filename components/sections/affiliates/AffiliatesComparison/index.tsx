@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { Reveal, RevealScale } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 const content = {
@@ -50,10 +51,12 @@ export function AffiliatesComparison() {
     <Section id="affiliates-comparison" className="bg-gray">
       <div className="container">
         <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <Heading as="h2" align="center" className="text-black text-balance">
-            {content.title}
-          </Heading>
-          <div className="relative mt-8 lg:mt-15 rounded-3xl border border-white/10 overflow-hidden">
+          <Reveal>
+            <Heading as="h2" align="center" className="text-black text-balance">
+              {content.title}
+            </Heading>
+          </Reveal>
+          <RevealScale className="relative mt-10 lg:mt-15 rounded-3xl border border-white/10 overflow-hidden">
             <Image
               src={cdn(images.shared.comparisonSectionBg, { width: 1400 })}
               alt=""
@@ -62,7 +65,37 @@ export function AffiliatesComparison() {
               className="object-cover pointer-events-none"
               unoptimized
             />
-            <table className="relative z-10 w-full">
+            {/* Mobile: stacked cards */}
+            <ul className="relative z-10 flex flex-col divide-y divide-white/5 md:hidden">
+              {content.rows.map((row) => (
+                <li key={row.feature} className="px-5 py-4">
+                  <p className="text-white text-sm font-semibold">
+                    {row.feature}
+                  </p>
+                  <dl className="mt-3 grid grid-cols-2 gap-3">
+                    <div className="flex flex-col gap-1">
+                      <dt className="text-[11px] uppercase tracking-wide text-white/40 font-medium">
+                        Traditional
+                      </dt>
+                      <dd className="text-xs text-white/50">
+                        {row.traditional}
+                      </dd>
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      <dt className="text-[11px] uppercase tracking-wide text-white/40 font-medium">
+                        Firstline
+                      </dt>
+                      <dd className="text-xs text-white font-semibold">
+                        {row.firstline}
+                      </dd>
+                    </div>
+                  </dl>
+                </li>
+              ))}
+            </ul>
+
+            {/* Tablet/Desktop: table */}
+            <table className="relative z-10 w-full hidden md:table">
               <thead>
                 <tr className="border-b border-white/10">
                   {content.headers.map((header) => (
@@ -94,7 +127,7 @@ export function AffiliatesComparison() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </RevealScale>
         </div>
       </div>
     </Section>

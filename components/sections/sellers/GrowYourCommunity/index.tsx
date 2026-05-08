@@ -1,6 +1,12 @@
 import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import {
+  Reveal,
+  RevealScale,
+  StaggerGroup,
+  StaggerItem,
+} from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 export function GrowYourCommunity() {
@@ -19,15 +25,16 @@ export function GrowYourCommunity() {
           <div className="relative z-10 flex flex-col gap-8 lg:gap-10 max-w-4xl mx-auto">
             <div className="flex flex-col gap-8 lg:gap-10">
               <div className="flex flex-col gap-7">
-                <Image
-                  src={cdn(images.sellers.growYourCommunitySocials)}
-                  alt="Grow your community"
-                  width={400}
-                  height={300}
-                  className="max-w-xs lg:max-w-md mx-auto"
-                  unoptimized
-                />
-                <div className="flex flex-col items-center gap-4 lg:gap-6">
+                <RevealScale className="max-w-xs lg:max-w-md mx-auto">
+                  <Image
+                    src={cdn(images.sellers.growYourCommunitySocials)}
+                    alt="Grow your community"
+                    width={400}
+                    height={300}
+                    unoptimized
+                  />
+                </RevealScale>
+                <Reveal className="flex flex-col items-center gap-4 lg:gap-6">
                   <Heading as="h2" align="center">
                     Grow your community
                   </Heading>
@@ -36,22 +43,38 @@ export function GrowYourCommunity() {
                     them chat on web. Let your followers or the followers of
                     your followers sell your product without boundaries.
                   </p>
-                </div>
+                </Reveal>
               </div>
-              <div className="grid grid-cols-2 lg:flex lg:flex-row lg:items-center lg:justify-center gap-4 lg:gap-10 text-center">
-                <p className="text-balance text-sm lg:text-base">
-                  Multi-platform community management
-                </p>
-                <p className="text-balance text-sm lg:text-base">
-                  Unlimited sales network depth
-                </p>
-                <p className="text-balance text-sm lg:text-base">
-                  Web chat for seamless communication
-                </p>
-                <p className="text-balance text-sm lg:text-base">
-                  Sell your product to your community
-                </p>
-              </div>
+              <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-row lg:items-center lg:justify-center gap-4 lg:gap-10 text-left lg:text-center">
+                {[
+                  "Multi-platform community management",
+                  "Unlimited sales network depth",
+                  "Web chat for seamless communication",
+                  "Sell your product to your community",
+                ].map((label) => (
+                  <StaggerItem
+                    key={label}
+                    as="p"
+                    className="text-balance text-sm lg:text-base flex flex-row items-start lg:items-center lg:justify-center gap-2"
+                  >
+                    <svg
+                      aria-hidden
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      className="shrink-0 size-4 mt-0.5 sm:hidden text-[#51C9C2]"
+                    >
+                      <path
+                        d="M3.5 8.5l3 3 6-6"
+                        stroke="currentColor"
+                        strokeWidth="1.75"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span>{label}</span>
+                  </StaggerItem>
+                ))}
+              </StaggerGroup>
             </div>
           </div>
         </div>

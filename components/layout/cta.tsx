@@ -3,6 +3,7 @@ import Link from "next/link";
 import { cdn, images } from "@/lib/cdn";
 import { Button } from "../ui/button";
 import { Heading } from "../ui/heading";
+import { Reveal } from "../ui/reveal";
 import { Section } from "./section";
 
 export default function CTA() {
@@ -34,7 +35,7 @@ export default function CTA() {
             loading="lazy"
             unoptimized
           />
-          <div className="flex flex-col items-center justify-center text-center gap-4">
+          <Reveal className="flex flex-col items-center justify-center text-center gap-4">
             <Heading as="h2" className="text-center">
               Ready to start earning?
             </Heading>
@@ -42,8 +43,11 @@ export default function CTA() {
               Join thousands of affiliates earning passive income. Sign up free
               and <br /> start building your network today.
             </p>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-3 mt-10 lg:mt-0">
+          </Reveal>
+          <Reveal
+            className="flex flex-col items-center justify-center gap-3 mt-10 lg:mt-0"
+            delay={0.1}
+          >
             <Button
               className="w-fit"
               variant="primary"
@@ -55,7 +59,7 @@ export default function CTA() {
             <span className="text-text-secondary text-sm">
               No credit card required • Start earning in minutes
             </span>
-          </div>
+          </Reveal>
         </div>
       </div>
     </Section>

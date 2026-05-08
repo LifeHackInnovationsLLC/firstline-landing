@@ -4,10 +4,14 @@ import {
   FeatureCard,
   FeatureCardContent,
   FeatureCardDescription,
-  FeatureCardList,
-  FeatureCardListItem,
   FeatureCardTitle,
 } from "@/components/ui/feature-card";
+import {
+  Reveal,
+  RevealScale,
+  StaggerGroup,
+  StaggerItem,
+} from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 function Bullet() {
@@ -131,21 +135,33 @@ export function WhyAgencies() {
             unoptimized
           />
           <FeatureCardContent className="relative z-10 lg:max-w-120">
-            <FeatureCardTitle>Why agencies love us</FeatureCardTitle>
-            <FeatureCardDescription>
-              We handle the hard part. You make the introduction, we do the
-              sales, onboarding, and support. You just collect the checks.
-            </FeatureCardDescription>
-            <FeatureCardList>
+            <Reveal>
+              <FeatureCardTitle>Why agencies love us</FeatureCardTitle>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <FeatureCardDescription>
+                We handle the hard part. You make the introduction, we do the
+                sales, onboarding, and support. You just collect the checks.
+              </FeatureCardDescription>
+            </Reveal>
+            <StaggerGroup as="ul" className="mt-10 flex flex-col gap-[14px]">
               {items.map((item) => (
-                <FeatureCardListItem key={item}>
+                <StaggerItem
+                  as="li"
+                  key={item}
+                  from="left"
+                  className="flex flex-row items-center gap-[14px] text-sm text-white"
+                >
                   <Bullet />
                   {item}
-                </FeatureCardListItem>
+                </StaggerItem>
               ))}
-            </FeatureCardList>
+            </StaggerGroup>
           </FeatureCardContent>
-          <div className="max-w-sm lg:max-w-100 relative z-10 mx-auto lg:mx-0">
+          <RevealScale
+            delay={0.1}
+            className="max-w-sm lg:max-w-100 relative z-10 mx-auto lg:mx-0"
+          >
             <Image
               src={cdn(images.agencies.whyAgenciesGraphic)}
               alt="Why agencies love us"
@@ -153,7 +169,7 @@ export function WhyAgencies() {
               height={300}
               unoptimized
             />
-          </div>
+          </RevealScale>
         </FeatureCard>
       </div>
     </Section>

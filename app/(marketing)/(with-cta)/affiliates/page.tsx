@@ -3,12 +3,13 @@ import { PlayArrow } from "@/components/icons/play-arrow";
 import { PurpleBullet } from "@/components/icons/purple-bullet";
 import { AffiliatesBento } from "@/components/sections/affiliates/AffiliatesBento";
 import { AffiliatesComparison } from "@/components/sections/affiliates/AffiliatesComparison";
+import { AffiliatesHeroBackdrop } from "@/components/sections/affiliates/AffiliatesHeroBackdrop";
 import { AffiliatesSteps } from "@/components/sections/affiliates/AffiliatesSteps";
 import { AffiliatesTeams } from "@/components/sections/affiliates/AffiliatesTeams";
 import { PageHero } from "@/components/sections/shared/PageHero";
 import { Stats } from "@/components/sections/shared/Stats";
 import { TwoCardFeature } from "@/components/sections/shared/TwoCardFeature";
-import { cdn, images } from "@/lib/cdn";
+import { images } from "@/lib/cdn";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = generatePageMetadata({
@@ -94,18 +95,7 @@ export default function AffiliatesPage() {
         maxWidth="max-w-200"
         align="bottom"
         className="relative overflow-hidden min-h-175 -mt-(--navbar-height) pt-(--navbar-height)"
-        bgImage={{
-          src: cdn(images.affiliates.hero, { width: 3840, quality: "100" }),
-          mobileSrc: cdn(images.affiliates.heroMobile, {
-            width: 1608,
-            quality: "100",
-          }),
-          alt: "Affiliates hero — earn recurring commissions with Firstline",
-          width: 4320,
-          height: 2109,
-          mobileWidth: 1608,
-          mobileHeight: 2572,
-        }}
+        decorations={<AffiliatesHeroBackdrop />}
       />
       <Stats id="affiliates-stats" stats={stats} />
       <AffiliatesBento />

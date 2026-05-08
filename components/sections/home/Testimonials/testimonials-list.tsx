@@ -136,17 +136,17 @@ function TestimonialsListDesktop() {
   return (
     <Testimonials className="hidden lg:block">
       <TestimonialsGrid height={700}>
-        <TestimonialsColumn speed={30} repeat={2}>
+        <TestimonialsColumn duration={26}>
           {testimonials.column1.map((item) => (
             <TestimonialItem key={item.author} item={item} />
           ))}
         </TestimonialsColumn>
-        <TestimonialsColumn speed={25} reverse repeat={2}>
+        <TestimonialsColumn duration={32} reverse>
           {testimonials.column2.map((item) => (
             <TestimonialItem key={item.author} item={item} />
           ))}
         </TestimonialsColumn>
-        <TestimonialsColumn speed={35} repeat={2}>
+        <TestimonialsColumn duration={22}>
           {testimonials.column3.map((item) => (
             <TestimonialItem key={item.author} item={item} />
           ))}

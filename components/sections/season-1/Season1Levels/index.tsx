@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 const levels = [
@@ -65,17 +66,17 @@ export default function Season1Levels() {
     <Section className="relative overflow-hidden">
       <div className="container relative z-10">
         <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <div className="flex flex-col items-center gap-4">
+          <Reveal className="flex flex-col items-center gap-4">
             <Heading as="h2" align="center">
               {content.title}
             </Heading>
             <p className="text-white/72 text-sm lg:text-base max-w-lg text-center lg:max-w-none">
               {content.description}
             </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-15">
+          </Reveal>
+          <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-15">
             {levels.map((level) => (
-              <div
+              <StaggerItem
                 key={level.level}
                 className="relative flex flex-col justify-end h-86 bg-card-dark overflow-hidden rounded-xl p-5"
               >
@@ -97,9 +98,9 @@ export default function Season1Levels() {
                   </div>
                   <span className="text-green font-semibold">{level.xp}</span>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </div>
     </Section>

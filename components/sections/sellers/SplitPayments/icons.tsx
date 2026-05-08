@@ -1,8 +1,7 @@
 export function InstantPayoutIcon() {
   return (
     <svg
-      width="16"
-      height="16"
+      className="shrink-0 size-4"
       viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -22,8 +21,7 @@ export function InstantPayoutIcon() {
 export function SplitPaymentIcon() {
   return (
     <svg
-      width="16"
-      height="16"
+      className="shrink-0 size-4"
       viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -43,8 +41,7 @@ export function SplitPaymentIcon() {
 export function RiskBasedIcon() {
   return (
     <svg
-      width="16"
-      height="16"
+      className="shrink-0 size-4"
       viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -64,9 +61,7 @@ export function RiskBasedIcon() {
 export function HighValueIcon() {
   return (
     <svg
-      className="shrink-0"
-      width="24"
-      height="17"
+      className="shrink-0 w-6 h-4"
       viewBox="0 0 24 17"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

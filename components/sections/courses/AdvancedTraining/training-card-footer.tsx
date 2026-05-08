@@ -13,7 +13,10 @@ export function TrainingCardFooter({
 }: TrainingCardFooterProps) {
   return (
     <div
-      className={cn("mt-auto pt-6 flex items-center gap-4", className)}
+      className={cn(
+        "mt-auto pt-5 md:pt-6 flex flex-wrap items-center gap-3 md:gap-4",
+        className,
+      )}
       {...props}
     >
       {children}

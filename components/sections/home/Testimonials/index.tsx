@@ -1,5 +1,6 @@
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { Reveal } from "@/components/ui/reveal";
 import { TestimonialsList } from "./testimonials-list";
 
 export default function Testimonials() {
@@ -8,7 +9,7 @@ export default function Testimonials() {
       <div className="flex flex-col gap-8 lg:gap-10">
         <div className="container">
           <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-            <div className="relative flex flex-col gap-4 lg:gap-5 items-center">
+            <Reveal className="relative flex flex-col gap-4 lg:gap-5 items-center">
               <Heading
                 as="h2"
                 className="text-center text-balance text-black relative z-10"
@@ -19,7 +20,7 @@ export default function Testimonials() {
                 Join thousands of sellers, agents, and affiliates who trust
                 Firstline to manage their commissions and grow their networks.
               </p>
-            </div>
+            </Reveal>
           </div>
         </div>
         <TestimonialsList />

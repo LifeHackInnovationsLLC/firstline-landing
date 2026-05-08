@@ -8,6 +8,7 @@ import {
   FeatureCardDescription,
   FeatureCardTitle,
 } from "@/components/ui/feature-card";
+import { Reveal, RevealScale } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 export function TheBottomLine() {
@@ -23,24 +24,30 @@ export function TheBottomLine() {
             height={1000}
             unoptimized
           />
-          <FeatureCardContent className="relative z-10 lg:max-w-120">
-            <FeatureCardTitle>The bottom line</FeatureCardTitle>
-            <FeatureCardDescription>
-              You earn from every transaction through a Firstline terminal. This
-              isn&apos;t a one-time commission, it&apos;s a recurring monthly
-              check on merchant volume, flowing straight into your pocket.
-            </FeatureCardDescription>
-            <div className="mt-10">
-              <Button
-                variant="green"
-                nativeButton={false}
-                render={<Link href="/agents/get-started" />}
-              >
-                Start Earning Today
-              </Button>
-            </div>
-          </FeatureCardContent>
-          <div className="max-w-sm lg:max-w-100 relative z-10 mx-auto lg:mx-0 lg:pr-[100px]">
+          <Reveal>
+            <FeatureCardContent className="relative z-10 lg:max-w-120">
+              <FeatureCardTitle>The bottom line</FeatureCardTitle>
+              <FeatureCardDescription>
+                You earn from every transaction through a Firstline terminal.
+                This isn&apos;t a one-time commission, it&apos;s a recurring
+                monthly check on merchant volume, flowing straight into your
+                pocket.
+              </FeatureCardDescription>
+              <div className="mt-10">
+                <Button
+                  variant="green"
+                  nativeButton={false}
+                  render={<Link href="/agents/get-started" />}
+                >
+                  Start Earning Today
+                </Button>
+              </div>
+            </FeatureCardContent>
+          </Reveal>
+          <RevealScale
+            delay={0.1}
+            className="max-w-sm lg:max-w-100 relative z-10 mx-auto lg:mx-0 lg:pr-[100px]"
+          >
             <Image
               src={cdn(images.agents.bottomLineImage)}
               alt="The bottom line"
@@ -48,7 +55,7 @@ export function TheBottomLine() {
               height={300}
               unoptimized
             />
-          </div>
+          </RevealScale>
         </FeatureCard>
       </div>
     </Section>

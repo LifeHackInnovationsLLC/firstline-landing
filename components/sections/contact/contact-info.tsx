@@ -2,6 +2,12 @@ import Image from "next/image";
 import { AutoAvatar } from "@/components/ui/auto-avatar";
 import { Heading } from "@/components/ui/heading";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import {
+  Reveal,
+  RevealScale,
+  StaggerGroup,
+  StaggerItem,
+} from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 const content = {
@@ -95,12 +101,14 @@ const content = {
 export function ContactInfo() {
   return (
     <div className="flex flex-col gap-8 lg:gap-10">
-      <Heading as="h2" align="center" className="lg:text-left">
-        {content.title}
-      </Heading>
-      <div className="flex flex-col gap-6">
+      <Reveal>
+        <Heading as="h2" align="center" className="lg:text-left">
+          {content.title}
+        </Heading>
+      </Reveal>
+      <StaggerGroup className="flex flex-col gap-6">
         {content.descriptions.map((description) => (
-          <div key={description.title} className="flex flex-col gap-1">
+          <StaggerItem key={description.title} className="flex flex-col gap-1">
             <div className="flex items-center gap-2">
               {description.icon}
               <Heading as="h3" size={"xs"}>
@@ -108,18 +116,19 @@ export function ContactInfo() {
               </Heading>
             </div>
             <p className="text-white/60">{description.description}</p>
-          </div>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerGroup>
       <hr className="border-white/16" />
-      <Image
-        src={cdn(images.contact.contactEmail)}
-        alt="Contact Email"
-        width={400}
-        height={300}
-        className="max-w-65 mx-auto lg:mx-0 lg:-ml-5"
-        unoptimized
-      />
+      <RevealScale className="max-w-65 mx-auto lg:mx-0 lg:-ml-5">
+        <Image
+          src={cdn(images.contact.contactEmail)}
+          alt="Contact Email"
+          width={400}
+          height={300}
+          unoptimized
+        />
+      </RevealScale>
       <div className="flex flex-col lg:flex-row w-full items-center gap-4 border-t border-white/6">
         <span className="text-white/72 text-lg shrink-0 text-center lg:text-left">
           Trusted by <br /> 2,500+ users:

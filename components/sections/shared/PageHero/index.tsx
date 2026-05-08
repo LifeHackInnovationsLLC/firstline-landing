@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
+import { FadeIn } from "@/components/ui/reveal";
 
 interface PageHeroCta {
   label: string;
@@ -28,7 +29,8 @@ interface PageHeroProps {
     mobileWidth?: number;
     mobileHeight?: number;
   };
-  align?: "center" | "bottom";
+  decorations?: React.ReactNode;
+  align?: "center" | "bottom" | "responsive-bottom";
   className?: string;
 }
 
@@ -41,10 +43,12 @@ export function PageHero({
   ctas,
   maxWidth = "max-w-2xl",
   bgImage,
+  decorations,
   align = "center",
   className,
 }: PageHeroProps) {
-  const isBottom = align === "bottom";
+  const isBottom = align === "bottom" || align === "responsive-bottom";
+  const isResponsiveBottom = align === "responsive-bottom";
   return (
     <Section
       id={id}
@@ -74,20 +78,40 @@ export function PageHero({
           />
         </>
       )}
+      {decorations}
       <div
-        className={`${bgImage ? "container relative z-10" : "container"}${isBottom ? " flex flex-col flex-1 justify-end" : ""}`}
+        className={`${bgImage || decorations ? "container relative z-10" : "container"}${
+          isBottom
+            ? isResponsiveBottom
+              ? " flex flex-col flex-1 justify-start lg:justify-end"
+              : " flex flex-col flex-1 justify-end"
+            : ""
+        }`}
       >
         <div
-          className={`flex flex-col gap-8 lg:gap-11 ${maxWidth} mx-auto items-center text-center ${isBottom ? "pb-10 lg:pb-20" : "pt-10 lg:pt-20"}`}
+          className={`flex flex-col gap-8 lg:gap-11 ${maxWidth} mx-auto items-center text-center ${
+            isBottom
+              ? isResponsiveBottom
+                ? "pt-10 pb-10 lg:pt-0 lg:pb-20"
+                : "pb-10 lg:pb-20"
+              : "pt-10 lg:pt-20"
+          }`}
         >
           <div className="flex flex-col gap-4 items-center">
-            {kicker}
-            <Heading as="h1" align="center">
-              {title}
-            </Heading>
-            <p className={descriptionClassName}>{description}</p>
+            {kicker && <FadeIn>{kicker}</FadeIn>}
+            <FadeIn delay={0.05}>
+              <Heading as="h1" align="center">
+                {title}
+              </Heading>
+            </FadeIn>
+            <FadeIn delay={0.1} as="p" className={descriptionClassName}>
+              {description}
+            </FadeIn>
           </div>
-          <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-4">
+          <FadeIn
+            delay={0.15}
+            className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-4"
+          >
             {ctas.map((cta) => (
               <Button
                 key={cta.label}
@@ -100,7 +124,7 @@ export function PageHero({
                 {cta.icon}
               </Button>
             ))}
-          </div>
+          </FadeIn>
         </div>
       </div>
     </Section>

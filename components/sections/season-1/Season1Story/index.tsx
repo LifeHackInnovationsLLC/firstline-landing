@@ -1,5 +1,6 @@
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 
 const paragraphs = [
   "There are a lot of people out there who are just naturally good at selling. Not in a pushy way, just... they know how to talk to people. They know how to connect, how to read a room, how to make things happen.",
@@ -17,16 +18,22 @@ export default function Season1Story() {
     <Section className="bg-gray">
       <div className="container">
         <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto flex flex-col gap-15 lg:max-w-[53.25rem]">
-          <Heading as="h2" className="text-black">
-            The Story
-          </Heading>
-          <div className="flex flex-col gap-6">
+          <Reveal>
+            <Heading as="h2" className="text-black">
+              The Story
+            </Heading>
+          </Reveal>
+          <StaggerGroup className="flex flex-col gap-6">
             {paragraphs.map((text) => (
-              <p key={text.slice(0, 40)} className="text-xl text-[#686868]">
+              <StaggerItem
+                as="p"
+                key={text.slice(0, 40)}
+                className="text-xl text-[#686868]"
+              >
                 {text}
-              </p>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </div>
     </Section>

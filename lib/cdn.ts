@@ -101,7 +101,6 @@ export const images = {
     paymentProcessingGlobe: "firstline/payment-processing-globe.webp",
     whyAgenciesBlur: "firstline/why-agencies-blur.webp",
     whyAgenciesGraphic: "firstline/why-agencies-graphic.webp",
-    potentialEarnings: "firstline/potential-earnings.webp",
     hero: "firstline/agencies-bg-hero.png",
     heroMobile: "firstline/agencies-bg-hero-mobile.png",
   },
@@ -176,5 +175,40 @@ export const images = {
   },
   brand: {
     logo: "firstline/logo.svg",
+  },
+  benefitBento: {
+    card1Box: "firstline-landing/textures/benefit-bento/card1/box.png",
+    card2Bg: "firstline-landing/textures/benefit-bento/card2/background.png",
+    card3Bg: "firstline-landing/textures/benefit-bento/card3/background.png",
+    card5Bg: "firstline-landing/textures/benefit-bento/card5/background.png",
+  },
+  agentBento: {
+    card1Bg: "firstline-landing/textures/agent-bento/card1/background.png",
+    card2Bg: "firstline-landing/textures/agent-bento/card2/background.png",
+    card3Bg: "firstline-landing/textures/agent-bento/card3/background.png",
+    card4Bg: "firstline-landing/textures/agent-bento/card4/background.png",
+    card5Bg: "firstline-landing/textures/agent-bento/card5/background.png",
+    card6Bg: "firstline-landing/textures/agent-bento/card6/background.png",
+  },
+  seasonBento: {
+    card1Bg: "firstline-landing/textures/season-bento/card1/background.png",
+    card2Bg: "firstline-landing/textures/season-bento/card2/background.png",
+    card3Bg: "firstline-landing/textures/season-bento/card3/background.png",
+    card4Bg: "firstline-landing/textures/season-bento/card4/background.png",
+  },
+  stepCards: {
+    card1Bg: "firstline-landing/textures/step-cards/card1/background.png",
+    card2Bg: "firstline-landing/textures/step-cards/card2/background.png",
+    card3Bg: "firstline-landing/textures/step-cards/card3/background.png",
+  },
+  affiliatesBento: {
+    card1Bg: "firstline-landing/textures/affiliates-bento/card1/background.png",
+    card2Bg: "firstline-landing/textures/affiliates-bento/card2/background.png",
+    card3Bg: "firstline-landing/textures/affiliates-bento/card3/background.png",
+    card4Bg: "firstline-landing/textures/affiliates-bento/card4/background.png",
+    card5Bg: "firstline-landing/textures/affiliates-bento/card5/background.png",
+    card6Bg: "firstline-landing/textures/affiliates-bento/card6/background.png",
+    coin1: "firstline-landing/textures/affiliates-bento/coin1.png",
+    coin2: "firstline-landing/textures/affiliates-bento/coin2.png",
   },
 } as const;

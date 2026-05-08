@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 import { cn } from "@/lib/utils";
 
@@ -23,43 +24,17 @@ const content = [
 
 export function WhySwitchList() {
   return (
-    <WhySwitchGrid>
+    <StaggerGroup className="flex flex-col lg:flex-row gap-4 items-start justify-start lg:gap-8 [--why-switch-icon-size:2.5rem] lg:[--why-switch-icon-size:4rem] [--why-switch-title-max-width:100%] lg:[--why-switch-title-max-width:16.25rem]">
       {content.map((item) => (
-        <WhySwitchItem key={item.title} className="flex-1">
+        <StaggerItem
+          key={item.title}
+          className="flex-1 flex flex-row items-start lg:flex-col gap-4 lg:gap-3"
+        >
           <WhySwitchIcon src={cdn(item.icon, { width: 96 })} alt={item.title} />
           <WhySwitchTitle>{item.title}</WhySwitchTitle>
-        </WhySwitchItem>
+        </StaggerItem>
       ))}
-    </WhySwitchGrid>
-  );
-}
-
-type WhySwitchGridProps = React.HTMLAttributes<HTMLDivElement>;
-
-function WhySwitchGrid({ className, children, ...props }: WhySwitchGridProps) {
-  return (
-    <div
-      className={cn(
-        "flex flex-col lg:flex-row items-start justify-start lg:gap-8 [--why-switch-icon-size:2.5rem] lg:[--why-switch-icon-size:3rem] [--why-switch-title-max-width:100%] lg:[--why-switch-title-max-width:16.25rem]",
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-}
-
-type WhySwitchItemProps = React.HTMLAttributes<HTMLDivElement>;
-
-function WhySwitchItem({ className, children, ...props }: WhySwitchItemProps) {
-  return (
-    <div
-      className={cn("flex flex-col items-start gap-4", className)}
-      {...props}
-    >
-      {children}
-    </div>
+    </StaggerGroup>
   );
 }
 

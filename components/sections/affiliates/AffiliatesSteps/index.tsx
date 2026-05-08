@@ -1,5 +1,6 @@
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 
 const content = {
   title: "From scale to\nsettlement in just\nfour steps",
@@ -244,7 +245,7 @@ export function AffiliatesSteps() {
     <Section id="affiliates-steps" className="bg-gray">
       <div className="container">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <div className="lg:w-1/3 items-start">
+          <Reveal className="lg:w-1/3 items-start">
             <Heading
               as="h2"
               align="center"
@@ -252,10 +253,10 @@ export function AffiliatesSteps() {
             >
               {content.title}
             </Heading>
-          </div>
-          <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-7">
+          </Reveal>
+          <StaggerGroup className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-7">
             {content.steps.map((step) => (
-              <div key={step.title} className="flex flex-col gap-7">
+              <StaggerItem key={step.title} className="flex flex-col gap-7">
                 {step.icon}
                 <div className="flex flex-col gap-3">
                   <h3 className="text-lg text-black font-semibold">
@@ -263,9 +264,9 @@ export function AffiliatesSteps() {
                   </h3>
                   <p className="text-text-body text-base">{step.description}</p>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </div>
     </Section>

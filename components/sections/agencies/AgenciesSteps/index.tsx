@@ -1,5 +1,6 @@
 import { Section } from "@/components/layout/section";
 import { Heading } from "@/components/ui/heading";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 
 const content = {
   title: "Get started in four\nsimple steps",
@@ -62,8 +63,8 @@ const content = {
       ),
     },
     {
-      title: "Introduce",
-      description: "Connect us with your clients who accept cards",
+      title: "Connect",
+      description: "Introduce products and services to customers or merchants",
       icon: (
         <svg
           width="48"
@@ -119,8 +120,9 @@ const content = {
       ),
     },
     {
-      title: "We Close",
-      description: "Our team handles the sales and onboarding",
+      title: "Close",
+      description:
+        "Direct the customer to a checkout page, or board a new merchant for payment processing services",
       icon: (
         <svg
           width="48"
@@ -177,7 +179,8 @@ const content = {
     },
     {
       title: "You Earn",
-      description: "Get paid monthly for as long as they process",
+      description:
+        "Get paid instant commissions for sales and monthly residuals on merchant processing deals",
       icon: (
         <svg
           width="48"
@@ -240,7 +243,7 @@ export function AgenciesSteps() {
     <Section className="bg-gray">
       <div className="container">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 [--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <div className="lg:w-1/2 items-start">
+          <Reveal className="lg:w-1/2 items-start">
             <Heading
               as="h2"
               align="center"
@@ -248,10 +251,10 @@ export function AgenciesSteps() {
             >
               {content.title}
             </Heading>
-          </div>
-          <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-7">
+          </Reveal>
+          <StaggerGroup className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-7">
             {content.steps.map((step) => (
-              <div key={step.title} className="flex flex-col gap-7">
+              <StaggerItem key={step.title} className="flex flex-col gap-7">
                 {step.icon}
                 <div className="flex flex-col gap-3">
                   <h3 className="text-lg text-black font-semibold">
@@ -259,9 +262,9 @@ export function AgenciesSteps() {
                   </h3>
                   <p className="text-text-body text-base">{step.description}</p>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </div>
     </Section>

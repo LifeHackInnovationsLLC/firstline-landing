@@ -79,6 +79,30 @@
     transform: translateY(calc(-100% - var(--gap)));
     }
   }
+
+  --animate-scroll-up: scroll-up var(--duration) linear infinite;
+  --animate-scroll-down: scroll-down var(--duration) linear infinite;
+  @keyframes scroll-up {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-50%); }
+  }
+  @keyframes scroll-down {
+    from { transform: translateY(-50%); }
+    to   { transform: translateY(0); }
+  }
+  --animate-ripple: ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite
+;
+  @keyframes ripple {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);}
+  50% {
+    transform: translate(-50%, -50%) scale(0.9);}}}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-up,
+  .animate-scroll-down {
+    animation-play-state: paused;
+  }
 }
 
 :root {

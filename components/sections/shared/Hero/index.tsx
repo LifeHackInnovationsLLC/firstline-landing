@@ -1,7 +1,6 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Section } from "@/components/layout/section";
@@ -9,7 +8,7 @@ import { AutoAvatar } from "@/components/ui/auto-avatar";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
-import { cdn, images } from "@/lib/cdn";
+import { HeroAnimation } from "./hero-animation";
 import { HeroKicker } from "./hero-kicker";
 import { AffiliatesIcon, AgenciesIcon, AgentIcon, SellerIcon } from "./svgs";
 
@@ -25,7 +24,6 @@ const content = {
       key: "sellers",
       label: "Sellers",
       icon: <SellerIcon />,
-      image: images.hero.image,
       description:
         "Launch products faster, scale distribution effortlessly, and tap into a network of motivated salespeople ready to sell for you. Only pay when revenue is generated, with full visibility so every dollar spent, drives growth.",
     },
@@ -33,7 +31,6 @@ const content = {
       key: "agents",
       label: "Agents",
       icon: <AgentIcon />,
-      image: images.hero.image,
       description:
         "Access high-quality products to sell, work on your own terms, and earn commissions without the usual friction. Every sale is tracked, every payout is automatic, and everything is built so you can focus on closing, not chasing.",
     },
@@ -41,7 +38,6 @@ const content = {
       key: "agencies",
       label: "Agencies",
       icon: <AgenciesIcon />,
-      image: images.hero.image,
       description:
         "Equip your team or community with the tools they need to sell, track performance, and get paid in one seamless system. From onboarding to checkout, everything is streamlined so you can scale without operational overhead.",
     },
@@ -49,7 +45,6 @@ const content = {
       key: "affiliates",
       label: "Affiliates",
       icon: <AffiliatesIcon />,
-      image: images.hero.image,
       description:
         "Turn your audience into a reliable revenue stream by promoting real products with built-in conversion and payout infrastructure. No complicated setups, no manual tracking, just a smarter way to grow consistent income from your influence.",
     },
@@ -76,7 +71,6 @@ export default function Hero() {
   const [activeMode, setActiveMode] = useState<ModeKey>(content.modes[0].key);
 
   const activeModeData = content.modes.find((mode) => mode.key === activeMode);
-  const activeModeImage = activeModeData?.image ?? images.hero.image;
   const activeModeDescription = activeModeData?.description ?? "";
 
   const toggleMode = (key: ModeKey) => {
@@ -102,7 +96,7 @@ export default function Hero() {
                 return (
                   <div
                     key={mode.key}
-                    className="relative rounded-[36px_4px_4px_36px] last:rounded-[4px_36px_36px_4px]"
+                    className="relative rounded-lg first:rounded-[36px_4px_4px_36px] last:rounded-[4px_36px_36px_4px]"
                   >
                     {isActive && (
                       <motion.div
@@ -118,10 +112,10 @@ export default function Hero() {
                     <button
                       type="button"
                       onClick={() => toggleMode(mode.key)}
-                      className="relative z-10 flex cursor-pointer flex-row items-center gap-2 px-[6px] lg:px-4 py-2"
+                      className="relative z-10 flex cursor-pointer flex-row items-center gap-0 sm:gap-2 px-2.5 sm:px-1.5 lg:px-4 py-2"
                     >
                       {mode.icon}
-                      <span className="text-white/72 text-sm lg:text-base">
+                      <span className="hidden sm:inline text-white/72 text-sm lg:text-base">
                         {mode.label}
                       </span>
                     </button>
@@ -151,32 +145,36 @@ export default function Hero() {
               {content.cta.label}
             </Button>
           </div>
-          <Image
-            src={cdn(activeModeImage, { width: 1200 })}
-            alt="Firstline commission platform dashboard preview"
-            width={1200}
-            height={1367}
-            priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover self-start w-full h-auto flex-1 lg:-mt-32"
-          />
+          <div className="relative flex-1 self-start w-full aspect-706/556">
+            <HeroAnimation />
+          </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row w-full items-center gap-4 -mt-24 border-t border-white/6 pt-4 pb-16">
-          <span className="text-white/72 text-lg whitespace-nowrap shrink-0 text-center lg:text-left">
-            Trusted by 2,500+ users:
-          </span>
-          <div className="relative flex-1 min-w-0 mask-[linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]`">
-            <InfiniteSlider gap={24} speed={50} repeat={2}>
+        <div className="flex flex-col lg:flex-row w-full items-center gap-4 mt-8 border-t border-white/6 pt-4 pb-16">
+          <div className="inline lg:max-w-44 lg:border-r lg:border-white/10 lg:pr-6 shrink-0">
+            <p className="text-white/72 text-sm text-center lg:text-end">
+              Trusted by 2,500+ users
+            </p>
+          </div>
+          <div className="relative flex-1 min-w-0 py-3">
+            <InfiniteSlider speedOnHover={20} speed={40} gap={24} repeat={2}>
               {content.socialProof.items.map((item) => (
                 <div
                   key={item.name}
-                  className="flex items-center gap-2.5 shrink-0 size-[63px] p-1 rounded-full bg-[linear-gradient(162.92deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.04)_100%)] shadow-[0px_11.69px_23.26px_rgba(0,0,0,0.25)] backdrop-blur-[80px]"
+                  className="flex items-center gap-2.5 shrink-0 size-15.75 p-1 rounded-full bg-[linear-gradient(162.92deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.04)_100%)] shadow-[0px_11.69px_23.26px_rgba(0,0,0,0.25)] backdrop-blur-[80px]"
                 >
                   <AutoAvatar name={item.name} width={55} height={55} />
                 </div>
               ))}
             </InfiniteSlider>
+            <div
+              aria-hidden
+              className="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-background to-transparent pointer-events-none z-10"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-y-0 right-0 w-20 bg-linear-to-l from-background to-transparent pointer-events-none z-10"
+            />
           </div>
         </div>
       </div>

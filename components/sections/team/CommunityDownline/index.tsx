@@ -4,10 +4,9 @@ import {
   FeatureCard,
   FeatureCardContent,
   FeatureCardDescription,
-  FeatureCardList,
-  FeatureCardListItem,
   FeatureCardTitle,
 } from "@/components/ui/feature-card";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { cdn, images } from "@/lib/cdn";
 
 function CommunitiesIcon() {
@@ -122,20 +121,30 @@ export function CommunityDownline() {
             unoptimized
           />
           <FeatureCardContent className="relative z-10">
-            <FeatureCardTitle>Your community is your downline</FeatureCardTitle>
-            <FeatureCardDescription>
-              Your community is your downline. Agents earn competitive
-              commissions, and team leaders earn override commissions on the
-              entire team, across all products. A true win-win.
-            </FeatureCardDescription>
-            <FeatureCardList>
+            <Reveal>
+              <FeatureCardTitle>
+                Your community is your downline
+              </FeatureCardTitle>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <FeatureCardDescription>
+                Your community is your downline. Agents earn competitive
+                commissions, and team leaders earn override commissions on the
+                entire team, across all products. A true win-win.
+              </FeatureCardDescription>
+            </Reveal>
+            <StaggerGroup as="ul" className="mt-10 flex flex-col gap-[14px]">
               {listItems.map((item) => (
-                <FeatureCardListItem key={item.label}>
+                <StaggerItem
+                  as="li"
+                  key={item.label}
+                  className="flex flex-row items-start gap-3.5 text-sm text-white [&>svg]:mt-0.5 [&>svg]:shrink-0"
+                >
                   {item.icon}
                   {item.label}
-                </FeatureCardListItem>
+                </StaggerItem>
               ))}
-            </FeatureCardList>
+            </StaggerGroup>
           </FeatureCardContent>
         </FeatureCard>
       </div>
