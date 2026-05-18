@@ -1,0 +1,8 @@
+# Build-context hygiene only (does not affect output correctness — the
+# builder stage runs `pnpm install` + `pnpm build` and regenerates these).
+node_modules
+.next
+out
+.git
+.DS_Store
+*.log

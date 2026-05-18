@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 
+// TEMPORARY BUILD-INFO BADGE — remove before production (see component file)
+import { BuildInfoBadge } from "@/components/build-info-badge";
 import { baseMetadata, defaultViewport } from "@/lib/seo/metadata";
 import {
   faqSchema,
@@ -67,7 +69,11 @@ export default function RootLayout({
         ))}
       </head>
 
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        {/* TEMPORARY BUILD-INFO BADGE — remove before production */}
+        <BuildInfoBadge />
+      </body>
     </html>
   );
 }

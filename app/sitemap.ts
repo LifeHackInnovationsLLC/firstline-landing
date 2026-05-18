@@ -1,6 +1,11 @@
 import type { MetadataRoute } from "next";
 import { SEO_CONSTANTS } from "@/lib/seo/constants";
 
+// Required by Next 16 for metadata route files under `output: 'export'`.
+// This route returns constant data, so forcing static is correct and
+// produces a plain sitemap.xml in the export with no behavior change.
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const { siteUrl } = SEO_CONSTANTS;
