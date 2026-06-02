@@ -21,7 +21,7 @@ export function AgentsShareLeads() {
     <Section>
       <div className="container">
         <div className="[--page-section-content-width:31.25rem] max-w-(--page-section-content-width) mx-auto lg:max-w-none">
-          <div className="relative overflow-hidden p-[6px] bg-[linear-gradient(162.92deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.04)_100%)] backdrop-blur-[68.6px] rounded-[12px]">
+          <div className="relative overflow-hidden p-[6px] bg-[linear-gradient(162.92deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.04)_100%)] backdrop-blur-[24px] rounded-[12px]">
             <div className="bg-black/90 rounded-[6px] relative overflow-hidden flex flex-col lg:flex-row">
               <Image
                 src={cdn(images.season1.climbPurpleElipse)}

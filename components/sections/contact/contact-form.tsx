@@ -56,7 +56,7 @@ export function ContactForm() {
 
   if (success) {
     return (
-      <div className="relative flex min-h-[400px] flex-col items-center justify-center gap-4 overflow-hidden rounded-3xl border border-white/12 bg-white/3 px-5 py-8 text-center backdrop-blur-[50px]">
+      <div className="relative flex min-h-[400px] flex-col items-center justify-center gap-4 overflow-hidden rounded-3xl border border-white/12 bg-white/3 px-5 py-8 text-center backdrop-blur-[24px]">
         <div className="pointer-events-none absolute -left-[133px] -top-[274px] h-[376px] w-[376px] rounded-full bg-[rgba(99,99,177,0.32)] mix-blend-plus-lighter blur-[200px]" />
         <p className="text-lg font-medium text-white">Message sent!</p>
         <p className="text-sm text-white/50">
@@ -70,7 +70,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-white/3 px-5 py-8 backdrop-blur-[50px]">
+    <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-white/3 px-5 py-8 backdrop-blur-[24px]">
       <div className="pointer-events-none absolute -left-[133px] -top-[274px] h-[376px] w-[376px] rounded-full bg-[rgba(99,99,177,0.32)] mix-blend-plus-lighter blur-[200px]" />
       <form
         onSubmit={form.handleSubmit(onSubmit)}
