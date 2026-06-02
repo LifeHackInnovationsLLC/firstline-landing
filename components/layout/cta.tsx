@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { cdn, images } from "@/lib/cdn";
+import { APP_SIGNUP_URL } from "@/lib/app-links";
 import { Button } from "../ui/button";
 import { Heading } from "../ui/heading";
 import { Section } from "./section";
@@ -48,7 +48,7 @@ export default function CTA() {
               className="w-fit"
               variant="primary"
               nativeButton={false}
-              render={<Link href="/get-started" prefetch={false} />}
+              render={<a href={APP_SIGNUP_URL} />}
             >
               Create Free Account
             </Button>

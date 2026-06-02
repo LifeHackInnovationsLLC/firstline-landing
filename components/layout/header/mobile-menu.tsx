@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback, useEffect, useId, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { APP_LOGIN_URL, APP_SIGNUP_URL } from "@/lib/app-links";
 import { cn } from "@/lib/utils";
 import { NavLinks } from "./nav-links";
 
@@ -109,14 +109,14 @@ export function MobileMenu() {
             <Button
               variant="ghost"
               nativeButton={false}
-              render={<Link href="/sign-in" prefetch={false} />}
+              render={<a href={APP_LOGIN_URL} />}
             >
               Sign in
             </Button>
             <Button
               variant="primary"
               nativeButton={false}
-              render={<Link href="/get-started" prefetch={false} />}
+              render={<a href={APP_SIGNUP_URL} />}
             >
               Get Started
             </Button>

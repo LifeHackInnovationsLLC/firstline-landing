@@ -1,10 +1,10 @@
 "use client";
 
 import { useMotionValueEvent, useScroll } from "motion/react";
-import Link from "next/link";
 import { useState } from "react";
 import { Logo } from "@/components/global/logo";
 import { Button } from "@/components/ui/button";
+import { APP_LOGIN_URL, APP_SIGNUP_URL } from "@/lib/app-links";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./mobile-menu";
 import { NavLinks } from "./nav-links";
@@ -43,14 +43,14 @@ export function Header() {
             <Button
               variant="ghost"
               nativeButton={false}
-              render={<Link href="/sign-in" prefetch={false} />}
+              render={<a href={APP_LOGIN_URL} />}
             >
               Sign in
             </Button>
             <Button
               variant="primary"
               nativeButton={false}
-              render={<Link href="/get-started" prefetch={false} />}
+              render={<a href={APP_SIGNUP_URL} />}
             >
               Get Started
             </Button>
