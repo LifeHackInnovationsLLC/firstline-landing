@@ -18,6 +18,26 @@ export function Card2Media() {
 
       if (!card1El || !card2El) return;
 
+      // GPU-promote the animated chips so transform-only motion stays composited.
+      gsap.set([card1El, card2El], { willChange: "transform, opacity" });
+
+      // Pause the infinite drift timelines whenever the card is offscreen so the
+      // GPU isn't compositing moving layers (and any residual blur) every frame
+      // while not visible. Resume on re-entry.
+      const timelines: gsap.core.Timeline[] = [];
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            for (const tl of timelines) {
+              if (entry.isIntersecting) tl.play();
+              else tl.pause();
+            }
+          }
+        },
+        { threshold: 0.01 },
+      );
+      io.observe(svg);
+
       const FADE_IN = 0.6;
       const FADE_OUT = 2.5;
 
@@ -29,6 +49,7 @@ export function Card2Media() {
       {
         const TOTAL = 12;
         const tl = gsap.timeline({ repeat: -1 });
+        timelines.push(tl);
         tl.to(card2El, {
           keyframes: [
             { x: -61, y: -264, duration: 0 }, // above SVG
@@ -55,6 +76,7 @@ export function Card2Media() {
       {
         const TOTAL = 12;
         const tl = gsap.timeline({ repeat: -1, delay: 4 });
+        timelines.push(tl);
         tl.to(card1El, {
           keyframes: [
             { x: 53, y: -170, duration: 0 }, // above SVG
@@ -74,6 +96,8 @@ export function Card2Media() {
           TOTAL - FADE_OUT,
         );
       }
+
+      return () => io.disconnect();
     },
     { scope: svgRef },
   );
@@ -84,7 +108,6 @@ export function Card2Media() {
       style={{
         background:
           "linear-gradient(162.92deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%)",
-        backdropFilter: "blur(68.6px)",
       }}
     >
       <img
@@ -171,41 +194,13 @@ export function Card2Media() {
           strokeLinejoin="round"
         />
         <g className="card2">
-          <foreignObject x="-148.35" y="-16.6" width="459.2" height="400.2">
-            <div
-              style={{
-                backdropFilter: "blur(85.3px)",
-                clipPath: "url(#bgblur_1_44_104_clip_path)",
-                height: "100%",
-                width: "100%",
-              }}
-            ></div>
-          </foreignObject>
           <g data-figma-bg-blur-radius="170.6">
             <g clipPath="url(#clip0_44_104)">
               <path
                 d="M22.25 168.025C22.25 160.279 28.5291 154 36.2747 154H126.225C133.971 154 140.25 160.279 140.25 168.025V198.975C140.25 206.721 133.971 213 126.225 213H36.2747C28.5291 213 22.25 206.721 22.25 198.975V168.025Z"
                 fill="url(#paint2_linear_44_104)"
               />
-              <foreignObject
-                x="-128.75"
-                y="3.00037"
-                width="361.604"
-                height="361.604"
-              >
-                <div
-                  style={{
-                    backdropFilter: "blur(80.17px)",
-                    clipPath: "url(#bgblur_2_44_104_clip_path)",
-                    height: "100%",
-                    width: "100%",
-                  }}
-                ></div>
-              </foreignObject>
-              <g
-                filter="url(#filter1_d_44_104)"
-                data-figma-bg-blur-radius="160.349"
-              >
+              <g data-figma-bg-blur-radius="160.349">
                 <rect
                   x="31.5996"
                   y="163.35"
@@ -252,41 +247,13 @@ export function Card2Media() {
           </g>
         </g>
         <g className="card1">
-          <foreignObject x="3.64999" y="-110.6" width="482.2" height="400.2">
-            <div
-              style={{
-                backdropFilter: "blur(85.3px)",
-                clipPath: "url(#bgblur_4_44_104_clip_path)",
-                height: "100%",
-                width: "100%",
-              }}
-            ></div>
-          </foreignObject>
           <g data-figma-bg-blur-radius="170.6">
             <g clipPath="url(#clip3_44_104)">
               <path
                 d="M174.25 74.0247C174.25 66.2791 180.529 60 188.275 60H301.225C308.971 60 315.25 66.2791 315.25 74.0247V104.975C315.25 112.721 308.971 119 301.225 119H188.275C180.529 119 174.25 112.721 174.25 104.975V74.0247Z"
                 fill="url(#paint6_linear_44_104)"
               />
-              <foreignObject
-                x="23.2504"
-                y="-90.9996"
-                width="361.604"
-                height="361.604"
-              >
-                <div
-                  style={{
-                    backdropFilter: "blur(80.17px)",
-                    clipPath: "url(#bgblur_5_44_104_clip_path)",
-                    height: "100%",
-                    width: "100%",
-                  }}
-                ></div>
-              </foreignObject>
-              <g
-                filter="url(#filter3_d_44_104)"
-                data-figma-bg-blur-radius="160.349"
-              >
+              <g data-figma-bg-blur-radius="160.349">
                 <rect
                   x="183.6"
                   y="69.3496"

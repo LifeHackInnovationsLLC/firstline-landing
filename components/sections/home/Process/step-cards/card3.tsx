@@ -10,7 +10,6 @@ export function Card3Media() {
       style={{
         background:
           "linear-gradient(162.92deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%)",
-        backdropFilter: "blur(68.6px)",
       }}
     >
       <img
@@ -30,16 +29,6 @@ export function Card3Media() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <foreignObject x="-170.6" y="-170.6" width="442.2" height="442.2">
-          <div
-            style={{
-              backdropFilter: "blur(85.3px)",
-              clipPath: "url(#bgblur_0_44_160_clip_path)",
-              height: "100%",
-              width: "100%",
-            }}
-          ></div>
-        </foreignObject>
         <g data-figma-bg-blur-radius="170.6">
           <rect
             x="0.5"
@@ -75,16 +64,6 @@ export function Card3Media() {
               fill="black"
               fillOpacity="0.72"
             />
-            <foreignObject x="-65.7" y="-79.7" width="232.4" height="260.4">
-              <div
-                style={{
-                  backdropFilter: "blur(51.35px)",
-                  clipPath: "url(#bgblur_2_44_160_clip_path)",
-                  height: "100%",
-                  width: "100%",
-                }}
-              ></div>
-            </foreignObject>
             <g
               opacity="0.64"
               filter="url(#filter1_ii_44_160)"
@@ -135,16 +114,6 @@ export function Card3Media() {
             stroke="url(#paint5_linear_44_160)"
           />
         </g>
-        <foreignObject x="47.4" y="-64.6" width="442.2" height="442.2">
-          <div
-            style={{
-              backdropFilter: "blur(85.3px)",
-              clipPath: "url(#bgblur_3_44_160_clip_path)",
-              height: "100%",
-              width: "100%",
-            }}
-          ></div>
-        </foreignObject>
         <g data-figma-bg-blur-radius="170.6">
           <rect
             x="218.5"
@@ -180,16 +149,6 @@ export function Card3Media() {
               fill="black"
               fillOpacity="0.72"
             />
-            <foreignObject x="152.3" y="26.3" width="232.4" height="260.4">
-              <div
-                style={{
-                  backdropFilter: "blur(51.35px)",
-                  clipPath: "url(#bgblur_5_44_160_clip_path)",
-                  height: "100%",
-                  width: "100%",
-                }}
-              ></div>
-            </foreignObject>
             <g
               opacity="0.64"
               filter="url(#filter5_ii_44_160)"
@@ -240,21 +199,6 @@ export function Card3Media() {
             stroke="url(#paint11_linear_44_160)"
           />
         </g>
-        <foreignObject
-          x="-16.1446"
-          y="-28.1446"
-          width="223.289"
-          height="223.289"
-        >
-          <div
-            style={{
-              backdropFilter: "blur(43.07px)",
-              clipPath: "url(#bgblur_6_44_160_clip_path)",
-              height: "100%",
-              width: "100%",
-            }}
-          ></div>
-        </foreignObject>
         <g data-figma-bg-blur-radius="86.1446">
           <rect
             x="70.25"
@@ -292,21 +236,6 @@ export function Card3Media() {
               fill="black"
               fillOpacity="0.72"
             />
-            <foreignObject
-              x="36.9651"
-              y="18.0425"
-              width="117.068"
-              height="130.915"
-            >
-              <div
-                style={{
-                  backdropFilter: "blur(25.93px)",
-                  clipPath: "url(#bgblur_8_44_160_clip_path)",
-                  height: "100%",
-                  width: "100%",
-                }}
-              ></div>
-            </foreignObject>
             <g
               opacity="0.64"
               filter="url(#filter9_ii_44_160)"
@@ -358,16 +287,6 @@ export function Card3Media() {
             strokeWidth="0.5"
           />
         </g>
-        <foreignObject x="111.855" y="77.8554" width="223.289" height="223.289">
-          <div
-            style={{
-              backdropFilter: "blur(43.07px)",
-              clipPath: "url(#bgblur_9_44_160_clip_path)",
-              height: "100%",
-              width: "100%",
-            }}
-          ></div>
-        </foreignObject>
         <g data-figma-bg-blur-radius="86.1446">
           <rect
             x="198.25"
@@ -405,21 +324,6 @@ export function Card3Media() {
               fill="black"
               fillOpacity="0.72"
             />
-            <foreignObject
-              x="164.965"
-              y="124.042"
-              width="117.068"
-              height="130.915"
-            >
-              <div
-                style={{
-                  backdropFilter: "blur(25.93px)",
-                  clipPath: "url(#bgblur_11_44_160_clip_path)",
-                  height: "100%",
-                  width: "100%",
-                }}
-              ></div>
-            </foreignObject>
             <g
               opacity="0.64"
               filter="url(#filter13_ii_44_160)"

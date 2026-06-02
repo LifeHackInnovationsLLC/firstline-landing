@@ -101,6 +101,10 @@ export function InfiniteSlider({
             : { y: translation }),
           gap: `${gap}px`,
           flexDirection: direction === "horizontal" ? "row" : "column",
+          // GPU-promote the moving track so the box-shadowed cards inside are
+          // composited as one layer and don't repaint their shadows each frame.
+          willChange: "transform",
+          backfaceVisibility: "hidden",
         }}
         ref={ref}
         {...hoverProps}

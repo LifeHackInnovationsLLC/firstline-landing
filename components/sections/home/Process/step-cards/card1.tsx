@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
-import { useId } from "react";
+import { motion, useInView } from "motion/react";
+import { useId, useRef } from "react";
 import { cdn, images } from "@/lib/cdn";
 
 const BEAM_DURATION = 5;
@@ -11,10 +11,12 @@ function BeamGradient({
   id,
   delay = 0,
   color = "#7DD3FC",
+  play = true,
 }: {
   id: string;
   delay?: number;
   color?: string;
+  play?: boolean;
 }) {
   return (
     <motion.linearGradient
@@ -23,10 +25,14 @@ function BeamGradient({
       y1="0%"
       y2="0%"
       initial={{ x1: "0%", x2: "0%" }}
-      animate={{
-        x1: ["10%", "110%"],
-        x2: ["0%", "100%"],
-      }}
+      animate={
+        play
+          ? {
+              x1: ["10%", "110%"],
+              x2: ["0%", "100%"],
+            }
+          : { x1: "0%", x2: "0%" }
+      }
       transition={{
         delay,
         duration: BEAM_DURATION,
@@ -47,10 +53,12 @@ function BeamPath({
   d,
   gradientId,
   delay = 0,
+  play = true,
 }: {
   d: string;
   gradientId: string;
   delay?: number;
+  play?: boolean;
 }) {
   return (
     <motion.path
@@ -59,7 +67,7 @@ function BeamPath({
       strokeWidth="1.5"
       strokeLinecap="round"
       initial={{ opacity: 0 }}
-      animate={{ opacity: [0, 1, 1, 0] }}
+      animate={play ? { opacity: [0, 1, 1, 0] } : { opacity: 0 }}
       transition={{
         delay,
         duration: BEAM_DURATION,
@@ -77,14 +85,18 @@ export function Card1Media() {
   const id2 = useId();
   const id3 = useId();
   const id4 = useId();
+  const rootRef = useRef<HTMLDivElement>(null);
+  // Only run the infinite beam animations while the card is on screen so the
+  // SVG isn't repainting (animated stroke gradients/opacity) off-screen.
+  const inView = useInView(rootRef, { margin: "0px 0px -10% 0px" });
 
   return (
     <div
+      ref={rootRef}
       className="border rounded-4xl h-full w-full flex justify-center items-center"
       style={{
         background:
           "linear-gradient(162.92deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%)",
-        backdropFilter: "blur(68.6px)",
       }}
     >
       <img
@@ -161,28 +173,30 @@ export function Card1Media() {
           strokeOpacity="0.02"
         />
         {/* beam animations — motion.linearGradient sweep with opacity fade */}
-        <BeamPath d="M-2.63062 104.346H392.559" gradientId={id1} delay={0} />
-        <BeamPath d="M-2.0498 89.8804H393.14" gradientId={id2} delay={1.5} />
+        <BeamPath
+          d="M-2.63062 104.346H392.559"
+          gradientId={id1}
+          delay={0}
+          play={inView}
+        />
+        <BeamPath
+          d="M-2.0498 89.8804H393.14"
+          gradientId={id2}
+          delay={1.5}
+          play={inView}
+        />
         <BeamPath
           d="M-2.41968 34.8228H86.21L114.119 76.2911H282.913L309.216 35.8079H392.927"
           gradientId={id3}
           delay={3}
+          play={inView}
         />
         <BeamPath
           d="M-2.49023 159.849H86.7403L114.119 118.252H282.913L309.817 159.345H393.345"
           gradientId={id4}
           delay={4.5}
+          play={inView}
         />
-        <foreignObject x="-50.6" y="-170.6" width="493.2" height="536.2">
-          <div
-            style={{
-              backdropFilter: "blur(85.3px)",
-              clipPath: "url(#bgblur_0_34_77_clip_path)",
-              height: "100%",
-              width: "100%",
-            }}
-          ></div>
-        </foreignObject>
         <g data-figma-bg-blur-radius="170.6">
           <path
             d="M134.024 0.583984H257.976C265.398 0.584149 271.416 6.60175 271.416 14.0244V180.976C271.416 188.398 265.398 194.416 257.976 194.416H134.024C126.602 194.416 120.584 188.398 120.584 180.976V14.0244C120.584 6.60175 126.602 0.584147 134.024 0.583984Z"
@@ -208,16 +222,6 @@ export function Card1Media() {
               fill="black"
               fillOpacity="0.72"
             />
-            <foreignObject x="-13.6" y="-132.6" width="419.2" height="419.2">
-              <div
-                style={{
-                  backdropFilter: "blur(85.3px)",
-                  clipPath: "url(#bgblur_2_34_77_clip_path)",
-                  height: "100%",
-                  width: "100%",
-                }}
-              ></div>
-            </foreignObject>
             <g data-figma-bg-blur-radius="170.6">
               <mask id="path-12-inside-1_34_77" fill="white">
                 <path d="M231.706 112.421C234.282 111.9 235.822 109.278 234.539 107.037C231.711 102.105 227.259 97.7685 221.567 94.4659C214.231 90.2107 205.239 87.9016 196 87.9016C186.756 87.9016 177.769 90.2061 170.433 94.4659C164.741 97.7685 160.289 102.105 157.461 107.037C156.178 109.278 157.718 111.9 160.294 112.421C183.843 117.193 208.152 117.193 231.702 112.421" />
@@ -253,10 +257,10 @@ export function Card1Media() {
           />
         </g>
         <defs>
-          <BeamGradient id={id1} delay={0} color="#F9A8D4" />
-          <BeamGradient id={id2} delay={1.5} color="#F9A8D4" />
-          <BeamGradient id={id3} delay={3} />
-          <BeamGradient id={id4} delay={4.5} />
+          <BeamGradient id={id1} delay={0} color="#F9A8D4" play={inView} />
+          <BeamGradient id={id2} delay={1.5} color="#F9A8D4" play={inView} />
+          <BeamGradient id={id3} delay={3} play={inView} />
+          <BeamGradient id={id4} delay={4.5} play={inView} />
           {/* delays match BeamPath so gradient position stays in sync with visibility */}
           <clipPath
             id="bgblur_0_34_77_clip_path"
