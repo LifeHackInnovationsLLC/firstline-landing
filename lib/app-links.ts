@@ -8,7 +8,7 @@
  * routes like /sign-in or /get-started, which do not exist (they 404).
  */
 export const APP_LOGIN_URL =
-  "https://developers.firstline.digital/firstline-workspace/app/login";
+  "https://firstline.digital/firstline-workspace/app/login";
 
 // Get Started / signup currently routes to the same login surface (the app's
 // login page exposes signup). If a dedicated signup route is later exposed
